@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Enigma</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Enigma</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="process.html">Our Process</a></li>
+								<li><a href="system.html">System Overview</a></li>
+								<li><a href="about.html">About Us</a></li>
+								<li><a href="history.html">History</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>The Mechanical System</h2>
+								<p>We sought to create our own interpretation of the original Enigma's mechanical system in a way that would interface seamlessly with the electrical challenges of creating our visualization. </p>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+
+									<h3 class="major">Mechanical System Overview</h3>
+									<p>Our mechanical system follows the general outline of the original Enigma machine, with a keyboard, four rotors, and a plugboard. The original machine takes input from a keyboard, passes that letter through the plugboard for an initial swap of one letter with another, and continues on, passing the swapped letters through a series of rotors that further encrypt it and back through the plugboard. A block diagram for our system can be found <a href="electrical.html">here</a>.</p>
+
+									<h3 class="major">Rotors</h3>
+									<p>The bulk of our entire system, however, relies on a series of rotors. We have developed a set of links to hold these rotors off the ground and enable flawless rotation. These links allow all of the wires necessary for the electrical system to work to pass through unobstructed, interfacing directly with the copper taped contacts that transmit the electrical signal for each letter through the entire system.</p>
+
+									<p>For safety reasons, we enclosed the electrical contacts such that they were not visible in order to prevent arcing and viewers from inadvertently touching the contacts whilst the EL Wire is powered.</p>
+
+									<h4 class="major">Initial Gears</h4>
+									<p><span class="image left"><img src="images/old_rotors.jpg" alt="" /></span>During our initial testing, we utilized the Solidworks toolbox gears. These helped us to take the focus off of the mechanical system while the electrical and software subteams sought to integrate aspects of their initial designs with the mechanical system. These gears proved useful in the short term and allowed us to work on rotor designs for incorporating the electrical contacts and EL wire into the system. Eventually, however, we knew we needed to transition away from these gears, as the Solidworks toolbox imposed significant restraints on altering the designs and the rotors were not actually all that consistent. To compound these effects, their teeth were rather bulky and interacted in a rather clunky manner.</p>	
+									<h4 class="major">Geneva Drive</h4>
+									<p><span class="image right"><img src="images/rotating.gif" alt="" /></span>In considering the way we intended to make the gears for our final product, we realized that because we needed to fit 26 letters on each rotor, each letter would only be allocated 13.8 degrees. This meant that slight errors in how far the servos were driven could cause the EL Wire to lose contact and thus interfere with the encryption process.</p>
+
+									<p>To remedy this problem, we transitioned to a Geneva drive. In this setup, a rotating cam mechanism attached to the servo contained a pin that fit into a slot on the driven wheel, the rotor, in order to turn the rotor stepwise. This new drive prevented small errors in the amount the servo turned the cam from moving the electrical contacts contained within the system away from their desired resting points. Though the design of this mechanism proved difficult to perfect, we eventually settled on a design that was consistent and easy to manufacture, with the rotor itself being lasercut out of hardbaord and the the cam being 3-D printed.</p>
+
+									<h4 class="major">Links</h4>
+									<p><span class="image left"><img src="images/link_pic.jpg" alt="" /></span>As we intended to create a system of four rotors like the original Enigma machine, we needed a way to hold the rotors off of the ground to allow them to rotate freely while also passing the electrical signal down the rotors in order to illuminate the correct series of letters. As a result, we designed a series of so-called links to link the rotors together. Over the course of the project, these links evolved with the rotors as well as the electrical contacts. Eventually, the mechanical and electrical subteams settled on a design that utilized 3-D printed pieces that had angled ends and were wrapped in copper tape in order to transmit the electrical signal through the links. Additionally, we attached springs to these links to maintain contact with the copper plate on the rotors as they rotated. </p>
+
+
+									<h4 class="major">Electrical Integration</h4>
+									<p>In order to effectively integrate the mechanical and electrical systems, we needed to design the rotors to work with the EL wire, the copper plate being mounted on the rotor, and the contacts. We went through numerous iterations of this design, ranging from small holes that simply allowed the wire to pass through to slots for the battery clips. We worked closely with the electrical team at all times to meet their specifications and ensure that the two subsystems would be able to work together cohesively in the final product.</p>
+
+									<div class="gallery style1 medium lightbox onscroll-fade-in">
+										<article>
+											<a href="images/Rotors3.JPG" class="image">
+												<img src="images/Rotors3.JPG" alt="" />
+											</a>
+											<div class="caption">
+												<h3>Toolbox Gears</h3>
+												<p>We initially used gears from the solidworks toolbox to allow the electrical team to test while the mechanical team prototyped rotors.</p>
+												<!-- <ul class="actions fixed">
+													<li><span class="button small">Details</span></li>
+												</ul> -->
+											</div>
+										</article>
+										<article>
+											<a href="images/ThreeContacts.jpg" class="image">
+												<img src="images/ThreeContacts.jpg" alt="" />
+											</a>
+											<div class="caption">
+												<h3>Testing Contacts</h3>
+												<p>We updated our rotors to be Geneva drives and rigged a rotor to test three different ways of making electrical contact at once.</p>
+												<!-- <ul class="actions fixed">
+													<li><span class="button small">Details</span></li>
+												</ul> -->
+											</div>
+										</article>
+										<article>
+											<a href="images/slots.jpg" class="image">
+												<img src="images/slots.jpg" alt="" />
+											</a>
+											<div class="caption">
+												<h3>Updating Rotors 1</h3>
+												<p>We updated the rotors to have slots for the new battery clip contacts rather than holes for the EL wire.</p>
+												<!-- <ul class="actions fixed">
+													<li><span class="button small">Details</span></li>
+												</ul> -->
+											</div>
+										</article>
+										<article>
+											<a href="images/angledContact.jpg" class="image">
+												<img src="images/angledContact.jpg" alt="" />
+											</a>
+											<div class="caption">
+												<h3>Updating Links</h3>
+												<p>We updated the links to fit the new 3-D printed, copper taped wrapped contacts that propagate the electrical signal between rotors.</p>
+												<!-- <ul class="actions fixed">
+													<li><span class="button small">Details</span></li>
+												</ul> -->
+											</div>
+										</article>
+										<article>
+											<a href="images/wired_rotor.JPG" class="image">
+												<img src="images/wired_rotor.JPG" alt="" />
+											</a>
+											<div class="caption">
+												<h3>Updating Rotors 2</h3>
+												<p>We added the copper plate to the rotor and incorporated a mix of slots for the battery clips and holes for the EL wire.</p>
+												<!-- <ul class="actions fixed">
+													<li><span class="button small">Details</span></li>
+												</ul> -->
+											</div>
+										</article>
+									</div><br>
+
+
+									<h3 class="major">Housing</h3>
+									<p>For the sake of saving money, we have chosen to utilize a modern keyboard in order to simulate the typewriter feel of the original machine. We enclosed this keyboard in hardboard housing and 3-D printed keys with which the user can interact. Within the same housing, we have incorporated the plugboard, allowing the user to directly swap one letter with another in a seamless way.</p>
+
+									<span class="image fit"><img src="images/housing_full.jpg" alt="" /></span>
+
+									<h4 class="major">Plugboard and Keyboard</h4>
+									<p>The housing was crafted entirely in hardboard and designed to hold most of the components within it. To start out, the housing was designed to be a box with holes, made so that you can type on the keyboard through the holes, and was not made to incorporate the plugboard. But as the project developed, the front aspect of it became a component for holding the plugboard, initially being a 3 piece assembly to hold 3 different PCBs. However, to optimize material and aesthetic, this quickly became a singular slab of hardboard that help each of the 3 PCBs together with the letters they represent rastered above each hole. Additionally, to allow wires to go in and out of the housing, we made a small hole in the back of the housing so that parts like the plugboard and the keyboard could connect to the parts outside of the housing like the LCD display. Additionally, we added keyboard holders to the inside of the housing so that the keyboard is held in place and we wouldn’t have to worry about fixing it when incorporating the keys. Then to display the inside of the housing and the work happening behind the scenes, we opened up the front part of the housing, right above the plugboard, so that people can see the parts working together within the actual housing instead of just the display itself since we wanted to visualize the encryption process and the different parts of this project.</p>
+
+									<h4 class="major">Keys</h4>
+									<p><span class="image right"><img src="images/housing_with_keys.jpg" alt="" /></span>In developing the keys, we played around with multiple different sizes and lengths of the keys, starting from short but wide keys. From this, we wanted to move towards a more accurate representation of the keys used in the real Enigma machine, so we moved into two different types of keys, one being tall and thin with a wide base to hold it up to represent the actual keys the closest, and another that was tall and wider through the stem, still capturing some of the historical accuracy. From trying these two, we concluded to go with option 2 but slightly shorter so that it could be a more stable key that we do not have to worry about falling and leaning over when not in use.</p>
+<!--
+									<h4 class="major">Challenges</h4>
+									<h5 class="major">D-Shaft</h5>
+									<p>Sponsor us, copper tape people! Please!</p>
+
+									<h5 class="major">Rotor Mount</h5>
+									<p>Sponsor us, copper tape people! Please!</p>
+
+									<h5 class="major">Torque</h5>
+									<p>Sponsor us, copper tape people! Please!</p>
+
+-->
+<!--
+									<section class="features">
+										<article>
+											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+											<h3 class="major">Sed feugiat lorem</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
+											<a href="#" class="special">Learn more</a>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
+											<h3 class="major">Nisl placerat</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
+											<a href="#" class="special">Learn more</a>
+										</article>
+									</section>
+
+								</div>
+							</div>
+-->
+					</section>
+				
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Contact Us</h2>
+							<p>If you would like to get in touch with the enigma team or learn more about the project, please send us a message!</p>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="4"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+							<ul class="contact">
+								<li class="fa-home">
+									Olin College<br />
+									1000 Olin Way<br />
+									Needham, MA</li>
+								<li class="fa-github"><a href="#">github.com/coreyacl/Enigma</a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Enigma POE Team All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
