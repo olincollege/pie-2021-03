@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic - Solid State by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Enigma</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="process.html">Our Process</a></li>
+								<li><a href="system.html">System Overview</a></li>
+								<li><a href="about.html">About Us</a></li>
+								<li><a href="history.html">History</a></li>
+								<!-- <li><a href="encryption.html">Encryption Process</a></li> -->
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>The Software</h2>
+								<p>We added software components to this machine to validate our encryption, unite separate components, and add digital visualization.</p>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+
+									<!--<h3 class="major">System Overview</h3>-->
+									<h3 class="major">Verify Encryption</h3>
+									<p>
+									<span class="image left"><img src="images/py_enigma.JPG" alt="" /></span>
+									Our software duties were split between a Raspberry Pi 2.0 and an Arduino Uno. The Ras-Pi took in input from the keyboard and output the encrypted input based on the data it collected from the plugboard. This verified that our encryption was correct as it was displayed. The encryption was handled by Py-Enigma, an opensource python library that performs Enigma machine encryption. 
+									<a href="https://py-enigma.readthedocs.io/en/latest/" class="special">Py-Enigma</a>
+									</p>
+								</div>
+								<div class="inner">
+									<h3 class="major">Data Visualization</h3>
+									<p>
+									<span class="image right"><img src="images/datavis.png" alt="" /></span>
+									We also decided to use software to write an interactive visualization to accompany the plugboard. This program allows users to see the changes in the plugboard in real time as they change letter combinations. Check out the Jupyter Notebook to see how it works.
+									<a href="https://github.com/elizabethtawes/Enigma" class="special">Github</a>
+									</p>
+
+									
+
+
+								</div>
+							</div>
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Contact Us</h2>
+							<p>If you would like to get in touch with the enigma team or learn more about the project, please send us a message!</p>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="4"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+							<ul class="contact">
+								<li class="fa-home">
+									Olin College<br />
+									1000 Olin Way<br />
+									Needham, MA</li>
+								<li class="fa-github"><a href="#">github.com/coreyacl/Enigma</a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Enigma POE Team All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
