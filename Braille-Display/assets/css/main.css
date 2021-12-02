@@ -2133,8 +2133,8 @@ input, select, textarea {
 /* Header */
 
 	#logo {
-		position: absolute;
-		z-index: 1;
+		position: fixed;
+		z-index: 5001;
 		top: 0;
 		left: 50%;
 		width: 15em;
@@ -2160,14 +2160,19 @@ input, select, textarea {
 			text-transform: uppercase;
 		}
 
-	#nav {
+	#nav{
+		display: block;
 		text-align: center;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 4em;
 		line-height: 4em;
+		/* TODO PRETTY COLOR */
+		background: rgb(38, 35, 35); 
+		z-index: 5000;
+
 	}
 
 		#nav > ul {
