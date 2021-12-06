@@ -34,29 +34,12 @@ possibly adding a crystal reveal in the hilt.
 On the electrical/software side we expected for both lightsabers to possess
 visual and sound effects. As well as do there respective launch and shutdown
 procedures. For effects we wanted to have multiple characters be available to
-the user via a button which would change the
+the user via a button which would change the saber's color and play a theme song.
+In idle the lightsaber also emulates hits and wooshing noises via the hardware.
 
-On the electrical/software side, we had to start by speccing out a
-microcontroller, sound board, LEDs, speaker, switches, etc. in order to make the
-lightsaber react to movement changes and turn the saber on and off.
-After this we will have to map out and integrate this into the lightsaber
-chassis. Following this we can then begin to program the microcontroller to
-react as we expect it to (for example, changing sound based on blade speed and
-movement). If we end up having the extendable blade, we will also need to spec
-out and program the motors that extend and retract the blade. As a bonus, we may
-be able to include themes or character-specific modes to set blade colors and sounds,
-though this is essentially a customization element to add on top of the main design.
-
-For this project, we anticipate challenges in the design of the
-retraction/extension mechanism, especially in fitting it into a comfortably sized
-hilt, and in successfully synchronizing the sound and light changes with actual
-movement. We may also have issues in acquiring parts, depending on chip availability.
-Our current fabrication plan is to start with 3D printing, which is easier to
-prototype with but could be a challenge to do full-scale. As a stretch, once
-the design is done, we could use the lathe and mills to make a metal hilt, 
-though this may become expensive and time-consuming.
-
-
+For this project we hope that we are able to get as close to a traditional replica
+saber as possible. Our main inspiration coming from the Disney Imagineers
+most recent [Lightsaber](https://youtu.be/ggWBEj8ppgM)
 
 
 ## Final System
