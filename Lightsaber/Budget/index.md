@@ -5,8 +5,9 @@ permalink: /Budget/
 ---
 | Item      | Quantity | Cost per Unit | Total |
 | --------- | ---------- | ---------- | ---------- |
-| [Propmaker Set](https://www.adafruit.com/product/4860) | 2 | $54.95 | $109.90 |
-| [LED's (0.5m)](https://www.adafruit.com/product/4865) | 2 | $37.50 | $75.00 |
+| [Adafruit Propmaker Set](https://www.adafruit.com/product/4860) | 2 | $54.95 | $109.90 |
+| [NeoPixel 332 LED-per-Meter (0.5m)](https://www.adafruit.com/product/4865) | 2 | $37.50 | $75.00 |
+| [NeoPixel 144 LED-per-Meter (1m)](https://www.adafruit.com/product/4865) | 1 | Free | $64.95 (Estimated) |
 | [Battery Charger](https://www.adafruit.com/product/1904) | 1 | $6.95 | $6.95 |
 | [Polycarbonate Tubing](https://www.mcmaster.com/9176T6/) | 1 | $21.25 | $21.25 |
 | [Polypropylene Film, 0.016" Thick](https://www.mcmaster.com/5895N111/) | 1 | $3.36 | $3.36 |
