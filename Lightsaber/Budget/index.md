@@ -16,4 +16,5 @@ permalink: /Budget/
 | [Polycarbonate Film, 0.015" Thick](https://www.mcmaster.com/85585K34/) | 1 | $4.57 | $4.57 |
 | [Polycarbonate Film, 0.02" Thick](https://www.mcmaster.com/85585K35/) | 1 | $5.88 | $5.88 |
 | Tax/Shipping |  |  | $42.95 |
-| Total | | | $282.07 |
+| Total (Before Donations) | | | $282.07 |
+| Total (After Donations) | | | $347.02 |
