@@ -31,8 +31,19 @@ For electrical, we soldered the Prop-Maker FeatherWing onto the Feather M4 Expre
 The board we got runs CircuitPython, so the software is done directly on the board. The base code for the lightsaber already exists ([Source](https://learn.adafruit.com/hallowing-lightsaber/program-with-circuitpython)), so we started with geting the base code running on our board, before making tweaks.
 
 
-
 ## Sprint 2
+In Sprint 2, we wanted to see how far along we could get with the extendable lightsaber, before deciding whether we should focus on only the detachable lightsaber or both the detachable and extendable ones. We ultimately decided to continue pursuing both, leading us to purchase another Adafruit Propmaker kit. Luckily, we found an LED strip to use for this blade, so we wouldn't have to purchase another which would have put us way over budget.
+
+#### Mechanical
+For the detachable blade, this sprint we modified the electronics packaging, so that the hilt of the lightsaber could be more compact and more closly resemble Disney's lightsaber dimensions. Additionally, we began working on the detaching mechanism of the blade. 
+
+<p align="center">
+  <img src="./sprint2detachabledesign.png" alt="Sprint 2 Detaching Mechanism Design">
+</p>
+
+<p align="center">
+  <img src="./sprint2detachableprinted.jpg" alt="Sprint 2 Detaching Mechanism">
+</p>
 
 ## Sprint 3
 
