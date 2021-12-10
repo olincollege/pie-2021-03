@@ -21,21 +21,21 @@ For the extendable blade, we investigated how we could make this work, basing it
 </p>
 
 #### Electrical
-For electrical, we soldered the Prop-Maker FeatherWing onto the Feather M4 Express and then connected the battery, speaker, button, and LEDs. 
+For electrical, we soldered the FeatherWing onto the Feather M4 Express and then connected the battery, speaker, button, and LEDs. 
 
 <p align="center">
   <img src="./sprint1electrical.jpg" alt="Sprint 1 Circuit Diagram">
 </p>
 
 #### Software
-The board we got runs CircuitPython, so the software is done directly on the board. The base code for the lightsaber already exists ([Source](https://learn.adafruit.com/hallowing-lightsaber/program-with-circuitpython)), so we started with geting the base code running on our board, before making tweaks.
+The board we got runs CircuitPython, so the software is done directly on the board. The base code for the lightsaber already exists ([Source](https://learn.adafruit.com/hallowing-lightsaber/program-with-circuitpython)), so we started with getting the base code running on our board, before making tweaks. This initial code powered the blade on and played humming sounds based on accelerometer values.
 
 
 ## Sprint 2
 In Sprint 2, we wanted to see how far along we could get with the extendable lightsaber, before deciding whether we should focus on only the detachable lightsaber or both the detachable and extendable ones. We ultimately decided to continue pursuing both, leading us to purchase another Adafruit Propmaker kit. Luckily, we found an LED strip to use for this blade, so we wouldn't have to purchase another which would have put us way over budget.
 
 #### Mechanical
-For the detachable blade, this sprint we modified the electronics packaging, so that the hilt of the lightsaber could be more compact and more closly resemble Disney's lightsaber dimensions. Additionally, we began working on the detaching mechanism of the blade. 
+For the detachable blade, this sprint we modified the electronics packaging, so that the hilt of the lightsaber could be more compact and more closely resemble Disney's lightsaber dimensions. Additionally, we began working on the detaching mechanism of the blade. 
 
 <p align="center">
   <img src="./sprint2detachabledesign.png" alt="Sprint 2 Detaching Mechanism Design">
@@ -45,6 +45,25 @@ For the detachable blade, this sprint we modified the electronics packaging, so 
   <img src="./sprint2detachableprinted.jpg" alt="Sprint 2 Detaching Mechanism">
 </p>
 
+For the extendable blade, we reverse engineered a motorized tape measure. We found that the motor was sufficient for our needs, so we switched the battery out for **?** volt one. We then connected the tape measure and LEDs, although the diameter of the LED spool was too small, leading to problems when retracting the blade. 
+
+**ADD PHOTO OF INITIAL EXTENDABLE BLADE**
+
+We also looked into different thicknesses of polycarbonate and polypropylene film to thermoform into the tape spring shape as a possible alternative to the tape measure. This would allow the LED light to diffuse through the plastic. We ended up getting a range of films to test which would be best.
+
+#### Electrical
+For electrical, we put together the second set of electronics for the second blade. Additionally, we added a second button and a switch.
+
+<p align="center">
+  <img src="./sprint2electrical.png" alt="Sprint 2 Circuit Diagram">
+</p>
+
+#### Software
+For software, we added the ability to switch between blade colors based on button input. There are four different blade colors with corresponding audio files that play music when the blade is extended. We had originally planned to add a fifth color with music, but the Featherwing's memory was too small to hold it. Finally, we separated the detachable and extendable code.
+
+[Github Repo](https://github.com/nabihestefan/Lightsaber)
+
 ## Sprint 3
+In Sprint 3, we finished up both the extendable and detachable blades.
 
 [Presentation](https://docs.google.com/presentation/d/1FsrQfatEuBN9W9HeRLlkH6D4EyJWSfqdYsHG7buiOm8/edit?usp=sharing)
