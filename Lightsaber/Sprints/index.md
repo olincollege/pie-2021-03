@@ -41,10 +41,6 @@ For the detachable blade, this sprint we modified the electronics packaging, so 
   <img src="./sprint2detachabledesign.png" alt="Sprint 2 Detaching Mechanism Design">
 </p>
 
-<p align="center">
-  <img src="./sprint2detachableprinted.jpg" alt="Sprint 2 Detaching Mechanism">
-</p>
-
 For the extendable blade, we reverse engineered a motorized tape measure. We found that the motor was sufficient for our needs, so we switched the battery out for **?** volt one. We then connected the tape measure and LEDs, although the diameter of the LED spool was too small, leading to problems when retracting the blade. 
 
 **ADD PHOTO OF INITIAL EXTENDABLE BLADE**
@@ -64,6 +60,31 @@ For software, we added the ability to switch between blade colors based on butto
 [Github Repo](https://github.com/nabihestefan/Lightsaber)
 
 ## Sprint 3
-In Sprint 3, we finished up both the extendable and detachable blades.
+In Sprint 3, we finished up both the extendable and detachable blades. Additionally, we ordered the polycarbonate tubing for the detachable blade and the films to test thermoforming for the extendable blade. This order caused us to go over budget because the shipping for the tubing was an expensive $37. 
 
 [Presentation](https://docs.google.com/presentation/d/1FsrQfatEuBN9W9HeRLlkH6D4EyJWSfqdYsHG7buiOm8/edit?usp=sharing)
+ 
+#### Mechanical
+This sprint, we finalized the detaching mechanism of the detachable blade and designed the casing of the blade. 
+
+<p align="center">
+  <img src="./sprint3detachableprinted.jpg" alt="Sprint 3 Detaching Mechanism">
+</p>
+
+**ADD PHOTO OF CASING PRINTS/CAD DESIGN - DETACHABLE**
+
+Additionally, we used Emery **?** to diffuse the blade and printed a resin cap for the tubing.
+
+<p align="center">
+  <img src="./sprint3diffusedblade.jpg" alt="Sprint 3 Diffused Blade and Resin Cap">
+</p>
+
+For the extendable blade, we fixed the LED spool, so that the LEDs wrap around the spool without loosening when retracting, and we printed casing for the hilt. Additionally, we successfully thermoformed the film, creating the proof of concept for the clear blade, but we did not have the time or material to implement it. 
+
+**ADD PHOTO OF CASING PRINTS/CAD DESIGN - EXTENDABLE**
+
+#### Electrical
+For electrical, there were problems LED wires twisting too much in the extendable blade when the LED spool rotated to unwind. This was solved by adding longer wires connecting to the LEDs, giving the wires more room to twist without breaking. 
+
+#### Software
+We finished the software for the blade last sprint, so we focused on documentation for this sprint.
