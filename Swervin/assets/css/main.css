@@ -3391,6 +3391,18 @@ input, select, textarea {
 					text-decoration: none;
 					text-transform: uppercase;
 				}
+				#menu ul > li > ul> li > a {
+					border: 0;
+          padding: 0;
+					color: inherit;
+					display: block;
+					font-size: 0.8em;
+					letter-spacing: 0.225em;
+					outline: 0;
+					text-decoration: none;
+					text-transform: uppercase;
+          margin-left:15px;
+				}
 
 					@media screen and (max-width: 736px) {
 
