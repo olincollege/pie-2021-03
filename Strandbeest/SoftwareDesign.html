@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<!--
+	Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Software Architecture</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="right-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header" class="wrapper">
+
+					<!-- Logo -->
+						<div id="logo">
+							<h1><a href="index.html">Software Architecture</a></h1>
+						</div>
+
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="strandbeest.html">Home</a></li>
+							<li><a href="MechanicalDesign.html">Mechanical Design</a></li>
+							<li><a href="ElectricalDesign.html">ElectricalDesign</a></li>
+							<li class="current"><a href="SoftwareDesign.html">Software Design</a></li>
+						</ul>
+					</nav>
+
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="wrapper style3">
+					<!-- <div class="title"></div> -->
+					<div class="container">
+						<div class="row gtr-150">
+							<div class="col-8 col-12-medium">
+
+								<!-- Content -->
+									<div id="content">
+										<article class="box post">
+											<header class="style1">
+												<h2>High Level Overview</h2>
+											</header>
+											<h5 style="padding-bottom: 2.25%;">Our code base is split into two parts - vision software and arduino firmware. 
+												The vision code runs on a raspberry pi running ubuntu 20.04 and identifies a target in
+												frame. The centroid of the target is then identified and it's offset from the center of
+												the image is sent over serial to the arduino. Then the arduino control loop takes the 
+												offset as input and uses it to adjust the robot speed. If no input is given, the robot 
+												should continue in the same direction that it was taking at the time of the last input.</h5>
+											<a class="image featured">
+												<img src="images/SoftwarePathway.PNG" alt="" />
+											</a>
+										</article>
+									</div>
+
+							</div>
+							<div class="col-4 col-12-medium">
+
+								<!-- Sidebar -->
+									<div id="sidebar">
+										<section class="box">
+											<!-- <header>
+												<h2>View our code here:</h2>
+											</header> -->
+											<a href="https://github.com/kviiim/strandbeest" class="button style1">Github Repository</a>
+										</section>
+										<section class="box">
+											<header>
+												<h2>Dependencies</h2>
+											</header>
+											<ul class="style2">
+												<li>
+													<article class="box post-excerpt">
+														<a href="https://opencv.org/" class="image left"><img src="images/OpenCV_logo_no_text_.png" alt="" /></a>
+														<h3><a href="https://opencv.org/">Opencv</a></h3>
+														<p>Image processing library used for color and person tracking. Using version 4.5.3.
+														</p>
+													</article>
+												</li>
+												<li>
+													<article class="box post-excerpt">
+														<a href="https://github.com/adafruit/Adafruit_Motor_Shield_V2_Library" class="image left"><img src="images/Adafruit_logo.gif" alt="" /></a>
+														<h3><a href="https://github.com/adafruit/Adafruit_Motor_Shield_V2_Library">Adafruit Motor Shield V2 Library</a></h3>
+														<p>Motor shield controller library. </p>
+													</article>
+												</li>
+											</ul>
+										</section>
+									</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section id="highlights" class="wrapper style1">
+				<div class="title">More Details</div>
+				<div class="container">
+					<div class="row gtr-150">
+						<div class="col-6 col-12-small">
+							<section class="box">
+								<header>
+									<h2>Vision Software Overview</h2>
+								</header>
+								<p>There are two separate methods in which the strandbeest operates - 
+									tracking a color target and tracking a person. In either case, the 
+									code will identify the target of choice in the frame, and calculate the 
+									offset of the target from the center of the frame. This value is sent 
+									over serial to interact with the arduino code.</p>
+
+								<p>One difference in operation between color tracking and person tracking - 
+									if a person is not found in frame, the code will send a halt signal to the 
+									arduino. Alternatively if the color target is lost, no signal is sent to the 
+									arduino, causing the beest to continue in the same direction as it was prior.
+									</p>
+							</section>
+						</div>
+						<div class="col-6 col-12-small">
+							<section class="box">
+								<header>
+									<h2>Arduino Firmware Overview</h2>
+								</header>
+								<p>The arduino software powers the beest at a constant forward speed unless given 
+									input over serial. Upon being given an offset value, the right and left motor 
+									speeds are updated by adding and subtracting respectively the offset multiplied 
+									by a scalar value. The motors are powered at these speeds until new input is 
+									given.</p>
+								<p>If an offset of exactly 0 is recieved, all motors will be stopped,
+									including the rear ones. Once a non-zero offset is recieved, the motors are repowered
+									at the base running speed with the offset modifier. 
+								</p>
+
+								<!-- <p>The overall base speed that the beest is powered at can also be updated over serial. 
+									This allows us to manually update the walking speed without hardcoding the values. 
+								</p> -->
+							</section>
+						</div>
+					</div>
+						<div id="copyright">
+							<ul>
+								<li>&copy; Strandbeest.</li><li>Design: Katherine Mackowiak <a href="#"></a></li>
+							</ul>
+						</div>
+				</div>
+				</section>
+
+		</div>
+	</body>
+</html>
