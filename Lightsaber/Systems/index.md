@@ -31,6 +31,6 @@ We found that this system did meet the MVP electrical requirements, so for our s
   <img src="../Photos!/sprint2electrical.png" alt="Sprint 2 Circuit Diagram">
 </p>
 
-Unfortunately, since we chose to create two different Lightsabers, we could not spare more money for the electrical system at this time. However, in future iterations, we would like to add sensors in the blade of the Lightsaber. Specifically, we would add one in the tip of the blade to allow us to create blade drag effect as seen in The Force Awakens. However, sensors along the blade would allow us flash the blade white in the location it was hit instead of flashing the whole blade white. 
+Unfortunately, since we chose to create two different Lightsabers, we could not spare more money for the electrical system at this time. However, in future iterations, we would like to add sensors in the blade of the Lightsaber. Specifically, we would add one in the tip of the blade to allow us to create blade drag effect as seen in [The Force Awakens](https://youtu.be/FJTz-ahXyyI?t=247) and a material cutting effect as seen in [The Phantom Menace](https://youtu.be/K48M2S7bkSA?t=1). However, sensors along the blade would allow us flash the blade white in the location it was hit instead of flashing the whole blade white. 
 
 ## Software
