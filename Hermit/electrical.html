@@ -71,14 +71,23 @@
 								</div>
 								<div class="row">
 									<div class="col-8 col-6-medium col-12-small">
-										<section class="box"> 
+										<section class="box">
+											<h3>Motors</h3>
 											<p>
-												DESCRIPTION OF SUBSYSTEM
+												To control the motors, we have a motor shield. The motor shield 
+												has a fully-dedicated PWM driver chip onboard that handles all 
+												the motor and speed controls over I2C. The Arduino is then able 
+												to communicate to the motor shield to apply power in pulses that 
+												effectively changes the speed of the motors. If we want the motors 
+												to go faster, we drive the PWM output to a higher duty cycle. If 
+												we want the motors to go slower, we drive the PWM output to a lower 
+												duty cycle. Note that the motors we used are rated for 12V so we 
+												used a 12V power supply for them (see Power section).
 											</p>
 										</section>
 									</div>									
 									<div class="col-4 col-6-medium col-12-small">
-										<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+										<a href="#" class="image"><img src="images/electrical/leg.jpg" alt="" /></a>
 									</div>
 								</div>
 								<div class="row">
