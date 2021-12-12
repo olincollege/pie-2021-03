@@ -169,14 +169,22 @@
 										</section>
 									</div>	
 								</div>
+                                <header class="major">
+                                    <h2>Design Process</h2>
+                                </header>
 								<div class="row">
 									<div class="col-4 col-6-medium col-12-small">
-										<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+										<a href="#" class="image"><img src="images/electrical/PIR-testing.jpg" alt="" /></a>
 									</div>
 									<div class="col-8 col-6-medium col-12-small">
 										<section class="box"> 
+											<h3>Testing PIR Sensors</h3>
 											<p>
-												DESCRIPTION OF SUBSYSTEM
+												To first test the PIR sensors we connected the output to an LED as can be seen 
+												in the image of the breadboard. The PIR sensor sends high or low signals 
+												depending on if it senses anything. Therefore, at default this LED would be off, 
+												and when it detected a warm body, the LED would turn on. We used this setup as a 
+												means to test whether the PIR sensors worked as intended.
 											</p>
 										</section>
 									</div>
@@ -184,14 +192,29 @@
 								<div class="row">
 									<div class="col-8 col-6-medium col-12-small">
 										<section class="box"> 
+											<h3>Testing Motors</h3>
 											<p>
-												DESCRIPTION OF SUBSYSTEM
+												When designing our crab, there were a couple of trade-offs that we had to take. 
+												The first tradeoff involved our motors. The motors that we first used were 6V 
+												motors with a 1:100 gear ratio. However, after mounting the motors to the crab, 
+												and driving them, we realized that the motors were not powerful enough to drive 
+												the crab forward. The legs/motors would simply stay in the same position.
+											</p>
+											<p>
+												Therefore, we decided to get more powerful motors. However, these motors required 
+												a higher voltage (12V) and drew a lot more current. When getting these motors we 
+												first tested them with a power supply at 12V. In doing so we found that they draw 
+												about 0.22 Amp when the leg is not in contact with anything, and they draw about 
+												0.29 Amps when stalled. Given this high draw of current, we decided to use a power 
+												supply to supply the 12V instead of finding a battery solution. This meant that we 
+												had to tether our crab to a wall outlet, but we wouldn’t have to worry about a 
+												battery that quickly used up its capacity. 
 											</p>
 										</section>
 									</div>									
-									<div class="col-4 col-6-medium col-12-small">
+									<!-- <div class="col-4 col-6-medium col-12-small">
 										<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-									</div>
+									</div> -->
 								</div>
 							</section>
 						</div>
