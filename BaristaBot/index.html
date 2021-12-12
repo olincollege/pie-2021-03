@@ -1,0 +1,509 @@
+<!DOCTYPE HTML>
+<!--
+	WEBSITE REQUIREMENTS 
+	- A high level summary description of the project’s objectives.
+	- A system diagram depicting the schematic relationships between all of the different subsystems comprising your final system.
+	- An account of how you spent your $250 budget. You must include all components and materials and their estimated costs 
+	  (even if you obtained them for free somehow). Please note where something was obtained for free and cost is just your best estimate.
+	- A detailed description of electrical design (circuit diagrams are appropriate) and any necessary analysis.
+	- A detailed description of your mechanical design (CAD images/renderings are appropriate) and any necessary analysis.
+	- A detailed description of the firmware design with links to complete source code (GitHub or other repository is helpful).
+	- A detailed description of software design with links to complete source code (GitHub or other repository is helpful). Please be
+	  sure to include a list of all external software dependencies (eg. OpenCV, Google Voice API, etc.)
+	- Photos or videos of your final system in action.
+-->
+<html>
+	<head>
+		<title>BaristaBot2.0</title>
+		<link rel="shortcut icon" type="image/png" href="images/bawistaboticon.svg">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon-bawistaboticon"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>BawistaBot</h1>
+								<p>Your cutest coffee machine yet.</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#about">About</a></li>
+								<li><a href="#budget">Budget</a></li>
+								<li><a href="#mechanical">Mechanical</a></li>
+								<li><a href="#electrical">Electrical</a></li>
+								<li><a href="#software">Software</a></li>
+								<!-- <li><a href="#elements">Elements</a></li> Remove when uploading -->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+						<!-- About -->
+						<article id="about">
+							<h2 class="major">About</h2>
+							<p>The BaristaBot 2.0 is a coffee-making robot that shows the beauty in the process of making a cup of coffee. 
+								The BaristaBot2.0 is a new take on the original <a href="http://poe.olin.edu/2018/flair_barista/index.html" target="_blank" >BaristaBot, 
+								</a>which aimed to fully automate the coffee brewing process with an assembly-line-style aesthetic.</p>
+							<p>For our iteration, we decided to aim for an open-view, more compact experience that not only dispenses coffee, 
+								but the additional capability to add milk and sugar.</p>
+							<span class="iconimage"><img src="images/white_circle.png" alt=""/></span>
+							<span class="iconimage"><img src="images/dan-2.png" alt=""/></span>
+							<span class="iconimage"><img src="images/white_circle.png" alt=""/></span>
+							 <span class="iconimage"><img src="images/moises_portrait.png" alt=""/></span>
+							 <span class="iconimage"><img src="images/white_circle.png" alt=""/></span>
+							<span class="paragraph"> This project was made possible by the BaristaBot PIE Team: Ivonne Munoz, Daniel Park, Charlotte Ramiro, Moises Sabido Garcia, and Merwan Yeditha.</span>
+						</article>
+
+						<!-- Mechanical Subsystem -->
+							<article id="mechanical">
+								<h2 class="major">Mechanical</h2>
+								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+								<p>Here you can see the mechanical design of the BaristaBot2.0 from the 
+									heating water container, bean grinder, ingredient dispensing, and the cup stirrer.
+								</p>
+								<h3>Water Heating</h3>
+								<!-- Schematic goes here -->
+								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								<p>The coil heats up the water poured into the container and is poured out through
+									a solunoid dispenser into the cup.
+								</p>
+								<h3>Bean Grinder</h3>
+								<!-- Schematic goes here -->
+								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								<p>The bean grinder uses a motor running at 84 rpm at 12V DC to drive a modified hand crank coffee grinder
+									attached with 3D printed motor and grinder mounts. The grinded beans will be dispensed into a dispenser container
+								so it can be poured into the cup</p>
+								<h3>Ingredient Dispensers</h3>
+								<!-- Schematic goes here -->
+								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								<p>The dispensers, with the control of a servo each, will dispenser the grinded coffee beans, powdered milk, and sugar
+									into the cup.
+								</p>
+								<h3>Cup Stirrer</h3>
+								<!-- Schematic goes here -->
+								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								<p>And finally, when all the coffee ingredients are in the cup, the mixer will automatically mix the cup for the user.</p>
+							</article>
+
+						<!-- Electrical -->
+							<article id="electrical">
+								<h2 class="major">Electrical</h2>
+								<span class="image main"><img src="images/barista_bot_electrical_full.png" alt="" /></span>
+								<p>The Electrical System is composed of multiple modules defined by the Arduinos that drives the coffee machine 
+									from water heating, coffee bean grinding, ingredient dispensing, and cup stirring.</p>		
+								<h3>Water Heating</h3>
+								<!-- Schematic goes here -->
+								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								<h3>Coffee Bean Grinding</h3>
+								<!-- Schematic goes here -->
+								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								<h3>Ingredient Dispensing</h3>
+								<!-- Schematic goes here -->
+								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								<h3>Cup Stirring</h3>
+								<!-- Schematic goes here -->
+								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+							</article>
+
+						<!-- Software -->
+						<article id="software">
+							<h2 class="major">Software</h2>
+							<p>At a high level, the firmware help facilitates all the functions within the electrical components of the BaristaBot.</p>
+							<p>The image provides an overivew of the streamline process that occurs when the ingredients are poured into the machine,
+								to the machine brewing the coffee into a cup.
+							</p>
+							<span class="image main"><img src="images/software_arch.png" alt="" /></span>
+							<p>The system starts when the user whether or not they want sugar or milk in their coffee.
+								Depending on what the user chooses, the machine will dispense the sugar and/or milk into the cup alongside the brewed coffee with hot water and beans.
+								When all the ingredients are put in the cup, then the stirring mechanism will mix the ingredients together
+								with the final product of a fresh, hot cup of coffee.
+							</p>
+							<p>A link to our GitHub repository can be found by on our
+								<a href="https://github.com/DanPark13/BaristaBot2" target="_blank" >GitHub Page.</a></p>
+						</article>
+
+						<!-- Budget -->
+						<article id="budget">
+							<h2 class="major">Budget</h2>
+							<!-- <span class="image main"><img src="images/pic01.jpg" alt="" /></span> -->
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Quantity</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><a href="https://www.amazon.com/ELEGOO-Project-Tutorial-Controller-Projects/dp/B01D8KOZF4"
+														target="_blank" >Arduino Super Starter Kit</a></td>
+													<td>Includes many basic components Such as Arduino, Servos, Wires, Motors, etc. (Pre-Owned).</td>
+													<td>39.99</td>
+												</tr>
+												<tr>
+													<td><a href="https://www.amazon.com/Opard-Stainless-Bottle-Insulated-Camping/dp/B08B8MRFWZ/ref=sr_1_1?crid=1QWOPRJ9A0XVW&keywords=opard%2Bstainless%2Bsteel%2Bwater%2Bbottle%2B32%2Boz%2Bvacuum%2Binsulated&qid=1639024350&sprefix=32%2Boz%2Bwater%2Bbottle%2Binsulated%2Bopard%2Caps%2C184&sr=8-1&th=1"
+														target="_blank" >32oz Insulated Water Bottle</a></td>
+													<td>Used for containing the water.</td>
+													<td>18.05</td>
+												</tr>
+												<tr>
+													<td><a href="https://www.amazon.com/Diximus-300W-Portable-Immersion-Electric/dp/B07ZSYKJPR/ref=sr_1_1?crid=SIRKVCDV5IWA&keywords=heating+coil+for+water&qid=1639024110&sprefix=heating+coil+%2Caps%2C273&sr=8-1"
+														 target="_blank" >Heating Coil</a></td>
+													<td>Used for heating up the water inside the container</td>
+													<td>14.34</td>
+												</tr>
+												<tr>
+													<td><a href="https://www.amazon.com/Zevro-SmartSpace-Mount-Triple-Canister/dp/B0009MGQUM/ref=sr_1_7?keywords=food%2Bdispenser&qid=1639024806&sr=8-7&th=1"
+														target="_blank" >Dry Food Dispenser</a></td>
+													<td>For dispensing the grinded coffee beans, powdered milk, and sugar.</td>
+													<td>34.21</td>
+												</tr>
+												<tr>
+													<td>Wood</td>
+													<td>Used to construct the structure of the BaristaBot. (Bought from Home Depot.)</td>
+													<td>30</td>
+												</tr>
+												<tr>
+													<td>PVC Pipes</td>
+													<td>Holds the structure together through the center. (Bought from Home Depot.)</td>
+													<td>19</td>
+												</tr>
+												<tr>
+													<td><a href="https://www.adafruit.com/product/1770"
+														target="_blank" >Adafruit LCD Touchscreen</a></td>
+													<td>Additional Touchscreen Capabilities to Control the Coffee Machine. (Pre-Owned)</td>
+													<td>29.95</td>
+												</tr>
+												<tr>
+													<td><a href="https://ussolid.com/u-s-solid-electric-solenoid-valve-1-4-12v-dc-solenoid-valve-brass-body-normally-closed-viton-seal.html"
+														target="_blank" >Brass Solenoid Valve</a></td>
+													<td>For dispensing the water into the cup.</td>
+													<td>19.49</td>
+												</tr>
+												<tr>
+													<td><a href="https://www.digikey.com/en/products/detail/panasonic-electric-works/ALF1T05/645560?fbclid=IwAR2Jrgpab0VohFzObEJYFLsU2US4B30ADbsju-uFFvz3vHlhJ11N5CsVdJ8"
+														target="_blank" >ALF1T05 Power Relay</a></td>
+													<td>Switches open and close the circuits to control different parts of the machine such as the water valve and ingredient dispensing.</td>
+													<td>6.22</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>184.25</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+
+						</article>
+
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">Contact</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+								<ul class="icons">
+									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article>
+
+						<!-- Elements -->
+							<article id="elements">
+								<h2 class="major">Elements</h2>
+
+								<section>
+									<h3 class="major">Text</h3>
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+									<hr />
+									<h2>Heading Level 2</h2>
+									<h3>Heading Level 3</h3>
+									<h4>Heading Level 4</h4>
+									<h5>Heading Level 5</h5>
+									<h6>Heading Level 6</h6>
+									<hr />
+									<h4>Blockquote</h4>
+									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+									<h4>Preformatted</h4>
+									<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+								</section>
+
+								<section>
+									<h3 class="major">Lists</h3>
+
+									<h4>Unordered</h4>
+									<ul>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Alternate</h4>
+									<ul class="alt">
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Ordered</h4>
+									<ol>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis viverra.</li>
+										<li>Felis enim feugiat.</li>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis lorem.</li>
+										<li>Felis enim et feugiat.</li>
+									</ol>
+									<h4>Icons</h4>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+									</ul>
+
+									<h4>Actions</h4>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions stacked">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Table</h3>
+									<h4>Default</h4>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+
+									<h4>Alternate</h4>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</section>
+
+								<section>
+									<h3 class="major">Buttons</h3>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Primary</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button">Default</a></li>
+										<li><a href="#" class="button small">Small</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+									</ul>
+									<ul class="actions">
+										<li><span class="button primary disabled">Disabled</span></li>
+										<li><span class="button disabled">Disabled</span></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Form</h3>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="demo-name">Name</label>
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
+											</div>
+											<div class="field half">
+												<label for="demo-email">Email</label>
+												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
+											</div>
+											<div class="field">
+												<label for="demo-category">Category</label>
+												<select name="demo-category" id="demo-category">
+													<option value="">-</option>
+													<option value="1">Manufacturing</option>
+													<option value="1">Shipping</option>
+													<option value="1">Administration</option>
+													<option value="1">Human Resources</option>
+												</select>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+												<label for="demo-priority-low">Low</label>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-high" name="demo-priority">
+												<label for="demo-priority-high">High</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-copy" name="demo-copy">
+												<label for="demo-copy">Email me a copy</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<label for="demo-human">Not a robot</label>
+											</div>
+											<div class="field">
+												<label for="demo-message">Message</label>
+												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</section>
+
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; BaristaBot2.0. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
