@@ -44,30 +44,28 @@
                                 <header class="major">
                                     <h2>Electrical System</h2>
                                 </header>
-								<div class="row">
-									<div class="col-4 col-6-medium col-12-small">
-										<a href="#" class="image"><img src="images/electrical/hermit_schematic.png" alt="" /></a>
-									</div>
-									<div class="col-8 col-6-medium col-12-small">
-										<section class="box"> 
-											<h3>Electrical Requirements</h3>
-											<p>
-												To meet the goal of having a crab that walks towards you and 
-												hides its head into its shell when picked up, we needed the 
-												following electrical requirements:
-											</p>
-											<ul>
-												<li>Motors that are powerful enough to move the weight of the crab forward</li>
-												<li>Sensors that can tell where a person is</li>
-												<li>A sensor to tell when the crab is picked up</li>
-												<li>A servo to move the crab's head out of and into its shell</li>
-												<li>A way to supply enough power to all of the above</li>
-											</ul>
-											<p>
-												The electrical schematic for this system is shown.
-											</p>
-										</section>
-									</div>
+								<div class="col-8 col-6-medium col-12-small">
+									<section class="box"> 
+										<h3>Electrical Requirements</h3>
+										<p>
+											To meet the goal of having a crab that walks towards you and 
+											hides its head into its shell when picked up, we needed the 
+											following electrical requirements:
+										</p>
+										<ul>
+											<li>Motors that are powerful enough to move the weight of the crab forward</li>
+											<li>Sensors that can tell where a person is</li>
+											<li>A sensor to tell when the crab is picked up</li>
+											<li>A servo to move the crab's head out of and into its shell</li>
+											<li>A way to supply enough power to all of the above</li>
+										</ul>
+										<p>
+											The electrical schematic for this system is shown.
+										</p>
+									</section>
+								</div>
+								<div class="col-4 col-6-medium col-12-small">
+									<a href="#" class="image"><img src="images/electrical/hermit_schematic.png" alt="" /></a>
 								</div>
 								<div class="row">
 									<div class="col-8 col-6-medium col-12-small">
@@ -94,9 +92,6 @@
 									<div class="col-4 col-6-medium col-12-small">
 										<a href="#" class="image"><img src="images/electrical/EYES.jpg" alt="" /></a>
 									</div>
-									<div class="col-4 col-6-medium col-12-small">
-										<a href="#" class="image"><img src="images/electrical/phototransistor.png" alt="" /></a>
-									</div>
 									<div class="col-8 col-6-medium col-12-small">
 										<section class="box"> 
 											<h3>Sensors</h3>
@@ -115,6 +110,15 @@
 												read the signals from the sensors. See the <a href="https://berwinl.com/pie-2021-03/Hermit/software.html">Software</a> section to 
 												learn more about how we used them to detect a person.
 											</p>
+										</section>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-4 col-6-medium col-12-small">
+										<a href="#" class="image"><img src="images/electrical/phototransistor.png" alt="" /></a>
+									</div>
+									<div class="col-8 col-6-medium col-12-small">
+										<section class="box"> 
 											<p>
 												Another one of our requirements for our crab was to be able to 
 												sense when it has been picked up. We were able to do this through 
@@ -190,32 +194,27 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-8 col-6-medium col-12-small">
-										<section class="box"> 
-											<h3>Testing Motors</h3>
-											<p>
-												When designing our crab, there were a couple of trade-offs that we had to take. 
-												The first tradeoff involved our motors. The motors that we first used were 6V 
-												motors with a 1:100 gear ratio. However, after mounting the motors to the crab, 
-												and driving them, we realized that the motors were not powerful enough to drive 
-												the crab forward. The legs/motors would simply stay in the same position.
-											</p>
-											<p>
-												Therefore, we decided to get more powerful motors. However, these motors required 
-												a higher voltage (12V) and drew a lot more current. When getting these motors we 
-												first tested them with a power supply at 12V. In doing so we found that they draw 
-												about 0.22 Amp when the leg is not in contact with anything, and they draw about 
-												0.29 Amps when stalled. Given this high draw of current, we decided to use a power 
-												supply to supply the 12V instead of finding a battery solution. This meant that we 
-												had to tether our crab to a wall outlet, but we wouldn’t have to worry about a 
-												battery that quickly used up its capacity. 
-											</p>
-										</section>
-									</div>									
-									<!-- <div class="col-4 col-6-medium col-12-small">
-										<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-									</div> -->
-								</div>
+									<section class="box"> 
+										<h3>Testing Motors</h3>
+										<p>
+											When designing our crab, there were a couple of trade-offs that we had to take. 
+											The first tradeoff involved our motors. The motors that we first used were 6V 
+											motors with a 1:100 gear ratio. However, after mounting the motors to the crab, 
+											and driving them, we realized that the motors were not powerful enough to drive 
+											the crab forward. The legs/motors would simply stay in the same position.
+										</p>
+										<p>
+											Therefore, we decided to get more powerful motors. However, these motors required 
+											a higher voltage (12V) and drew a lot more current. When getting these motors we 
+											first tested them with a power supply at 12V. In doing so we found that they draw 
+											about 0.22 Amp when the leg is not in contact with anything, and they draw about 
+											0.29 Amps when stalled. Given this high draw of current, we decided to use a power 
+											supply to supply the 12V instead of finding a battery solution. This meant that we 
+											had to tether our crab to a wall outlet, but we wouldn’t have to worry about a 
+											battery that quickly used up its capacity. 
+										</p>
+									</section>
+								</div>			
 							</section>
 						</div>
 					</div>
