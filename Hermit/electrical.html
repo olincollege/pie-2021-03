@@ -92,6 +92,62 @@
 								</div>
 								<div class="row">
 									<div class="col-4 col-6-medium col-12-small">
+										<a href="#" class="image"><img src="images/electrical/EYES.jpg" alt="" /></a>
+									</div>
+									<div class="col-4 col-6-medium col-12-small">
+										<a href="#" class="image"><img src="images/electrical/phototransistor.png" alt="" /></a>
+									</div>
+									<div class="col-8 col-6-medium col-12-small">
+										<section class="box"> 
+											<h3>Sensors</h3>
+											<p>
+												One of our requirements for our crab was to be able to tell where 
+												a person is. We accomplished this through Passive Infrared (PIR) 
+												sensors. A PIR motion sensor consists of two main parts: a 
+												pyroelectric sensing element and a Fresnel lens. The pyroelectric 
+												sensing element can detect infrared radiation. Note that human 
+												bodies emit heat energy in the form of infrared radiation. The 
+												white dome in front of the sensing element is a Fresnel lens. 
+												This lens focuses the infrared radiation onto the sensor.
+											</p>
+											<p>
+												We connected these sensors to analog pins on our Arduino that 
+												read the signals from the sensors. See the <a href="https://berwinl.com/pie-2021-03/Hermit/software.html">Software</a> section to 
+												learn more about how we used them to detect a person.
+											</p>
+											<p>
+												Another one of our requirements for our crab was to be able to 
+												sense when it has been picked up. We were able to do this through 
+												a phototransistor. The phototransistor is a transistor that responds 
+												to light striking it by generating and amplifying an electric current. 
+												Therefore, we could use the phototransistor to detect a change in light. 
+												By putting the phototransistor on the bottom of our crab, we were able 
+												to tell when it has been picked up. When it was on the ground, its body 
+												would cast a shadow beneath it, meaning that there wasn’t a lot of light 
+												hitting the phototransistor. When it was picked up, the phototransistor 
+												could be exposed to the light in its surroundings, meaning that there was 
+												more light hitting the phototransistor. By doing some testing, we were 
+												able to find a threshold reading that we used to determine of the crab 
+												has been picked up. To learn more about how we did this, see the 
+												<a href="https://berwinl.com/pie-2021-03/Hermit/software.html">Software</a> section.
+											</p>
+										</section>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-8 col-6-medium col-12-small">
+										<section class="box"> 
+											<p>
+												DESCRIPTION OF SUBSYSTEM
+											</p>
+										</section>
+									</div>									
+									<div class="col-4 col-6-medium col-12-small">
+										<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-4 col-6-medium col-12-small">
 										<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
 									</div>
 									<div class="col-8 col-6-medium col-12-small">
