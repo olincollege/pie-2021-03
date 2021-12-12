@@ -41,7 +41,7 @@ For the detachable blade, this sprint we modified the electronics packaging, so 
   <img src="../Photos!/sprint2detachabledesign.png" alt="Sprint 2 Detaching Mechanism Design">
 </p>
 
-For the extendable blade, we reverse engineered a motorized tape measure. We found that the motor was sufficient for our needs, so we switched the battery out for a 9V one because we wanted more power for the extending and retracting motions. We then connected the tape measure and LEDs, although the diameter of the LED spool was too small, leading to problems when retracting the blade. 
+For the extendable blade, we reverse engineered a motorized tape measure. We found that the motor was sufficient for our needs, so we switched the battery out for a 9 volt one because we wanted more power for the extending and retracting motions. We then connected the tape measure and LEDs, although the diameter of the LED spool was too small, leading to problems when retracting the blade. 
 
 **ADD PHOTO OF INITIAL EXTENDABLE BLADE**
 
