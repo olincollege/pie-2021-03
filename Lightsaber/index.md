@@ -21,7 +21,7 @@ or read on below to learn more about the overall goals we had and what we did!
 
 
 ## Project Goals
-For our project, we planned to build two replica lightsabers. On the mechanical side,
+For our project, we planned to build two replica Lightsabers. On the mechanical side,
 we expected to have a separable hilt and blade which can be disconnected and
 reconnected easily. The hilt itself needs to be at least large enough to hold
 our electronics, including a speaker, controller, and enough batteries to power
@@ -31,7 +31,7 @@ button on the hilt. Other goals we decided on but were not detrimental to succes
 were including a modular hilt, making the lightsaber properly balanced, and
 possibly adding a crystal reveal in the hilt.
 
-On the electrical/software side we expected for both lightsabers to possess
+On the electrical/software side we expected for both Lightsabers to possess
 visual and sound effects. As well as do there respective launch and shutdown
 procedures. For effects we wanted to have multiple characters be available to
 the user via a button which would change the saber's color and play a theme song.
@@ -43,3 +43,6 @@ most recent [Lightsaber](https://youtu.be/ggWBEj8ppgM)
 
 
 ## Final System
+
+
+## Meet the Team
