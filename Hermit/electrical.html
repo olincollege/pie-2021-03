@@ -137,14 +137,37 @@
 								<div class="row">
 									<div class="col-8 col-6-medium col-12-small">
 										<section class="box"> 
+											<h3>Head Movement</h3>
 											<p>
-												DESCRIPTION OF SUBSYSTEM
+												When the crab is picked up, it retreats its head into its shell. In order to 
+												make this movement, we used a servo combined with a slot slider mechanism. 
+												This servo was controlled by a digital input on the Arduino. Therefore, to 
+												move the head, we programmed the servo to move between 0 and 180 degrees. 
+												See the <a href="https://berwinl.com/pie-2021-03/Hermit/software.html">Software</a> 
+												section for additional information about the sensing and logic.
 											</p>
 										</section>
 									</div>									
-									<div class="col-4 col-6-medium col-12-small">
-										<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-									</div>
+									<div class="col-8 col-6-medium col-12-small">
+										<section class="box"> 
+											<h3>Power</h3>
+											<p>
+												To power our crab, we have two sources of power: A 9V battery and a 
+												12V power supply. In the schematic, we can see on the bottom right a 
+												9V battery connected to a Step Down Converter. This Step Down Converter 
+												converts the 9V to 5V. This 5V powers the arduino, the PIR Sensors, 
+												the phototransistor, and the servo. Note that even though the Arduino 
+												Uno has a built-in low drop-out voltage regulator, we opted to use an 
+												external switching regulator due to it being more efficient. 
+											</p>
+											<p>
+												In the schematic, we can see on the top right that the motor 
+												shield is powered by 12V. This 12V comes from a power supply 
+												and is only used to power the motors. This is due to the 
+												operating voltage of the crab being 12V. 
+											</p>
+										</section>
+									</div>	
 								</div>
 								<div class="row">
 									<div class="col-4 col-6-medium col-12-small">
