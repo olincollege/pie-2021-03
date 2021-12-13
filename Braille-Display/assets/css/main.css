@@ -2076,7 +2076,7 @@ input, select, textarea {
 		position: relative;
 		background: #fff;
 		overflow-x: hidden;
-		padding: 6em 0 6em 0;
+		padding: 6em 0 0em 0;
 	}
 
 	.image-wrapper {
@@ -3281,7 +3281,7 @@ input, select, textarea {
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
+  color: #000000;
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
