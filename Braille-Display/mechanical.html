@@ -65,34 +65,45 @@
 					</header>
 					<a href="images/FullAssemblyRender-dimetric.JPG" class="image featured"><img
 							src="images/FullAssemblyRender-dimetric.JPG"
-							alt="Render of full braille display assembly" /></a>
-
+							alt="Render of full braille display assembly" />
+							<caption>A render of the CAD for our full assembly.</caption>
+						</a>
+					
 					<h3>Housing</h3>
-					<div>
-						
-					</div>
+					<!-- <div class="row features">
+						<section class="col-6 col-12-narrow feature">
+							<a href="images/Housing.jpg" class="image centered-small"><img src="images/Housing.jpg" alt="" /></a>
+						</section>
+						<section class="col-6 col-12-narrow feature">
+							<p>To create the housing, we laser cut a sheet of 1/4"-thick clear acrylic into plates that finger joint together. It has mounting geometry for all of the components of the braille display. To facilitate rapid prototyping and design flexibility, we did not glue the housing together. This allowed us to modify individual panels after the initial fabrication of the side panels.
+							</p>
+						</section>
+					</div> -->
 
-					<a href="images/Housing.jpg" class="image centered-small"><img src="images/Housing.jpg" alt="" /></a>
+					<a href="images/Housing.jpg" class="image centered-small"><img src="images/Housing.jpg" alt="A long rectangular box made of clear plastic sits on a table top." />
+					<caption>The empty housing assembled and waiting for parts!</caption></a>
 
-					<p>To create the housing, we laser cut a sheet of 1/4"-thick clear acrylic
-						into plates that finger joint together. It has mounting geometry for all of the components
-						of the braille display. To facilitate rapid prototyping and design flexibility, we did not
-						glue the housing together. This allowed us to modify individual panels after the initial
-						fabrication of the side panels.</p>
+					<p>To create the housing, we laser cut a sheet of 1/4"-thick clear acrylic into plates that finger joint together. It has mounting geometry for all of the components of the braille display. To facilitate rapid prototyping and design flexibility, we did not glue the housing together. This allowed us to modify individual panels after the initial fabrication of the side panels.</p>
 
 					<h3>Mounts</h3>
-					<p>The micro-servos are all mounted in-line, parallel to the bottom plate of the chassis. Due to
-						this and the cams sharing a common axis of rotation, they had to be mounted such that the
-						linkages would not interfere with one another. To keep this from happening, the farther away
-						a servo is from its cam, the farther away it is from the back of the housing. The mount is a
-						single 3D printed piece that mounts to the inside of back wall of housing. </p>
-					<p>The stepper motor mount attaches to the outside of the back of the housing. One set of bolts
-						attaches the stepper motor to both the mount and to the back of the housing. Another set of
-						bolts only connects the mount to the housing. In addition to the bolts, the motor has a
-						platform that it rests on, keeping it from floating with only the bolts holding it up.</p>
+					<p>The micro-servos are all mounted in-line, parallel to the bottom plate of the chassis. Due to this and the cams sharing a common axis of rotation, they had to be mounted such that the linkages would not interfere with one another. To keep this from happening, the farther away a servo is from its cam, the farther away it is from the back of the housing. The mount is a single 3D printed piece that mounts to the inside of back wall of housing. </p>
+					<p>The stepper motor mount attaches to the outside of the back of the housing. One set of bolts attaches the stepper motor to both the mount and to the back of the housing. Another set of bolts only connects the mount to the housing. In addition to the bolts, the motor has a platform that it rests on, keeping it from floating with only the bolts holding it up.</p>
+
+					<h3>Chain of Braille Cells</h3>
+					
+					<!-- INSERT IMAGE OF BELT CHAIN -->
+					<!-- UPDATE src, href, AND alt text -->
+					<a href="#" class="image centered-small"><img src="images/pic03.jpg" alt="" /></a>
+
+					<p>One of the primary costs of a traditional braille display is the high number of actuators needed for each cell of braille. As the number of cells available in the display increases, so does the cost of the display. Our budget constraints meant that we could not follow the traditional path of six to eight actuators for each braille cell. If we wanted to create a braille display with a useful number of characters, we needed to get creative with our design.</p>
+					<p>To work around the limited number of actuators, we decided to create a chain of braille cells (Cell Chain) that would move relative to a fixed actuator mechanism. Using this method, we can create a braille display of any size, and the cost of actuators does not increase.</p>
+					<p>To allow for easier modification, we included a few "blank" spots in the chain where there is not a braille cell. Instead, there are individual links that complete the chain on each side and empty space in between the sprockets. The empty space left by these blanks gave us room to reach into the device and make adjustments as needed.</p>
+
+					<h3>Braille Cells and Pins</h3>
+
 				</article>
 
-				<div class="row features">
+				<!-- <div class="row features">
 					<section class="col-4 col-12-narrower feature">
 						<div class="image-wrapper first">
 							<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
@@ -132,7 +143,7 @@
 							<li><a href="#" class="button">Elevate my awareness</a></li>
 						</ul>
 					</section>
-				</div>
+				</div> -->
 			</div>
 		</div>
 
