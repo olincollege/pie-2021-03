@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>H.E.R.M.I.T.</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="left-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+            <section id="header">
+
+                <!-- Logo -->
+                    <h1><a href="index.html">H.E.R.M.I.T.</a></h1>
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+							<li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="system.html">System</a></li>
+                            <li><a href="mechanical.html">Mechanical</a></li>
+                            <li><a href="electrical.html">Electrical</a></li>
+                            <li class="current"><a href="software.html">Software</a></li>
+                            <li><a href="budget.html">Budget</a></li>
+							<li><a href="team.html">Our Team</a></li>
+                        </ul>
+                    </nav>
+            </section>
+
+			<!-- Main -->
+            <section id="main">
+				<div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <section>
+                                <header class="major">
+                                    <h2>Software System (<a href="https://github.com/berwinlan/PIE-FinalProject">Code Repository</a>)</h2>
+                                </header>
+								<section class="box">
+									<h3>Software/Firmware Requirements</h3>
+									<ul>
+										<li>
+											Read from PIR sensors to drive motors at differential speeds
+										</li>
+										<li>
+											Read from phototransistor to extend and retract head based on orientation of robot
+										</li>
+									</ul>
+								</section>
+								<div class="row">
+									<div class="col-4 col-6-medium col-12-small">
+										<a href="#" class="image"><img src="images/software/PIR Diagram.png" alt="" /></a>
+									</div>
+									<div class="col-8 col-6-medium col-12-small">
+										<section class="box"> 
+											<h3>PIR sensing, PID, and differential drive</h3>
+											<p>
+												We use two PIR sensors to determine the location of a person. 
+												These are HC-SR501 PIR motion detectors, which output a digital 
+												HIGH or LOW depending on whether the sensor detects a difference 
+												in infrared between the left and right halves of the sensor. See 
+												electrical documentation for additional information.
+											</p>
+											<p>
+												The PIR outputs are fed into a PID loop based on the outputs of the 
+												left and right sensors, using similar logic as the mini-project 3 
+												PID loop. The left and right motors are driven forward at differential 
+												rates depending on the output of the PID loop calculated based on the 
+												PIR sensors towards the person. Please refer to <a href="https://github.com/
+												berwinlan/PIE-FinalProject/blob/627d632a281256b5cc868ad0cf744b052ecac3ca/pid/
+												pid.ino">the source code</a> for further detail.
+											</p>
+											<p>
+												For human sensing, we chose to use PIR sensing instead of a more advanced system 
+												(i.e., OpenCV) for two primary reasons. The first was the overhead cost associated 
+												with the hardware necessary for computer vision, such as a more powerful 
+												microcontroller and potentially an on-board camera. Secondly, the limited 
+												number of software people-hours (one E:C) and our goals to have multiple 
+												functioning software systems meant that it made more sense to choose a simpler, 
+												more straightforward human sensing system in the interest of other mechanisms.
+											</p>
+										</section>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-8 col-6-medium col-12-small">
+										<section class="box"> 
+											<h3>Phototransistor and head movement</h3>
+											<p>
+												We use one HW5P-1 phototransistor to determine whether the hermit crab is upright or 
+												upside down. As discussed in the electrical documentation, the phototransistor outputs 
+												to a pin on the microcontroller depending on how much light is present. It is mounted 
+												on the bottom of the base plate, facing toward the ground. Thus, when the hermit crab 
+												is upright, the phototransistor is shadowed, and it outputs below our threshold. When 
+												the hermit crab is lifted or upside down, the phototransistor senses the increase in 
+												light above our threshold. The logical comparison between the phototransistor’s moving 
+												average and light threshold is done by the software on the Arduino.
+											</p>
+											<p>
+												The threshold was chosen so that when any light reached the phototransistor, the threshold 
+												would be exceeded. We encountered a roadblock where noise from the phototransistor would 
+												inadvertently trigger the head to retract and extend, which was easily fixed by taking a 
+												moving average of the phototransistor readings (with the movingAvg library) to use for 
+												the logical comparison to the threshold.
+											</p>
+											<p>
+												A servo is used for the head slot-slider mechanism. The servo has two states, one for head 
+												in and one for head out (at 0 and 180 degree positions). Based on the phototransistor output 
+												and the current state of the head, the Arduino writes to the servo to flip the state of the head.
+											</p>
+											<p>
+												We chose to use a phototransistor instead of a more complex orientation sensor for simplicity. 
+												Because we placed the phototransistor in a location where it would always be shadowed in the 
+												upright orientation, we were able to add logic in software that mapped the phototransistor 
+												output to the orientation of the hermit crab.
+											</p>
+										</section>
+									</div>									
+									<div class="col-4 col-6-medium col-12-small">
+										<a href="#" class="image"><img src="images/software/Phototransistor Diagram.png" alt="" /></a>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+            </section>
+
+			<!-- Footer -->
+				<section id="footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<!-- Copyright -->
+									<div id="copyright">
+										<ul class="links">
+											<li>&copy; H.E.R.M.I.T. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										</ul>
+									</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
