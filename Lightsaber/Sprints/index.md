@@ -12,12 +12,14 @@ In Sprint 1, our team decided we wanted to create a replica Lightsaber. We decid
 #### Mechanical
 To do this, our mechanical team split between developing the detachable blade and creating a proof of concept of the extendable blade. On the detachable side of things, we focused on the electronics packaging within the hilt with a focus on making it secure and compact enough that the hilt can comfortably fit in someone's hand.
 
-**ADD PICTURE OF INITIAL LAYOUT FROM SPRINT 1/CAD MODEL**
+<p align="center">
+  <img src="../Photos!/sprint1electronicslayout.jpg" alt="Sprint 1 Electronics Layout">
+</p>
 
 For the extendable blade, we investigated how we could make this work, basing it off of Disney's new Lightsaber. We landed on a tape measure mechanism where the tape measure would be spool in the hilt and attached to the LEDs, so that they can be pulled out together. The mvp for this extendable blade was decided to be a single tape measure with a LED strip extending together.
 
 <p align="center">
-  <img src="../Photos!/sprint1extendable.jpg" alt="Extendable Proof of Concept">
+  <img src="../Photos!/sprint1extendable.jpg" alt="Sprint 1 Extendable Proof of Concept">
 </p>
 
 #### Electrical
@@ -35,7 +37,7 @@ The board we got runs CircuitPython natively, so the software is done directly o
 In Sprint 2, we wanted to see how far along we could get with the extendable Lightsaber, before deciding whether we should focus on only the detachable Lightsaber or both the detachable and extendable ones. We ultimately decided to continue pursuing both, leading us to purchase another Adafruit Propmaker kit. Luckily, we found an LED strip to use for this blade, so we wouldn't have to purchase another which would have put us way over budget.
 
 #### Mechanical
-For the detachable blade, this sprint we modified the electronics packaging, so that the hilt of the Lightsaber could be more compact and more closely resemble Disney's Lightsaber dimensions. Additionally, we began working on the detaching mechanism of the blade. 
+For the detachable blade, this sprint we modified the electronics packaging, so that the hilt of the Lightsaber would fit into a 2 inch diameter hilt, more closely resemble Disney's Lightsaber dimensions. Additionally, we began working on the detaching mechanism of the blade. 
 
 <p align="center">
   <img src="../Photos!/sprint2detachabledesign.png" alt="Sprint 2 Detaching Mechanism Design">
@@ -47,8 +49,18 @@ For the extendable blade, we reverse engineered a motorized tape measure. We fou
 
 We also looked into different thicknesses of polycarbonate and polypropylene film to thermoform into the tape spring shape as a possible alternative to the tape measure. This would allow the LED light to diffuse through the plastic. We ended up getting a range of films to test which would be best.
 
+v1 nov 8
+v2 nov 15
+
+v3 29
+v4 12/4
+v5 12/5
+v6 12/8
+v7 12/11
+v8 12/12
+
 #### Electrical
-For electrical, we put together the second set of electronics for the second blade. Additionally, we added a second button and a switch.
+For electrical, we put together the second set of electronics for the second blade. Additionally, we added a second button and a switch. The button was added to allow for switching between Lightsaber colors, and the switch was added to turn the whole Lightsaber off, so that it does not drain the battery when not in use. 
 
 <p align="center">
   <img src="../Photos!/sprint2electrical.png" alt="Sprint 2 Circuit Diagram">
@@ -65,19 +77,31 @@ In Sprint 3, we finished up both the extendable and detachable blades. Additiona
 [Presentation](https://docs.google.com/presentation/d/1FsrQfatEuBN9W9HeRLlkH6D4EyJWSfqdYsHG7buiOm8/edit?usp=sharing)
  
 #### Mechanical
-This sprint, we finalized the detaching mechanism of the detachable blade and designed the casing of the hilt. 
+This sprint, we finalized the detaching mechanism of the detachable blade.
 
 <p align="center">
   <img src="../Photos!/sprint3detachableprinted.jpg" alt="Sprint 3 Detaching Mechanism">
 </p>
 
-**ADD PHOTO OF CASING PRINTS/CAD DESIGN - DETACHABLE**
+Additionally, we designed the casing of the hilt. The first version of the hilt shown below is made of 3D printed sections. This allows for easy access to the battery to recharge it. Additionally, it features a cutout to show off the board we are using. Originally, we had hoped to implement a kyber crystal reveal, however since we did not have the time to develop this feature, we made a board reveal instead.
+
+<p align="center">
+  <img src="../Photos!/sprint3hiltv1.jpg" alt="Sprint 3 Hilt Version 1">
+</p>
+
+With the first version of the hilt, we had trouble extruding the threads, so the only change from version 1 to version 2 is working threads.
+
+**FINAL HILT VERSION**
 
 Additionally, we used an emery cloth to diffuse the blade and printed a resin cap for the tubing.
 
 <p align="center">
   <img src="../Photos!/sprint3diffusedblade.jpg" alt="Sprint 3 Diffused Blade and Resin Cap">
 </p>
+
+We found that this did not provide enough diffusion and added 0.002 inch thick polycarbonate film to the inside of the tube.
+
+**PICTURE OF FINAL DIFFUSED BLADE**
 
 For the extendable blade, we fixed the LED spool, so that the LEDs wrap around the spool without loosening when retracting, and we printed the casing for the hilt. Additionally, we successfully thermoformed the film, creating the proof of concept for the clear blade, but we did not have the time or material to implement it. 
 
