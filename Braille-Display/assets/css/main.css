@@ -278,6 +278,107 @@ input, select, textarea {
 
 		}
 
+		.container figure { 
+			background-image: url(https://webdevtrick.com/wp-content/uploads/1st.jpg);
+			background-size: cover;
+			font-size: 0;
+			height: 100%;
+			margin: 0; 
+			position: relative;
+			width: 100%; 
+		   }
+		   #compare {
+			background-image:"images\RearPhoto.JPG";
+			background-size: cover;
+			bottom: 0;
+			border-right: 5px solid rgba(255,255,255,0.7);
+			box-shadow: 10px 0 15px -13px #000;
+			height: 100%;
+			max-width: 98.6%;
+			min-width: 0.6%;
+			overflow: visible;
+			position: absolute;
+			width: 50%; 
+			animation: first 2s 1 normal ease-in-out 0.1s; 
+			-webkit-animation: first 2s 1 normal ease-in-out 0.1s; 
+		   }
+		   input#slider {
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			border: none; 
+			background: transparent;
+			cursor: col-resize;
+			height: 100vw;
+			left: 0;
+			margin: 0;
+			outline: none; 
+			padding: 0;
+			position: relative;
+			top: -100vw;
+			width: 100%;
+		   }
+		   input#slider::-moz-range-track { 
+			background: transparent; 
+		   }
+		   input#slider::-ms-track {
+			border: none; 
+			background-color: transparent;
+			height: 100vw; 
+			left: 0; 
+			outline: none; 
+			position: relative;
+			top: -100vw; 
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			cursor: col-resize;
+			color:transparent;
+		   }
+		   input#slider::-ms-fill-lower {
+			background-color:transparent;
+		   }
+		   input#slider::-webkit-slider-thumb {
+			-webkit-appearance:none;
+			height: 100vw;
+			width: 0.5%;
+			opacity: 0;
+		   }
+		   input#slider::-moz-range-thumb {
+			-moz-appearance: none;
+			height: 100vw;
+			width: 0.5%;
+			opacity: 0;
+		   }   
+		   input#slider::-ms-thumb {
+			height: 100vw;
+			width: 0.5%; 
+			opacity:0;
+		   }
+		   input#slider::-ms-tooltip {
+			display:none;
+		   }
+		   #compare::before {
+			background: url(https://webdevtrick.com/wp-content/uploads/comparision.png) no-repeat scroll 0 center transparent;
+			background-size:contain;
+			content: " ";
+			float: right;
+			height: 100%;
+			margin-right: -34px;
+			position: relative;
+			top:0;
+			width: 64px;
+		   }
+		   @keyframes first {
+			 0% {width: 0%; }
+			 50% {width: 80%; }
+			 100% {width: 50%; }
+		   }
+		   @-webkit-keyframes first {
+			 0% {width: 0%; }
+			 50% {width: 80%; }
+			 100% {width: 50%; }
+		   }
+
 /* Row */
 
 	.row {
