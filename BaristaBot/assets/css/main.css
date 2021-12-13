@@ -628,8 +628,10 @@ input, select, textarea {
   
   .icon-bawistaboticon:before {
 	content: "\e900";
-	font-size: 55px;
-	line-height: 90px;
+	align-items: center;
+    justify-content: center;
+	max-width:100%;
+    height:auto;
   }
 
 /* Image */
@@ -1315,7 +1317,7 @@ input, select, textarea {
 		}
 
 			#header .logo .icon:before {
-				font-size: 2rem;
+				font-size: 10rem;
 			}
 		/*lines above title*/
 		#header .content {
