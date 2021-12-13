@@ -2115,22 +2115,25 @@ input, select, textarea {
 
 	#promo-wrapper {
 		position: relative;
-		background-image: url("images/overlay.png"), url("../../images/promo.jpg");
+		/* background-image: url("images/overlay.png"), url("../../images/promo.jpg"); */
 		background-size: 192px 192px, cover;
 		background-position: top left, center center;
-		color: #fff;
+		color: rgb(255, 87, 87);
 		text-align: center;
 		padding: 6em 0 6em 0;
 	}
 
-	#footer-wrapper {
+	/* #footer-wrapper { 
 		-webkit-transform: translate3d(0, 0, 0);
-		position: relative;
+		position: relative; 
 		border-top: solid 1px #c2c7cc;
-		padding: 6em 0 6em 0;
+		padding: 6em 6em 0;
 		background-image: url("images/overlay.png"), url("images/footer.svg");
 		background-size: 128px 128px,				100% 100%;
-	}
+		background-color: red;
+		height: 0px;
+
+	} */
 
 /* Header */
 
@@ -2435,9 +2438,9 @@ input, select, textarea {
 		z-index: 1;
 		text-align: center;
 		border-top: solid 1px #d2d7dc;
-		color: #a2a7ac;
-		padding-top: 4em;
-		margin-top: 6em;
+		color:#a2a7ac;
+		padding-top: 1em; 
+	    margin-top: 0; 
 	}
 
 /* Normal */
@@ -2473,9 +2476,9 @@ input, select, textarea {
 				padding: 5em 0 5em 0;
 			}
 
-			#footer-wrapper {
+			/* #footer-wrapper {
 				padding: 5em 0 5em 0;
-			}
+			} */
 
 	}
 
@@ -2518,9 +2521,9 @@ input, select, textarea {
 				padding: 2em;
 			}
 
-			#footer-wrapper {
+			/* #footer-wrapper {
 				padding: 4em 2em 4em 2em;
-			}
+			} */
 
 		/* Header */
 
@@ -2586,8 +2589,8 @@ input, select, textarea {
 		/* Copyright */
 
 			#copyright {
-				padding-top: 2em;
-				margin-top: 3em;
+				padding-top: 1em; 
+				margin-top: 0; 
 			}
 
 	}
@@ -2767,9 +2770,9 @@ input, select, textarea {
 				padding: 20px;
 			}
 
-			#footer-wrapper {
+			/* #footer-wrapper {
 				padding: 3em 20px 3em 20px;
-			}
+			} */
 
 		/* Header */
 
