@@ -1961,14 +1961,14 @@ input, select, textarea {
 		.wrapper .title {
 			position: absolute;
 			top: 0;
-			left: 50%;
+			left: 48%;
 			text-align: center;
 			text-transform: uppercase;
 			display: block;
 			font-weight: 700;
 			letter-spacing: 0.25em;
 			font-size: 0.9em;
-			width: 25em;
+			width: 29em;
 			height: 3.25em;
 			top: -3.25em;
 			line-height: 3.25em;
@@ -2061,7 +2061,7 @@ input, select, textarea {
 		justify-content: center;
 		position: relative;
 		height: 24em;
-		background: url("../../images/banner.jpg") center center;
+		background: url("../../images/headerbeest.png") center center;
 		background-size: cover;
 		padding: 0;
 	}
@@ -2855,7 +2855,7 @@ input, select, textarea {
 
 				.wrapper .title {
 					font-size: 0.9em;
-					width: 18em;
+					width: 20em;
 					height: 2.5em;
 					top: -2.5em;
 					line-height: 2.5em;
