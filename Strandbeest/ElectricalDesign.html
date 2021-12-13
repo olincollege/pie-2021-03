@@ -29,50 +29,58 @@
 							<li><a href="MechanicalDesign.html">Mechanical Design</a></li>
 							<li class="current"><a href="ElectricalDesign.html">Electrical Design</a></li>
 							<li><a href="SoftwareDesign.html">Software Design</a></li>
+							<li><a href="Budget.html">Budget</a></li>
 						</ul>
 					</nav>
 
-				</section>
+				</section> 
 
 			<!-- Main -->
 				<section id="main" class="wrapper style2">
-					<div class="title">Circuit Diagram</div>
-					<div class="content">
-						<a href="#" class="image featured">
-							<img src="images/CircuitDiagram.PNG" alt="" />
-						</a>
+					<div class="row gtr-150 aln-center">
+						<div class="col-5 col-12-medium ">
+							<!-- <div class="title">Circuit Diagram</div> -->
+							<div class="content">
+								<header class="style1"><h2>Circuit Diagram</h2></header>
+								<img src="images/CircuitDiagram.PNG" alt="" />
+							</div>
+						</div>	
+						<div class="col-5 col-12-medium ">
+						<header class="style1"><h2>Motor Shield and Battery</h2></header>
+						<header>
+							<p>Our motor shield and battery choices were strongly influenced by the motors we purchased, 
+								which you can read about here: <a href="MechanicalDesign.html">Mechanical Design</a>. Our motors 
+								required 12V to run at full speed and a rated current of 1.4A. 
+							</p>
+							</header>
+							<div class="row gtr-150 aln-center">
+								<div class="col-6 col-12-medium ">
+									<header>
+										<h2>Batteries</h2>
+									</header>
+									<p>We chose to use drone batteries which have an 11.2V output. While this is lower than the max voltage of 
+										our motors, we found that this voltage would still be enough to power our motors and we were not too concerned with 
+										the slight drop in max speed which would result from running at a lower voltage. </p>							
+								</div>
+								<div class="col-6 col-12-medium ">		
+									<header>
+										<h2>Motor Shield</h2>
+									</header>
+									<p>Since our motors had a running current of 1.32A, we were looking for a motor controller that 
+										had a running current at that or slightly higher so we would not burn out the board with our 
+										current draw. We settled on using the Adafruit Motor Shield V2, despite it having a 1.2A output, 
+										as we had it on hand and were not planning on running our motors at full voltage. </p>
+								</div>
+							</div>
+						</div>	
+
 					</div>
 
 				</section>
 		<!-- Highlights -->
 			<section id="highlights" class="wrapper style3">
-				<div class="title">Battery and Motor Shield</div>
 				<div class="container">
-					<header>
-					<p>Our motor shield and battery choices were strongly influenced by the motors we purchased, 
-						which you can read about here: <a href="MechanicalDesign.html">Mechanical Design</a>. Our motors 
-						required 12V to run at full speed and a rated current of 1.4A. 
-					</p>
-					</header>
-					<div class="row gtr-150 aln-center">
-						<div class="col-6 col-12-medium ">
-							<header>
-								<h2>Batteries</h2>
-							</header>
-							<p>We chose to use drone batteries which have an 11.2V output. While this is lower than the max voltage of 
-								our motors, we found that this voltage would still be enough to power our motors and we were not too concerned with 
-								the slight drop in max speed which would result from running at a lower voltage. </p>							
-						</div>
-						<div class="col-6 col-12-medium ">		
-							<header>
-								<h2>Motor Shield</h2>
-							</header>
-							<p>Since our motors had a running current of 1.32A, we were looking for a motor controller that 
-								had a running current at that or slightly higher so we would not burn out the board with our 
-								current draw. We settled on using the Adafruit Motor Shield V2, despite it having a 1.2A output, 
-								as we had it on hand and were not planning on running our motors at full voltage. </p>
-						</div>
-					</div>
+					
 				</div>
 			</section>
 
@@ -81,6 +89,9 @@
 					<!-- <div class="title"></div> -->
 					<div class="container">	
 						<div id="copyright">
+							<ul>
+								Fun fact: We have no electrical engineers - send help.
+							</ul>
 							<ul>
 								<li>&copy; Strandbeest </li><li>Design: Katherine Mackowiak <a href="#"></a></li>
 							</ul>
