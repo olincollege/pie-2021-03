@@ -29,6 +29,7 @@
 							<li class="current"><a href="MechanicalDesign.html">Mechanical Design</a></li>
 							<li><a href="ElectricalDesign.html">Electrical Design</a></li>
 							<li><a href="SoftwareDesign.html">Software Design</a></li>
+							<li><a href="Budget.html">Budget</a></li>
 						</ul>
 					</nav>
 
@@ -120,34 +121,38 @@
 
 						<div class="container">
 							<div class="row aln-center">
-								<div class="col-6 col-12-medium">
+								<div class="col-4 col-12-medium">
 									<article>
 										<p>
 										Another factor that helped the bending problem was the addition of 3d printed feet. 
 										We made feet for each leg that prevented them from sliding to the side (shown Right). 
 										Initially the feet were just plastic, however on the tile floor the robot is designed 
 										to walk on, they couldn’t get enough traction to actually move the robot forward. </p>
-										<p>
-										To solve the traction problem we added rubber bands to the pads of the feet. But the 
-										bending of the legs meant that the feet still contacted the ground when they were meant 
-										to be in the air and the robot couldn’t move. The solution was to make feet that only had 
-										friction in one direction, pulling the robot forward then sliding back into position. This 
-										was accomplished by putting the rubber bands on an angle, and adding a layer of tape to the top. 
-										This means when the foot is moving forward the foot slides along the tape, and when it is moving 
-										back the angled rubber catches the ground pulling the robot forward. 
-										</p>
-									</article>
+									</article>	
 								</div>
-								<div class="col-6 col-12-medium">
+								<div class="col-4 col-12-medium">
 									<section class="highlight">
 										<a href="#" class="image featured"><img src="images/Foot base.JPG" alt="" /></a>
 									</section>
-									<section class="highlight">
-										<a href="#" class="image featured"><img src="images/Foot.JPG" alt="" /></a>
-									</section>
 								</div>
+								<div class="col-4 col-12-medium">
+								<section class="highlight">
+									<a href="#" class="image featured"><img src="images/Foot.JPG" alt="" /></a>
+								</section>
+								</div>	
 							</div>
 						</div>
+						<article>
+						<p>
+							To solve the traction problem we added rubber bands to the pads of the feet. But the 
+							bending of the legs meant that the feet still contacted the ground when they were meant 
+							to be in the air and the robot couldn’t move. The solution was to make feet that only had 
+							friction in one direction, pulling the robot forward then sliding back into position. This 
+							was accomplished by putting the rubber bands on an angle, and adding a layer of tape to the top. 
+							This means when the foot is moving forward the foot slides along the tape, and when it is moving 
+							back the angled rubber catches the ground pulling the robot forward. 
+							</p>
+						</article>
 						</div>
 					</div>
 				</section>
@@ -190,24 +195,26 @@
 						</article>
 						<div class="container">
 							<div class="row aln-center">
-								<div class="col-5 col-12-medium">
+								<div class="col-6 col-12-medium">
 									<section class="highlight">
 										<a href="#" class="image featured"><img src="images/ChassisLayout.png" alt="" /></a>
 									</section>
 								</div>
-								<div class="col-5 col-12-medium">
-									The chassis box is the main body of the robot, and holds the Arduino and motor shield, 
+								<div class="col-6 col-12-medium">
+									<p>The chassis box is the main body of the robot, and holds the Arduino and motor shield, 
 									the battery, the camera, the RasPi, and a second battery for the RasPi. The motor shield, 
 									arduino, batteries and cables are all stored in spaces formed by the leg mounts to conceal 
 									them and give the robot a tidier appearance. The Raspi is secured under the main body to 
-									lower the center of mass and make the robot more stable, while the camera is mounted on top, 
+									lower the center of mass and make the robot more stable, while the camera is mounted on top.</p>
+									
+									<p>The chassis plate is designed with slots at the leg mounting points. These slots allow the motor 
+										mounts to be slid along the chassis plate then re-tightened for on-the-fly repositioning of the 
+										legs-motor components. </p>
 								</div>
 							</div>
 						</div>
 						<article>
-							<p>The chassis plate is designed with slots at the leg mounting points. These slots allow the motor 
-								mounts to be slid along the chassis plate then re-tightened for on-the-fly repositioning of the 
-								legs-motor components. </p>
+
 							<p>The chassis plates were made of hardboard such that holes could easily be drilled in the plate to 
 								reposition fastening points for the RasPi and camera, which are held outside the main chassis box. 
 								Hardboard is also a fairly rigid material, which (especially configured in the box shape of the 
@@ -318,7 +325,6 @@
 			<!-- Footer -->
 				<section id="footer" class="wrapper">
 					<!-- <div class="title">The Rest Of It</div> -->
-
 						<div id="copyright">
 							<ul>
 								<li>&copy; Strandbeest</li><li>Design: Katherine Mackowiak <a href="#"></a></li>
