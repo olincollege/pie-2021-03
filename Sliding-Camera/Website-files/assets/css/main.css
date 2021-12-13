@@ -3826,10 +3826,10 @@ input, select, textarea {
 	}
 
 	#process-banner > header {
-		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/IMG_6981_1.jpg");
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/IMG_6981_1.jpg");
-		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/IMG_6981_1.jpg");
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/IMG_6981_1.jpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/IMG_6981_1.jpg");
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/banner.jpg");
+		background-image: linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/IMG_6981_1.jpg");
 		padding: 12em 0 10em 0 ;
 		background-attachment: fixed;
 		background-position: center center;
@@ -3839,10 +3839,10 @@ input, select, textarea {
 	}
 
 	#details-banner > header {
-		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/IMG_6988.jpg");
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/IMG_6988.jpg");
-		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/IMG_6988.jpg");
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/IMG_6988.jpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/IMG_6988.jpg");
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/banner.jpg");
+		background-image: linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/IMG_6988.jpg");
 		padding: 12em 0 10em 0 ;
 		background-attachment: fixed;
 		background-position: center center;
@@ -3852,10 +3852,23 @@ input, select, textarea {
 	}
 
 	#aboutus-banner > header {
-		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/IMG_6950_2.jpg");
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/IMG_6950_2.jpg");
-		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/IMG_6950_2.jpg");
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/IMG_6950_2.jpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/IMG_6950_2.jpg");
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/banner.jpg");
+		background-image: linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/IMG_6950_2.jpg");
+		padding: 12em 0 10em 0 ;
+		background-attachment: fixed;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		text-align: center;
+	}
+
+	#budget-banner > header {
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/budgetspreadsheet.jpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/budgetspreadsheet.jpg");
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url("../../images/banner.jpg");
+		background-image: linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/budgetspreadsheet.jpg");
 		padding: 12em 0 10em 0 ;
 		background-attachment: fixed;
 		background-position: center center;

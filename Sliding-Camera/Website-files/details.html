@@ -52,7 +52,7 @@
 
 								<h3>Overview</h3>
 
-								<p>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec dui cursus, posuere dui eget interdum. Fusce lectus magna, sagittis at facilisis vitae, pellentesque at etiam. Quisque posuere leo quis sem commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius.</p>
+								<p>We integrated a mechanical belt gantry with a digital LCD user control. The mechanical component of the project involved designing and creating various mounts, platforms, and mechanisms that enable both linear and pan movement. The electrical components of the project involved the wiring for two motors, a camera trigger, the touch screen, and the wiring for the camera trigger. The code section has three subsections; the UI section encompasses the code that went into creating the touch screen interface, the motors section includes code and libraries to run the motors, and the camera control section details the simple yet important code used to trigger the camera. </p>
 
 								<a id = 'details-mechanical'></a>
 
@@ -68,18 +68,31 @@
 								<hr />
 
 								<h4>Electrical</h4></a>
-								<p>Nam sapien ante, varius in pulvinar vitae, rhoncus id massa. Donec varius ex in mauris ornare, eget euismod urna egestas. Etiam lacinia tempor ipsum, sodales porttitor justo. Aliquam dolor quam, semper in tortor eu, volutpat efficitur quam. Fusce nec fermentum nisl. Aenean erat diam, tempus aliquet erat.</p>
+								<p>The touchscreen is wired based on the wiring tutorial provided by Adafruit for this screen. We are using an Arduino Mega for the final deliverable, but also prototyped on an Arduino Uno. The CLK through D/C connections are for the screen, while the SDA and SCL connections allow the capacitive touch to work. In order, each connections is the following:</p>
 
-								<p>Etiam iaculis nulla ipsum, et pharetra libero rhoncus ut. Phasellus rutrum cursus velit, eget condimentum nunc blandit vel. In at pulvinar lectus. Morbi diam ante, vulputate et imperdiet eget, fermentum non dolor. Ut eleifend sagittis tincidunt. Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui, at vestibulum sit amet, auctor bibendum neque.</p>
+								<ul>
+									<li>GND connects to ground.</li>
+									<li>Vin connects to 5V. </li>
+									<li>CLK connects to the SPI clock, which is Digital 52 on the Mega.</li>
+									<li>MISO connects to the SPI MISO, Digital 50 on the Mega.</li>
+									<li>MOSI connects to the SPI MOSI, Digital 51 on Mega.</li>
+									<li>CS connects to the SPI Chip Select Pin. This can be any pin, but we are using Digital 10.</li>
+									<li>D/C connects to the SPI data/command select pin. Once again this can be any pin, but we are using Digital 9. </li>
+									<li>SCL connects to the I2C clock SCL pin, Digital 21 on the Mega.</li>
+									<li>SDA connects to the I2C data SDA pin, Digital 20 on the Mega.</li>
+								</ul>
+
+								<p>Note that we also needed to solder closed the IM1, IM2, and IM3 pins on the back of our touchscreen board in order to trigger the SPI side of the board; if you have the same board that we do you’ll need to do that as well. </p>
+
+
+								<p><span class="image right"><img src="images/pic04.jpg" alt="" /></span>The motor driver’s pinout is shown above. The VMOT and GND lines in the upper right corner are connected to the higher voltage lines to supply the motor with enough power to run. The B2-A2 pins supply power to the electromagnets in the motor. The second GND pin (lower right corner) is with reference to the voltage for the pins on the opposite side of the board, which in our case use voltages from the Arduino. The Sleep and Reset pins are held high so the motor does not go into low-power Sleep mode, or Reset the circuitry inside. Both of these pins are active low. The M0-M2 pins control the motor’s step size. The three pins work in a simple binary state encoding to switch from full steps (all pins low) to 1/32 steps (M0 in any state and M1 and M2 high) in powers of two. As shown in the diagram below, we held M0 and M1 high for a 1/8 step size.</p>
+
+								<p>To protect the motor drivers from high current, the potentiometer (marked with an “x” in the top left corner) was adjusted so that the voltage between the logic high voltage to the motors (in our case 14 V) to the ground to the low voltage power supply (the Arduino) was roughly 500 mV. This operation was executed by wiring the driver only to Reset, Step, VMOT, GND_14V, and GND_Arduino. A multimeter measured the voltage between the center of the potentiometer and GND_Arduino, which was roughly 500mV ± 50mV. This specific value was chosen because of guidance in documentation for the motor drivers that the current limit was roughly equal to 2 * V_ref, where V_ref is the voltage measured earlier. Given that the desired current limit was one amp, 1A = 2*V_ref, so V_ref = 0.5V = 500mV. Before this adjustment was made, drivers would overheat quickly when plugged into the motors.</p>
+
 
 								<hr />
 
-								<h4>Coding</h4>
-								<p>Nam sapien ante, varius in pulvinar vitae, rhoncus id massa. Donec varius ex in mauris ornare, eget euismod urna egestas. Etiam lacinia tempor ipsum, sodales porttitor justo. Aliquam dolor quam, semper in tortor eu, volutpat efficitur quam. Fusce nec fermentum nisl. Aenean erat diam, tempus aliquet erat.</p>
-
-								<p>Etiam iaculis nulla ipsum, et pharetra libero rhoncus ut. Phasellus rutrum cursus velit, eget condimentum nunc blandit vel. In at pulvinar lectus. Morbi diam ante, vulputate et imperdiet eget, fermentum non dolor. Ut eleifend sagittis tincidunt. Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui, at vestibulum sit amet, auctor bibendum neque.
-								<a id = 'details-UI'></a>
-								</p>
+								<a id = 'details-UI'></a><h4>Coding</h4>
 
 								<h5>User Interface</h5>
 
@@ -89,18 +102,29 @@
 
 								<p>The main design decisions we made with the interface were a) to use sliders to set the speeds and distances, and b) the size and placement of different buttons. Our decision to use sliders was made because we realized that quick adjustments were more important than precise value setting. The slider we coded can be set anywhere across its range in seconds, allowing for many different shots to be made quickly. Another design decision we encountered was the issue of an emergency stop button. We originally thought to create an external e-stop, but we decided to incorporate it into the screen instead since that allowed us to a) make the button large and easy to press without having to purchase a large or custom button, and b) keep the e-stop button in the same place as other settings and buttons, since we believe that is where the user is most likely to look for the emergency stop.</p>
 
-								<p>To take a closer look at the UI code, check out our <a>github repository.</a></p>
+								<p>To take a closer look at the UI code, check out our <a>github repository.</a><a id = 'details-firmware'></a></p>
 
-								<a id = 'details-firmware'></a>
-								</p>
 
 								<h5>Motors</h5>
 
-								<p>Etiam iaculis nulla ipsum, et pharetra libero rhoncus ut. Phasellus rutrum cursus velit, eget condimentum nunc blandit vel. In at pulvinar lectus. Morbi diam ante, vulputate et imperdiet eget, fermentum non dolor. Ut eleifend sagittis tincidunt. Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui, at vestibulum sit amet, auctor bibendum neque.</p>
+								<p>Stepper motors are very commonly used in gantry systems where accuracy is needed. Given servo motors’ limited travel and DC motors’ lack of accuracy, stepper motors were the obvious choice. Stepper drivers are commonly used as an interface between a controller unit and a stepper motor. In this configuration, the Arduino only needs to output a step logic and a direction logic, which greatly simplifies the control code.</p>
+
+								<p>The stepper driver takes a square wave step input and a held directional input to instruct the motors. For early iterations of this project, the square wave was generated in the firmware by writing the step pin high, waiting for between 0.5 ms and 2 ms, writing the pin low, waiting for the same interval, and repeating again. This simple square wave generator creates the desired behavior, but the stepper motor lacks the torque to accelerate the weighted payload up to speed. In the second sprint, the motor code was augmented to run the motor out to positions along the 1.2 meter range of motion, but it still was using the simple square wave mechanism and generating too much audible noise. </p>
+
+								<p>To respond to the noise and difficulty getting the motor moving, the motor control was shifted to the Speedy Stepper library, created by Olin’s very own Stan Reifel. This library has built-in acceleration schema and many more customization options, which the final iteration of the motor control took advantage of. The library allowed for homing using limit switches, and also for the implementation of microstepping.</p>
+
+								<p>The library allows for the control of multiple steppers at the same time through the use of setupMove commands. These functions prepare the stepper for movement, after which a function processMovement can be executed to process one small piece of that motion. Placing the processMovement call inside a while loop that checks whether the moves that have been setup have been completed allows the code to run multiple motors at the same time.</p>
+
+								<p>Unfortunately, a while loop was not possible when integrating with the UI. The screen functions as a finite state machine, using various function calls to switch to the next state when various on-screen buttons are pressed. Creating a new state that processes the movement and does not change the state until a button press is detected, or until the movement is complete, involved converting the while architecture to an if architecture.</p>
+
+								<p>[REFLECTION ON INTEGRATION]</p>
+
 
 								<h5>Camera</h5>
 
-								<p>Etiam iaculis nulla ipsum, et pharetra libero rhoncus ut. Phasellus rutrum cursus velit, eget condimentum nunc blandit vel. In at pulvinar lectus. Morbi diam ante, vulputate et imperdiet eget, fermentum non dolor. Ut eleifend sagittis tincidunt. Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui, at vestibulum sit amet, auctor bibendum neque.</p>
+							<p>	Triggering the shutter on the camera is a fairly simple task complicated by the fact that we don’t want to send power from one electronic device to another, especially when one is a $2000 camera. This means we can’t simply wire up a digital out to the camera’s remote shutter port without adding in something to separate the two devices so power never flows between them. A relay designed for arduino would probably work in this situation as it allows for one circuit to control the state of another without power transfer, but as they are designed to control high power circuits with low power logic, they are overkill for the application of controlling a logic circuit with a logic circuit. Instead, we opted to use a much smaller and cheaper optocoupler for our purposes. An optocoupler is similar to a relay, but can only be used for low power applications like logic circuits on both sides. In an optocoupler, the control signal (the arduino) is connected to an enclosed LED which when lit up causes the phototransistor on the output side of the optocoupler to become conductive and complete the output logic circuit (the camera). </p>
+    					<p>For software this means all we need to do is send a high signal from the digital out of the arduino and it will trigger the camera shutter with no risk of damaging either device.</p>
+
 
 							</div>
 						</section>
