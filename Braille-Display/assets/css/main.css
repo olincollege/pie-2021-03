@@ -1781,13 +1781,15 @@ input, select, textarea {
 
 		.image.centered {
 			display: block;
-			margin: 0 0 3em 0;
+			/* margin: 0 0 3em 0; */
+			margin: 0 auto;
+			width: auto;
 		}
 
-			.image.centered img {
+			/* .image.centered img {
 				margin: 0 auto;
 				width: auto;
-			}
+			} */
 
 	a.image:hover {
 		opacity: 0.85;
