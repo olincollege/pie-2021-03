@@ -34,15 +34,37 @@ possibly adding a crystal reveal in the hilt.
 On the electrical/software side we expected for both Lightsabers to possess
 visual and sound effects. As well as do there respective launch and shutdown
 procedures. For effects we wanted to have multiple characters be available to
-the user via a button which would change the saber's color and play a theme song.
-In idle the lightsaber also emulates hits and wooshing noises via the hardware.
+the user via a button which would change the saber's color and play a theme song. In idle the lightsaber also emulates hits and swinging noises via the speaker.
 
-For this project we hope that we are able to get as close to a traditional replica
-saber as possible. Our main inspiration coming from the Disney Imagineers
-most recent [Lightsaber](https://youtu.be/ggWBEj8ppgM)
+For this project we hope that we are able to get as close to a traditional replica saber as possible. Our main inspiration coming from the Disney Imagineers most recent [Lightsaber](https://youtu.be/ggWBEj8ppgM)
 
 
-## Final System
+## Final Deliverable
+
+In the end we were able to deliver on our project goals and create both lightsabers. We do accept there are room for improvements that we would like to continue to improve on in the future:
+  - Create a smaller more accurate hilt for the extendable version
+  - Add an outer blade encasing to the extendable lightsaber
+  - Creat our Hilts for both out of properly machine metals instead of 3D printed material
+  - Further develop the diffusion done on our blades.
+  - Develop our own bi-stable roll of heat-treated plastic to use instead of the tape measure.
+
+Demos of both lightsabers can be found below:
+
+[Embeded 1]
+
+[Embeded 2]
+
+
 
 
 ## Meet the Team
+
+#### Abby Omer
+
+#### Jacob Uy
+
+#### Laurel Rodriguez Mitton
+
+#### Nabih Estefan
+
+#### Oscar G. De La Garza
