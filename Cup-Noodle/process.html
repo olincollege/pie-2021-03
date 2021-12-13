@@ -44,19 +44,115 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<span class="date">April 25, 2017</span>
 									<h1>This is <br />
 									Our Process</h1>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
+									<p> Take a look into the different stages in our design process. From our first to our final design sprint, see how the pieces come together as we go from the ideation to the implementation of Olin’s #1 ramen vending machine. </p>
 								</header>
 								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
+								
+								<!-- Sprint 1 -->
+								
+								<h3> Sprint 1 - November 4, 2021</h3>	
+								<p class='tab'> Our first design review was centered around choosing what the project was going to entail, what each of our team members wanted to focus on and learn, and seeing if we could test a piece of what was going to come further along in our project. During Sprint 1, we were able to establish all of the technologies, materials, and steps we would need to integrate the mechanical, hardware, and software in our project. <br/> </p>
+
+								<p class='tab'>We realized upon our first couple of meetings that most of the team had a strong software background, so we wanted to incorporate/consider several ways in which we could bring more software aspects into a mechanically dense project. <br/></p>
+
+								<p class='tab'>We narrowed down our options to creating a website that allows users to input their order by choosing their flavors and toppings. The website will send data to an API that then talks to an ESP32 WiFi module on our board. The module works with an Arduino to control our motors and send our gantry system to the correct location. Given extra time, we hoped to create a game mode where customers could move the ramen platform themselves and work to catch toppings falling from the top. <br/> </p>
+								
+								<div class="image fit"><img src="images/process-1.jpg" alt="" /></div>
+
+								<p class="tab"> Mechanical-wise, this sprint we built a single-axis slider that we controlled through an Arduino and could send to a specific location in the x-axis. After doing some motor torque hand calculations, we decided to use three Nema 17 motors - two for the y-axis and one for the x-axis. We found some 80-20 aluminum rails and designed 3D-printed mounts for the bearings. For belt tensioning, we tried various methods including zip ties and torsion springs. To minimize cost, we reached out to the Wellesley Recycling and Disposal Facility to look for any parts. We were able to find a lot of scrap wood and a working kettle. We also had an existing 24 V PC power supply and used PIE motors instead of buying motors whenever we could. The CAD assembly for our two-axis gantry system was also created, shown below.
+
+								</p>
+
+								<div class="image fit"><img src="images/process-2.jpg" alt="" /></div>
+
+								<p class='tab'> We also worked on our website design and planned what options we wanted to have available, and how interactive we would like it to be.
+								</p>
+								
+								<div class="image fit"><img src="images/process-3.jpg" alt="" /></div>
+								<div class="image fit"><img src="images/process-4.jpg" alt="" /></div>
+								<div class="image fit"><img src="images/process-5.jpg" alt="" /></div>
+								
+								<h4> First Iteration of our Slider</h4>
+								<div style="justify-content: center">
+									<video width="100%" controls>
+										<source src="videos/sprint1-1.mp4" type="video/mp4" >
+									</video>
+								</div>
+
+								<hr/>
+								<!-- Sprint 2 -->
+								
+								<h3> Sprint 2 - November 18, 2021</h3>	
+								<p class='tab'> For our second check-in, we wanted to have our second axis of our gantry built, as well as housing for the whole system. Two more Nema 17 motors were added to control the movement of the gantry in the y-axis and we devised a quick belt tensioning method with zip ties. A free air hockey board and various wooden planks were used to build the frame. To power all our motors and servos, we used a 24 V PC power supply. A lot of iteration (at least 3+ redesigns) was done for the 3D printed bearing and motor mounts to get the proper fit and smooth sliding motion in both axes. <br/> </p>
+
+									
+								<div style="justify-content: center">
+									<video width="100%" controls>
+										<source src="videos/sprint2-1.mp4" type="video/mp4">
+									</video>
+								</div>
+
+								<p class='tab'> We had created a design for our topping dispensing mechanism and printed out an initial idea. We had a servo that would turn a rounded piece that is held in 3D printed housing. We hoped that by turning the inside piece back and forth 180°, we could allow only one packet of each topping to fall out. We tested using pieces of cardboard similarly shaped to our topping packets and found that we could not reliably dispense with this design, as either many would fall out or none would. This design was also hard to manufacture. <br/></p>
+
+								<div class="image fit"><img src="images/sprint2-1.jpg" alt="" /></div>
+								<div class="image fit"><img src="images/sprint2-2.jpg" alt="" /></div>
+
+								<p class="tab"> During this sprint we later realized that we wanted to prioritize creating our hot water mechanism over creating our dispensing mechanism. A lot of ideas were thrown about but eventually we settled on the easiest and cheapest idea: attaching a valve to an existing kettle and dispensing water through a sharpened spike which would puncture the cup noodle. A motor would open and close the valve and 3D prints would connect and hold everything in place.</p>
+
+
+
+								<p class="tab"> Regarding communication between our customers and our machine, we created an API using Python that can communicate with our ESP32 and transfer the data that will be inputted to the website by the customer. The following link leads to our API website:	</p>
+
+								<p style="text-align: center"> <a href="https://cupnoodle-api.herokuapp.com/order">Cup Noodle API Website</a></p>
+
+
+								<p class="tab"> We also continued work on our website and began building the framework for it using React. A challenge that we faced while building this initial part of the React app was establishing how much of our initial design would be able to be converted to our app. Our firmware is in C++ to communicate with the Arduino. </p>
+
+								<div class="image fit"><img src="images/sprint2-3.jpg" alt="" /></div>
+								<div class="image fit"><img src="images/sprint2-4.jpg" alt="" /></div>
+
+								<p class='tab'> A problem we faced while creating our second axis of our gantry was that our motors were constantly slipping, so our cup holder platform was not able to successfully reach our cup dispenser. We increased our output voltage from the PC power supply from 12 V, which is what we were initially using, to 24 V. We also increased the reference voltage of the stepper motors so that the controller fed more amperage to our motors. We initially were trying to have our ESP simultaneously receive orders and do motor controls, and found that there was a large amount of delay as the ESP is not good at completing multiple tasks at the same time. This meant that we were not able to send our cup holder to the locations we wanted. We changed our system so that our ESP solely received information from the API and sent it over to the Arduino, which completed the difficult processing and controlled the motors successfully. We were then able to accurately send our cup holder to the correct locations.</p>
+								
+								<hr/>
+								<!-- Sprint 3 -->
+								
+								<h3> Sprint 3 - November 18, 2021</h3>	
+
+								<p class="tab">We first had a completely 3D printed ramen cup holder connected to bearings on our horizontal rail. We found issues with our holder being very wobbly and having our cup noodles falling out through the back as there was no railing to hold our cups in place. We started working on building a wooden holder with a lip but sourced a decorative metal cage creating a wooden platform for it to connect to a 3D printed mount which held the bearings. With this new holder iteration, we decreased the risk of our cup wobbling and having hot water fall out. More woodworking was generally favored over 3D prints because it fit with the wooden aesthetic of our system. </p>
+
+								<div class="image fit"><img src="images/sprint3-1.jpg" alt="" /></div>
+								
+								<p class='tab'> Our existing topping dispenser was hard to manufacture and did not always dispense the correct number of topping packets, so we decided to focus on the remaining parts of our machine and focus on the dispenser afterwards with extra time.
+								</p>
+
+								<p class='tab'> We created a successful hot water dispenser but through the process encountered many issues. Our kettle is placed at the top of our vending machine and is connected to a power strip via extension cord. To dispense the hot water, we drilled a hole into the side of the kettle attached to a mechanical valve. Solenoid valves were considered but they were too expensive for our budget, so we compromised on a motor turning a manual valve. Our valve opened and closed with a stepper motor and we 3D printed the motor mount and hardware necessary to be able to turn the valve. We had to ensure that everything the water passed through was food safe and could withstand boiling water. Our first valve required too much torque to turn, more than our stepper motor was able to output, so we purchased another valve that is much easier to turn but still fits in the hole we drilled into the side of the kettle and the bulkhead. The valve is connected to a sharpened copper toilet riser which we use as a straw, which is connected to the valve via a compression fitting. The ramen is raised to the copper straw and is punctured.
+								</p>
+
+								<p class='tab'> Our final integration between software and hardware follows the pipeline below: </p> 
+
+								<div class="image fit"><img src="images/sprint3-2.jpg" alt="" /></div>
+
+								<p class='tab'> We are currently sending flavors as <strong>a</strong>, <strong>b</strong>, <strong>c</strong>, or <strong>d</strong>. The toppings are currently being sent as the word with an emoji next to it, for example: egg . The API is not able to parse data with emojis, so we were not able to send data from the website to the Arduino. We have been testing our vending machine by manually inputting data into the API since our website data cannot be sent. To fix this, we removed the emojis from the topping data and changed the website output so that the toppings are sent as a, b, d, or d instead.
+								</p>
+
+								<div class="image fit"><img src="images/sprint3-3.jpg" alt="" /></div>
+
+<!-- 
+								<div style="justify-content: center">
+									<video width="100%" controls>
+										<source src="videos/sprint1-1.mp4" type="video/mp4" scale="50%">
+									</video>
+								</div> -->
+
+
+							
 							</section>
 
-					</div>
+							
+
+					</di>
 
 				<!-- Footer -->
 					<footer id="footer">
@@ -84,16 +180,16 @@
 						<section class="split contact">
 							<section class="alt">
 								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
+								<p> 1000 Olin Way <br/>
+									Needham, MA 02492</p>
 							</section>
 							<section>
 								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
+								<p><a href="#">(781) 292-2300</a></p>
 							</section>
 							<section>
 								<h3>Email</h3>
-								<p><a href="#">info@untitled.tld</a></p>
+								<p><a href="#">pie@olin.edu</a></p>
 							</section>
 							<section>
 								<h3>Social</h3>

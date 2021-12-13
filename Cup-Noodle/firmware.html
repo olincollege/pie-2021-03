@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Electrical</title>
+		<title>Firmware</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -44,27 +44,19 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<h1> Electrical </h1>
-                                    <div class="image main"><img src="images/electrical-1.jpg" alt="" /></div>
+									<h1> Firmware </h1>
+                                    <div class="image main"><img src="images/firmware-1.jpg" alt="" /></div>
                                 </header>
 								
 								<!-- First feature -->
 								
-								<h3> Power Supply</h3>	
-								<p class='tab'> We used a 24 volt PC power supply to power all our motors and controllers. We initially pulled 12 volts, but found that was not enough to power all our motors, and after increasing the output to 24 we found that all our motors were able to perform reliably. <br/> </p>
-                        
-
-								<p class='tab'> To also help our gantry motors perform better, we increased the reference voltage of the motors on the motor controller, so the controller was able to send more current to the motors and they were able to better send our cup holder to the correct location. <br/></p>
-
+								<h3> Overview </h3>	
+								<p class='tab'> Here is a <a href="">link </a>to our Arduino code. <br/> </p>
+    
+								<p class='tab'> Regarding our firmware, one the largest issues we encountered in this project was with having our ESP32 try to take orders and simultaneously perform motor control. This resulted in a lot of lag, so we weren’t able to accurately send our cup holder to the correct positions. To account for this, we had our ESP solely take order information and pass it to the Arduino which could parse the information and control our motors much more successfully. <br/></p>
                                 <hr/>
 								
-                                <!-- Second feature -->
-								
-								<h3> Wiring Diagram </h3>	
-								<p class='tab'> NEEDS TO BE ADDED</p>
-                                <!-- <div class="image fit"><img src="images/electrical-1.jpg" alt="" /></div> -->
-                                <hr/>
-
+                               
                                 <!-- Add a video -->
 								<!-- <div style="justify-content: center">
 									<video width="100%" controls>

@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Software</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Make an order now!</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">This is Cup Noodle</a></li>
+							<li><a href="process.html">Our Process</a></li>
+							<li class="active"><a href="systemsoverview.html">Systems Overview</a></li>
+							<li><a href="aboutus.html"> About Us </a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1> Software </h1>
+                                    <div class="image main"><img src="images/software-1.jpg" alt="" /></div>
+                                </header>
+								
+								<!-- First feature -->
+								
+								<h3> Order Handler and Motor Controls</h3>	
+								<p class='tab'> Our gantry system first calibrates by traveling to the four vertices of the gantry. <br/> </p>
+                            
+
+								<p class='tab'> Upon receiving an order, it then travels to the correct flavor of ramen, stops below the dispenser so the cup falls into the holder, and a motor spins the spiral of wire we have in our cup dispensers. The wire pushes the cup forward so it falls in our holder, which then travels up towards our hot water dispenser. <br/></p>
+
+								<p class='tab'> The holder pushes the cup into the sharpened straw so that hot water can be dispensed into the ramen. A stepper motor turns a valve which allows hot water to fall through the straw. After a period of time, the stepper motor closes the valve and the cup holder drops down to the bottom of the vending machine so the customer can obtain their order when they are ready. <br/> </p>
+
+                                <hr/>
+								
+                                <!-- Second feature -->
+								
+								<h3> API </h3>	
+								<p class='tab'> We created a simple Python script to be able to send messages to our ESP32() from our Order App. <br/> Check out our github repo <a href="https://github.com/jonaskaz/Noodle-API"> here. </a> </p>
+                            
+
+                                <hr/>
+
+                                <h3> Ordering Website </h3>	
+								<p class='tab'> We decided to build an Order app in ReactJS since most of the team’s learning goals were to learn this specific Javascript framework. We started off with creating simple components that added functionality (like a homepage leading to an order page, and an order page having options to be able to choose certain flavors and options). Once we had some functionality down, we were able to go in and update the UI of the page, revamping the experience for our users. Lastly, we integrated the API that we created to our ‘Submit’ button on our Order app, and we tested the fetch and post methods to our vending machine. 
+                                    <br/> Check out our github repo <a href="https://github.com/notwaltervilla/Cup-Noodle-React-App"> here. </a> </p>
+                            
+                                <hr/>
+
+                                <h3> Website Design </h3>	
+								<p class='tab'>The UI Design was built on Figma. We were able to quickly generate a design and use Figma’s CSS property to quickly build out the UI of our order app.
+                                <hr/>
+
+                                <!-- Add a video -->
+								<!-- <div style="justify-content: center">
+									<video width="100%" controls>
+										<source src="videos/sprint1-1.mp4" type="video/mp4" scale="50%">
+									</video>
+								</div> -->
+
+                                <h3> Budget </h3>	
+								<p class='tab'>Here is the budget for our project this year.</p>
+
+                                <table>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Link</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                        <th>Total</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Stepper motor</td>
+                                        <td><a href="https://www.amazon.com/dp/B00PNEQUZ2/ref=emc_b_5_t"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$20.99</td>
+                                        <td>$20.99</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Stepper motor driver</td>
+                                        <td><a href="https://www.amazon.com/BIQU-Compatible-Stepper-StepStick-Controller/dp/B01FFGAKK8/ref=pd_bxgy_2/139-8266457-6234248?pd_rd_w=ADqyV&pf_rd_p=c64372fa-c41c-422e-990d-9e034f73989b&pf_rd_r=5VV5WXKT16RBVDCDMXV2&pd_rd_r=b65b1ce3-7e6f-4b5a-8615-c84e4ba905c8&pd_rd_wg=YAxgl&pd_rd_i=B01FFGAKK8&psc=1#customerReviews"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$10.99</td>
+                                        <td>$10.99</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Limit Switches</td>
+                                        <td><a href="https://www.amazon.com/dp/B01G3FCH56?psc=1&ref=ppx_yo2_dt_b_product_details"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$8.05</td>
+                                        <td>$8.05</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Timing Belt kit - belt, pulleys, motor adapter </td>
+                                        <td><a href="https://www.amazon.com/KeeYees-Timing-Tensioner-Torsion-Printer/dp/B07JKT5BZQ/ref=sr_1_4?crid=JHEAIUIU8PLT&dchild=1&keywords=gt2+timing+belt&qid=1635281187&qsid=142-6686061-3916109&sprefix=timing+belts+g%2Caps%2C164&sr=8-4&sres=B07KK86NYX%2CB07JKT5BZQ%2CB08BJ2G2X6%2CB088M3V865%2CB071K8HYB4%2CB0776KXY8G%2CB0897CJKS1%2CB07Z51RKQ7%2CB08974S1CC%2CB08SQ32RSR%2CB07BRKZGMS%2CB08YX549JM%2CB077GMKW1C%2CB018HMU9NU%2CB07Y2VRSM3%2CB085NMDTDM"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$15.99</td>
+                                        <td>$15.99</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>6x19x6 mm bearings (10)</td>
+                                        <td><a href="https://www.amazon.com/BIQU-Compatible-Stepper-StepStick-Controller/dp/B01FFGAKK8/ref=pd_bxgy_2/139-8266457-6234248?pd_rd_w=ADqyV&pf_rd_p=c64372fa-c41c-422e-990d-9e034f73989b&pf_rd_r=5VV5WXKT16RBVDCDMXV2&pd_rd_r=b65b1ce3-7e6f-4b5a-8615-c84e4ba905c8&pd_rd_wg=YAxgl&pd_rd_i=B01FFGAKK8&psc=1#customerReviews"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$10.99</td>
+                                        <td>$10.99</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Nema 17 Stepper Motor</td>
+                                        <td><a href="https://www.amazon.com/gp/product/B00PNEQKC0/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1"/> Amazon Link </a></td>
+                                        <td>3</td>
+                                        <td>$13.99</td>
+                                        <td>$41.97</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Replacement Bearings</td>
+                                        <td><a href="https://www.amazon.com/dp/B075CM4WZQ?psc=1&smid=A1THAZDOWP300U&ref_=chk_typ_imgToDp"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$9.99</td>
+                                        <td>$9.99</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Various bolts from Harvey's hardware</td>
+                                        <td>No Link</td>
+                                        <td>1</td>
+                                        <td>$35.00</td>
+                                        <td>$35.00</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Wire </td>
+                                        <td><a href="https://www.amazon.com/gp/product/B000BPEQAE/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$6.18</td>
+                                        <td>$6.18</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>8mm universal motor hub</td>
+                                        <td><a href="https://www.amazon.com/gp/product/B0822425TT/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$8.99</td>
+                                        <td>$8.99</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Ball valve for kettle</td>
+                                        <td><a href="https://www.amazon.com/gp/product/B07F7VBMRH/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$13.99.99</td>
+                                        <td>$13.99</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>12 cups of ramen</td>
+                                        <td>No link</td>
+                                        <td>1</td>
+                                        <td>$19.68</td>
+                                        <td>$19.68</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Wood</td>
+                                        <td> No link</td>
+                                        <td>1</td>
+                                        <td>$20.00</td>
+                                        <td>$20.00</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Power Supply</td>
+                                        <td>No link</td>
+                                        <td>1</td>
+                                        <td>$10.00</td>
+                                        <td>$10.00</td> 
+                                    </tr>
+                                    <tr>
+                                        <td> ESP 8266</td>
+                                        <td> No link</td>
+                                        <td>1</td>
+                                        <td>$10.00</td>
+                                        <td>$10.00</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Adafruit Motor Shield</td>
+                                        <td> No Link </td>
+                                        <td>1</td>
+                                        <td>$20.00</td>
+                                        <td>$20.00</td> 
+                                    </tr>
+                                    <tr>
+                                        <td> Kettle</td>
+                                        <td> No Link </td>
+                                        <td>1</td>
+                                        <td>$10.00</td>
+                                        <td>$10.00</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>DC Motors</td>
+                                        <td> No Link </td>
+                                        <td>4</td>
+                                        <td>$4.00</td>
+                                        <td>$16.00</td> 
+                                    </tr>
+                                  </table>							
+							</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p> 1000 Olin Way <br/>
+									Needham, MA 02492</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(781) 292-2300</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">pie@olin.edu</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
