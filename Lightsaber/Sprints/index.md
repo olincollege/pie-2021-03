@@ -37,10 +37,22 @@ The board we got runs CircuitPython natively, so the software is done directly o
 In Sprint 2, we wanted to see how far along we could get with the extendable Lightsaber, before deciding whether we should focus on only the detachable Lightsaber or both the detachable and extendable ones. We ultimately decided to continue pursuing both, leading us to purchase another Adafruit Propmaker kit. Luckily, we found an LED strip to use for this blade, so we wouldn't have to purchase another which would have put us way over budget.
 
 #### Mechanical
-For the detachable blade, this sprint we modified the electronics packaging, so that the hilt of the Lightsaber would fit into a 2 inch diameter hilt, more closely resemble Disney's Lightsaber dimensions. Additionally, we began working on the detaching mechanism of the blade. 
+For the detachable blade, this sprint we modified the electronics packaging, so that the hilt of the Lightsaber would fit into a 2 inch diameter hilt, more closely resemble Disney's Lightsaber dimensions. 
 
 <p align="center">
   <img src="../Photos!/sprint2detachabledesign.png" alt="Sprint 2 Detaching Mechanism Design">
+</p>
+
+Additionally, we began working on the detaching mechanism of the blade. We began by creating a proof of concept with a small blade and placeholder to for plug on the side of the endcap.
+
+<p align="center">
+  <img src="../Photos!/sprint2detachablev1.jpg" alt="Sprint 2 Detaching Mechanism Version 1">
+</p>
+
+For our next iteration of the detachable mechanism we increased the size of the blade tubing and added a wire channel to the plug holder. 
+
+<p align="center">
+  <img src="../Photos!/sprint2detachablev2.jpg" alt="Sprint 2 Detaching Mechanism Version 2">
 </p>
 
 For the extendable blade, we reverse engineered a motorized tape measure. We found that the motor was sufficient for our needs, so we switched the battery out for a 9 volt one because we wanted more power for the extending and retracting motions. We then connected the tape measure and LEDs, although the diameter of the LED spool was too small, leading to problems when retracting the blade. 
@@ -48,16 +60,6 @@ For the extendable blade, we reverse engineered a motorized tape measure. We fou
 **ADD PHOTO OF INITIAL EXTENDABLE BLADE**
 
 We also looked into different thicknesses of polycarbonate and polypropylene film to thermoform into the tape spring shape as a possible alternative to the tape measure. This would allow the LED light to diffuse through the plastic. We ended up getting a range of films to test which would be best.
-
-v1 nov 8
-v2 nov 15
-
-v3 29
-v4 12/4
-v5 12/5
-v6 12/8
-v7 12/11
-v8 12/12
 
 #### Electrical
 For electrical, we put together the second set of electronics for the second blade. Additionally, we added a second button and a switch. The button was added to allow for switching between Lightsaber colors, and the switch was added to turn the whole Lightsaber off, so that it does not drain the battery when not in use. 
@@ -77,10 +79,44 @@ In Sprint 3, we finished up both the extendable and detachable blades. Additiona
 [Presentation](https://docs.google.com/presentation/d/1FsrQfatEuBN9W9HeRLlkH6D4EyJWSfqdYsHG7buiOm8/edit?usp=sharing)
  
 #### Mechanical
-This sprint, we finalized the detaching mechanism of the detachable blade.
+During sprint 3, we went through several versions of the detaching mechanism for the detachable blade before we finalized it.
+
+**MOVE ALL VERSION BUT FINAL IN SPRINTS TO ANOTHER PAGE IF TIME**
+
+For version 3, we tested using the socket instead of the plug on the blade side adn added space for the connector on the hilt side. 
 
 <p align="center">
-  <img src="../Photos!/sprint3detachableprinted.jpg" alt="Sprint 3 Detaching Mechanism">
+  <img src="../Photos!/sprint3detachablev3.jpg" alt="Sprint 3 Detaching Mechanism Version 3">
+</p>
+
+For version 4, added an auxiliary stabilizer across from the plug to increase stability and increased clearances for plug and socket.
+
+<p align="center">
+  <img src="../Photos!/sprint3detachablev4.jpg" alt="Sprint 3 Detaching Mechanism Version 4">
+</p>
+
+For version 5, we reduced teh height of the stabilizer and added a thread to the hilt side to attach to the rest of the hilt.
+
+<p align="center">
+  <img src="../Photos!/sprint3detachablev5.jpg" alt="Sprint 3 Detaching Mechanism Version 5">
+</p>
+
+For version 5.5, we reduced the height of spline behind plug passthrough on endcap.
+
+<p align="center">
+  <img src="../Photos!/sprint3detachablev5.5.jpg" alt="Sprint 3 Detaching Mechanism Version 5.5">
+</p>
+
+For version 6, we tested adding a third stabilizer and modifying placement and clearance for connectors. We also modified the thread to match the rest of the hilt.
+
+<p align="center">
+  <img src="../Photos!/sprint3detachablev6.jpg" alt="Sprint 3 Detaching Mechanism Version 6">
+</p>
+
+For version 7, the final version, we moved the connectors to center of endcap instead of side and changed to first plug in wires manually, then twist the blade into place.
+
+<p align="center">
+  <img src="../Photos!/sprint3detachablev7.jpg" alt="Sprint 3 Detaching Mechanism Version 6">
 </p>
 
 Additionally, we designed the casing of the hilt. The first version of the hilt shown below is made of 3D printed sections. This allows for easy access to the battery to recharge it. Additionally, it features a cutout to show off the board we are using. Originally, we had hoped to implement a kyber crystal reveal, however since we did not have the time to develop this feature, we made a board reveal instead.
@@ -93,7 +129,7 @@ With the first version of the hilt, we had trouble extruding the threads, so the
 
 **FINAL HILT VERSION**
 
-Additionally, we used an emery cloth to diffuse the blade and printed a resin cap for the tubing.
+Additionally, we used an emery cloth to diffuse the blade and printed a resin and pla cap for the tubing. We found our initial version broke easily and the LEDs could not connect to it, so we increased the thicknesss of the interface with the blade and added a hook for the LEDs to be glued onto. The final version of the endcap is shown below. 
 
 <p align="center">
   <img src="../Photos!/sprint3diffusedblade.jpg" alt="Sprint 3 Diffused Blade and Resin Cap">
