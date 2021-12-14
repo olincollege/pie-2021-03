@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<!--
+	Template: Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+	Olin College of Engineering, Principles of Integrated Engineering Fall 2021
+	Team: Gati Aher, Mari Kang, Cory Knox, Efe Gulcu, Max Stopyra
+-->
+<html>
+	<head>
+		<title>Disco Cats</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Disco Cats</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="mechanical.html">Mechanical</a></li>
+								<li><a href="electrical.html">Electrical</a></li>
+								<li><a href="software.html">Software</a></li>
+								<li><a href="bill_of_materials.html">Bill of Materials</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<div class="logo"><span class="icon solid fa-cat"></span></div>
+							<h2>Disco Cats!</h2>
+							<p><b>An interactive music visualization system that uses motors, LED matrix, and sound to express multi-instrument musical pieces generated with Machine Learning.</b></p>
+							<p><i>Principles of Integrated Engineering, Fall 2021 @ Olin College of Engineering
+								<br>By Gati Aher, Mari Kang, Cory Knox, Efe Gulcu & Max Stopyra</i></p>
+						</div>
+					</section>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+
+						<!-- One: Demo -->
+						<section id="one" class="wrapper style1">
+							<div class="inner">
+								<div class="content">
+									<h2 class="major">Demo</h2>
+									<div class="content">
+										<p>
+											An Arduino Uno manages a user input panel that supports selecting, playing, and generating songs. A laptop with Google Magenta’s MultiTrackVAE machine learning model generates longer pieces based selected song excerpts and can send the contents of MIDI files over a serial connection. An Arduino Mega extracts note pitch, instrument, and duration information in real time. The visualized output manifests as dancing cats on various motors and linkage systems with a sparkling LED matrix as the backdrop.
+										</p>
+									</div>
+									<span class="image fit">
+										<iframe class="image" width="800vw" height="400vw" border-radius="5px"
+											src="https://www.youtube.com/embed/nX_OTCaxyTM?autoplay=1&mute=1&loop=1"
+											title="YouTube video player"
+											frameborder="0"
+											allowfullscreen
+											>
+										</iframe>
+									</span>
+									<a href="https://youtu.be/nX_OTCaxyTM" class="special">Watch Demo</a>
+								</div>
+							</div>
+						</section>
+
+						<!-- Two: Goals Overview -->
+						<section id="two" class="wrapper spotlight style2">
+							<div class="inner">
+								<a href="images/photo_booth/top_view.jpg" class="image"><img src="images/photo_booth/top_view.jpg" alt="" /></a>
+								<div class="content">
+									<h2 class="major">Team Goal</h2>
+									<p>We prioritized both aesthetics and functionality - we wanted to combine our skills and interests to create a sound-based, visually interesting system that sparks joy!</p>  
+									
+									<h2 class="major">Project Objectives</h2>
+									<ol>
+										<li>
+											Lovable: Cheerful and visually appealing design
+											<br><b>Cuteness = Top Priority</b>
+										</li>
+										<li>
+											Interesting: Utilize user input, generative ML, and real-time MIDI bitstream decoding to control mechanical and electrical outputs
+										</li>
+										<li>
+											Easy-to-Use: Incorporate joyous music making for people at any music level
+										</li>
+									</ol>
+								
+								</div>
+							</div>
+						</section>
+						
+						<!-- Three: Integration Map -->
+						<section id="three" class="wrapper alt style3">
+							<div class="inner">
+								<span class="image fit">
+									<h2 class="major">Integration Diagram</h2>
+									<p><i>From user input to visual & audio output</i></p>
+									<a href="images/diagram/integration_map.png" class="image"><img src="images/diagram/integration_map.png" alt="" /></a>
+								</span>
+							</div>
+						</section>
+
+						<!-- Four: Mechanical Components -->
+							<section id="four" class="wrapper alt spotlight style4">
+								<div class="inner">
+									<a href="mechanical.html" class="image"><img src="images/MechECat.png" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Mechanical Components</h2>
+										<p>Our mechanical team primarily used lasercutting and 3D printing to create the structure that expressed our output. There are 3 components to the build:</p>
+										<ol>
+											<li><b>The Cats:</b> various linkage systems and stepper motor interactions make 3D-printed cats puppets dance. Four unique motions were incorporated into our design: (1) up and down, (2) the infinity loop, (3) dancing pair, and (4) one dancing on its own.</li>
+											<li><b>The Stage:</b> the primary housing unit for this project had to be large enough to hold our wires, 9 motors and stands to support the cats, the linkages that drive the cat motions, and a LED matrix. The housing unit is 5.5” in height and has an 18” diameter. The walls are created from living hinges and the components of the stage are held together with a slot-based design.</li>
+											<li><b>The LED Housing:</b> this component of the project brings height and acts as the primary expression of note pitches. It stands at 16.5” tall and holds 64 LEDs in an 8x8 matrix. The material is laser cut acrylic, assembled with a puzzle piece method and spray painted black to minimize the reflection of light in any unwanted directions.</li>
+										</ol>
+										<a href="mechanical.html" class="special">Learn more</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Five: Electrical System-->
+							<section id="five" class="wrapper spotlight style1">
+								<div class="inner">
+									<a href="electrical.html" class="image"><img src="images/ECECat.png" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Electrical System</h2>
+										<p><b>The LED Matrix + MAX7219 LED Driver Chip:</b><br>64 LEDs are hooked up in a parallel grid layout. The Arduino Mega interfaces with a <a href="https://datasheets.maximintegrated.com/en/ds/MAX7219-MAX7221.pdf">MAX7219 LED driver chip</a> to individually control each LED using a 3-pin SPI protocol. The MAX7219 is powered by the 5V power supply from the Arduino.</p>
+										<p><b>DC Stepper Motors + ULN2003 Driver Boards:</b><br>Nine <a href="https://www.mouser.com/datasheet/2/758/stepd-01-data-sheet-1143075.pdf">28-BYJ48 stepper motors</a> with <a href="https://www.electronicoscaldas.com/datasheet/ULN2003A-PCB.pdf">ULN2003 driver boards</a> drive the dancing cat movements. Each stepper motor requires 4 I/O pins, using 36 pins in total. The Arduino Mega is a large Arduino board with enough I/O pins to control both the 9 motor drivers and the LED Matrix. We use a 12V 5A AC→DC power supply to power the ULN2003 driver boards' with their maximum supported voltage and provide all 9 stepper motors with ~260mA of current.</p>
+										<p><b>User Input Panel:</b><br>An Arduino UNO is hooked up to an input panel with 9 push buttons with 9 status LEDs.</p>
+										<a href="electrical.html" class="special">Learn more</a>
+									</div>
+								</div>
+							</section>
+
+							<!-- Seven: Software Systems -->
+							<section id="seven" class="wrapper alt style4">
+								<div class="inner">
+									<h2 class="major">Software Subsystems</h2>
+									<p>Our code system uses an Arduino Uno, an Arduino Mega, and a laptop with a Linux OS. The Arduinos were programmed in C++, and the laptop runs a Python3 script and bash commands. There are 4 subsystems:</p>
+									<section class="features">
+										<article>
+											<a href="software.html#userInputManager" class="image"><img src="images/diagram/user_input.png" alt="" /></a>
+											<h3 class="major">User Input Manager</h3>
+											<p>An Arduino Uno manages a button panel interface that allows the user to experience and select from eight short 2 second song excerpts. The user can also click a button to generate a new 60 second song based on the selected excerpts. The chosen action is read by the laptop via <a href="https://pyserial.readthedocs.io/en/latest/">pySerial</a>.</p>
+											<a href="software.html#userInputManager" class="special">Learn more</a>
+										</article>
+										<article>
+											<a href="software.html#playAndTransmitMIDIBitstream" class="image"><img src="images/diagram/play_transmit_MIDI.jpg" alt="" /></a>
+											<h3 class="major">Play and Transmit MIDI Bitsteam</h3>
+											<p>The <a href="http://timidity.sourceforge.net/#info">TiMidity++ software synthesizer</a> plays a MIDI file by converting it to a MIDI bitstream format. This bitstream can be transmitted over a <a href="http://www.varal.org/ttymidi/">ttyMIDI</a> serial connection.</p>
+											<a href="software.html#playAndTransmitMIDIBitstream" class="special">Learn more</a>
+										</article>
+										<article>
+											<a href="software.html#MLPoweredMusicGeneration" class="image"><img src="images/diagram/magenta-logo-bottom-text.png" alt="" /></a>
+											<h3 class="major">ML-Powered Music Generation</h3>
+											<p>A Python3 script runs <a href="https://magenta.tensorflow.org/multitrack">Google Magenta's open-source MultiTrackVAE</a> machine learning model to generate musical pieces based on user selected song excerpts.</p>
+											<a href="software.html#MLPoweredMusicGeneration" class="special">Learn more</a>
+										</article>
+										<article>
+											<a href="software.html#LEDMatrixAndMotorControl" class="image"><img src="images/diagram/control_LED_Motor.png" alt="" /></a>
+											<h3 class="major">LED Matrix and Motor Control</h3>
+											<p>An Arduino Mega decodes the MIDI bitstream in order to extract pitch, instrument, and duration information. These properties are used to control the behavior of an 8x8 LED Matrix column and 9 stepper motors.</p>
+											<a href="software.html#LEDMatrixAndMotorControl" class="special">Learn more</a>
+										</article>
+									</section>
+								</div>
+							</section>
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">About Us</h2>
+							<ul>
+								<li><b>Mechanical:</b> Efe Gulcu & Cory Knox (also PM)</li>
+								<li><b>Electrical:</b> Max Stopyra</li>
+								<li><b>Software:</b> Gati Aher & Mari Kang</li>
+							</ul>
+
+							<div class="box alt">
+								<div class="row gtr-uniform" padding="4em">									
+									<div class="col-4">
+										<span class="image fit">
+											<img src="images/MechECat.png">
+										</span>
+									</div>
+
+									<div class="col-4">
+										<span class="image fit">
+											<img src="images/ECECat.png">
+										</span>
+									</div>
+
+									<div class="col-4">
+										<span class="image fit">
+											<img src="images/softwareCat.png">
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<ul class="contact">
+								<li class="icon solid fa-home">
+									Olin College of Engineering<br/>
+									1000 Olin Way, Needham, MA<br/>
+									<a href="https://olincollege.github.io/pie-2021-03/">Principles of Integrated Engineering, Fall 2021</a>
+								</li>
+								<li class="icon brands fa-github"><a href="https://github.com/GatiAher/disco_cats">disco_cats</a></li>
+								<li class="icon fa-gem"><a href="https://html5up.net/solid-state">Website Powered by HTML5: Solid State</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
