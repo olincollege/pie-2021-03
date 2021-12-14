@@ -10,45 +10,36 @@ layout: home
 
 # Our Project
 
-Welcome, we are the Lightsaber team of the Fall 2021 Principles of Integrated
-Engineering Class. For our Final project we have decided to create our very own
-Lightsabers! You can find more about our engineering or design via these links,
-or read on below to learn more about the overall goals we had and what we did!
+Welcome, we are the lightsaber team of the Fall 2021 Principles of Integrated Engineering Class. For our final project, we  decided to create our very own lightsabers! You can find more about our engineering or design via these links, or read on below to learn more about the overall goals we had and what we did!
 
 [Engineering](https://olincollege.github.io/pie-2021-03/Lightsaber/Systems)
 
 [Design Reviews](https://olincollege.github.io/pie-2021-03/Lightsaber/Sprints)
 
+<p align="center">
+  <img src="../Photos!/demoDark.png" alt="Display of Completed Lightsabers">
+</p>
+
 
 ## Project Goals
-For our project, we planned to build two replica Lightsabers. On the mechanical side,
-we expected to have a separable hilt and blade which can be disconnected and
-reconnected easily. The hilt itself needs to be at least large enough to hold
-our electronics, including a speaker, controller, and enough batteries to power
-the saber. The blade was expected to be sturdy enough to be swung around as if
-dueling. Our second blade we expected to be an extendable blade controlled by a
-button on the hilt. Other goals we decided on but were not detrimental to success
-were including a modular hilt, making the Lightsaber properly balanced, and
-possibly adding a crystal reveal in the hilt.
+For our project, we planned to build two replica lightsabers. On the mechanical side, we want to make a separable hilt and blade which can be disconnected and reconnected easily. The hilt itself needs to be at least large enough to hold our electronics, including a speaker, controller, and enough batteries to power the saber. The blade was expected to be sturdy enough to be swung around as if dueling. For our second blade, we wanted to make an extendable blade controlled by a button on the hilt. Other lesser goals included making a modular hilt, making the lightsaber properly balanced, and possibly adding a kyber crystal reveal in the hilt.
 
-On the electrical/software side we expected for both Lightsabers to possess
-visual and sound effects. As well as do there respective launch and shutdown
-procedures. For effects we wanted to have multiple characters be available to
-the user via a button which would change the saber's color and play a theme song. In idle the Lightsaber also emulates hits and swinging noises via the speaker.
+On the electrical/software side we wanted both lightsabers to possess visual and sound effects, as well as power on and off in a similar way to Disney's lightsabers. For effects, we wanted to have multiple characters available to the user via a button which would change the lightsaber's color and play a theme song. In idle, the lightsaber also emulates hits and swinging noises via the speaker.
 
-For this project we hope that we are able to get as close to a traditional replica saber as possible. Our main inspiration coming from the Disney Imagineers most recent [Lightsaber](https://youtu.be/ggWBEj8ppgM)
+For this project we hope that we are able to get as close to a traditional replica saber as possible. Our main inspiration coming from the Disney Imagineers most recent [lightsaber](https://youtu.be/ggWBEj8ppgM).
 
 
 ## Final Deliverable
 
-In the end we were able to deliver on our project goals and create both Lightsabers. We do accept there are room for improvements that we would like to continue to improve on in the future:
+In the end, we were able to deliver on our project goals and create both lightsabers. Some improvements we would like to make in future iterations include:
   - Create a smaller more accurate hilt for the extendable version
-  - Add an outer blade encasing to the extendable Lightsaber
-  - Create                      our Hilts for both out of properly machine metals instead of 3D printed material
-  - Further develop the diffusion done on our blades.
-  - Develop our own bi-stable roll of heat-treated plastic to use instead of the tape measure.
+  - Add an outer blade encasing to the extendable lightsaber
+  - Create the hilts out of properly machine metals instead of 3D printed material
+  - Further develop the diffusion done on our blades
+  - Develop our own bi-stable roll of heat-treated plastic to use instead of the tape measure
+  - Create a blade drag, material cutting, and unstable blade effect as seen in the Star Wars movies
 
-Demos of both Lightsabers can be found below:
+Demos of both lightsabers can be found below:
 
 <!-- [![Detachable Lightsaber](./Photos!/About/team.jpg)](https://youtu.be/RMrMl14pZ-I) -->
 
@@ -56,10 +47,7 @@ Demos of both Lightsabers can be found below:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RMrMl14pZ-I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ##### Extendable
-[Embeded 2 NEEEDED]
-
-
-
+<iframe width="560" height="315" src="https://youtu.be/GjQWpX-BY98" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Meet the Team
 
