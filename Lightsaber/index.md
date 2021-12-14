@@ -114,7 +114,7 @@ Demos of both lightsabers can be found below:
   <br>
   <br>
   <br>
-  Nabih is an Electrical and Computer Engineer of the Class of 2023. He has been obsessed with Star Wars since before he can remember and somehow convinced his teammates to make a lightsaber. Be learned how to CAD just for this.
+  Nabih is an Electrical and Computer Engineer of the Class of 2023. He has been obsessed with Star Wars since before he can remember and somehow convinced his teammates to make a lightsaber. He learned how to CAD just for this, the Force helped a little.
 </p>
 <br>
 <br>
