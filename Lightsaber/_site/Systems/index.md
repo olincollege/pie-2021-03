@@ -1,5 +1,0 @@
-## Mechanical
-
-## Electrical
-
-## Software
