@@ -67,7 +67,7 @@
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/j">website templates</a></section><section class="header1 cid-sRqC7XlRFd" id="header16-1l">
+<section class="engine"><a href="https://mobirise.info/o">portfolio website templates</a></section><section class="header1 cid-sRqC7XlRFd" id="header16-1l">
 
     
 
@@ -156,7 +156,7 @@
                             <div class="card-text">
                                 <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Accomplishments?</h4>
                                 <p class="mbr-content-text mbr-fonts-style display-7">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae cupiditate rerum ipsum tempora vero.</p>
+                                    Implement IR sensor for robot movement stopping functionality, and add more tactile switches (14 in total) with more intentionality on placement around robot’s perimeters towards the front and back such that a switch would be pressed in almost any instance it encounters an obstacle.</p>
                             </div>
                         </div>
                     </div>
@@ -168,7 +168,7 @@
                             <div class="card-text">
                                 <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Problems?</h4>
                                 <p class="mbr-content-text mbr-fonts-style display-7">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Towards the end of this last sprint, when we wanted to test the fully integrated system with the filled sanitizer dispenser that was mounted on the chassis, the sanitizer did not dispense. We probed different areas of the dispenser electronics to see where the issue was occurring - the battery attachment, the hand sensor signal power, and the dispenser motor power. The issue was with the latter. We realized that the motor used to dispense sanitizer from the dispenser was not receiving any power from the PCB it was connected to. It was functional earlier on in the project, so a possibility is that it may have burned out. This led us to purchase a replacement sanitizer dispenser. 
                                 </p>
                             </div>
                         </div>
@@ -180,8 +180,7 @@
                             </div>
                             <div class="card-text">
                                 <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Goal for Next Sprint?</h4>
-                                <p class="mbr-content-text mbr-fonts-style display-7">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae cupiditate rerum ipsum tempora vero.</p>
+                                <p class="mbr-content-text mbr-fonts-style display-7">In the vein of achieving a fully cable-less robot, we unplugged the Arduino on the robot from the computer after uploading the code. However when we did so, the Arduino did not receive enough power, so we had to provide it with an extra 12V battery pack to power it. &nbsp;<br></p>
                             </div>
                         </div>
                     </div>
@@ -199,7 +198,7 @@
 
     <div class="container pt-4 mt-2">
         <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2"><strong>Software Progress</strong></h2>
-        
+        <h3 class="mbr-section-subtitle pb-5 align-center mbr-fonts-style display-5">A four-wheeled robot which moved and changed direction upon obstruction contact.</h3>
         <div>
                 <div class="cards-container">
                     <div class="card col-12 col-md-6 col-lg-4 pb-md-4">
@@ -209,8 +208,8 @@
                             </div>
                             <div class="card-text">
                                 <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Accomplishments?</h4>
-                                <p class="mbr-content-text mbr-fonts-style display-7">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae cupiditate rerum ipsum tempora vero.</p>
+                                <p class="mbr-content-text mbr-fonts-style display-7">Sanibot, a four wheeled robot, moved forward until an obstruction was detected. The robot detected an obstruction when a tactile switch was pressed. 
+<br>Once we were able to detect when tactile switches were pressed, we tested our code from sprint 2 to alter the behavior of Sanibot based on the situation it faced. &nbsp;<br>Our new debouncing technique works as follows. We begin by setting a debounce delay constant, in this case, 50 milliseconds. Then, we check if the tactile switch has been pressed. If the reading of the switch has changed since the last reading, reset the debounce timer (measures the time since the switch change was detected). When the debounce timer exceeds the debounce delay constant, if the reading of the switch has not changed since the timer began, we set the last reading variable to this reading. Otherwise, we assume that the reading was caused due to noise and we ignore it.<br></p>
                             </div>
                         </div>
                     </div>
@@ -222,7 +221,7 @@
                             <div class="card-text">
                                 <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Problems?</h4>
                                 <p class="mbr-content-text mbr-fonts-style display-7">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    The key issue in this sprint (and in sprint 2) was that even though each individual case delivered the commands to the robot as expected when we tested one case at a time, when the tactile switches were pressed, the robot did not detect these presses most of the times and instead changed cases in a cyclic fashion to alter the robot behavior. This was occurring because our code relied on one 100 millisecond delay time frame to detect tactile switch presses. This meant that the switch had to be pressed in the exact same timeframe as the delay was occurring in the loop, otherwise the switch press would not be detected. After consulting the professors and course assistants, we approached the switch press detection using a more robust debouncing technique.
                                 </p>
                             </div>
                         </div>
@@ -235,7 +234,7 @@
                             <div class="card-text">
                                 <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Goal for Next Sprint?</h4>
                                 <p class="mbr-content-text mbr-fonts-style display-7">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae cupiditate rerum ipsum tempora vero.</p>
+                                        Our original plan was to implement PID control to the software components because given the top-heavy nature of our design and the strength of our wheel motors, we wanted to use the code to make the robot movement smooth and prevent the robot from toppling. However, as we progressed through our sprints, we realized that our mechanical components were sturdy enough to support our design and our current code was able to provide smooth movement of the robot. Thus, we did not need to implement PID control. </p>
                             </div>
                         </div>
                     </div>

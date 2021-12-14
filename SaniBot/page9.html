@@ -67,7 +67,7 @@
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.info/p">site templates free download</a></section><section class="header1 cid-sRux6f7eHY" id="header16-1v">
+<section class="engine"><a href="https://mobirise.info/q">responsive web templates</a></section><section class="header1 cid-sRux6f7eHY" id="header16-1v">
 
     
 
@@ -145,7 +145,7 @@
 
     <div class="container pt-4 mt-2">
         <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2"><strong>Electrical Progress</strong></h2>
-        
+        <h3 class="mbr-section-subtitle pb-5 align-center mbr-fonts-style display-5">Rebuild breadboard circuit to add more tactile switches, change from a power supply to a 6V battery-powered source for a cable-free robot, and integrate COTS sanitizer dispenser’s hand sensor</h3>
         <div>
                 <div class="cards-container">
                     <div class="card col-12 col-md-6 col-lg-4 pb-md-4">
@@ -155,8 +155,8 @@
                             </div>
                             <div class="card-text">
                                 <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Accomplishments?</h4>
-                                <p class="mbr-content-text mbr-fonts-style display-7">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae cupiditate rerum ipsum tempora vero.</p>
+                                <p class="mbr-content-text mbr-fonts-style display-7">Upon working with course assistants, we realized that the tactile switches were not connected to the 5V power we were supplying. Additionally, we found that the resistor did not have a high enough value so we had to switch from a 1k to a 10k resistor. The last change we made to fix this issue was moving the switches to be in parallel rather than series. 
+<br>We had initially scoped 6V batteries to power the motors. After switching to batteries and running through test cycles, we observed wheel speeds that appeared slower than they were set to. This made us realize that the batteries were draining faster than we initially anticipated. So, for testing purposes, we opted to keep the cable power supply, and near the end of Sprint 3 was likely when we would be switching back to a battery pack.&nbsp;<br></p>
                             </div>
                         </div>
                     </div>
@@ -167,9 +167,7 @@
                             </div>
                             <div class="card-text">
                                 <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Problems?</h4>
-                                <p class="mbr-content-text mbr-fonts-style display-7">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </p>
+                                <p class="mbr-content-text mbr-fonts-style display-7">The key issue in this sprint was that even though each individual case delivered the commands to the robot as expected when we tested one case at a time, when the tactile switches were pressed, the robot did not detect these presses most of the times and instead changed cases in a cyclic fashion to alter the robot behavior. To understand this issue, we had to focus on debugging the circuit for detecting the tactile switches.&nbsp;<br></p>
                             </div>
                         </div>
                     </div>
@@ -180,8 +178,7 @@
                             </div>
                             <div class="card-text">
                                 <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Goal for Next Sprint?</h4>
-                                <p class="mbr-content-text mbr-fonts-style display-7">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae cupiditate rerum ipsum tempora vero.</p>
+                                <p class="mbr-content-text mbr-fonts-style display-7">During another test, we noticed one set of wheels in particular spinning significantly faster than the other three sets. This was because we had a faulty Motor Shield which made one of the motor power ports get more power. <br>Reading raw output values from the sensor in the COTS sanitizer dispenser via Arduino was unfeasible since the COTS part was using a PCB that had very little data provided about it. This meant that we had to pivot from our original idea to using the given method of dispensing. &nbsp;<br></p>
                             </div>
                         </div>
                     </div>
@@ -224,7 +221,7 @@
                             <div class="card-text">
                                 <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Problems?</h4>
                                 <p class="mbr-content-text mbr-fonts-style display-7">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    The key issue in this sprint (and in sprint 3) was that even though each individual case delivered the commands to the robot as expected when we tested one case at a time, when the tactile switches were pressed, the robot did not detect these presses most of the times and instead changed cases in a cyclic fashion to alter the robot behavior. To understand this issue, we had to focus on debugging the circuit for detecting the tactile switches. 
                                 </p>
                             </div>
                         </div>
@@ -237,7 +234,7 @@
                             <div class="card-text">
                                 <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Goal for Next Sprint?</h4>
                                 <p class="mbr-content-text mbr-fonts-style display-7">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae cupiditate rerum ipsum tempora vero.</p>
+                                        The commands for Sanibot were constructed using cases and loops in sprint 2. Each case represented a situation the robot would face and each loop dictated the behavior of the robot. Depending on the case the robot was facing, it would enter a certain loop and perform all the commands given in the loop. The cases were as follows: the robot could hit no obstructions and continue traveling forward or one of the switches in the front or back could be hit leading to a change in direction and movement. We wanted to optimize this in Sprint 3, and fix and circuit issues we had.</p>
                             </div>
                         </div>
                     </div>
