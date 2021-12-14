@@ -1,0 +1,538 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Friend Shaped Machine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<span class="logo"><img src="images/vivian_no_bg.png" alt="A floofy robot", width="200" /></span>
+						<h1>Friend Shaped Machine</h1>
+						<p>Shaped like a friend.<br />
+						<!--built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a>.--></p>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#intro" class="active">Overview</a></li>
+							<li><a href="#mech">Mechanical</a></li>
+							<li><a href="#elec">Electrical</a></li>
+							<li><a href="#firm">Firmware</a></li>
+							<li><a href="#soft">Software</a></li>
+							<li><a href="#process">Design Process</a></li>
+							<li><a href="#budget">Budget</a></li>
+							<li><a href="#about">About Us</a></li>
+							<li><a href="#gallery">Gallery</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>System Overview</h2>
+										</header>
+										<p>Our objective with the Friend Shaped Machine project was to create a robotic friend with a soft and fluffy exterior that follows people and hugs them with soft arms. Our resulting robot, Vivian, uses ArUco tag detection and PID control to follow people wearing tagged ankle bracelets, and provides hugs using motorized cable-driven plush arms.</p>
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/JbAxCXN5VTY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										<!--<ul class="actions">
+											<li><a href="generic.html" class="button">Learn More</a></li>
+										</ul>-->
+									</div>
+									<span class="image"><img src="images/vivian-without-arms-or-exoskeleton.jpg" alt="" /></span>
+								</div>
+								<img src="images/system_diagram.png", width="800">
+								<p>Our robot integrates software, firmware, electrical, and mechanical parts to create its behavior. To be able to follow a person, a Raspberry Pi running computer vision talks to the firmware to inform it of the person’s location. Based on the robot’s mode, the firmware reads different sensors and drives different motors to move the robot forward and power hugging action. Finally, the mechanical drive platform and soft robotic arms create the movement and gentle hugging action.</p>
+							</section>
+
+						<!-- Mechanical -->
+							<section id="mech" class="main special">
+								<header class="major">
+									<h2>Mechanical</h2>
+								</header>
+								<h2>CAD</h2>
+								<p>For this project, we used Fusion 360 for our CAD, because it allowed for easy CAD sharing between the team. Our chassis went through three distinct revisions. We initially started out using the chassis from the line-following robot, while we designed our own chassis. We knew we wanted the robot to be small, and so we opted for a basic circular design with an initial diameter of 24 cm. However, due to the size of our wheels and motors, we had to change to a circle with some protrusions in the back. To keep the mass centered, we put the battery in the back, to try to counter the mass of the arms at the front. We also created 3D printed brackets for the circuit boards and the cameras. </p>
+								<figure>
+									<img src="images/first-custom-chassis.JPG", width="400">
+									<figcaption><em>First custom chassis</em></figcaption>
+								</figure>
+								<p>However, when it came time to add the servos for the arms, we realized that our chassis was a bit too small. We decided that while we could probably compact things more by either stacking the electronics more, or by moving them, the easier solution was to just design the chassis to be slightly larger. So, we switched to a chassis with roughly the same shape, but with a 28 cm diameter. As you can see from the pictures below, the electronics got rotated 90 degrees and the motors got moved slightly farther apart. This made space for the arms.</p>
+								<figure>
+									<img src="images/vivian-v2.JPG", width="400">
+									<img src="images/vivian-v3.JPG", width="400">
+									<figcaption><em>Vivian V2 vs. Vivian V3</em></figcaption>
+								</figure>
+								<p>Other changes in the second version were adding the battery (which is held on with velcro straps), the servos for the arms, and arm mounting slots. We also realized that we needed to make the camera taller so that they could see the leg mounted ArUco Tag, so we increased the camera bracket's height. We also added a depth sensor (which is not in the CAD, because we never made a CAD model of that one sensor). This can all be seen in the rendering below:</p>
+								<img src="images/final-ver.JPG", width="400">
+								<h2>Arms</h2>
+								<p>With our main goal being to hug, many ideas were discussed to accomplish this.  First we thought of using pneumatic soft robotics, because it was an idea that many of us were excited by.  After doing more research we found that the cost and the finicky nature of pneumatics made this not exactly in scope for our project and thought that a cable driven system is the likely better option.</p>
+								<h3>Mechanical Arms</h3>
+								<p>One option we debated early on was arms with a built-in skeleton that would be made of laser cut wood. We ultimately ended up abandoning them because they wouldn’t be as soft as the stuffed arms with cable run down the sides. </p>
+								<img src="images/mech-arms.PNG", width="400">
+								<h3>Soft Arms</h3>
+								<p>After our Sprint 1 review it seemed that the mechanical arms no matter how organic the motion of the mechanical arms were they seemed a little imposing and didn't match the cuddly vibe we were going for. Based on suggestions from the teaching team, we took inspiration from Bern, Kumagai, and Coros' paper <a href="https://par.nsf.gov/servlets/purl/10039433">'Fabrication, Modeling, and Control of Plush Robots'</a> and made cable driven plush actuators. This takes our soft robotics goal from before but simplifies it. We designed and fabricated plush tentacles out of fleece and polyfill then sewed fishing line through in a basic running stitch pattern. By either sewing in a straight line or in different directions different motions can be created ranging from a simple in-out motion to a spiral up and in. These arms had the added bonus of being able to one use one servo and returning to straight natural as the bobbin unwinds. The arms were mounted to a slot with custom washers that compresse a larger area of the plush arms and firmly hold it in place. Grommets were added at different locations at the end of the arms to allow for the arm to be mounted at a variety of angles. Swapping out the spools and arms is also a very simple process allowing for customization and modularity of our little friend.</p>
+								<img src="images/arm-action.jpg", width="300">
+								<h2>Exoskeleton</h2>
+								<p>To protect our electronics, support our consent button, and make our bot more cute, we made a fluffy exoskeleton with velcro straps for easy access to the wiring underneath. A basic plastic bowl that was the same length as our bot was patterned with a faux fur cover with holes cut so as to not block our sensors.</p>
+								<img src="images/vivian-lesscreepy.jpg", width="300">
+
+								<!--<ul class="features">
+									<li>
+										<span class="icon solid major style1 fa-code"></span>
+										<h3>Ipsum consequat</h3>
+										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+									</li>
+									<li>
+										<span class="icon major style3 fa-copy"></span>
+										<h3>Amed sed feugiat</h3>
+										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+									</li>
+									<li>
+										<span class="icon major style5 fa-gem"></span>
+										<h3>Dolor nullam</h3>
+										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+									</li>
+								</ul>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="generic.html" class="button">Learn More</a></li>
+									</ul>
+								</footer>-->
+							</section>
+
+						<!-- Electrical -->
+							<section id="elec" class="main special">
+								<header class="major">
+									<h2>Electrical</h2>
+									<!-- <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
+									posuere. Nulla massa urna, fermentum eget quam aliquet.</p> -->
+								</header>
+								<!-- <ul class="statistics">
+									<li class="style1">
+										<span class="icon solid fa-code-branch"></span>
+										<strong>5,120</strong> Etiam
+									</li>
+									<li class="style2">
+										<span class="icon fa-folder-open"></span>
+										<strong>8,192</strong> Magna
+									</li>
+									<li class="style3">
+										<span class="icon solid fa-signal"></span>
+										<strong>2,048</strong> Tempus
+									</li>
+									<li class="style4">
+										<span class="icon solid fa-laptop"></span>
+										<strong>4,096</strong> Aliquam
+									</li>
+									<li class="style5">
+										<span class="icon fa-gem"></span>
+										<strong>1,024</strong> Nullam
+									</li>
+								</ul> -->
+								<img src="images/Circuit_diagram.png", width="800">
+								<p>Our design incorporates multiple sensors and sets of motors to create the robotic platform.</p>
+
+								<p>We drive the robot using two DC brushless motors for differential drive. However, we cannot control them directly with the Arduino because they require too much power and require back voltage protection. Therefore, we use an Arduino motor shield which we can interface over I2C using an Adafruit library to control the motor power and direction.</p>
+									
+								<p>Each of our motors has a rotary encoder which consists of two hall effect sensors and a rotating magnetic disc. The phase of the two hall effect sensor outputs are offset such that the value of B (see diagram) is positive on the rising edge of A when the motor is rotating clockwise, and negative when counterclockwise, meaning that we can detect both rotation amount and the direction. We connect one hall effect sensor on each motor to the hardware interrupt pins of our Arduino Uno, which allows the arduino to accurately count the number of rotations at fast speeds.</p>
+									</p>
+
+								<img src="images/quadrature.PNG">
+
+								<p>To sense whether the bot has reached its destination, we used an infrared distance sensor which acts as a voltage divider, increasing the voltage on the signal wire when an object gets closer.
+
+								<p>We also used two 360 degree servos to power the arms. These are wired directly to the arduino for power and signal, and the servos are controlled using PWM with a servo library.</p>
+									
+								<p>To power our robot, we used a 7.4V 2000mAh Lithium Polymer battery which can supply a maximum of 296 Watts. We measured our power consumption to be 10W for each of the two motors at maximum load, approximately 300 mW for the arduino and sensors, and about 5 Watts for each of the two servos. This comes to a potential maximum power draw of about 30 Watts which gives us plenty of overhead in our battery's power budget.</p>
+									
+								</p>
+
+								<img src="images/Battery.jpg", width="300">
+
+								<footer class="major">
+									<!--<ul class="actions special">
+										<li><a href="generic.html" class="button">Learn More</a></li>
+									</ul>-->
+								</footer>
+							</section>
+
+						<!-- Firmware -->
+						<section id="firm" class="main special">
+							<header class="major">
+								<h2>Firmware</h2>
+								<!-- <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
+								posuere. Nulla massa urna, fermentum eget quam aliquet.</p> -->
+							</header>
+							<img src="images/state-diagram.PNG", width="800"> 
+							<p class="content">
+							<h2>Searching</h2>
+							<p>In “Searching” mode, the robot waits until it detects an ArUco tag coming into view, and then switches to “Follow” mode. The arduino determines this when an angle command is sent over serial from the Raspberry Pi computer vision code.</p>
+							
+							<h2>Follow</h2>
+							<p>When the robot is in “Follow” mode, we use PID control to drive the robot to the person it is following. Using the rotary encoders, we calculate the current angle of the robot with differential drive mechanics. We determine the decoder values by counting how many times the encoder has rotated using hardware-interrupt-triggered functions which increment and decrement variables based on the direction the motor is going.
+								Once we receive an angle over Serial from the Raspberry Pi, we calculate a setpoint angle for the PID controller, in which the robot increases or decreases each motor speed to adjust its angle towards the person it is following.
+								If the robot is in “Follow” mode but an angle has not recently been received, the robot will switch back into “Searching” mode, as it has lost track of the tag.
+								If the robot is at the right distance from the tag (determined by the reading from the IR distance sensor), the robot switches into “ConsentWait” mode.</p>
+							
+							<h2>ConsentWait</h2>
+							<p>In “ConsentWait” mode, the robot will sit still and wait until either the button is pressed or the 3-second timer has expired. Once the button is pressed, the robot switches into “Hug” mode, but if the timer expires, it switches back to “Searching” mode.</p>
+							
+							<h2>Hug</h2>
+							<p>The “Hug” state writes commands to the servos to curl the arms in, hold them closed, then open them again and switch back to “Searching” mode.</p>
+
+							<h2>Serial Communication</h2>
+							<p>We created a serial parser based off of Brad Minch's Arduino serial code. Our serial parser first reads and stores all of the ascii text in the command buffer and then checks the first two characters for a command. It then looks in the remaining characters for numbers following the command, performing an operation based on the command. For example, sending “AG20” over serial to the arduino would result in the PID controller using twenty degrees as a new setpoint - this is the way that the computer vision code running on the Raspberry Pi communicates with the firmware.</p>
+
+							<p><strong>Firmware Dependencies:</strong>
+								<ul>
+								<li>Adafruit_Motorshield.h: The motor controller library</li>
+								<li>Servo.h: A servo library</li>
+								</ul>
+							</p>
+							
+							</p>
+							<footer class="major">
+								<p>Our firmware is contained in <a href="https://github.com/BenjiPugh/PIE-Friendly-Robot">our GitHub repo</a> in the file "main.ino".</p>
+								<!--<ul class="actions special">
+									<li><a href="generic.html" class="button primary">Get Started</a></li>
+									<li><a href="generic.html" class="button">Learn More</a></li>
+								</ul>-->
+							</footer>
+						</section>
+
+						<!-- Software -->
+							<section id="soft" class="main special">
+								<header class="major">
+									<h2>Software</h2>
+									<!-- <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
+									posuere. Nulla massa urna, fermentum eget quam aliquet.</p> -->
+								</header>
+								<h2>ArUco Tag Detection</h2>
+								<img src="images/aruco-tag.jpg", width="300">
+								<p>
+									To determine where a person is, we use OpenCV to detect an ArUco tag strapped to the person. For this, we used the ArUco library which allows us to determine the pixel position on the video stream. We can then use trigonometry to determine the angle of the person relative to the camera:
+								</p>
+								<img src="images/angle-calc.PNG">
+									
+								<p>	<a href="https://youtu.be/HsipPBIvDNo">Link to tag detection demo video!</a><br /></p>
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/HsipPBIvDNo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									
+									<p>We run the Computer Vision code on a Raspberry Pi 3 B+, which allows us to run the robot untethered. However, the performance limitations of this Single Board Computer make fast, real time computer vision difficult. Initially our plan for person detection was using a pre-trained neural network called YOLO-v3. However, this was extremely slow to run on even a full laptop, so instead we pivoted to ArUco tags.<br /></p>
+									
+									<a href="https://www.youtube.com/watch?v=Z1XtGztZZYs">Link to YOLO-v3 person detection demo video!</a><br />
+									
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/Z1XtGztZZYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									<p>We further made performance enhancements by using the multithreading video library ImUtils, which allows the video stream to run in parallel to the detection, resulting in faster detection and lower latency. Our final performance enhancement was to convert the video to grayscale because ArUco tag detection does not depend on color channels, so less processing is required if the video only has one channel.</p>
+									
+									<p>To interface with the firmware running on the arduino, we created a helper serial class based off of Brad Minch's python serial code to be able to easily send angle commands over serial.</p>
+																		
+								</p>
+								<p><strong>Software Dependencies:</strong>
+									<ul>
+									<li>OpenCV (Specifically opencv-contrib-python)</li>
+									<li>Numpy</li>
+									<li>Scipy</li>
+									<li>ImUtils</li>
+									<li>PySerial</li>
+									</ul>
+								</p>
+
+								<footer class="major">
+									<!--<ul class="actions special">
+										<li><a href="generic.html" class="button primary">Get Started</a></li>
+										<li><a href="generic.html" class="button">Learn More</a></li>
+									</ul>-->
+									<p>Our software is contained in <a href="https://github.com/BenjiPugh/PIE-Friendly-Robot">our GitHub repo</a> in the files “tag-locator.py” and “Serial_cmd.py”.</p>
+								</footer>
+							</section>
+
+						<!-- Design Process -->
+						<section id="process" class="main special">
+							<header class="major">
+								<h2>Design Process</h2>
+								<!-- <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
+								posuere. Nulla massa urna, fermentum eget quam aliquet.</p> -->
+							</header>
+							<p>Our project shifted and began to take form over the course of the three design sprints.</p>
+							<h2>Sprint 1</h2>
+							<p>Our goal was to simply get a robotic platform up and running while working on designs for arms, drive platform, and computer vision. Therefore, we used an existing differential drive platform for the bot and simultaneously developed mechanical arms and Computer Vision code. At this point in time we had stretch goals of using inflatable soft robotics and stereo-vision terrain mapping.</p>
+							<h2>Sprint 2</h2>
+							<p>Our goal was to create our own working drive platform while refining the arms and computer vision. We created a new drive platform and mounted motors with rotary encoders for the bot’s movement. We iterated on arm design to create both rigid and soft arms, experimenting with materials and ways to make the arms curl. On software, we began using the Raspberry Pi to run the computer vision directly on the bot.</p>
+							<img src="images/topdown_sprint2_bot.jpg", width="300">
+							<h2>Sprint 3</h2>
+							<p>Our goal was to have a fully integrated bot with arms mounted and person-following working. We made the drive platform larger to accommodate the arms while fixing bugs in firmware. We converged on plush arms because they return to their original shape and interact friendlier with humans. We finally got person-following working using ArUco tags, and developed behavior modes for the bot.</p>
+							<img src="images/sprint3_bot_topdown.jpg", width="300">
+							
+
+							<footer class="major">
+								<!--<ul class="actions special">
+									<li><a href="generic.html" class="button primary">Get Started</a></li>
+									<li><a href="generic.html" class="button">Learn More</a></li>
+								</ul>-->
+							</footer>
+						</section>
+
+						<!-- Budget -->
+						<section id="budget" class="main special">
+							<header class="major">
+								<h2>Budget</h2>
+								<!-- <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
+								posuere. Nulla massa urna, fermentum eget quam aliquet.</p> -->
+							</header>
+							<p class="content">
+								<table>
+									<tr>
+										<td><strong>Item</strong></td>
+										<td><strong>Quantity</strong></td>
+										<td><strong>Price per unit</strong></td>
+										<td><strong>Total Price</strong></td>
+									</tr>
+									<tr>
+										<td>720p USB Camera Module with 120degree Lens</td>
+										<td>2</td>
+										<td>$31.99</td>
+										<td>$63.98</td>
+									</tr>
+									<tr>
+										<td>360 Degree Continuous Servos (2 pcs) </td>
+										<td>2</td>
+										<td>$14.97</td>
+										<td>$29.94</td>
+									</tr>
+									<tr>
+										<td>Geared DC Motor with Encoder</td>
+										<td>2</td>
+										<td>$13.50</td>
+										<td>$27.00</td>
+									</tr>
+									<tr>
+										<td>2000mAh 7.4V LiPo Battery</td>
+										<td>1</td>
+										<td>$21.99</td>
+										<td>$21.99</td>
+									</tr>
+									<tr>
+										<td>Arcade LED Lights Push Button (5 pcs)</td>
+										<td>1</td>
+										<td>$11.99</td>
+										<td>$11.99</td>
+									</tr>
+									<tr>
+										<td>0.45mm Fishing Line - 656ft spool</td>
+										<td>1</td>
+										<td>$7.59</td>
+										<td>$7.59</td>
+									</tr>
+									<tr>
+										<td>Orange and Clear TT Motor Wheel for TT DC Gearbox Motor</td>
+										<td>2</td>
+										<td>$1.50</td>
+										<td>$3.00</td>
+									</tr>
+									<tr>
+										<td>Supporting Swivel Caster Wheel - 1.3" Diameter</td>
+										<td>1</td>
+										<td>$1.95</td>
+										<td>$1.95</td>
+									</tr>
+									<tr>
+										<td>Plastic Bowl</td>
+										<td>1</td>
+										<td>$1.00</td>
+										<td>$1.00</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td><strong>Total</strong></td>
+										<td><strong>$168.44</strong></td>
+									</tr>
+								</table>						  
+							</p>
+							<p>We also sourced a few materials for the project from around campus or members of our team, so we did not need to purchase them. Below is a rough estimate of what these items would have cost.</p>
+							<table>
+								<tr>
+									<td>Raspberry Pi 3B+</td>
+									<td>1</td>
+									<td>$35.00</td>
+								</tr>
+								<tr>
+									<td>Arduino Uno</td>
+									<td>1</td>
+									<td>$22.76</td>
+								</tr>
+								<tr>
+									<td>Arduino Motor Shield</td>
+									<td>1</td>
+									<td>$19.95</td>
+								</tr>
+								<tr>
+									<td>Sharp IR Sensor</td>
+									<td>1</td>
+									<td>$14.95</td>
+								</tr>
+								<tr>
+									<td>Clear Acrylic</td>
+									<td>12"x24"</td>
+									<td>$10.97</td>
+								</tr>
+								<tr>
+									<td>Fleece and Faux Fur</td>
+									<td>12"x24"</td>
+									<td>$9.00</td>
+								</tr>
+								<tr>
+									<td>PLA</td>
+									<td>0.125 kg</td>
+									<td>$4.00</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td><strong>Total</strong></td>
+									<td><strong>$116.63</strong></td>
+								</tr>
+							</table>
+							<footer class="major">
+								<!--<ul class="actions special">
+									<li><a href="generic.html" class="button primary">Get Started</a></li>
+									<li><a href="generic.html" class="button">Learn More</a></li>
+								</ul>-->
+							</footer>
+						</section>
+
+						<!-- About Us -->
+						<section id="about" class="main special">
+							<header class="major">
+								<h2>About Us</h2>
+								<!-- <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
+								posuere. Nulla massa urna, fermentum eget quam aliquet.</p> -->
+							</header>
+							<img src="images/vivian-group-photo.jpg", width="600">
+							<p class="content">
+								<figure>
+									<img src="images/benji.jpg", width="400">
+									<figcaption><strong>Benji: </strong>Electrical and Computer Engineer, Class of 2024, likes jazz.</figcaption>
+								</figure>
+								<figure>
+									<img src="images/chris-s.jpg", width="400">
+									<figcaption><strong>Chris S: </strong>Mechanical Engineer, Class of 2024, likes (sarcastic) sentient robots.</figcaption>
+								</figure>
+								<figure>
+									<img src="images/chris-b.jpg", width="400">
+									<figcaption><strong>Chris B: </strong>Mechanical Engineer, Class of 2024, likes soft things.</figcaption>
+								</figure>
+								<figure>
+									<img src="images/maya.jpg", width="400">
+									<figcaption><strong>Maya: </strong>Robotics Engineer, Class of 2023, likes the color purple.</figcaption>
+								</figure>
+								<figure>
+									<img src="images/clark.jpg", width="400">
+									<figcaption><strong>Clark: </strong>Software and Firmware Engineer, Class of 2023, likes textures and shapes. Has a dance mode.</figcaption>
+								</figure>
+							</p>
+							<footer class="major">
+								<!--<ul class="actions special">
+									<li><a href="generic.html" class="button primary">Get Started</a></li>
+									<li><a href="generic.html" class="button">Learn More</a></li>
+								</ul>-->
+							</footer>
+						</section>
+
+						<!-- Gallery -->
+						<section id="gallery" class="main special">
+							<header class="major">
+								<h2>Gallery</h2>
+								<!-- <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
+								posuere. Nulla massa urna, fermentum eget quam aliquet.</p> -->
+							</header>
+							<p class="content">
+								<figure>
+								<img src="images/moodboard.PNG", width="400">
+								<figcaption>Initial ideas for the appearance (some more serious than others)</figcaption>
+								</figure>
+								<figure>
+									<img src="images/cams-and-distance-sensor.jpg", width="400">
+									<figcaption>Mounted cameras and distance sensor</figcaption>
+								</figure>
+								<figure>
+									<img src="images/rotary-encoder.jpg", width="400">
+									<figcaption>Rotary encoder</figcaption>
+								</figure>
+								<figure>
+									<img src="images/vivian-without-exoskeleton.jpg", width="400">
+									<figcaption>Vivian without exoskeleton</figcaption>
+								</figure>
+							</p>
+							<footer class="major">
+								<!--<ul class="actions special">
+									<li><a href="generic.html" class="button primary">Get Started</a></li>
+									<li><a href="generic.html" class="button">Learn More</a></li>
+								</ul>-->
+							</footer>
+						</section>
+					
+						
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<!--<section>
+							<h2>Aliquam sed mauris</h2>
+							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
+							<ul class="actions">
+								<li><a href="generic.html" class="button">Learn More</a></li>
+							</ul>
+						</section>
+						<section>
+							<h2>Etiam feugiat</h2>
+							<dl class="alt">
+								<dt>Address</dt>
+								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+								<dt>Phone</dt>
+								<dd>(000) 000-0000 x 0000</dd>
+								<dt>Email</dt>
+								<dd><a href="#">information@untitled.tld</a></dd>
+							</dl>
+							<ul class="icons">
+								<li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+							</ul>
+						</section>
+						<p class="copyright">&copy; Untitled.--> 
+						<p>Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
