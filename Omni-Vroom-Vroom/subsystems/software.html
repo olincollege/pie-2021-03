@@ -70,47 +70,55 @@
 							<div class="col-8 col-12-mobile imp-mobile" id="content">
 								<article id="main">
 									<header>
-										<h2><a href="#">Left Sidebar</a></h2>
+										<h2><a href="#">Software System</a></h2>
 										<p>
-											Morbi convallis lectus malesuada sed fermentum dolore amet
+											“We typed into the computer to tell the arduino what to do. The arduino then told the rest of our robot 
+											what to do with some cool different colored wires and tiny squares. After typing for several hours our 
+											robot seemed to work.” -Neel D
 										</p>
 									</header>
-									<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-									<p>
-										Commodo id natoque malesuada sollicitudin elit suscipit. Curae suspendisse mauris posuere accumsan massa
-										posuere lacus convallis tellus interdum. Amet nullam fringilla nibh nulla convallis ut venenatis purus
-										lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum
-										consequat integer interdum integer purus sapien. Nibh eleifend nulla nascetur pharetra commodo mi augue
-										interdum tellus. Ornare cursus augue feugiat sodales velit lorem. Semper elementum ullamcorper lacinia
-										natoque aenean scelerisque vel lacinia mollis quam sodales congue.
-									</p>
 									<section>
 										<header>
-											<h3>Ultrices tempor sagittis nisl</h3>
+											<h3>WebService</h3>
 										</header>
 										<p>
-											Nascetur volutpat nibh ullamcorper vivamus at purus. Cursus ultrices porttitor sollicitudin imperdiet
-											at pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-											feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-											fringilla consequat dis arcu. Pellentesque mus tempor vitae pretium sodales porttitor lacus. Phasellus
-											egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
+											Using an ESP32 we are able to connect to WiFi, once given the WiFi name and password the code will return 
+											an IP. This is the IP that the user will use to control the ROV-R by plugging in the IP to their browser. 
+											The website, which is written in html, will react to user input by highlighting the movement they are attempting 
+											to do. Since a user can theoretically use both the W key to go forward and the left arrow key to spin left 
+											at the same time to turn left, we will condense that combination into a single character representation. 
+											Overall all the moves are processed into a single character and sent to the Arduino over Serial. 
 										</p>
+										<a href="#" class="image featured"><img src="../images/WebService.png" alt="" /></a>
+									</section>
+									
+									<section>
+										<header>
+											<h3>Wheel Motor Control</h3>
+										</header>
 										<p>
-											Eleifend auctor turpis magnis sed porta nisl pretium. Aenean suspendisse nulla eget sed etiam parturient
-											orci cursus nibh. Quisque eu nec neque felis laoreet diam morbi egestas. Dignissim cras rutrum consectetur
-											ut penatibus fermentum nibh erat malesuada varius.
+											Once the user input is processed by our webservice, a single character is sent to our arduino over serial. We 
+											choose to do a single character mostly due to wanting to use a switch case that only takes either an integer 
+											or a character. This character is then used to call a specific method that controls wheel movement. For example, 
+											if the Arduino were to receive a letter through serial, we will check which letter it is. If the letter was 
+											“W” a method called goForward will be called, if it is “A” we will call goLeft. All of these methods were made 
+											by us, each method will tell each wheel motor which way to turn and how fast. Since we have omnidirectional 
+											wheels there was a multitude of combinations to make. With every iteration adding more and more motions. 
 										</p>
 									</section>
 									<section>
 										<header>
-											<h3>Augue euismod feugiat tempus</h3>
+											<h3>Servo Motor Control</h3>
 										</header>
 										<p>
-											Pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-											feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-											ut nunc urna volutpat donec cubilia commodo risus morbi. Lobortis vestibulum velit malesuada ante
-											egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
+											In addition to controlling all the driving motors. It also controls the servo used for the firing system to 
+											push marbles forward through the firing system and reloads the system in one motion. 
 										</p>
+									</section>
+									<section>
+										<header>
+											<h3><a href="https://github.com/ndhulipala1/rovr-pie-project">LINK TO GITHUB REPO</a></h3>
+										</header>
 									</section>
 								</article>
 							</div>
