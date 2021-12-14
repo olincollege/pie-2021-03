@@ -51,7 +51,7 @@ Demos of both lightsabers can be found below:
 
 ## Meet the Team
 
-<h4 align="center">Abby Omer</h1>
+<h4 align="center">Abby Omer</h4>
 
 <p align="center">
   <img style="float:Left" src="./Photos!/About/abby_head.jpg" alt="Abby Omer"  width="150">
@@ -68,7 +68,7 @@ Demos of both lightsabers can be found below:
 <br>
 
 
-<h4 align="center">Jacob Uy</h1>
+<h4 align="center"> Jacob Uy </h4> 
 
 <p align="center">
   <img style="float:Left" src="./Photos!/About/jacob_head.jpg" alt="Jacob Uy"  width="150">
@@ -85,7 +85,7 @@ Demos of both lightsabers can be found below:
 
 
 
-<h4 align="center">Laurel Rodriguez Mitton</h1>
+<h4 align="center">Laurel Rodriguez Mitton</h4>
 
 <p align="center">
   <img style="float:Left" src="./Photos!/About/laurel_head.jpg" alt="Laurel Rodriguez Mitton"  width="150">
@@ -103,7 +103,7 @@ Demos of both lightsabers can be found below:
 
 
 
-<h4 align="center">Nabih Estefan</h1>
+<h4 align="center">Nabih Estefan</h4>
 
 <p align="center">
   <img style="float:Left" src="./Photos!/About/nabih_head.jpg" alt="Nabih Estefan" width="150">
@@ -120,7 +120,7 @@ Demos of both lightsabers can be found below:
 <br>
 
 
-<h4 align="center">Oscar G. De La Garza </h1>
+<h4 align="center">Oscar G. De La Garza </h4>
 
 <p align="center">
   <img style="float:Left" src="./Photos!/About/Oscar_head.jpg" alt="Oscar G. De La Garza"  width="150">
