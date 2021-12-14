@@ -1,5 +1,5 @@
  .u-section-1 {
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('images/fcb14a161aa9547b4673c26e4bc92cdd.jpeg');
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("images/IMG_8019.jpg");
   background-position: 50% 50%;
 }
 
@@ -226,7 +226,11 @@
     width: 340px;
     height: 230px;
   }
-}.u-section-3 .u-sheet-1 {
+} .u-section-3 {
+  background-image: none;
+}
+
+.u-section-3 .u-sheet-1 {
   min-height: 524px;
 }
 
