@@ -35244,16 +35244,20 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-footer .u-sheet-1 {
-  min-height: 120px;
+  min-height: 186px;
 }
 
 .u-footer .u-text-1 {
-  width: 417px;
+  width: 523px;
   margin: 49px auto;
 }
 @media (max-width: 1199px) {
   .u-footer .u-sheet-1 {
     min-height: 99px;
+  }
+
+  .u-footer .u-text-1 {
+    width: 523px;
   }
 }
 @media (max-width: 991px) {
