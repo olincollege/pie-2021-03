@@ -76,11 +76,11 @@
 								When lowered, the stirring motor will run and stir the drink. When completed, the servo will raise back to its original position and conclude the program.
 							</p>
 							<h3>The Team</h3>
-							<span class="iconimage"><img src="images/ivonne_portrait.png" alt=""/></span>
-							<span class="iconimage"><img src="images/dan-2.png" alt=""/></span>
-							<span class="iconimage"><img src="images/charlotte_portrait.PNG" alt=""/></span>
-							 <span class="iconimage"><img src="images/moises_portrait.png" alt=""/></span>
-							 <span class="iconimage"><img src="images/merwan_portrait.PNG" alt=""/></span>
+							<span class="iconimage"><img src="images/ivonne_portrait.png" alt="Ivonne Munoz portrait"/></span>
+							<span class="iconimage"><img src="images/dan-2.png" alt="Dan Park portrait"/></span>
+							<span class="iconimage"><img src="images/charlotte_portrait.PNG" alt="Charlotte Ramiro portrait"/></span>
+							 <span class="iconimage"><img src="images/moises_portrait.png" alt="Moises portrait"/></span>
+							 <span class="iconimage"><img src="images/merwan_portrait.PNG" alt="Merwan portrait"/></span>
 							<span class="paragraph"> This project was made possible by the BaristaBot PIE Team: Ivonne Munoz, Daniel Park, Charlotte Ramiro, Moises Sabido Garcia, and Merwan Yeditha.</span>
 						</article>
 
@@ -93,7 +93,7 @@
 									<br>
 									<br>
 									For access to our CAD files, visit 
-									<a href="https://workbench.grabcad.com/workbench/myprojects#/account/1952748/projects" target="_blank" >the GrabCad Page</a>
+									<a href="https://workbench.grabcad.com/workbench/myprojects#/account/1952748/projects" target="_blank" >our GrabCAD Page</a>
 									or request access to the project to msabidogarcia@olin.edu
 								</p>
 								<h3>Housing</h3>
@@ -208,9 +208,18 @@
 								<p>The Electrical System is composed of multiple modules defined by the Arduinos that drives the coffee machine 
 									from water heating, coffee bean grinding, ingredient dispensing, and cup stirring.</p>		
 								<h3>A. Water Heating</h3>
+								
+								<p>
+									The water heating system uses a thermistor to detect the temperature of the water as well as an induction heating coil to heat
+									up the water while it is below 90 degrees Celsius. Since the heating coil is rated with 15 Amps of current, we also used a relay
+									and NMOS circuit in order to limit the current and be able to safely control the heating from the lower-current Arduino. The
+									thermistor resistance lowers as the water heats, so we have programmed it such that the Arduino will send a high signal to the
+									heating coil module until the thermistor's value goes below 80. Once it hits 80, the loop will end, the heating coil will turn off,
+									and the program will continue to the next steps in brewing the coffee (such as grinding the beans and dispensing the water).
+								</p>
 								<br>
 								<h3>B. Water Dispensing</h3>
-								<p>Water dispensing is controlled by a 12-Volt Solenoid. The valve screws into the bottom of the water bottle and
+								<p>Water dispensing is controlled by a 12 Volt Solenoid. The valve screws into the bottom of the water bottle and
 								when a high voltage is pushed to the solenoid the valve, the valve opens and allows for water to flow through. 
 								In order to control the 12-Volt Solenoid, we utilized an NMOS transistor. The NMOS transisor's gate is connected 
 								to an Arduino with a 10k Resistor running to ground in parallel. The source is connected to the ground of the 
@@ -220,7 +229,7 @@
 								<br>
 								<h3>C. Ingredient Dispensing</h3>
 								<p>The powdered milk and sugar ingredients are dispensed using containers and a dispensing mechanism controlled by a servo.
-									When the ingredient needs to be dispensed, the servo rotates, dropping in some sugar and milk into the cup.
+									When the ingredient needs to be dispensed, the servo rotates, dropping in some sugar and creamer into the cup.
 								</p>
 								<h3>D. Cup Rotating</h3>
 								<span class="image main"><img src="images/rotating.jpg" alt="" /></span>

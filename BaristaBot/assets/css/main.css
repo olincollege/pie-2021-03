@@ -720,13 +720,13 @@ input, select, textarea {
 /*Meet the Team*/
 	.iconimage {
 		text-align: left;
-		font-size:12px;
+		font-size:11px;
 	}
 		.iconimage img{
 		float:left;
 		text-align:left;
 		padding:5px;
-		max-width:20%;
+		max-width:19%;
 		margin-left: auto;
 		margin-right: auto;
 	}
