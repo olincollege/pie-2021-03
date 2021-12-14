@@ -4,6 +4,12 @@ title: Systems
 permalink: 
 ---
 
+[Home](./index.html)
+
+[Sprints](./sprints.html)
+
+[Budget](./index.html)
+
 While the electrical and software systems remain the same for both blades, the mechanical systems differ. The system diagrams along with the final lightsabers are shown below. 
 
 [Mechanical](#mechanical-subsystem) 

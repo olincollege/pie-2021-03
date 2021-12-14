@@ -6,6 +6,12 @@ permalink:
 
 <a name="top"></a>
 
+[Home](./index.html)
+
+[Systems](./systems.html)
+
+[Budget](./index.html)
+
 This project was divided into three sprints of two weeks in class each.
 
 [Sprint 1](#sprint-1)

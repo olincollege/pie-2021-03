@@ -3,6 +3,14 @@ layout: page
 title: Budget
 permalink: 
 ---
+
+[Home](./index.html)
+
+[Systems](./systems.html)
+
+[Sprints](./sprints.html)
+
+
 | Item      | Quantity | Cost per Unit | Total |
 | --------- | ---------- | ---------- | ---------- |
 | [Adafruit Propmaker Set](https://www.adafruit.com/product/4860) | 2 | $54.95 | $109.90 |
