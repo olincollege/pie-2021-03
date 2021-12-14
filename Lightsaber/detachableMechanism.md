@@ -1,18 +1,18 @@
 ---
 layout: page
 title: Detachable Mechanism
-permalink: 
+permalink:
 ---
 
 <a name="top"></a>
 
-The detaching mechanism for the detachable blade went through several iterations to get to the final version. Versions 1-2 were products of the second sprint and versions 3-7 were products of the third sprint. 
+The detaching mechanism for the detachable blade went through several iterations to get to the final version. Versions 1-2 were products of the second sprint and versions 3-7 were products of the third sprint.
 
 [Back to Sprint 2](./sprints.html#sprint-2-mech)
 
 [Back to Sprint 3](./sprints.html#sprint-3-mech)
 
-<iframe width="560" height="315" src="https://youtu.be/tNJzzJCSO8g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tNJzzJCSO8g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### Initial Design
 
@@ -32,7 +32,7 @@ We began by creating a proof of concept with a small blade and placeholder to fo
 
 #### Version 2
 
-For our next iteration of the detachable mechanism we increased the size of the blade tubing and added a wire channel to the plug holder. 
+For our next iteration of the detachable mechanism we increased the size of the blade tubing and added a wire channel to the plug holder.
 
 <p align="center">
   <img src="./Photos!/sprint2detachablev2.jpg" alt="Sprint 2 Detaching Mechanism Version 2">
@@ -42,7 +42,7 @@ For our next iteration of the detachable mechanism we increased the size of the 
 
 #### Version 3
 
-For version 3, we tested using the socket instead of the plug on the blade side adn added space for the connector on the hilt side. 
+For version 3, we tested using the socket instead of the plug on the blade side adn added space for the connector on the hilt side.
 
 <p align="center">
   <img src="./Photos!/sprint3detachablev3.jpg" alt="Sprint 3 Detaching Mechanism Version 3">

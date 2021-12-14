@@ -47,11 +47,11 @@ Demos of both lightsabers can be found below:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RMrMl14pZ-I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ##### Extendable
-<iframe width="560" height="315" src="https://youtu.be/GjQWpX-BY98" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lac2HNVDAbc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Meet the Team
 
-#### Abby Omer
+<h4 align="center">Abby Omer</h1>
 
 <p align="center">
   <img style="float:Left" src="./Photos!/About/abby_head.jpg" alt="Abby Omer"  width="150">
@@ -60,7 +60,7 @@ Demos of both lightsabers can be found below:
   <br>
   <br>
   <br>
-  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. -->
+  Abby is an electrical and computer engineer (although that might switch computing) form the class of 2024. Her love of Star Wars started at a young age and is thrilled to have been part of making a replica lightsaber.
 </p>
 <br>
 <br>
@@ -68,7 +68,7 @@ Demos of both lightsabers can be found below:
 <br>
 
 
-#### Jacob Uy
+<h4 align="center">Jacob Uy</h1>
 
 <p align="center">
   <img style="float:Left" src="./Photos!/About/jacob_head.jpg" alt="Jacob Uy"  width="150">
@@ -77,7 +77,7 @@ Demos of both lightsabers can be found below:
   <br>
   <br>
   <br>
-  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. -->
+  Jacob is a design engineer from the class of 2024. He likes to make things work and make them look nice. Engineering things from movies, TV shows and video games is his favorite pastime. Never tell him the odds.
 </p>
 <br>
 <br>
@@ -85,7 +85,7 @@ Demos of both lightsabers can be found below:
 
 
 
-#### Laurel Rodriguez Mitton
+<h4 align="center">Laurel Rodriguez Mitton</h1>
 
 <p align="center">
   <img style="float:Left" src="./Photos!/About/laurel_head.jpg" alt="Laurel Rodriguez Mitton"  width="150">
@@ -94,7 +94,7 @@ Demos of both lightsabers can be found below:
   <br>
   <br>
   <br>
-  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. -->
+  Laurel is a (mostly) mechanical engineer in the Class of 2023. She made it all the way to last year having only seen Episodes 4, 7, 8, and 9, but has since been educated with the rest of Star Wars’ cinematic history. She’s slowly coming to terms with the fact that sometimes, in engineering, the garbage will do.
 </p>
 <br>
 <br>
@@ -103,7 +103,7 @@ Demos of both lightsabers can be found below:
 
 
 
-#### Nabih Estefan
+<h4 align="center">Nabih Estefan</h1>
 
 <p align="center">
   <img style="float:Left" src="./Photos!/About/nabih_head.jpg" alt="Nabih Estefan" width="150">
@@ -112,7 +112,7 @@ Demos of both lightsabers can be found below:
   <br>
   <br>
   <br>
-  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. -->
+  Nabih is an Electrical and Computer Engineer of the Class of 2023. He has been obsessed with Star Wars since before he can remember and somehow convinced his teammates to make a lightsaber. Be learned how to CAD just for this.
 </p>
 <br>
 <br>
@@ -120,7 +120,7 @@ Demos of both lightsabers can be found below:
 <br>
 
 
-#### Oscar G. De La Garza
+<h4 align="center">Oscar G. De La Garza </h1>
 
 <p align="center">
   <img style="float:Left" src="./Photos!/About/Oscar_head.jpg" alt="Oscar G. De La Garza"  width="150">
@@ -129,7 +129,7 @@ Demos of both lightsabers can be found below:
   <br>
   <br>
   <br>
-  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. -->
+  Oscar is a Computing Engineer of the Class of 2023. He has always loved Star Wars since he was a kid and played with his own toy lightsabers growing up. Getting to work on replica lightsabers of our own has been a blast!
 </p>
 <br>
 <br>
