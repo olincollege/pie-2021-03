@@ -28,31 +28,29 @@ our electronics, including a speaker, controller, and enough batteries to power
 the saber. The blade was expected to be sturdy enough to be swung around as if
 dueling. Our second blade we expected to be an extendable blade controlled by a
 button on the hilt. Other goals we decided on but were not detrimental to success
-were including a modular hilt, making the lightsaber properly balanced, and
+were including a modular hilt, making the Lightsaber properly balanced, and
 possibly adding a crystal reveal in the hilt.
 
 On the electrical/software side we expected for both Lightsabers to possess
 visual and sound effects. As well as do there respective launch and shutdown
 procedures. For effects we wanted to have multiple characters be available to
-the user via a button which would change the saber's color and play a theme song. In idle the lightsaber also emulates hits and swinging noises via the speaker.
+the user via a button which would change the saber's color and play a theme song. In idle the Lightsaber also emulates hits and swinging noises via the speaker.
 
 For this project we hope that we are able to get as close to a traditional replica saber as possible. Our main inspiration coming from the Disney Imagineers most recent [Lightsaber](https://youtu.be/ggWBEj8ppgM)
 
 
 ## Final Deliverable
 
-In the end we were able to deliver on our project goals and create both lightsabers. We do accept there are room for improvements that we would like to continue to improve on in the future:
+In the end we were able to deliver on our project goals and create both Lightsabers. We do accept there are room for improvements that we would like to continue to improve on in the future:
   - Create a smaller more accurate hilt for the extendable version
-  - Add an outer blade encasing to the extendable lightsaber
-  - Creat our Hilts for both out of properly machine metals instead of 3D printed material
+  - Add an outer blade encasing to the extendable Lightsaber
+  - Create                      our Hilts for both out of properly machine metals instead of 3D printed material
   - Further develop the diffusion done on our blades.
   - Develop our own bi-stable roll of heat-treated plastic to use instead of the tape measure.
 
-Demos of both lightsabers can be found below:
+Demos of both Lightsabers can be found below:
 
-[Embeded 1]
-
-[Embeded 2]
+**Add links to videos**
 
 
 

@@ -5,7 +5,7 @@ permalink: /Sprints/
 ---
 
 ## Sprint 1
-In Sprint 1, our team decided we wanted to create a replica Lightsaber. We decided our mvp would be a Lightsaber with a detachable blade with a reach goal of recreating Disney's new extendable blade Lightsaber. 
+In Sprint 1, our team decided we wanted to create a replica lightsaber. We decided our MVP would be a lightsaber with a detachable blade with a reach goal of recreating Disney's new extendable blade lightsaber. 
 
 [Presentation](https://docs.google.com/presentation/d/1-5Kee44TzqyZskYLsyKVEHtzWcdqXS3h8iD9GProHQo/edit?usp=sharing)
 
@@ -16,7 +16,7 @@ To do this, our mechanical team split between developing the detachable blade an
   <img src="../Photos!/sprint1electronicslayout.jpg" alt="Sprint 1 Electronics Layout">
 </p>
 
-For the extendable blade, we investigated how we could make this work, basing it off of Disney's new Lightsaber. We landed on a tape measure mechanism where the tape measure would be spool in the hilt and attached to the LEDs, so that they can be pulled out together. The mvp for this extendable blade was decided to be a single tape measure with a LED strip extending together.
+For the extendable blade, we investigated how we could make this work, basing it off of Disney's new lightsaber. We landed on a tape measure mechanism where the tape measure would be spool in the hilt and attached to the LEDs, so that they can be pulled out together. The MVP for this extendable blade was decided to be a single tape measure with a LED strip extending together.
 
 <p align="center">
   <img src="../Photos!/sprint1extendable.jpg" alt="Sprint 1 Extendable Proof of Concept">
@@ -30,14 +30,14 @@ For electrical, we put the FeatherWing onto the Feather M4 Express and then conn
 </p>
 
 #### Software
-The board we got runs CircuitPython natively, so the software is done directly on the board. The base code for the Lightsaber already exists ([Source](https://learn.adafruit.com/hallowing-lightsaber/program-with-circuitpython)), so we started with getting the base code running on our board, before making tweaks. This initial code powered the blade on and played humming sounds based on accelerometer values.
+The board we got runs CircuitPython natively, so the software is done directly on the board. The base code for the lightsaber already exists ([Source](https://learn.adafruit.com/hallowing-lightsaber/program-with-circuitpython)), so we started with getting the base code running on our board, before making tweaks. This initial code powered the blade on and played humming sounds based on accelerometer values.
 
 
 ## Sprint 2
-In Sprint 2, we wanted to see how far along we could get with the extendable Lightsaber, before deciding whether we should focus on only the detachable Lightsaber or both the detachable and extendable ones. We ultimately decided to continue pursuing both, leading us to purchase another Adafruit Propmaker kit. Luckily, we found an LED strip to use for this blade, so we wouldn't have to purchase another which would have put us way over budget.
+In Sprint 2, we wanted to see how far along we could get with the extendable lightsaber, before deciding whether we should focus on only the detachable lightsaber or both the detachable and extendable ones. We ultimately decided to continue pursuing both, leading us to purchase another Adafruit Propmaker kit. Luckily, we found an LED strip to use for this blade, so we wouldn't have to purchase another which would have put us way over budget.
 
 #### Mechanical
-For the detachable blade, this sprint we modified the electronics packaging, so that the hilt of the Lightsaber would fit into a 2 inch diameter hilt, more closely resemble Disney's Lightsaber dimensions. 
+For the detachable blade, this sprint we modified the electronics packaging, so that the hilt of the lightsaber would fit into a 2 inch diameter hilt, more closely resemble Disney's lightsaber dimensions. 
 
 <p align="center">
   <img src="../Photos!/sprint2detachabledesign.png" alt="Sprint 2 Detaching Mechanism Design">
@@ -62,7 +62,7 @@ For the extendable blade, we reverse engineered a motorized tape measure. We fou
 We also looked into different thicknesses of polycarbonate and polypropylene film to thermoform into the tape spring shape as a possible alternative to the tape measure. This would allow the LED light to diffuse through the plastic. We ended up getting a range of films to test which would be best.
 
 #### Electrical
-For electrical, we put together the second set of electronics for the second blade. Additionally, we added a second button and a switch. The button was added to allow for switching between Lightsaber colors, and the switch was added to turn the whole Lightsaber off, so that it does not drain the battery when not in use. 
+For electrical, we put together the second set of electronics for the second blade. Additionally, we added a second button and a switch. The button was added to allow for switching between lightsaber colors, and the switch was added to turn the whole lightsaber off, so that it does not drain the battery when not in use. 
 
 <p align="center">
   <img src="../Photos!/sprint2electrical.png" alt="Sprint 2 Circuit Diagram">
