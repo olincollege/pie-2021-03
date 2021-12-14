@@ -2287,6 +2287,7 @@ input, select, textarea {
 		border: 0;
 		display: inline-block;
 		position: relative;
+
 	}
 
 		.image img {
@@ -2320,8 +2321,15 @@ input, select, textarea {
 		}
 
 			.image.fit img {
-				width: 100%;
+				width: 50%;
 			}
+
+		.image.small {
+			display: block;
+			margin: 0 0 2em 0;
+			width: 30%;
+
+		}
 
 		.image.featured {
 			display: block;
@@ -2350,11 +2358,23 @@ input, select, textarea {
 			.image.main img {
 				width: 100%;
 			}
+			.column {
+				float: left;
+				width: 50%;
+				padding: 5px;
+			  }
+			  
+			  /* Clear floats after image containers */
+			  .row::after {
+				content: "";
+				clear: both;
+				display: table;
+			  }
 
 /* List */
 
 	ol {
-		list-style: decimal;
+		inset: decimal;
 		margin: 0 0 2em 0;
 		padding-left: 1.25em;
 	}

@@ -21,11 +21,11 @@
 						<h1><a href="index.html">Chess Not Checkers </a></h1>
 						<nav class="links">
 							<ul>
-								<li><a href="#">Lorem</a></li>
-								<li><a href="#">Ipsum</a></li>
-								<li><a href="#">Feugiat</a></li>
-								<li><a href="#">Tempus</a></li>
-								<li><a href="#">Adipiscing</a></li>
+								<li><a href="Timeline.html">Timeline</a></li>
+								<li><a href="Subsystems.html">Subsystems</a></li>
+								<li><a href="Bill of Materials.html">Bill of Materials</a></li>
+								<li><a href="About Us.html">About Us</a></li>
+								<li><a href="Resources.html">Resources</a></li>
 							</ul>
 						</nav>
 						<nav class="main">
@@ -105,37 +105,42 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">Magna sed adipiscing</a></h2>
-										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-11-01">November 1, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
-									</div>
+										<h2>Software</h2>
+									</div>			
 								</header>
-								<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-								<p>Nunc quis dui scelerisque, scelerisque urna ut, dapibus orci. Sed vitae condimentum lectus, ut imperdiet quam. Maecenas in justo ut nulla aliquam sodales vel at ligula. Sed blandit diam odio, sed fringilla lectus molestie sit amet. Praesent eu tortor viverra lorem mattis pulvinar feugiat in turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce ullamcorper tellus sit amet mattis dignissim. Phasellus ut metus ligula. Curabitur nec leo turpis. Ut gravida purus quis erat pretium, sed pellentesque massa elementum. Fusce vestibulum porta augue, at mattis justo. Integer sed sapien fringilla, dapibus risus id, faucibus ante. Pellentesque mattis nunc sit amet tortor pellentesque, non placerat neque viverra. </p>
-								<footer>
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon solid fa-heart">28</a></li>
-										<li><a href="#" class="icon solid fa-comment">128</a></li>
-									</ul>
-								</footer>
+								<span class="image fit"><img src="images/Chess_Software Diagram.png" align="left" /></span>
+								<p>The code for controlling and tracking the flow of a game as well as directing the steppers and electromagnet is held in Python. The two Arduinos are responsible for implementing the commands sent from Python through Serial ports. One Arduino is responsible for motors and the other for the hall effect sensors.</p>
+								<p>The class that controls the game and keeps track of the player’s and AI’s moves is the Board class from the documented Python Chess Library. This library does the heavy lifting in terms of checking for invalid moves, wins, checkmates, etc.</p>
+								<p>The chess engine we used to be the AI chess player was the Stockfish 14.1 chess engine. Through the Pychess library and the UCI (Universal chess interface), the chess engine receives the moves of the player and responds accordingly. Then the engine’s move is translated to physical changes.</p>
 							</article>
+												
+						<!-- Post -->
+											<article class="post">
+												<header>
+													<div class="title">
+														<h2>Mechanical</h2>
+													
+													</div>
+												</header>
+												<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
+												<p>The two goals for the mechanical subsystem was to find a way to move the pieces across the board, and build an external structure to house the components.</p>
+												<p>The first of the two was done using an electromagnet moved by a two-axis gantry system, in turn controlled by two NEMA 17 stepper motors. We designed and 3D printed all mounts for the steppers, rods, electromagnets and bearings, allowing us to achieve very precise fits and iterate quickly between versions of the parts. (Optional: Insert CAD of electromagnet mount).The stepper motors themselves were connected to m8 “fast threaded” rods, typically used in 3D printers, by couplings. Two unthreaded rods were added to provide stability to the system.</p>
+												<p>To house the gantry system, we laser cut boards of MDF to specific dimensions</p>
+												<p>We decided to make the playing field 20x20”. This is the standard size used in American tournaments and would allow our pieces enough space to pass in between squares without disturbing other pieces that may reside in those squares.</p>
+										
+													<span class ="image fit"><img src="images/Ball Bearing Mount.PNG" alt="Ball Bearing" ></span>
+													<p>Ball Bearing Mount: This is used to hold the ball bearing that allows one of the two rods (y-axis) to spin without resistance. This was designed so that the center of the rod was 25mm from the ground, allowing the pieces to move freely.</p>
+													<span class ="image fit"><img src="images/Electromagnet mount.PNG" ></span>
+													<figcaption>Electromagnet Mount: This is used to hold the electromagnet that makes the piece move across the board. It is stabilised by two rods: one threaded, connected to the mount via a special nut that allows it to move, and one unthreaded, connected to the mount via a linear bearing.</figcaption>
+													<span class = "image fit"><img src="" alt=""></span>
+													<p>Full assembly: This is the full assembly of our hardware system. Its main components are two: the box and the gantry.</p>
+
+											</article>		
 
 					</div>
 
 				<!-- Footer -->
 					<section id="footer">
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
-							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
 						<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
 					</section>
 
