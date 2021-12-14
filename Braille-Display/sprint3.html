@@ -56,31 +56,53 @@
 						<!-- Content -->
 							<article id="content">
 								<header>
-									<h2>No Sidebar</h2>
-									<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit
-									dolor neque semper.</p>
+									<h2>Sprint 3</h2>
+									<p>In Sprint 3, we wanted to finish designing and fabricating all mechanical parts, finalize the timing of the chain (stepper motor) and cams (servo motors), assemble all parts to as close to the final version as possible in the time frame available.</p>
 								</header>
-								<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<p>Ut sed tortor luctus, gravida nibh eget, volutpat odio. Proin rhoncus, sapien
-								mollis luctus hendrerit, orci dui viverra metus, et cursus nulla mi sed elit. Vestibulum
-								condimentum, mauris a mattis vestibulum, urna mauris cursus lorem, eu fringilla lacus
-								ante non est. Nullam vitae feugiat libero, eu consequat sem. Proin tincidunt neque
-								eros. Duis faucibus blandit ligula, mollis commodo risus sodales at. Sed rutrum et
-								turpis vel blandit. Nullam ornare congue massa, at commodo nunc venenatis varius.
-								Praesent mollis nisi at vestibulum aliquet. Sed sagittis congue urna ac consectetur.</p>
-								<p>Mauris eleifend eleifend felis aliquet ornare. Vestibulum porta velit at elementum
-								gravida nibh eget, volutpat odio. Proin rhoncus, sapien
-								mollis luctus hendrerit, orci dui viverra metus, et cursus nulla mi sed elit. Vestibulum
-								condimentum, mauris a mattis vestibulum, urna mauris cursus lorem, eu fringilla lacus
-								ante non est. Nullam vitae feugiat libero, eu consequat sem. Proin tincidunt neque
-								eros. Duis faucibus blandit ligula, mollis commodo risus sodales at. Sed rutrum et
-								turpis vel blandit. Nullam ornare congue massa, at commodo nunc venenatis varius.
-								Praesent mollis nisi at vestibulum aliquet. Sed sagittis congue urna ac consectetur.</p>
-								<p>Vestibulum pellentesque posuere lorem non aliquam. Mauris eleifend eleifend
-								felis aliquet ornare. Vestibulum porta velit at elementum elementum.</p>
+								<a href="#" class="image featured"><img src="images/finalPhotos/finalFrontTopCams.JPG" alt="" /></a>
+
+								<h3>Mechanical</h3>
+
+
+								<h3>Electrical</h3>
+								<p>In Sprint 3, we made a few improvements to our circuit and user interaction and then transferred the circuit to a solder-able protoboard. To power on and off the system and both power sources, we use a double pole single throw (DPST) switch. This allows us to easily turn on and off both power rails (the 5V for the Arduino and the 12V for the stepper motor). We also added a slide switch to control the grade of braille. The final circuit and the physical controls are shown below.</p>
+								<div class="row features">
+									<section class="col-6 col-12-narrower feature">
+										<div class="image-wrapper">
+											<a href="images/sprint3/protoboard.jpg" class="image centered"><img src="images/sprint3/protoboard.jpg" alt="" /></a>
+										</div>
+									</section>
+									<section class="col-6 col-12-narrower feature">
+										<div class="image-wrapper">
+											<a href="images/sprint3/physicalControls.jpg" class="image centered"><img src="images/sprint3/physicalControls.jpg" alt="" /></a>
+										</div>
+									</section>
+								</div>
+
+
+								<h3>Software/Firmware</h3>
+								<p>During Sprint 3, we refined our driver code and calibrated the cam/stepper motor system. As we designed our control mechanism at the end of Sprint 3 and built a skeleton, all we had to do was determine constant values. We measured the number of microsteps to move from one cell to the next. We also determined the positions for the servos to actuate the pins. This was a lot of trial and error, as each servo needed slightly different values to activate the pins. After this, we had a fully integrated system that was able to create braille cells!</p>
+
+								<h4>Timing</h4>
+								<p>Instead of having cell chain move continuously and coordinating the cams to activate the pins while the chain was moving, we decided to instead sequence these actions.</p>
+								<ol>
+									<li>Belt moves to align the cell with the cam</li>
+									<li>Cams move to the right position to actuate the pins included in the current braille letter being printed</li>
+									<li>Once the pins have been pushed up, the belt moves again to move to the next cell</li>
+									<li>Repeat</li>
+								</ol>
+
+								<h4>GUI</h4>
+								<p>The GUI was completed in Sprint 2.</p>
+
+								<h4>Switches</h4>
+								<p>We integrated the braille 1 and braille 2 switch code with the Arduino.</p>
+
+								<!-- <h3>Integration</h3> -->
+
 							</article>
 
-						<div class="row features">
+						<!-- <div class="row features">
 							<section class="col-4 col-12-narrower feature">
 								<div class="image-wrapper first">
 									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
@@ -120,7 +142,7 @@
 									<li><a href="#" class="button">Elevate my awareness</a></li>
 								</ul>
 							</section>
-						</div>
+						</div> -->
 					</div>
 				</div>
 
