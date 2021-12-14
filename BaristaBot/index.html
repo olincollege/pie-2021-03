@@ -58,44 +58,160 @@
 								The BaristaBot2.0 is a new take on the original <a href="http://poe.olin.edu/2018/flair_barista/index.html" target="_blank" >BaristaBot, 
 								</a>which aimed to fully automate the coffee brewing process with an assembly-line-style aesthetic.</p>
 							<p>For our iteration, we decided to aim for an open-view, more compact experience that not only dispenses coffee, 
-								but the additional capability to add milk and sugar.</p>
-							<span class="iconimage"><img src="images/white_circle.png" alt=""/></span>
-							<span class="iconimage"><img src="images/dan-2.png" alt=""/></span>
-							<span class="iconimage"><img src="images/white_circle.png" alt=""/></span>
-							 <span class="iconimage"><img src="images/moises_portrait.png" alt=""/></span>
-							 <span class="iconimage"><img src="images/white_circle.png" alt=""/></span>
-							<span class="paragraph"> This project was made possible by the BaristaBot PIE Team: Ivonne Munoz, Daniel Park, Charlotte Ramiro, Moises Sabido Garcia, and Merwan Yeditha.</span>
+								but the additional capability to add milk, sugar and stirring.</p>
+							<h3>System Integration</h3>
+							<span class="image main"><img src="images/total_system.png" alt="" /></span>
+							<p>As seen in our total system above, our mechanical, electrical, and software work together to create the BaristaBot.
+								The software receives input from the user of what ingredients they wish to place in their cups and communicates
+							with the electrical components through the Arduino to trigger events that get supported from the mechanical portions
+						of the project. The Arduino communicates to the cup surface servo to start rotating to go towards the four stations: coffee brewing, milk dispensing, sugar dispensing, and stirring.</p>
+							<p>
+								The coffee brewing communicates to the heating coil to the thermistor, which is able to tell the temperature of the water inside the container.
+								If the water is not at the ideal temperature, the heating coil will start boiling the water until the thermistor indicates that the ideal temperature has been reached.
+								The relay will trigger for the water to be dispensed over the coffee grinds, which will brew the coffee into the cup through the solenoid. 
+							</p>
+							<p>
+								The cup surface servo will rotate towards the milk and sugar dispensers, depending on whether or not the user chose both or only one of the ingredients, where the servo will turn and dispense the ingredients. 
+								Whether or not the user wishes for milk and/or sugar in their drink, the cup will rotate to its final destination at the stirrer. The servo of the stirring mechanism will bring down the stirring motor.
+								When lowered, the stirring motor will run and stir the drink. When completed, the servo will raise back to its original position and conclude the program.
+							</p>
+							<h3><a href="https://youtu.be/LUU-jocCiSg" target="_blank">Video Demonstration</a></h3>
+							<iframe 
+								src="https://youtu.be/LUU-jocCiSg">
+							</iframe> 
+							<br>
+							<h3><a href="https://youtu.be/-2zLJylLpwE" target="_blank">A Glowing Review from our Loyal Customer!</a></h3>
+							<iframe
+								src="https://youtu.be/-2zLJylLpwE">
+							</iframe> 
+							<br>
+							<h3>The Team</h3>
+							<span class="iconimage"><img src="images/ivonne_portrait.png" alt="Ivonne Munoz portrait"/></span>
+							<span class="iconimage"><img src="images/dan-2.png" alt="Dan Park portrait"/></span>
+							<span class="iconimage"><img src="images/charlotte_portrait.png" alt="Charlotte Ramiro portrait"/></span>
+							 <span class="iconimage"><img src="images/moises_portrait.png" alt="Moises portrait"/></span>
+							 <span class="iconimage"><img src="images/merwan.PNG" alt="Merwan portrait"/></span>
+							<span class="paragraph"> This project was made possible by the BaristaBot PIE Team: Ivonne Munoz (Mechanical Engineering '23), 
+								Daniel Park (Engineering with Computing '24), Charlotte Ramiro (Electrical and Computer Engineering '24'), Moises Sabido Garcia 
+								(Mechanical Engineering '24'), and Merwan Yeditha (Engineering with Computing '24'), shown respectively left to right. 
+							</span>
 						</article>
 
 						<!-- Mechanical Subsystem -->
 							<article id="mechanical">
 								<h2 class="major">Mechanical</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+								<span class="image main"><img src="images/render4.png" alt="" /></span>
 								<p>Here you can see the mechanical design of the BaristaBot2.0 from the 
-									heating water container, bean grinder, ingredient dispensing, and the cup stirrer.
+									housing, bean grinder, ingredient dispensing, and the cup stirrer.
+									<br>
+									<br>
+									For access to our CAD files, visit 
+									<a href="https://workbench.grabcad.com/workbench/myprojects#/account/1952748/projects" target="_blank" >our GrabCAD Page</a>
+									or request access to the project to msabidogarcia@olin.edu
 								</p>
-								<h3>Water Heating</h3>
-								<!-- Schematic goes here -->
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>The coil heats up the water poured into the container and is poured out through
-									a solunoid dispenser into the cup.
+								<h3>Housing</h3>
+								<span class="image main"><img src="images/box.png" alt="" /></span>
+                                <p>When drawing out what we wanted our final project to look like, a larger 
+								need was to have everything be in a single compact housing. Immediately, we
+								CADed a box that would fit the dimensions we believed we would need and that
+								would be viable to create using easy to source material. Based on our budget,
+								we opted for plywood over a higher quality wood (especially once we went to
+								purchase it and saw that even the more expensive sheets of wood were extremely
+								warped). We then took our 4' X 8' sheet and CNC milled it on the "Shopbot" with
+								very accurate tolerances! To ensure stability, we center drilled many spots on
+								the finger joints of the box and then inserted wood screws. We also created a 
+								lid but later determined that it was less useful to have it since some of our 
+								elements were taller than what fit inside the box.
+								<br>
+								<br>
+
+								<h3>Tiered Design</h3>
+								<p>The inside of the box is a three tiered design, in which the top and middle 
+									tiers are static and the bottom tier rotates. The design is laid out as follows:
+									<br>
+									<br>
+									Top tier - contains the water heating and bean grinding mechanism
+									<br>
+									Middle tier - contains the powder creamer and sugar dispensers, as well 
+									as the coffee filter cup that dispenses the coffee
+									<br>
+									Bottom tier - contains the coffee mug that rotates to each dispenser 
+									<br>
+									<span class="image main"><img src="images/circle mount.png" alt="" /></span>
+									
+									The top and middle tiers have holes relative to the shape of the part or mechanism
+									 that goes on that tier. The top tier has a hexagon-shaped hole for the nut at the 
+									 bottom of the water bottle, as well as a circle with two notches across from each 
+									 other for the dispenser. 
+									 <br>
+									 <br>
+									 <span class="image main"><img src="images/top tier.png" alt="" /></span>
+								
+									
+									The middle tier has one regular-shaped hole, and two circles with notches. This design was made so that we could slide the dispensers in and then lock them in place.
+									<br>
+									<br>
+									<span class="image main"><img src="images/middle tier.png" alt="" /></span>
+								</p>
+
 								</p>
 								<h3>Bean Grinder</h3>
 								<!-- Schematic goes here -->
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>The bean grinder uses a motor running at 84 rpm at 12V DC to drive a modified hand crank coffee grinder
-									attached with 3D printed motor and grinder mounts. The grinded beans will be dispensed into a dispenser container
-								so it can be poured into the cup</p>
+								<span class="image main"><img src="images/beangrinder.png" alt="" /></span>
+								<p>When seeing how the original BaristaBot team implemented bean grinding, we tried to 
+									create a unique solution. When that did not work, we traced back our steps and 
+									attempted to recreate their solution which was put take a hand bean grinder and 
+									attach a strong 12V DC motor to it. We acquired a hand grinder and stripped it so 
+									that it would fit out purpose.
+									<br>
+									<br>
+									Later, we harvested a motor from an old cordless hand drill that had a bad battery
+									as we had tried to grind beans with a smaller 5V DC motor but that failed. Still,
+									as great as the larger 12V bean grinding motor was, it posed many issues for both
+									the mechanical and electrical teams. On the mechanical side, it was quite bulky, 
+									heavy, and had a planetary transmission that we had to keep. If we had not kept it,
+									we would not have been able to connect the shaft of the bean grinder to the chuck of 
+									the drill. We would have had to make out own coupling to connect them and that was 
+									deemed not worth the time. After CADing a mount for both the grinder and the motor,
+									we connected the two using wooden dowels to constrain the torqy movement of the motor.
+									<br>
+									<br>
+									For as much as we wanted to have this in the final iteration, we could not keep it in
+									due to complications in the electrical components needed to power the motor as it 
+									ran at a variable amperage that bounced from 3.5A to 4.8A thus making it difficult to 
+									build a circuit for, especially when we were already doing a complicated one for the
+									water heating elements.
+								</p>
 								<h3>Ingredient Dispensers</h3>
 								<!-- Schematic goes here -->
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>The dispensers, with the control of a servo each, will dispenser the grinded coffee beans, powdered milk, and sugar
-									into the cup.
+								<span class="image main"><img src="images/dispenser_in.gif" alt="" /></span>
+								<p>Having had experience with the creation of food safe containers, our team opted to purchase
+									COTS dispensing containers from Amazon. The containers were originally intended to be used
+									with cereal, so adjusting them to work with finer ingredients was something that we knew would
+									have to be addressed. Our solution to that ended up being putting tape on the "flippers". This
+									would then make the gap between the flippers and the sidewalls of the containers small enough
+									to limit the amount of spillage. The ingredients we were putting inside these containers were 
+									bean grinds, powdered creamer, and granulated sugar.
+                                    <br>
+									<br>
+									These COTS containers were perfect for our team in the sense that we were able to quickly and 
+									easily motorize them. We simply took the handle that had a D-shaft attached to it (which 
+									attached to the flippers), sanded it flat, and put a servo mount that was available to us in 
+									the PIE room. Just like that, we now had motorized dispensers. 
+                                    <br>
+									<br>
+									For more on how these were mounted in the system, read the section on the  housing/tiered system.
 								</p>
 								<h3>Cup Stirrer</h3>
 								<!-- Schematic goes here -->
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>And finally, when all the coffee ingredients are in the cup, the mixer will automatically mix the cup for the user.</p>
+								<span class="image main"><img src="images/stirring.gif" alt="" /></span>
+								<p>
+									And finally, when all the coffee ingredients are in the cup, the mixer will automatically mix the cup for the user.
+									With a <a href="https://www.thingiverse.com/thing:3170748" target="_blank" >custom 3D printed rack and pinion system</a>
+									and a servo controlling the actuator, we were able to move the rod up and down into the cup for mixing.
+									At the end of the actuator, there was a small 5V motor and modified fan to stir the contents of the cup.
+									This system was attached to the PVC pipe in the middle to be part of the rotation as the final step of the coffee making process.
+								</p>
 							</article>
 
 						<!-- Electrical -->
@@ -104,18 +220,39 @@
 								<span class="image main"><img src="images/barista_bot_electrical_full.png" alt="" /></span>
 								<p>The Electrical System is composed of multiple modules defined by the Arduinos that drives the coffee machine 
 									from water heating, coffee bean grinding, ingredient dispensing, and cup stirring.</p>		
-								<h3>Water Heating</h3>
-								<!-- Schematic goes here -->
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<h3>Coffee Bean Grinding</h3>
-								<!-- Schematic goes here -->
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<h3>Ingredient Dispensing</h3>
-								<!-- Schematic goes here -->
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<h3>Cup Stirring</h3>
-								<!-- Schematic goes here -->
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								<h3>A. Water Heating</h3>
+								<span class="image main"><img src="images/heat.gif" alt="" /></span>
+								<p>
+									The water heating system uses a thermistor to detect the temperature of the water as well as an induction heating coil to heat
+									up the water while it is below 90 degrees Celsius. Since the heating coil is rated with 15 Amps of current, we also used a relay
+									and NMOS circuit in order to limit the current and be able to safely control the heating from the lower-current Arduino. The
+									thermistor resistance lowers as the water heats, so we have programmed it such that the Arduino will send a high signal to the
+									heating coil module until the thermistor's value goes below 80. Once it hits 80, the loop will end, the heating coil will turn off,
+									and the program will continue to the next steps in brewing the coffee (such as grinding the beans and dispensing the water).
+								</p>
+								<h3>B. Water Dispensing</h3>
+								<span class="image main"><img src="images/water.gif" alt="" /></span>
+								<p>Water dispensing is controlled by a 12 Volt Solenoid. The valve screws into the bottom of the water bottle and
+								when a high voltage is pushed to the solenoid the valve, the valve opens and allows for water to flow through. 
+								In order to control the 12-Volt Solenoid, we utilized an NMOS transistor. The NMOS transisor's gate is connected 
+								to an Arduino with a 10k Resistor running to ground in parallel. The source is connected to the ground of the 
+								solenoid pin and the drain is connected to the ground of the Arduino. The 12V pin of the solenoid is connected to 
+								a 12V 1.5A power supply, which is also connected to the ground. When the Arduino pushes a high voltage from a 
+								digital pin to the gate of the transistor, the circuit completes and allows for the solenoid to connect to ground</p>
+								<h3>C. Ingredient Dispensing</h3>
+								<p>The powdered milk and sugar ingredients are dispensed using containers and a dispensing mechanism controlled by a servo.
+									When the ingredient needs to be dispensed, the servo rotates, dropping in some sugar and creamer into the cup.
+								</p>
+								<h3>D. Cup Rotating</h3>
+								<span class="image main"><img src="images/rotating.jpg" alt="" /></span>
+								<p>When alternating between the coffee brewer, ingredient dispensers, and cup stirrer, 
+									the surface where the cup is held rotates with a servo that is placed underneath each dispenser.
+								</p>
+								<h3>E. Cup Stirring</h3>
+								<p>
+									As the final step to mix the ingredients together, the mechanism has a actuator that is lowered into a cup by a servo
+									which has a 5V motor attached to the end of it. This motor spins the rod attached to its shaft that stirs the contents in the cup.
+								</p>
 							</article>
 
 						<!-- Software -->
@@ -138,13 +275,14 @@
 						<!-- Budget -->
 						<article id="budget">
 							<h2 class="major">Budget</h2>
-							<!-- <span class="image main"><img src="images/pic01.jpg" alt="" /></span> -->
 									<div class="table-wrapper">
 										<table class="alt">
 											<thead>
 												<tr>
 													<th>Name</th>
+													<th>Description</th>
 													<th>Quantity</th>
+													<th>Unit Price</th>
 													<th>Price</th>
 												</tr>
 											</thead>
@@ -152,60 +290,149 @@
 												<tr>
 													<td><a href="https://www.amazon.com/ELEGOO-Project-Tutorial-Controller-Projects/dp/B01D8KOZF4"
 														target="_blank" >Arduino Super Starter Kit</a></td>
-													<td>Includes many basic components Such as Arduino, Servos, Wires, Motors, etc. (Pre-Owned).</td>
+													<td>Includes many basic components Such as Arduino, Resistors, Wires, USB Plugs, etc. (Pre-Owned).</td>
+													<td>1</td>
 													<td>39.99</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td><a href="https://www.horizonhobby.com/product/hs-82mg-micro-analog-metal-gear-servo/HRC32082S.html"
+														target="_blank" >HS-82MG Servos</a></td>
+													<td>Servos used to control the dispensers and the stirring actuator</td>
+													<td>4</td>
+													<td>23.99</td>
+													<td>0</td>
 												</tr>
 												<tr>
 													<td><a href="https://www.amazon.com/Opard-Stainless-Bottle-Insulated-Camping/dp/B08B8MRFWZ/ref=sr_1_1?crid=1QWOPRJ9A0XVW&keywords=opard%2Bstainless%2Bsteel%2Bwater%2Bbottle%2B32%2Boz%2Bvacuum%2Binsulated&qid=1639024350&sprefix=32%2Boz%2Bwater%2Bbottle%2Binsulated%2Bopard%2Caps%2C184&sr=8-1&th=1"
 														target="_blank" >32oz Insulated Water Bottle</a></td>
 													<td>Used for containing the water.</td>
+													<td>1</td>
 													<td>18.05</td>
+													<td>18.05</td>
+												</tr>
+												<tr>
+													<td><a href="https://www.amazon.com/Opard-Stainless-Bottle-Insulated-Camping/dp/B08B8MRFWZ/ref=sr_1_1?crid=1QWOPRJ9A0XVW&keywords=opard%2Bstainless%2Bsteel%2Bwater%2Bbottle%2B32%2Boz%2Bvacuum%2Binsulated&qid=1639024350&sprefix=32%2Boz%2Bwater%2Bbottle%2Binsulated%2Bopard%2Caps%2C184&sr=8-1&th=1"
+														target="_blank" >Silicon Water Tubing</a></td>
+													<td>Used for containing the heated water.</td>
+													<td>1</td>
+													<td>7.12</td>
+													<td>7.12</td>
 												</tr>
 												<tr>
 													<td><a href="https://www.amazon.com/Diximus-300W-Portable-Immersion-Electric/dp/B07ZSYKJPR/ref=sr_1_1?crid=SIRKVCDV5IWA&keywords=heating+coil+for+water&qid=1639024110&sprefix=heating+coil+%2Caps%2C273&sr=8-1"
 														 target="_blank" >Heating Coil</a></td>
 													<td>Used for heating up the water inside the container</td>
+													<td>1</td>
+													<td>14.34</td>
 													<td>14.34</td>
 												</tr>
 												<tr>
 													<td><a href="https://www.amazon.com/Zevro-SmartSpace-Mount-Triple-Canister/dp/B0009MGQUM/ref=sr_1_7?keywords=food%2Bdispenser&qid=1639024806&sr=8-7&th=1"
 														target="_blank" >Dry Food Dispenser</a></td>
 													<td>For dispensing the grinded coffee beans, powdered milk, and sugar.</td>
+													<td>1</td>
+													<td>34.21</td>
 													<td>34.21</td>
 												</tr>
 												<tr>
-													<td>Wood</td>
+													<td>Plywood</td>
 													<td>Used to construct the structure of the BaristaBot. (Bought from Home Depot.)</td>
+													<td>1</td>
+													<td>30</td>
 													<td>30</td>
 												</tr>
 												<tr>
 													<td>PVC Pipes</td>
 													<td>Holds the structure together through the center. (Bought from Home Depot.)</td>
+													<td>1</td>
 													<td>19</td>
+													<td>19</td>
+												</tr>
+												<tr>
+													<td><a href="https://www.amazon.com/Kastar-Adapter-5-52-5mm-Wireless-Security/dp/B003TUMDWG"
+														target="_blank">12V 6A PSU</td>
+													<td>Power Supply for the BaristaBot</td>
+													<td>1</td>
+													<td>10.95</td>
+													<td>10.95</d>
 												</tr>
 												<tr>
 													<td><a href="https://www.adafruit.com/product/1770"
 														target="_blank" >Adafruit LCD Touchscreen</a></td>
 													<td>Additional Touchscreen Capabilities to Control the Coffee Machine. (Pre-Owned)</td>
+													<td>1</td>
 													<td>29.95</td>
+													<td>0</td>
 												</tr>
 												<tr>
 													<td><a href="https://ussolid.com/u-s-solid-electric-solenoid-valve-1-4-12v-dc-solenoid-valve-brass-body-normally-closed-viton-seal.html"
 														target="_blank" >Brass Solenoid Valve</a></td>
 													<td>For dispensing the water into the cup.</td>
+													<td>1</td>
+													<td>19.49</td>
 													<td>19.49</td>
 												</tr>
 												<tr>
 													<td><a href="https://www.digikey.com/en/products/detail/panasonic-electric-works/ALF1T05/645560?fbclid=IwAR2Jrgpab0VohFzObEJYFLsU2US4B30ADbsju-uFFvz3vHlhJ11N5CsVdJ8"
 														target="_blank" >ALF1T05 Power Relay</a></td>
-													<td>Switches open and close the circuits to control different parts of the machine such as the water valve and ingredient dispensing.</td>
+													<td>Power Modulation to switch open and close the circuits to control different parts of the machine such as the water valve and ingredient dispensing.</td>
+													<td>1</td>
 													<td>6.22</td>
+													<td>6.22</td>
+												</tr>
+												<tr>
+													<td><a href="https://www.amazon.com/Silicone-Flexible-Rubber-Tubing-Transparent/dp/B08GPD22ZC/ref=sr_1_14?keywords=water+tubing&qid=1639357756&sr=8-14"
+														target="_blank" >Silicon Tube Pipes</a></td>
+													<td>For transporting the water from the bottle to the dispenser.</td>
+													<td>1</td>
+													<td>6.99</td>
+													<td>6.99</td>
+												</tr>
+												<tr>
+													<td><a href="https://www.amazon.com/Stainless-LHS-Paperless-Reusable-Non-slip/dp/B07MX87HH9/ref=sr_1_4?keywords=coffee%2Bfilter%2Bmetal&qid=1639358767&sr=8-4&th=1"
+														target="_blank" >Reusable Stainless Steel Coffee Dripper</a></td>
+													<td>Used for Brewing Coffee by dripping hot water over the grinded beans. (Pre-Owned)</td>
+													<td>1</td>
+													<td>12.99</td>
+													<td>0</td>
+												</tr>
+												<tr>
+													<td><a href="https://www.target.com/p/folgers-classic-medium-roast-ground-coffee-30-5oz/-/A-13397813?ref=tgt_adv_XS000000&AFID=google_pla_df_free_local&CPNG=Grocery&adgroup=231-10"
+														target="_blank" >Coffee Grinds</a></td>
+													<td>Ingredient for Coffee</td>
+													<td>1</td>
+													<td>7.49</td>
+													<td>7.49</td>
+												</tr>
+												<tr>
+													<td><a href="https://www.amazon.com/NESTLE-NIDO-Fortificada-Ounce-Canister/dp/B00FRFRZF6/ref=sr_1_2?keywords=Powdered+Milk&qid=1639361244&sr=8-2"
+														target="_blank" >Powdered Milk</a></td>
+													<td>Ingredient for Coffee (Powdered due to refrigeration issues)</td>
+													<td>1</td>
+													<td>10.68</td>
+													<td>10.68</td>
+												</tr>
+												<tr>
+													<td><a href="https://www.amazon.com/Domino-Premium-Granulated-Sugar-Ounce/dp/B01BWM57CK/ref=sr_1_1?keywords=sugar&qid=1639361267&sr=8-1"
+														target="_blank" >Sugar</a></td>
+													<td>Ingredient for Coffee</td>
+													<td>1</td>
+													<td>10.74</td>
+													<td>10.74</td>
+												</tr>
+												<tr>
+													<td>Toscanini's Ice Cream</td>
+													<td>Ice Cream for Team Bonding Event!</td>
+													<td>1</td>
+													<td>19.69</td>
+													<td>19.69</td>
 												</tr>
 											</tbody>
 											<tfoot>
 												<tr>
-													<td colspan="2"></td>
-													<td>184.25</td>
+													<td colspan="4"></td>
+													<td>214.67</td>
 												</tr>
 											</tfoot>
 										</table>
