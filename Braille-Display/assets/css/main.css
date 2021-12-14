@@ -278,8 +278,16 @@ input, select, textarea {
 
 		}
 
-		.container figure { 
-			background-image: url(https://webdevtrick.com/wp-content/uploads/1st.jpg);
+	.containerbeforeafter { 
+		/* height: 73.5vw; */
+		margin: 1vw auto;
+		height: 675px;
+		width: 1200px;
+		overflow: visible;
+		/* width: 98vw; */
+		}
+		.containerbeforeafter figure { 
+			background-image:url("images/RearPhoto.JPG");
 			background-size: cover;
 			font-size: 0;
 			height: 100%;
@@ -288,7 +296,7 @@ input, select, textarea {
 			width: 100%; 
 		   }
 		   #compare {
-			background-image:"images\RearPhoto.JPG";
+			background-image: url("images/RearRender-match2.JPG");
 			background-size: cover;
 			bottom: 0;
 			border-right: 5px solid rgba(255,255,255,0.7);
