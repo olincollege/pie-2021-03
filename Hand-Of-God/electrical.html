@@ -24,11 +24,11 @@
 							<a href="#" class="icon solid fa-angle-down">Features</a>
 							<ul>
 								<li><a href="gallery.html">Gallery</a></li>
-								<li><a href="budget.html">Budget Overview</a></li>
 								<li><a href="mechanical.html">Mechanical Design</a></li>
 								<li><a href="software.html">Software Design</a></li>
 								<li><a href="electrical.html">Electrical Design</a></li>
 								<li><a href="firmware.html">Firmware Design</a></li>
+								<li><a href="budget.html">Budget Overview</a></li>
 								<li><a href="aboutus.html">About Us</a></li>
 								
 							</ul>
@@ -44,6 +44,13 @@
 						<p><em>Shockingly</em> fast.</p>
 					</header>
 					<div class="box">
+						<span class="image featured"><img src="images/finalcircuit.png" alt="" /></span>
+						<p>Final Circuit Diagram.</p>
+						<div class="row">
+							
+							
+						</div>
+					<div class="box">
 						<span class="image featured"><img src="images/electrical.jpg" alt="" /></span>
 						<p>Where every other aspect of our project was novel and posed unique challenges, we went with a proven approach for the electrical system as to not needlessly cause ourselves trouble. Even then, we had to evaluate multiple options before coming to our final solution.</p>
 						<div class="row">
@@ -54,6 +61,7 @@
 							</div>
 							<div class="row-6 row-12-mobilep">
 								<h3>Final System</h3>
+								<span class="image featured"><img src="images/final_circuit.jpg" alt="" /></span>
 								<p>Our electrical system also includes two mechanical endstops placed at y=0 and x=0. These are connected to the hardware interrupt pins for use during zeroing and powered by the logic rail. All of the stepper drivers are configured the same except for the GPIO pins controlling them. They receive power from the logic rail (5V) and then motor rail (12-32V). ~ENABLE is pulled low to keep them enabled and microstepping is not configured as we care more about speed than ultra precise motion. We initially used 12V for the motor rail, but as we neared the speeds we were hoping for the steppers began to slip as soon as there was any load. After some research, we learned that increasing the motor voltage will increase torque allowing for higher speeds. Based on this, we switched to a 32V power supply as it is still safely within the 35V the drivers are rated for. When we revisited the datasheet was also added the suggest 47uF-100uF smoothing capacitor in the form of 5 100uF electrolytic capacitors to protect the power supply from current spikes.</p>
 							</div>
 						</div>
