@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Hand of God</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header" class="colorblock black">>
+				<h1><a href="index.html">Hand of God</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li>
+							<a href="#" class="icon solid fa-angle-down">Features</a>
+							<ul>
+								<li><a href="gallery.html">Gallery</a></li>
+								<li><a href="budget.html">Budget Overview</a></li>
+								<li><a href="mechanical.html">Mechanical Design</a></li>
+								<li><a href="software.html">Software Design</a></li>
+								<li><a href="electrical.html">Electrical Design</a></li>
+								<li><a href="firmware.html">Firmware Design</a></li>
+								<li><a href="aboutus.html">About Us</a></li>
+								
+							</ul>
+						</li>
+						<li><a href="aboutus.html" class="button">Contact Us</a></li>
+					</ul>
+				</nav>
+			</header>
+			<!-- Main -->
+				<section id="main" class="container">
+					<header>
+						<h2>Firmware Design</h2>
+						<p>Optimized down to the byte.</p>
+					</header>
+					<div class="box">
+						<span class="image featured"><img src="images/firmware_banner.png" alt="" /></span>
+						<!--<h3>This is a subheading</h3>-->
+						<p>Our firmware was designed with performance in mind. We knew from the start the speed would make or break our system. Controlling steppers and handling serial data is enough to overwhelm the Arduino’s microcontroller if it is not approached carefully. For our gantry to move cleanly, we needed our main loop to run fast enough to create the illusion that each component was running in parallel perfectly synchronized.</p>
+						<p>The firmware was written in Arduino C and has 3 components. It was designed to be largely modular so that we could easily develop components in parallel and swap out different versions as needed. This was particularly valuable when we ran into an issue with high serial parsing latency. The modular design allowed us to swap out the serial parsing code and command format in just an afternoon.</p>
+						<p>All of our code is available on GitHub: <a href="https://github.com/simrunm/HandofGod">simrunm/HandofGod</a></p>
+						<div class="row">
+							<div class="row-6 row-12-mobilep">
+								<h3>Zeroing</h3>
+								<p>The first component in the zeroing procedure. Zeroing is unique because we must be able to stop motion at any time, and want to move at a safe speed instead of the highest speed possible. We accomplish zeroing using the Arduino hardware interrupts to halt motion when the carriage reaches an endstop. For this portion, we control the steppers manually (without a library) using precise pin timings to allow immediate stopping.</p>
+							</div>
+							<div class="row-6 row-12-mobilep">
+								<h3>Movement</h3>
+								<h4>Stepper Control</h4>
+								<img src="images/stepper_driver_signal.png" alt="Stepper Driver Datasheet" style="width:60%">
+								<p>Part of our motivation for writing our own stepper code was so that we could optimize the timings using direct register access and inline assembly for more precise delay. The arduino provided digitalWrite function takes 50-60 cycles to execute which is almost 3us and our stepper drivers respond to pulses as short as 1us.  The zeroing procedure was intended to be the proving ground for writing our own stepper library designed to handle our systems synchronous motion constraints. Ultimately, although it was an interesting area to explore, we decided that it was not worth the time investment given the minimal value added compared to existing libraries. </p>
+								<h4>Using a Library</h4>
+								<p>To control the motion of the gantry, we ended up using the <a href="https://www.arduino.cc/reference/en/libraries/speedystepper/">Speedy Stepper Library</a>. We are able to calculate the number of steps for each motor based on the current and commanded position. We also calculate the relationship of the velocities of each motor to keep the system in tension.</p>
+							</div>
+							<div class="row-6 row-12-mobilep">
+								<h3>Serial Interface</h3>
+								<p>The final component of our firmware is the serial interface. The serial interface exposes the zeroing and positioning functionality, as well as the ability to move individual motors for tensioning. We initially used string commands and Serial.readln, but found that was over a second of latency for parsing commands. We still aren’t quite sure what the culprit was; after attempting to diagnose the issue, we replaced the serial parsing with a new optimized format so we could continue working. </p>
+								<img src="images/packet.png" alt="Serial packet breakdown" style="width:40%">
+								<img src="images/opcodes.png" alt="Serial Opcodes" style="width:40%">
+								<p>The command format we settled on sends commands as 2 bytes. The first 4 bits are the operation code which indicates which subroutine should be called. The remaining 12 bits are data, which is parsed as an integer and allows us to send 0-4095 as a value. This is more than sufficient for our gantry which moves at most 490mm in one direction. This format is advantageous because commands are extremely small over the wire and can be parsed using 3 boolean operations instead of slow and costly string parsing. With this format, the parsing time is reduced from around a second to just a few MCU cycles.</p>
+							</div>
+							<div class="row-6 row-12-mobilep">
+								<h3>Next Steps</h3>
+								<p>Based on our understanding of stepper motor behavior, we believe our zeroing procedure is to blame in part for the high temperatures our motors reach. Our hypothesis is that the slower speed and lack of acceleration means the shaft fully stops after each step, which increases the internal resistance and thus the energy dissipated as heat. Because the firmware tracks the gantry’s position after each movement, it would be possible to modify our software to only zero once instead of before each throw. Another potential mediation would be enabling microstepping on each driver during zeroing so that we could deliver a higher number of steps while maintaining the same safe speed.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					
+					<li><a href="https://github.com/simrunm/HandofGod" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
