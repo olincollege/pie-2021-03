@@ -1465,7 +1465,7 @@ input, select, textarea {
 			}
 
 				#header .logo .icon:before { /* size of icon */
-					font-size: 1.75rem;
+					font-size: 10rem;
 				}
 
 			#header .content .inner {
