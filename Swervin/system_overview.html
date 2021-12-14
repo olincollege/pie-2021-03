@@ -5,75 +5,88 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>System Overview</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+<head>
+	<title>System Overview</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html">Swervin'</a></h1>
-						<nav id="nav">
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1><a href="index.html">Swervin'</a></h1>
+			<nav id="nav">
+				<ul>
+					<li class="special">
+						<a href="#menu" class="menuToggle"><span>Menu</span></a>
+						<div id="menu">
 							<ul>
-								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="system_overview.html">System Overview</a></li>
-                      <li>
-                        <ul>
-                          <li><a href="mechanical.html">Mechanical</a></li>
-                          <li><a href="electrical.html">Electrical</a></li>
-                          <li><a href="software.html">Software</a></li>
-                        </ul>
-                      </li>
-											<li><a href="budget.html">Budget</a></li>
-                      <li><a href="team.html">Team</a></li>
-										</ul>
-									</div>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="system_overview.html">System Overview</a></li>
+								<li>
+									<ul>
+										<li><a href="mechanical.html">Mechanical</a></li>
+										<li><a href="electrical.html">Electrical</a></li>
+										<li><a href="software.html">Software</a></li>
+									</ul>
 								</li>
+								<li><a href="budget.html">Budget</a></li>
+								<li><a href="team.html">Team</a></li>
+								<li><a href="media.html">Media</a></li>
 							</ul>
-						</nav>
-					</header>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
 
-				<!-- Main -->
-					<article id="main">
-						<header>
-							<h2>System Overview</h2>
-						</header>
-						<section class="wrapper style5">
-							<div class="inner">
+		<!-- Main -->
+		<article id="main">
+			<header>
+				<h2>System Overview</h2>
+			</header>
+			<section class="wrapper style5">
+				<div class="inner">
 
-								<h3>System Diagram</h3>
-                <div class="row">
-                  <div class="col-2 col-12-medium"></div>
-                <div class="col-8 col-12-medium"><img style='height: 100%; width: 100%; object-fit: contain' src="images/system_diagram.jpg" alt=""/></div>
-                  <div class="col-2 col-12-medium"></div>
-                </div>
+					<h3>System Diagram</h3>
+					<div class="row">
+						<div class="col-2 col-12-medium"></div>
+						<div class="col-8 col-12-medium"><img style='height: 100%; width: 100%; object-fit: contain'
+								src="images/system_diagram.jpg" alt="" /></div>
+						<div class="col-2 col-12-medium"></div>
+					</div>
 
 
-                <p>The diagram above visualizes components in our system and the flow of information.</p>
-                <p>The user controls the movement of the robot with the “drive” and “spin” knobs on the joystick. These joystick outputs are streamed via USB to the laptop and converted to a command containing desired direction and rotation. The laptop then sends this command over wifi to the Raspberry Pi using sockets. On the Raspberry Pi, a script takes the command and calculates the servo angle and the drive motor velocity of each swerve module for the desired movement. After completing calculations, the Raspberry Pi sends the servo and drive motor commands to the Arduino Unos over serial. Each Arduino is responsible for parsing and executing the servo and motor commands for two swerve modules. Put everything together and we get a swerve drive robot!</p>
+					<p>The diagram above visualizes components in our system and the flow of information.</p>
+					<p>The user controls the movement of the robot with the “drive” and “spin” knobs on the joystick.
+						These joystick outputs are streamed via USB to the laptop and converted to a command containing
+						desired direction and rotation. The laptop then sends this command over wifi to the Raspberry Pi
+						using sockets. On the Raspberry Pi, a script takes the command and calculates the servo angle
+						and the drive motor velocity of each swerve module for the desired movement. After completing
+						calculations, the Raspberry Pi sends the servo and drive motor commands to the Arduino Unos over
+						serial. Each Arduino is responsible for parsing and executing the servo and motor commands for
+						two swerve modules. Put everything together and we get a swerve drive robot!</p>
 
-								<hr />
-                <h3>Subsystems</h3>
-                <p>Click the following buttons to learn more about our subsystems.</p>
+					<hr />
+					<h3>Subsystems</h3>
+					<p>Click the following buttons to learn more about our subsystems.</p>
 
-                <ul class="actions fit">
-                  <li><a href="mechanical.html" class="button fit">Mechanical</a></li>
-                  <li><a href="electrical.html" class="button  fit">Electrical</a></li>
-                  <li><a href="software.html" class="button fit">Software/Firmware</a></li>
-                </ul>
-                								
-<!--
+					<ul class="actions fit">
+						<li><a href="mechanical.html" class="button fit">Mechanical</a></li>
+						<li><a href="electrical.html" class="button  fit">Electrical</a></li>
+						<li><a href="software.html" class="button fit">Software/Firmware</a></li>
+					</ul>
+
+					<!--
                 <li class="icon solid fa-cog">
 								</li>
 								<li class="icon solid fa-code">
@@ -83,26 +96,28 @@
 -->
 
 
-							</div>
-						</section>
-					</article>
+				</div>
+			</section>
+		</article>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="copyright">
-							<li>&copy; Swervin'</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</footer>
-			</div>
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="copyright">
+				<li>&copy; Swervin'</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</footer>
+	</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
-	</body>
+</body>
+
 </html>
