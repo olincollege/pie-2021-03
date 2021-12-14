@@ -198,25 +198,25 @@ def drive(x_s, y_s, r_s):
 					<h5>run.ino psuedocode:
 					</h5>
 					<pre><code>
-		void setup() {
-	begin serial
-	attach servos to PWM port
-	set motor PWM pins to output mode
-	set all motor speeds to zero
-	begin neopixels
-	set all neopixels in each strip to specified color
-	}
-		
-	void loop() {
-		if (there is data available on serial) {
-			receive message between the start and end markers into the buffer
-			if (a valid message was received into the buffer) {
-				parse the buffer to get the two motor speeds (floats) and two servo angles (integers)
-		analog write to the servos to turn to specified angles
-	analog write to the motors to execute the specified velocities (scaling down to 0.25x)
-			}
+void setup() {
+begin serial
+attach servos to PWM port
+set motor PWM pins to output mode
+set all motor speeds to zero
+begin neopixels
+set all neopixels in each strip to specified color
+}
+	
+void loop() {
+	if (there is data available on serial) {
+		receive message between the start and end markers into the buffer
+		if (a valid message was received into the buffer) {
+			parse the buffer to get the two motor speeds (floats) and two servo angles (integers)
+	analog write to the servos to turn to specified angles
+analog write to the motors to execute the specified velocities (scaling down to 0.25x)
 		}
 	}
+}
 					</code></pre>
 
 					<h3>Test Programs</h3>
