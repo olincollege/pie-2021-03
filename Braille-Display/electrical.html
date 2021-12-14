@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Electrical - Braille Display</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="electrical is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+            <div id="header-wrapper">
+                <div id="header" class="container">
+
+                    <!-- Logo -->
+                        <h1 id="logo"><a href="index.html">Braille Display</a></h1>
+
+                    <!-- Nav -->
+                    <nav id="nav">
+                        <ul>
+                            <li>
+                                <a href="systems.html">Systems</a>
+                                <ul>
+                                    <li><a href="mechanical.html">Mechanical</a></li>
+                                    <li><a href="electrical.html">Electrical</a></li>
+                                    <li><a href="software.html">Software/Firmware</a></li>
+                                </ul>
+                            </li>
+                            <li class = "break">
+                                <a href="process.html">Process</a>
+                                <ul>
+                                    <li><a href="sprint1.html">Sprint 1</a></li>
+                                    <li><a href="sprint2.html">Sprint 2</a></li>
+                                    <li><a href="sprint3.html">Sprint 3</a></li>
+                                    <li><a href="billOfMaterials.html">Bill of Materials</a></li>
+                                </ul>
+                            </li>
+                            <li ><a href="team.html">Team</a></li>
+                        </ul>
+                    </nav>
+
+					<!-- Breadcrumbs -->
+					<ul class="breadcrumb">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="systems.html">Systems</a></li>
+						<li><a href="electrical.html">Electrical</a></li>
+					</ul> 
+
+                </div>
+			</div>
+			<!-- Main -->
+				<div class="wrapper">
+					<div class="container" id="main">
+
+						<!-- Content -->
+							<article id="content">
+								<header>
+									<h2>Electrical</h2>
+									<p>Read about the components and decisions to connect everything.</p>
+								</header>
+								<a href="#" class="image featured"><img src="images/Electrical-cover-photo.jpg" alt="" /></a>
+								<p> Our system uses 3 SG90 9g Micro Servos, 1 NEMA17 Stepper Motor, 1 DRV8825 motor controller, a SPDT slide switch, a DPST power switch, and an Arduino Uno. </p>
+								
+								<p>We used an external 12V 5A power supply to power our NEMA 17 stepper motor and by extension, our DRV8825 motor controller. This was able to provide enough current and voltage for the motor, which in return could drive the Cell Chain with a steady holding torque of 42 N/m. We also included a 100μf capacitor to regulate the voltage entering the system.</p>
+
+								<p>The three servos, the logic control system for the DRV8825 controller, and the Braille grade switch are powered through 5V given by the Arduino (via serial connection). The Arduino is powered via USB from the computer.</p>
+
+								<p>Below is a circuit diagram showing our system in detail. </p>
+								
+								<a href="images/circuitDiagram.png" class="image centered-small"><img src="images/circuitDiagram.png" alt="A circuit diagram showing the connections for all the components."/></a>
+
+								<h3>Design Decisions</h3>
+
+								<p>As a safeguard, we implemented an on/off switch for the entire system to control both power sources. This is a double pole, single throw switch that gives users an easy way to turn the system off even when it is plugged in.</p>
+								
+								<p>Another feature we implemented as a result of user consulting was a physical switch for changing between Braille 1 and Braille 2. We chose to implement this feature because we wanted to support changing between the two different types of Braille without having to go through the software user-interface. Braille 1 typically maps letters to cells directly, while Braille 2 has a variety contractions for more common words (such as the, and, or).</p>
+
+								<p>If we had more time, we would have implemented a safeguard for our NEMA17 stepper motor, as it sometimes stalls and draws more current than it can handle. We would likely implement an in-line fuse that could break at around 1.8A, so if our motor stalls and draws too much current, the fuse would break and force the motor to stop drawing power.</p>
+							
+							</article>
+
+						<!-- <div class="row features">
+							<section class="col-4 col-12-narrower feature">
+								<div class="image-wrapper first">
+									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								</div>
+								<header>
+									<h3>Dolor sit consequat magna</h3>
+								</header>
+								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur
+								vel sem sit dolor neque semper magna lorem ipsum.</p>
+								<ul class="actions">
+									<li><a href="#" class="button">Elevate my awareness</a></li>
+								</ul>
+							</section>
+							<section class="col-4 col-12-narrower feature">
+								<div class="image-wrapper">
+									<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+								</div>
+								<header>
+									<h3>Dolor sit consequat magna</h3>
+								</header>
+								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur
+								vel sem sit dolor neque semper magna lorem ipsum.</p>
+								<ul class="actions">
+									<li><a href="#" class="button">Elevate my awareness</a></li>
+								</ul>
+							</section>
+							<section class="col-4 col-12-narrower feature">
+								<div class="image-wrapper">
+									<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+								</div>
+								<header>
+									<h3>Dolor sit consequat magna</h3>
+								</header>
+								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur
+								vel sem sit dolor neque semper magna lorem ipsum.</p>
+								<ul class="actions">
+									<li><a href="#" class="button">Elevate my awareness</a></li>
+								</ul>
+							</section>
+						</div> -->
+					</div>
+				</div>
+
+			<!-- Footer -->
+			<div id="footer-wrapper">
+				<div id="copyright">
+					<ul class="menu">
+						<li>&copy; 2021 Braille Display. All rights reserved.</li>
+						<li> Principles of Integrated Engineering Fall 2021.</li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
