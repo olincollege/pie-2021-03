@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Right Sidebar - Helios by HTML5 UP</title>
+		<title>Process Overview</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -72,7 +72,6 @@
 											A summary of our sprints and how we got here.
 										</p>
 									</header>
-									<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
 									<p>
 										Our project was split up into three separate sprints before the unveiling of our final
 										product. During each sprint, we reflected on our current progress, evaluated it against our Minimum
@@ -83,303 +82,104 @@
 										<header>
 											<h3>Sprint 1</h3>
 										</header>
+										<a href="#" class="image featured"><img src="images/sprint1.png" alt="" /></a>
+										<a href="#" class="image featured"><img src="images/webpage1.png" alt="" /></a>
 										<p>
-											Nascetur volutpat nibh ullamcorper vivamus at purus. Cursus ultrices porttitor sollicitudin imperdiet
-											at pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-											feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-											fringilla consequat dis arcu. Pellentesque mus tempor vitae pretium sodales porttitor lacus. Phasellus
-											egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
+											At the very start of this project we obtained a small starter kit that provided the basics of our system.
+											It provided a small chassis that we would want to upgrade in the future, 4 TT motors, and most importantly
+											the 4 omnidirectional wheels. The electronics used in this sprint were an arduino board, a motor shield,
+											an ESP32, and two 9V batteries.
 										</p>
 										<p>
-											Eleifend auctor turpis magnis sed porta nisl pretium. Aenean suspendisse nulla eget sed etiam parturient
-											orci cursus nibh. Quisque eu nec neque felis laoreet diam morbi egestas. Dignissim cras rutrum consectetur
-											ut penatibus fermentum nibh erat malesuada varius.
+											In this sprint, our main focus was testing if we can reliably control the motors remotely from a laptop
+											and learning how we will power all the electronics. The reason we have two 9V batteries is so that one powers
+											the motor shield and therefore the motors and the other was used to power both the arduino and the ESP32.
+											Once assembled we were able to successfully interface between our laptop and ROV-R and had full control over
+											the system.
 										</p>
 									</section>
 									<section>
 										<header>
 											<h3>Sprint 2</h3>
 										</header>
+										<a href="#" class="image featured"><img src="images/sprint2.png" alt="" /></a>
 										<p>
-											Pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-											feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-											ut nunc urna volutpat donec cubilia commodo risus morbi. Lobortis vestibulum velit malesuada ante
-											egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
+											For this sprint we increased the size of our chassis in order to manage the growing number of electrical
+											components on ROV-R. We wired in and programmed the motors that we would be using for our projectile launcher
+											to activate with the press of a button from our web service. We also increased maneuverability with the
+											addition of different key combinations that help display the uniqueness of omni wheels as our robot can move
+											in any direction and turn simultaneously.
+										</p>
+										<p>
+											Throughout this sprint we realized that an upper level of the chassis was necessary to house the electrical
+											components of the system safely as well as to be a base for our projectile launcher. We designed this system to
+											be laser cut but did not have it ready in time for this sprint.
 										</p>
 									</section>
 									<section>
 										<header>
 											<h3>Sprint 3</h3>
 										</header>
+										<a href="#" class="image featured"><img src="images/sprint3.png" alt="" /></a>
 										<p>
-											Nascetur volutpat nibh ullamcorper vivamus at purus. Cursus ultrices porttitor sollicitudin imperdiet
-											at pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-											feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-											fringilla consequat dis arcu. Pellentesque mus tempor vitae pretium sodales porttitor lacus. Phasellus
-											egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
+											First, we laser cut and assembled the upper level of our chassis. During this time we also integrated
+											a small receiver camera to display onto an LCD choosing to power it independently instead of through the Arduino.
 										</p>
 										<p>
-											Eleifend auctor turpis magnis sed porta nisl pretium. Aenean suspendisse nulla eget sed etiam parturient
-											orci cursus nibh. Quisque eu nec neque felis laoreet diam morbi egestas. Dignissim cras rutrum consectetur
-											ut penatibus fermentum nibh erat malesuada varius.
+											Throughout the project thus far, we had a recurring issue of our components not getting enough power and failing
+											because of it. To address this we revamped our power system replacing our 9V Energizer battery with a 12 V 3s LiPo
+											and implemented a step down converter. This step down converter allows us to take the 12V from the LiPo down to 5V.
+											We’re using one of the LiPos to power our arduino directly and the LiPo with the step down to power our camera and ESP32.
+										</p>
+										<p>
+											During this sprint we also redesigned a nerf flywheel launcher system and 3D printed it for our own purposes.
+											Unfortunately there were issues with the design when printed making it nonfunctional for this sprint.
+										</p>
+										<p>
+											Finally, we invested in on-and-off switches to easily turn our system on and off.
+										</p>
+									</section>
+									<section>
+										<header>
+											<h3>Demo Day</h3>
+										</header>
+										<a href="#" class="image featured"><img src="images/demo.png" alt="" /></a>
+										<p>
+											Our main task for demo day was getting the projectile launcher functional. To do this we
+											had to redesign the flywheel mounts, create a container for ammunition, and fabricate a loading mechanism.
+										</p>
+										<p>
+											In addition to this we 3D printed mounts for the camera and various electrical components, redesigned the
+											upper chassis so it was more stable, and edited the code to allow for a servo motor instead of a normal motor for
+											the loading mechanism.
 										</p>
 									</section>
 								</article>
 							</div>
-							<div class="col-4 col-12-mobile" id="sidebar">
-								<hr class="first" />
-								<section>
-									<header>
-										<h3><a href="#">Accumsan sed penatibus</a></h3>
-									</header>
-									<p>
-										Dolor sed fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-										porttitor phasellus tempus cubilia ultrices tempor sagittis  tellus ante diam nec penatibus dolor cras
-										magna tempus feugiat veroeros.
-									</p>
-									<footer>
-										<a href="#" class="button">Learn More</a>
-									</footer>
-								</section>
-								<hr />
-								<section>
-									<header>
-										<h3><a href="#">Sed lorem etiam consequat</a></h3>
-									</header>
-									<p>
-										Tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-									</p>
-									<div class="row gtr-50">
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
-										</div>
-										<div class="col-8">
-											<h4>Nibh sed cubilia</h4>
-											<p>
-												Amet nullam fringilla nibh nulla convallis tique ante proin.
-											</p>
-										</div>
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
-										</div>
-										<div class="col-8">
-											<h4>Proin sed adipiscing</h4>
-											<p>
-												Amet nullam fringilla nibh nulla convallis tique ante proin.
-											</p>
-										</div>
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
-										</div>
-										<div class="col-8">
-											<h4>Lorem feugiat magna</h4>
-											<p>
-												Amet nullam fringilla nibh nulla convallis tique ante proin.
-											</p>
-										</div>
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
-										</div>
-										<div class="col-8">
-											<h4>Sed tempus fringilla</h4>
-											<p>
-												Amet nullam fringilla nibh nulla convallis tique ante proin.
-											</p>
-										</div>
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
-										</div>
-										<div class="col-8">
-											<h4>Malesuada fermentum</h4>
-											<p>
-												Amet nullam fringilla nibh nulla convallis tique ante proin.
-											</p>
-										</div>
-									</div>
-									<footer>
-										<a href="#" class="button">Magna Adipiscing</a>
-									</footer>
-								</section>
-							</div>
-						</div>
-						<hr />
-						<div class="row">
-							<article class="col-4 col-12-mobile special">
-								<a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">Gravida aliquam penatibus</a></h3>
-								</header>
-								<p>
-									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-								</p>
-							</article>
-							<article class="col-4 col-12-mobile special">
-								<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">Sed quis rhoncus placerat</a></h3>
-								</header>
-								<p>
-									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-								</p>
-							</article>
-							<article class="col-4 col-12-mobile special">
-								<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">Magna laoreet et aliquam</a></h3>
-								</header>
-								<p>
-									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-								</p>
-							</article>
 						</div>
 					</div>
 
 				</div>
 
-			<!-- Footer -->
-				<div id="footer">
-					<div class="container">
-						<div class="row">
+				<!-- Footer -->
+					<div id="footer">
+							<div class="row">
+								<div class="col-12">
 
-							<!-- Tweets -->
-								<section class="col-4 col-12-mobile">
-									<header>
-										<h2 class="icon brands fa-twitter circled"><span class="label">Tweets</span></h2>
-									</header>
-									<ul class="divided">
-										<li>
-											<article class="tweet">
-												Amet nullam fringilla nibh nulla convallis tique ante sociis accumsan.
-												<span class="timestamp">5 minutes ago</span>
-											</article>
-										</li>
-										<li>
-											<article class="tweet">
-												Hendrerit rutrum quisque.
-												<span class="timestamp">30 minutes ago</span>
-											</article>
-										</li>
-										<li>
-											<article class="tweet">
-												Curabitur donec nulla massa laoreet nibh. Lorem praesent montes.
-												<span class="timestamp">3 hours ago</span>
-											</article>
-										</li>
-										<li>
-											<article class="tweet">
-												Lacus natoque cras rhoncus curae dignissim ultricies. Convallis orci aliquet.
-												<span class="timestamp">5 hours ago</span>
-											</article>
-										</li>
-									</ul>
-								</section>
+									<!-- Copyright -->
+										<div class="copyright">
+											<ul class="menu">
+												<li>&copy; Project ROV-R Team. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+											</ul>
+										</div>
 
-							<!-- Posts -->
-								<section class="col-4 col-12-mobile">
-									<header>
-										<h2 class="icon solid fa-file circled"><span class="label">Posts</span></h2>
-									</header>
-									<ul class="divided">
-										<li>
-											<article class="post stub">
-												<header>
-													<h3><a href="#">Nisl fermentum integer</a></h3>
-												</header>
-												<span class="timestamp">3 hours ago</span>
-											</article>
-										</li>
-										<li>
-											<article class="post stub">
-												<header>
-													<h3><a href="#">Phasellus portitor lorem</a></h3>
-												</header>
-												<span class="timestamp">6 hours ago</span>
-											</article>
-										</li>
-										<li>
-											<article class="post stub">
-												<header>
-													<h3><a href="#">Magna tempus consequat</a></h3>
-												</header>
-												<span class="timestamp">Yesterday</span>
-											</article>
-										</li>
-										<li>
-											<article class="post stub">
-												<header>
-													<h3><a href="#">Feugiat lorem ipsum</a></h3>
-												</header>
-												<span class="timestamp">2 days ago</span>
-											</article>
-										</li>
-									</ul>
-								</section>
-
-							<!-- Photos -->
-								<section class="col-4 col-12-mobile">
-									<header>
-										<h2 class="icon solid fa-camera circled"><span class="label">Photos</span></h2>
-									</header>
-									<div class="row gtr-25">
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic15.jpg" alt="" /></a>
-										</div>
-									</div>
-								</section>
-
-						</div>
-						<hr />
-						<div class="row">
-							<div class="col-12">
-
-								<!-- Contact -->
-									<section class="contact">
-										<header>
-											<h3>Nisl turpis nascetur interdum?</h3>
-										</header>
-										<p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
-										<ul class="icons">
-											<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-											<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-											<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-											<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
-											<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-											<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
-										</ul>
-									</section>
-
-								<!-- Copyright -->
-									<div class="copyright">
-										<ul class="menu">
-											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-										</ul>
-									</div>
+								</div>
 
 							</div>
-
 						</div>
 					</div>
-				</div>
 
-		</div>
+			</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
