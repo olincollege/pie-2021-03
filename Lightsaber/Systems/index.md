@@ -4,19 +4,36 @@ title: Systems
 permalink: /systems/
 ---
 
+While the electrical and software systems remain the same for both blades, the mechanical systems differ. The system diagrams along with the final lightsabers are shown below. 
+
+[Mechanical](#mechanical-subsystem) 
+[Electrical](#electrical-subsystem) 
+[Software](#software-subsystem)
+
 ## Detachable
+<p align="center">
+  <img src="../Photos!/DetachableBlockDiagram.jpg" alt="Detachable Lightsaber Block Diagram">
+</p>
+
 <p align="center">
   <img src="../Photos!/finalDetachableOnDark.jpg" alt="Powered On Detachable Lightsaber">
 </p>
 
-[Video of Detachable Blade]()
+[Video of Detachable Blade](https://www.youtube.com/embed/RMrMl14pZ-I)
 
 ## Extendable
+<p align="center">
+  <img src="../Photos!/Photos!/ExtendableBlockDiagram.jpg" alt="Extendable Lightsaber Block Diagram">
+</p>
+
 <p align="center">
   <img src="../Photos!/finalExtendableOnDark.jpg" alt="Powered On Extendable Lightsaber">
 </p>
 
-[Video of Extendable Blade]()
+[Video of Extendable Blade](https://youtu.be/GjQWpX-BY98)
+
+
+<a name="mechanical-subsystem"></a>
 
 ## Mechanical
 The mechanical design was broken into two parts for the detachable and extendable blade.
@@ -43,13 +60,9 @@ The hilt is made of several cylinders which thread together and each hold variou
   <img src="../Photos!/FullCAD2.PNG" alt="Hilt Cylinders CAD Model">
 </p>
 
-**PICTURE OF FINAL HILT PRINT? IF NOT USE VERSION 1**
-
 #### Extendable
 
 We developed a mechanical system for the extendable lightsaber that has three main components: the LED strip spool which connects to the electronics, the tape measure spool which connects to the motor fiction wheel, and the motor friction wheel driving the tape measure wheel.
-
-**IS THERE SOME SORT OF BLOCK DIAGRAM TO EXPLAIN THIS?**
 
 <p align="center">
   <img src="../Photos!/finalAssembledExtendable.jpg" alt="Completed Extendable Blade">
@@ -73,6 +86,9 @@ The casing of the extendable blade hilt is very boxy and bulky due to housing th
   <img src="../Photos!/sprint3extendablecad.png" alt="Extendable Blade Hilt Casing">
 </p>
 
+
+<a name="electrical-subsystem"></a>
+
 ## Electrical
 We developed an electrical system that allowed the user to change the color of the lightsaber and made the lightsaber react to movement. We needed the system to be compact such that it could be contained in the hilt of the lightsaber, which needs to fit comfortably in someone's hand.
 
@@ -89,6 +105,9 @@ When powering on or changing colors, the system uses the amplifier and speaker t
 **WHAT ARE THE R,G,B DIODES FOR?**
 
 Unfortunately, since we chose to create two different lightsabers, we could not spare more money for the electrical system at this time. However, in future iterations, we would like to add sensors in the blade of the lightsaber. Specifically, we would add one in the tip of the blade to allow us to create blade drag effect as seen in [The Force Awakens](https://youtu.be/FJTz-ahXyyI?t=247) and a material cutting effect as seen in [The Phantom Menace](https://youtu.be/K48M2S7bkSA?t=1). However, sensors along the blade would allow us flash the blade white in the location it was hit instead of flashing the whole blade white.
+
+
+<a name="software-subsystem"></a>
 
 ## Software
 
