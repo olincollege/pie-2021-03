@@ -29,6 +29,18 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+figcaption {
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+
 body {
 	line-height: 1;
 }
@@ -2207,6 +2219,7 @@ input, select, textarea {
 
 		ul.actions.stacked {
 			-moz-flex-direction: column;
+			-moz-flex-direction: column;
 			-webkit-flex-direction: column;
 			-ms-flex-direction: column;
 			flex-direction: column;
@@ -2683,6 +2696,13 @@ input, select, textarea {
 			.spotlight .image img {
 				border-radius: 0;
 				width: 100%;
+			}
+
+      .spotlight .image video {
+				border-radius: 0;
+				width: 100%;
+        object-fit: cover;
+        
 			}
 
 		.spotlight .content {
