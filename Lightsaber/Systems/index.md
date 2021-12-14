@@ -23,7 +23,7 @@ While the electrical and software systems remain the same for both blades, the m
 
 ## Extendable
 <p align="center">
-  <img src="../Photos!/Photos!/ExtendableBlockDiagram.jpg" alt="Extendable Lightsaber Block Diagram">
+  <img src="../Photos!/ExtendableBlockDiagram.jpg" alt="Extendable Lightsaber Block Diagram">
 </p>
 
 <p align="center">
@@ -43,18 +43,28 @@ The mechanical design was broken into two parts for the detachable and extendabl
 The detachable lightsaber has two main components: the hilt which holds the electronics and the blade which houses the LED strip.
 
 <p align="center">
-  <img src="../Photos!/" alt="Completed Detachable Blade">
+  <img src="../Photos!/detachableFinalBlade.jpg" alt="Completed Detachable Blade">
 </p>
 
-The blade is made of a piece of diffused polycarbonate tubing with two endcaps holding a strip of LEDs in the center. The diffusion was done by rubbing the polycarbonate tubing with an emery cloth and placing 0.002 inch thick polycarbonate film on the inside of the tube. The upper endcap covers the top of the blade and is connected to the top of the LED strip, so the LEDs hang through the blade tubing. The lower endcap, in black, also holds a connector that interfaces with a matching connector on the hilt. Together, the lower endcap and matching connector act as the deaching mechanism to remove the blade from the hilt, allowing the LED strip to be connected to the hilt electronics when the blade is attached.
-
-**CAD OF THE FINAL DETACHING MECHANISM**
+The blade is made of a piece of diffused polycarbonate tubing with two endcaps holding a strip of LEDs in the center. The diffusion was done by rubbing the polycarbonate tubing with an emery cloth and placing 0.002 inch thick polycarbonate film on the inside of the tube. The upper endcap covers the top of the blade and is connected to the top of the LED strip, so the LEDs hang through the blade tubing. The lower endcap, shown in green in the CAD models below, also holds a connector that interfaces with a matching connector on the hilt. Together, the lower endcap and matching connector, shown in purple in the CAD models below, act as the deaching mechanism to remove the blade from the hilt, allowing the LED strip to be connected to the hilt electronics when the blade is attached.
 
 <p align="center">
-  <img src="../Photos!/sprint3detachablev7.jpg" alt="Detaching Mechanism">
+  <img src="../Photos!/bladeEndcapv7CAD.jpg" alt="Detaching Mechanism - Blade Encap CAD">
+</p>
+
+<p align="center">
+  <img src="../Photos!/connectorv8CAD.jpg" alt="Detaching Mechanism - Hilt Connector CAD">
+</p>
+
+<p align="center">
+  <img src="../Photos!/detachingMechanismCAD.jpg" alt="Detaching Mechanism CAD">
+</p>
+
+<p align="center">
+  <img src="../Photos!/sprint3detachablev7.jpg" alt="Detaching Mechanism Printed">
 </p>
  
-The hilt is made of several cylinders which thread together and each hold various electrical components such as the battery, speaker, and control board. The components are secured with hidden supports inside the hilt pieces. The speaker is housed in the very bottom of the hilt, and the battery is hosed in the component above it. This allows for easy access to the Lipo battery for recharging. Then, the buttons and switch **? - not that important** are housed in the third component, and the control board is housed in the top component. The control board is revealed here in our version of kyber crystal reveal that some lightsabers have. This top component is then connected to the hilt connector of the detaching mechanism.
+The hilt is made of several cylinders which thread together and each hold various electrical components such as the battery, speaker, and control board. The components are secured with hidden supports inside the hilt pieces. The speaker is housed in the very bottom of the hilt, and the battery is hosed in the component above it. This allows for easy access to the Lipo battery for recharging. Then, the buttons and switch are housed in the third component, and the control board is housed in the top component. The control board is revealed here in our version of kyber crystal reveal that some lightsabers have. This top component is then connected to the hilt connector of the detaching mechanism.
 
  <p align="center">
   <img src="../Photos!/FullCAD2.PNG" alt="Hilt Cylinders CAD Model">
@@ -101,8 +111,6 @@ The system features a 4 Ohm, 3 Watt speaker, a 0.5 meter NeoPixel LEDs, two push
 </p>
 
 When powering on or changing colors, the system uses the amplifier and speaker to play music. Otherwise, lightsaber noises are played based on accelerometer input. The switch is used to disconnect the battery from the system to prevent the battery from being drained when not in use. 
-
-**WHAT ARE THE R,G,B DIODES FOR?**
 
 Unfortunately, since we chose to create two different lightsabers, we could not spare more money for the electrical system at this time. However, in future iterations, we would like to add sensors in the blade of the lightsaber. Specifically, we would add one in the tip of the blade to allow us to create blade drag effect as seen in [The Force Awakens](https://youtu.be/FJTz-ahXyyI?t=247) and a material cutting effect as seen in [The Phantom Menace](https://youtu.be/K48M2S7bkSA?t=1). However, sensors along the blade would allow us flash the blade white in the location it was hit instead of flashing the whole blade white.
 

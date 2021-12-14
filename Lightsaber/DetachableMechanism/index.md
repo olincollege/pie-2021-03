@@ -12,6 +12,8 @@ The detaching mechanism for the detachable blade went through several iterations
 
 [Back to Sprint 3](../Sprints/#sprint-3-mech)
 
+<iframe width="560" height="315" src="https://youtu.be/tNJzzJCSO8g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 #### Initial Design
 
 <p align="center">

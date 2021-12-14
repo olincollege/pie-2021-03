@@ -114,7 +114,9 @@ Additionally, we designed the casing of the hilt. The first version of the hilt 
 
 With the first version of the hilt, we had trouble extruding the threads, so the only change from version 1 to version 2 is working threads.
 
-**FINAL HILT VERSION**
+ <p align="center">
+  <img src="../Photos!/FullCAD2.PNG" alt="Hilt Cylinders CAD Model">
+</p>
 
 Additionally, we used an emery cloth to diffuse the blade and printed a resin and pla cap for the tubing. We found our initial version broke easily and the LEDs could not connect to it, so we increased the thicknesss of the interface with the blade and added a hook for the LEDs to be glued onto. The final version of the endcap is shown below. 
 
@@ -124,7 +126,9 @@ Additionally, we used an emery cloth to diffuse the blade and printed a resin an
 
 We found that this did not provide enough diffusion and added 0.002 inch thick polycarbonate film to the inside of the tube.
 
-**PICTURE OF FINAL DIFFUSED BLADE**
+<p align="center">
+  <img src="../Photos!/detachableFinalBlade.jpg" alt="Completed Detachable Blade">
+</p>
 
 For the extendable blade, we fixed the LED spool, so that the LEDs wrap around the spool without loosening when retracting, and we printed the casing for the hilt. Additionally, we successfully thermoformed the film, creating the proof of concept for the clear blade, but we did not have the time or material to implement it. 
 
