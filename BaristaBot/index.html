@@ -59,11 +59,21 @@
 								</a>which aimed to fully automate the coffee brewing process with an assembly-line-style aesthetic.</p>
 							<p>For our iteration, we decided to aim for an open-view, more compact experience that not only dispenses coffee, 
 								but the additional capability to add milk and sugar.</p>
+							<h3>System Integration</h3>
+							<span class="image main"><img src="images/total_system.png" alt="" /></span>
+							<p>As seen in our total system above, our mechanical, electrical, and software work together to create the BaristaBot.
+								The software receives input from the user of what ingredients they wish to place in their cups and communicates
+							with the electrical components through the Arduino to trigger events that get supported from the mechanical portions
+						of the project.</p>
+							<p>When the user selects the type of coffe they want, the electrical components triggers the mechanical components to 
+								make the coffee to dispense the sugar and/or milk, brewing the coffee with hot water on the grinds, and stirring the final mixture.
+							</p>
+							<h3>The Team</h3>
 							<span class="iconimage"><img src="images/white_circle.png" alt=""/></span>
 							<span class="iconimage"><img src="images/dan-2.png" alt=""/></span>
-							<span class="iconimage"><img src="images/white_circle.png" alt=""/></span>
+							<span class="iconimage"><img src="images/charlotte_portrait.PNG" alt=""/></span>
 							 <span class="iconimage"><img src="images/moises_portrait.png" alt=""/></span>
-							 <span class="iconimage"><img src="images/merwan.png" alt=""/></span>
+							 <span class="iconimage"><img src="images/merwan_portrait.PNG" alt=""/></span>
 							<span class="paragraph"> This project was made possible by the BaristaBot PIE Team: Ivonne Munoz, Daniel Park, Charlotte Ramiro, Moises Sabido Garcia, and Merwan Yeditha.</span>
 						</article>
 
@@ -74,23 +84,48 @@
 								<p>Here you can see the mechanical design of the BaristaBot2.0 from the 
 									heating water container, bean grinder, ingredient dispensing, and the cup stirrer.
 								</p>
-								<h3>Water Heating</h3>
-								<!-- Schematic goes here -->
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>The coil heats up the water poured into the container and is poured out through
-									a solunoid dispenser into the cup.
-								</p>
 								<h3>Bean Grinder</h3>
 								<!-- Schematic goes here -->
 								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>The bean grinder uses a motor running at 84 rpm at 12V DC to drive a modified hand crank coffee grinder
-									attached with 3D printed motor and grinder mounts. The grinded beans will be dispensed into a dispenser container
-								so it can be poured into the cup</p>
+								<p>When seeing how the original BaristaBot team implemented bean grinding, we tried to 
+									create a unique solution. When that did not work, we traced back our steps and 
+									attempted to recreate their solution which was put take a hand bean grinder and 
+									attach a strong 12V DC motor to it. We acquired a hand grinder and stripped it so 
+									that it would fit out purpose.
+									
+									Later, we harvested a motor from an old cordless hand drill that had a bad battery
+									as we had tried to grind beans with a smaller 5V DC motor but that failed. Still,
+									as great as the larger 12V bean grinding motor was, it posed many issues for both
+									the mechanical and electrical teams. On the mechanical side, it was quite bulky, 
+									heavy, and had a planetary transmission that we had to keep. If we had not kept it,
+									we would not have been able to connect the shaft of the bean grinder to the chuck of 
+									the drill. We would have had to make out own coupling to connect them and that was 
+									deemed not worth the time. After CADing a mount for both the grinder and the motor,
+									we connected the two using wooden dowels to constrain the torqy movement of the motor.
+
+									For as much as we wanted to have this in the final iteration, we could not keep it in
+									due to complications in the electrical components needed to power the motor as it 
+									ran at a variable amperage that bounced from 3.5A to 4.8A thus making it difficult to 
+									build a circuit for, especially when we were already doing a complicated one for the
+									water heating elements.
+								</p>
 								<h3>Ingredient Dispensers</h3>
 								<!-- Schematic goes here -->
 								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>The dispensers, with the control of a servo each, will dispenser the grinded coffee beans, powdered milk, and sugar
-									into the cup.
+								<p>Having had experience with the creation of food safe containers, our team opted to purchase
+									COTS dispensing containers from Amazon. The containers were originally intended to be used
+									with cereal, so adjusting them to work with finer ingredients was something that we knew would
+									have to be addressed. Our solution to that ended up being putting tape on the "flippers". This
+									would then make the gap between the flippers and the sidewalls of the containers small enough
+									to limit the amount of spillage. The ingredients we were putting inside these containers were 
+									bean grinds, powdered creamer, and granulated sugar.
+
+									These COTS containers were perfect for our team in the sense that we were able to quickly and 
+									easily motorize them. We simply took the handle that had a D-shaft attached to it (which 
+									attached to the flippers), sanded it flat, and put a servo mount that was available to us in 
+									the PIE room. Just like that, we now had motorized dispensers. 
+
+									For more on how these were mounted in the system, read the section on the Box housing/tiered system.
 								</p>
 								<h3>Cup Stirrer</h3>
 								<!-- Schematic goes here -->
@@ -264,12 +299,42 @@
 													<td>12.99</td>
 													<td>0</td>
 												</tr>
-												
+												<tr>
+													<td><a href="https://www.target.com/p/folgers-classic-medium-roast-ground-coffee-30-5oz/-/A-13397813?ref=tgt_adv_XS000000&AFID=google_pla_df_free_local&CPNG=Grocery&adgroup=231-10"
+														target="_blank" >Coffee Grinds</a></td>
+													<td>Ingredient for Coffee</td>
+													<td>1</td>
+													<td>7.49</td>
+													<td>7.49</td>
+												</tr>
+												<tr>
+													<td><a href="https://www.amazon.com/NESTLE-NIDO-Fortificada-Ounce-Canister/dp/B00FRFRZF6/ref=sr_1_2?keywords=Powdered+Milk&qid=1639361244&sr=8-2"
+														target="_blank" >Powdered Milk</a></td>
+													<td>Ingredient for Coffee (Powdered due to refrigeration issues)</td>
+													<td>1</td>
+													<td>10.68</td>
+													<td>10.68</td>
+												</tr>
+												<tr>
+													<td><a href="https://www.amazon.com/Domino-Premium-Granulated-Sugar-Ounce/dp/B01BWM57CK/ref=sr_1_1?keywords=sugar&qid=1639361267&sr=8-1"
+														target="_blank" >Sugar</a></td>
+													<td>Ingredient for Coffee</td>
+													<td>1</td>
+													<td>10.74</td>
+													<td>10.74</td>
+												</tr>
+												<tr>
+													<td>Toscanini's Ice Cream</td>
+													<td>Ice Cream for Team Bonding Event!</td>
+													<td>1</td>
+													<td>19.69</td>
+													<td>19.69</td>
+												</tr>
 											</tbody>
 											<tfoot>
 												<tr>
 													<td colspan="4"></td>
-													<td>184.25</td>
+													<td>214.67</td>
 												</tr>
 											</tfoot>
 										</table>
