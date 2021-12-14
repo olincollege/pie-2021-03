@@ -36,9 +36,9 @@ plugins:
 
 header_pages:
   - index.md
-  - Systems/systems.md
-  - Sprints/sprints.md
-  - Budget/budget.md
+  - systems.md
+  - sprints.md
+  - budget.md
 
 # Exclude from processing.
 # The following items will not be processed, by default.

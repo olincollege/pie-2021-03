@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Budget
-permalink: /Budget/
+permalink: 
 ---
 | Item      | Quantity | Cost per Unit | Total |
 | --------- | ---------- | ---------- | ---------- |

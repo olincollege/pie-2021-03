@@ -12,9 +12,9 @@ layout: home
 
 Welcome, we are the lightsaber team of the Fall 2021 Principles of Integrated Engineering Class. For our final project, we  decided to create our very own lightsabers! You can find more about our engineering or design via these links, or read on below to learn more about the overall goals we had and what we did!
 
-[Engineering - Systems](./Systems/)
+[Engineering - Systems](./systems.html)
 
-[Design Reviews - Sprints](./Sprints)
+[Design Reviews - Sprints](./sprints.html)
 
 <p align="center">
   <img src="./Photos!/demoDark.png" alt="Display of Completed Lightsabers">

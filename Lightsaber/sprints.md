@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Sprints
-permalink: /Sprints/
+permalink: 
 ---
 
 <a name="top"></a>
@@ -25,20 +25,20 @@ In Sprint 1, our team decided we wanted to create a replica lightsaber. We decid
 To do this, our mechanical team split between developing the detachable blade and creating a proof of concept of the extendable blade. On the detachable side of things, we focused on the electronics packaging within the hilt with a focus on making it secure and compact enough that the hilt can comfortably fit in someone's hand.
 
 <p align="center">
-  <img src="../Photos!/sprint1electronicslayout.jpg" alt="Sprint 1 Electronics Layout">
+  <img src="./Photos!/sprint1electronicslayout.jpg" alt="Sprint 1 Electronics Layout">
 </p>
 
 For the extendable blade, we investigated how we could make this work, basing it off of Disney's new lightsaber. We landed on a tape measure mechanism where the tape measure would be spool in the hilt and attached to the LEDs, so that they can be pulled out together. The MVP for this extendable blade was decided to be a single tape measure with a LED strip extending together.
 
 <p align="center">
-  <img src="../Photos!/sprint1extendable.jpg" alt="Sprint 1 Extendable Proof of Concept">
+  <img src="./Photos!/sprint1extendable.jpg" alt="Sprint 1 Extendable Proof of Concept">
 </p>
 
 #### Electrical
 For electrical, we put the FeatherWing onto the Feather M4 Express and then connected the battery, speaker, button, and LEDs. 
 
 <p align="center">
-  <img src="../Photos!/sprint1electrical.jpg" alt="Sprint 1 Circuit Diagram">
+  <img src="./Photos!/sprint1electrical.jpg" alt="Sprint 1 Circuit Diagram">
 </p>
 
 #### Software
@@ -58,12 +58,12 @@ In Sprint 2, we wanted to see how far along we could get with the extendable lig
 For the detachable blade, this sprint we modified the electronics packaging, so that the hilt of the lightsaber would fit into a 2 inch diameter hilt, more closely resemble Disney's lightsaber dimensions. Additionally, we began working on the detaching mechanism of the blade, making versions 1-2. 
 
 <p align="center">
-  <img src="../Photos!/sprint2detachablev2.jpg" alt="Sprint 2 Detaching Mechanism Version 2">
+  <img src="./Photos!/sprint2detachablev2.jpg" alt="Sprint 2 Detaching Mechanism Version 2">
 </p>
 
 More information on this feature and the different versions can be found at the link below.
 
-[Detaching Mechanism](../DetachableMechanism/)
+[Detaching Mechanism](./detachableMechanism.html)
 
 For the extendable blade, we reverse engineered a motorized tape measure. We found that the motor was sufficient for our needs, so we switched the battery out for a 9 volt one because we wanted more power for the extending and retracting motions. We then connected the tape measure and LEDs, although the diameter of the LED spool was too small, leading to problems when retracting the blade. 
 
@@ -75,7 +75,7 @@ We also looked into different thicknesses of polycarbonate and polypropylene fil
 For electrical, we put together the second set of electronics for the second blade. Additionally, we added a second button and a switch. The button was added to allow for switching between lightsaber colors, and the switch was added to turn the whole lightsaber off, so that it does not drain the battery when not in use. 
 
 <p align="center">
-  <img src="../Photos!/sprint2electrical.png" alt="Sprint 2 Circuit Diagram">
+  <img src="./Photos!/sprint2electrical.png" alt="Sprint 2 Circuit Diagram">
 </p>
 
 #### Software
@@ -99,41 +99,41 @@ In Sprint 3, we finished up both the extendable and detachable blades. Additiona
 During sprint 3, we went through versions 3-6 of the detaching mechanism for the detachable blade before we finalized it with version 7. 
 
 <p align="center">
-  <img src="../Photos!/sprint3detachablev7.jpg" alt="Sprint 3 Detaching Mechanism Version 6">
+  <img src="./Photos!/sprint3detachablev7.jpg" alt="Sprint 3 Detaching Mechanism Version 6">
 </p>
 
 More information on this feature and the different versions can be found at the link below.
 
-[Detaching Mechanism](../DetachableMechanism/)
+[Detaching Mechanism](./detachableMechanism.html)
 
 Additionally, we designed the casing of the hilt. The first version of the hilt shown below is made of 3D printed sections. This allows for easy access to the battery to recharge it. Additionally, it features a cutout to show off the board we are using. Originally, we had hoped to implement a kyber crystal reveal, however since we did not have the time to develop this feature, we made a board reveal instead.
 
 <p align="center">
-  <img src="../Photos!/sprint3hiltv1.jpg" alt="Sprint 3 Hilt Version 1">
+  <img src="./Photos!/sprint3hiltv1.jpg" alt="Sprint 3 Hilt Version 1">
 </p>
 
 With the first version of the hilt, we had trouble extruding the threads, so the only change from version 1 to version 2 is working threads.
 
  <p align="center">
-  <img src="../Photos!/FullCAD2.PNG" alt="Hilt Cylinders CAD Model">
+  <img src="./Photos!/FullCAD2.PNG" alt="Hilt Cylinders CAD Model">
 </p>
 
 Additionally, we used an emery cloth to diffuse the blade and printed a resin and pla cap for the tubing. We found our initial version broke easily and the LEDs could not connect to it, so we increased the thicknesss of the interface with the blade and added a hook for the LEDs to be glued onto. The final version of the endcap is shown below. 
 
 <p align="center">
-  <img src="../Photos!/sprint3diffusedblade.jpg" alt="Sprint 3 Diffused Blade and Resin Cap">
+  <img src="./Photos!/sprint3diffusedblade.jpg" alt="Sprint 3 Diffused Blade and Resin Cap">
 </p>
 
 We found that this did not provide enough diffusion and added 0.002 inch thick polycarbonate film to the inside of the tube.
 
 <p align="center">
-  <img src="../Photos!/detachableFinalBlade.jpg" alt="Completed Detachable Blade">
+  <img src="./Photos!/detachableFinalBlade.jpg" alt="Completed Detachable Blade">
 </p>
 
 For the extendable blade, we fixed the LED spool, so that the LEDs wrap around the spool without loosening when retracting, and we printed the casing for the hilt. Additionally, we successfully thermoformed the film, creating the proof of concept for the clear blade, but we did not have the time or material to implement it. 
 
 <p align="center">
-  <img src="../Photos!/sprint3extendablecad.png" alt="Extendable Blade Hilt Casing">
+  <img src="./Photos!/sprint3extendablecad.png" alt="Extendable Blade Hilt Casing">
 </p>
 
 #### Electrical
