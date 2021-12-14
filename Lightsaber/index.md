@@ -17,7 +17,7 @@ Welcome, we are the lightsaber team of the Fall 2021 Principles of Integrated En
 [Design Reviews - Sprints](./Sprints)
 
 <p align="center">
-  <img src="../Photos!/demoDark.png" alt="Display of Completed Lightsabers">
+  <img src="./Photos!/demoDark.png" alt="Display of Completed Lightsabers">
 </p>
 
 
