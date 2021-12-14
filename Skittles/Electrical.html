@@ -55,7 +55,7 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="Software.html">Software</a>
 </li></ul>
 </div>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" style="padding: 10px 20px;">Budget</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Budget.html" style="padding: 10px 20px;">Budget</a>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
@@ -69,7 +69,7 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Software.html">Software</a>
 </li></ul>
 </div>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Budget</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Budget.html" style="padding: 10px 20px;">Budget</a>
 </li></ul>
               </div>
             </div>
@@ -84,7 +84,15 @@
     </section>
     <section class="u-align-center u-clearfix u-section-2" id="sec-9ccc">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h5 class="u-align-left u-custom-font u-font-roboto u-text u-text-1"> The electrical system for the Skittle PNP is in charge of providing power to all components, electrically controlling the solenoid air valve, and providing an easy interface between firmware and the electromechanical devices in the system, such as the motors and servos. The system features a custom interface PCB used to house the STM32 development board, A4988 stepper motor drivers, and linear power regulators that take a 12V input and provide 3.3V and 5V to all components in the system. </h5>
+        <h5 class="u-align-left u-custom-font u-font-roboto u-text u-text-1"> The
+ electrical system for the Skittle PNP is in charge of providing power 
+to all components, electrically controlling the solenoid air valve, and 
+providing an easy interface between firmware and the electromechanical 
+devices in the system, such as the motors and servos. The system 
+features a custom interface PCB used to house the STM32 development 
+board, A4988 stepper motor drivers, and linear voltage regulators that 
+take a 12V input and provide 3.3V and 5V to all components in the 
+system.</h5>
         <h2 class="u-align-left u-text u-text-2">Power</h2>
         <h5 class="u-align-left u-text u-text-3"> All components are powered by a 12V DC power supply, which goes through a power-on switch before powering all devices in the system (<a href="https://www.amazon.com/Nilight-90014E-Rocker-Toggle-Warranty/dp/B07QKFD7Z7/ref=sr_1_11?keywords=12v%2Bswitch&amp;qid=1639346484&amp;sr=8-11&amp;th=1" class="notion-enable-hover notion-link-token u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" target="_blank" rel="noopener noreferrer">Amazon Link</a>). The red casing prevents someone from accidentally starting the system and this switch doubles as an emergency stop switch.&nbsp;
         </h5>
@@ -283,7 +291,13 @@
           </div>
         </div>
         <ul class="u-align-left u-custom-font u-font-roboto u-text u-text-7">
-          <li> Although we have the exposed copper to provide extra pins (we didn't want to purchase more connectors), the servo we added for the skittle feeder had trouble interfacing with them. We had to use the pins on the connector for I2C instead. This works as a temporary fixed because we have not implemented the LCD screen yet, however, future iterations of the PCB should account for this change and issue. </li>
+          <li> Although
+ we have the exposed copper to provide extra pins (we didn't want to 
+purchase more connectors), the servo we added for the skittle feeder had
+ trouble interfacing with them. We had to use the pins on the connector 
+for I2C instead. This works as a temporary fix because we have not 
+implemented the LCD screen yet, however, future iterations of the PCB 
+should account for this change and issue.</li>
           <li>The silkscreen was not very comprehensive and we had to constantly check the datasheet for the pinouts of the connectors. In the future, we should make sure to label everything clearly to avoid accidentally shorting any wires. As placeholder labels, we took some painters tape and taped it onto the board. This is where some of the space on the board came in handy.&nbsp;<br>
           </li>
         </ul>
