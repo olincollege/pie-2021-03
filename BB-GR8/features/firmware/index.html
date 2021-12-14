@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Firmware - BB-Gr8</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="https://olincollege.github.io/pie-2021-03/BB-GR8/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/pie-2021-03/BB-GR8/css/style.min.1fcd47454b48916a73bd70e3c1396bfbf16aead9f87abe9af1683fc3132f1b4d.css">
+  
+
+  
+
+</head>
+
+<body class='page page-services-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+    <li class="menu-item-features">
+      <a href="/pie-2021-03/BB-GR8/features/">
+        
+        <span>Features</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-gallery">
+      <a href="/pie-2021-03/BB-GR8/gallery/">
+        
+        <span>Gallery</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-about">
+      <a href="/pie-2021-03/BB-GR8/about/">
+        
+        <span>About</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  <div id="wrapper" class="wrapper">
+    <div class='header header-absolute'>
+  <div class="container">
+    <div class="logo">
+      <a href="https://olincollege.github.io/pie-2021-03/BB-GR8/"><img alt="Figurit Homepage" src="https://olincollege.github.io/pie-2021-03/BB-GR8/images/logo.svg" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="https://olincollege.github.io/pie-2021-03/BB-GR8/"><img alt="Figurit Homepage" src="https://olincollege.github.io/pie-2021-03/BB-GR8/images/logo-mobile.svg" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  <ul>
+    
+    
+    <li class="menu-item-features">
+      <a href="/pie-2021-03/BB-GR8/features/">
+        
+        <span>Features</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-gallery">
+      <a href="/pie-2021-03/BB-GR8/gallery/">
+        
+        <span>Gallery</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-about">
+      <a href="/pie-2021-03/BB-GR8/about/">
+        
+        <span>About</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+    
+<div id="hero" class="hero-image hero-image-setheight" style="background-image: url('/pie-2021-03/BB-GR8/bb8-in-ship.jpg')">
+  <div class="container ">
+    <div class="hero-text">
+      <span class="hero-section">features</span>
+      <h1>Firmware</h1>
+      <p>How the robot is programmed to operate</p>
+    </div>
+  </div>
+</div>
+  
+<div class="container pt-4 pt-md-10 pb-4 pb-md-10">
+  <div class="row justify-content-start">
+    <div class="col-12 col-md-8">
+      <div class="service service-single">
+        <div class="content"><p>The Arduino&rsquo;s firmware is all written in Arduino C and allows BB-8 to receive
+commands from a laptop and output speeds to its motors. The firmware is short
+and to the point, as firmware should be.</p>
+<h2 id="code-summary">Code Summary</h2>
+<p>The code starts by setting all of the speeds to zero. When a bluetooth signal
+is received, it parses the command, which gives it three numbers: the signed
+percentage power values for the three motors. These values are normalized and
+the motors are then set to run at the relative speeds they were assigned.
+The firmware keeps doing this continuously, <em>unless there is no command sent for
+30 seconds, in which case the motors are stopped</em>. This failsafe is included
+in case electrical components stop working during a run and the motors need to stop
+running but the bluetooth connection fails.</p>
+<h2 id="libraries-used">Libraries Used</h2>
+<ol>
+<li><strong>&lt;Adafruit_MotorShield.h&gt;</strong> is used for interfacing the Motor Shield. See
+more information in the electrical section.</li>
+<li><strong>&lt;SoftwareSerial.h&gt;</strong> is used for feeding bluetooth commands to the Arduino
+via a non-default port.</li>
+</ol>
+<h2 id="more-information">More Information</h2>
+<p>The firmware for the Arduino, along with the rest of the software, can be found
+on <a href="https://github.com/intermezzio/bb-8">GitHub</a>.</p>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  
+  <div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          
+          <ul>
+            <li>Icons from Icons8</li>
+            <li class="zerostatic"><a href="https://www.zerostatic.io">www.zerostatic.io</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+  
+
+
+
+
+  <script type="text/javascript" src="/pie-2021-03/BB-GR8/js/services.min.052ec1d7bcff8bba2b50359ebe62c0e6d0f530b3bd5cf723d5ccc5e8f22bd123.js"></script>
+  
+
+
+  
+  <script type="text/javascript" src="/pie-2021-03/BB-GR8/js/scripts.min.98ee06cc35517b5800b382aecb0fc59893e95b9c11dd21842d0d57e4f68043e3.js"></script>
+  
+
+  
+  
+  
+    
+  
+
+
+</body>
+</html>

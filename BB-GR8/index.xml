@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on BB-Gr8</title>
+    <link>https://olincollege.github.io/pie-2021-03/BB-GR8/</link>
+    <description>Recent content in Home on BB-Gr8</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Feb 2018 15:37:57 +0700</lastBuildDate><atom:link href="https://olincollege.github.io/pie-2021-03/BB-GR8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Electrical</title>
+      <link>https://olincollege.github.io/pie-2021-03/BB-GR8/features/electrical/</link>
+      <pubDate>Sun, 18 Nov 2018 12:33:46 +1000</pubDate>
+      
+      <guid>https://olincollege.github.io/pie-2021-03/BB-GR8/features/electrical/</guid>
+      <description>An Arduino controls all of the electrical components on BB-8. The Arduino is connected to various other components, including motors and a bluetooth module, to drive BB-8.
+Circuit Design Here is the layout of our circuit:
+The circuit includes an Arduino, a motor shield, and an HC-05 bluetooth chip. The bluetooth module pairs with a laptop and connects to the Arduino to send and receive commands. The motor shield sends power to the motors to drive them.</description>
+    </item>
+    
+    <item>
+      <title>Sprint 1</title>
+      <link>https://olincollege.github.io/pie-2021-03/BB-GR8/gallery/sprint1/</link>
+      <pubDate>Sun, 18 Nov 2018 12:33:46 +1000</pubDate>
+      
+      <guid>https://olincollege.github.io/pie-2021-03/BB-GR8/gallery/sprint1/</guid>
+      <description>Our goal for this sprint was to design and build a two-wheel robot that drives in a sphere based on a pre-programmed path.
+Subteam Progress Software In this sprint, we were able to preload a set of drive commands to the robot to enable it to drive in the hamster ball. The robot is controlled via Arduino Uno. Future steps include wireless control of the robot using Bluetooth and some controller such as a joystick or laptop arrow keys.</description>
+    </item>
+    
+    <item>
+      <title>Mechanical</title>
+      <link>https://olincollege.github.io/pie-2021-03/BB-GR8/features/mechanical/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>https://olincollege.github.io/pie-2021-03/BB-GR8/features/mechanical/</guid>
+      <description>The main mechanical function of our BB-8 was to get a small robot to drive within a sphere. We built a bottom heavy robot inside of a spherical shell to mimic the functionality of BB-8.
+Creating the Sphere Making the Ball Openable Fabricating a sphere that is smooth inside &amp;amp; out is hard enough, but building it such that we could easily access the robot inside made it even more challenging.</description>
+    </item>
+    
+    <item>
+      <title>Sprint 2</title>
+      <link>https://olincollege.github.io/pie-2021-03/BB-GR8/gallery/sprint2/</link>
+      <pubDate>Sun, 18 Nov 2018 12:33:46 +1000</pubDate>
+      
+      <guid>https://olincollege.github.io/pie-2021-03/BB-GR8/gallery/sprint2/</guid>
+      <description>In this sprint, we wanted to make our robot wireless. This included incorporating our Bluetooth module and adding batteries.
+Subteam Progress Software Our goal for this sprint was to incorporate the HC-05 bluetooth module onto the robot chassis in order to communicate wirelessly with the Arduino and sent commands in real-time. Our approach was to write a Python script that converted keyboard presses into commands that were sent over Serial to the Bluetooth module.</description>
+    </item>
+    
+    <item>
+      <title>Software</title>
+      <link>https://olincollege.github.io/pie-2021-03/BB-GR8/features/software/</link>
+      <pubDate>Wed, 28 Nov 2018 15:15:34 +1000</pubDate>
+      
+      <guid>https://olincollege.github.io/pie-2021-03/BB-GR8/features/software/</guid>
+      <description>The software, written in Python, creates a clean interface for sending commands to BB-8, converting a joystick input to BB-8 commands.
+Joystick The joystick is written in HTML/JS using a canvas element. Since this code is very generic and not central to BB-8&amp;rsquo;s functionality, the frontend of this was based off of an existing HTML joystick. This code was modified to send the position of the joystick (indicating magnitude and direction) to a Python server.</description>
+    </item>
+    
+    <item>
+      <title>Sprint 3 and Beyond</title>
+      <link>https://olincollege.github.io/pie-2021-03/BB-GR8/gallery/sprint3/</link>
+      <pubDate>Sun, 18 Nov 2018 12:33:46 +1000</pubDate>
+      
+      <guid>https://olincollege.github.io/pie-2021-03/BB-GR8/gallery/sprint3/</guid>
+      <description>Our goal for this sprint was to integrate the wireless drive code with the newly built, three-wheel chassis, as well as fully integrate all mechanical and electrical components. A demo of the robot can be found here
+Subteam Progress Software Our goal for the final sprint was to update the firmware to drive with three wheels instead of two, and to make the controller more intuitive by creating a virtual joystick controller that would send commands to the robot.</description>
+    </item>
+    
+    <item>
+      <title>Firmware</title>
+      <link>https://olincollege.github.io/pie-2021-03/BB-GR8/features/firmware/</link>
+      <pubDate>Wed, 28 Nov 2018 15:15:26 +1000</pubDate>
+      
+      <guid>https://olincollege.github.io/pie-2021-03/BB-GR8/features/firmware/</guid>
+      <description>The Arduino&amp;rsquo;s firmware is all written in Arduino C and allows BB-8 to receive commands from a laptop and output speeds to its motors. The firmware is short and to the point, as firmware should be.
+Code Summary The code starts by setting all of the speeds to zero. When a bluetooth signal is received, it parses the command, which gives it three numbers: the signed percentage power values for the three motors.</description>
+    </item>
+    
+    <item>
+      <title>Low Cost</title>
+      <link>https://olincollege.github.io/pie-2021-03/BB-GR8/features/budget/</link>
+      <pubDate>Wed, 28 Nov 2018 15:15:34 +1000</pubDate>
+      
+      <guid>https://olincollege.github.io/pie-2021-03/BB-GR8/features/budget/</guid>
+      <description>This project could be replicated with a $250 budget, as our team was resourceful in its use of materials to create an effective robot at a low cost.
+Budget     Material Used Estimated Cost Amount Taken out of Budget     Borrowed Adafruit Motorshield $19.95 $0.00    Arduino Uno $23.00 $0.00    Roll of Duct Tape $8.58 $0.00    4V Rechargeable Batteries (3x) $7.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://olincollege.github.io/pie-2021-03/BB-GR8/about/</link>
+      <pubDate>Thu, 06 Dec 2018 09:29:16 +1000</pubDate>
+      
+      <guid>https://olincollege.github.io/pie-2021-03/BB-GR8/about/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
