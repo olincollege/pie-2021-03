@@ -70,7 +70,7 @@
 
 								<p>One challenge we faced was that each servo had different levels of positioning and movement precision, which forced us to code movement uniquely for each servo. For example, moving a servo to hit the right-most pin on a braille cell meant sending an instruction to move 80 degrees for servo 3, but only 64 degrees for servo 2. We compensated for this difference by using switch statements to give each servo different angle instructions adjusted to their level of position and sensitivity. </p>
 
-								<p>The stepper motor is set to move at 1/16 micro-steps per full step to create a more smooth and precise Cell Chain movement. We conducted substantive testing to calibrate our stepper motor and found that approximately 1100 micro-steps consistently moved one cell forward; this is reflected in our code, where we set our belt to move 1100 micro-steps for each process.</p>
+								<p>The stepper motor is set to move at 1/16 micro-steps per full step to create a more smooth and precise cell chain movement. We conducted substantive testing to calibrate our stepper motor and found that approximately 1100 micro-steps consistently moved one cell forward; this is reflected in our code, where we set our belt to move 1100 micro-steps for each process.</p>
 
 								<p>All of our source code can be found on our <a href="https://github.com/caitlincoffey/braille-display"> Github repository</a>. The main script used in our final product is sprint3DriveCode.ino, and the supporting script used to calibrate our stepper motor and servo motor positions is beltCalibration.ino.</p>
 

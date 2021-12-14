@@ -60,11 +60,11 @@
 									<p>Read about the components and decisions to connect everything.</p>
 								</header>
 								<a href="#" class="image featured"><img src="images/Electrical-cover-photo.jpg" alt="" /></a>
-								<p> Our system uses 3 SG90 9g Micro Servos, 1 NEMA17 Stepper Motor, 1 DRV8825 motor controller, a SPDT slide switch, a DPST power switch, and an Arduino Uno. </p>
+								<p>Our system uses 3 SG90 9g Micro Servos, 1 NEMA17 Stepper Motor, 1 DRV8825 motor controller, a SPDT (single pole, double throw) slide switch, a DPST (double pole, single throw) power switch, and an Arduino Uno. </p>
 								
-								<p>We used an external 12V 5A power supply to power our NEMA 17 stepper motor and by extension, our DRV8825 motor controller. This was able to provide enough current and voltage for the motor, which in return could drive the Cell Chain with a steady holding torque of 42 N/m. We also included a 100μf capacitor to regulate the voltage entering the system.</p>
+								<p>We used an external 12V 5A power supply to power our NEMA 17 stepper motor and by extension, our DRV8825 motor controller. This was able to provide enough current and voltage for the motor, which in return could drive the cell chain with a steady holding torque of 42 N/m. We also included a 100μf capacitor to regulate the voltage entering the system.</p>
 
-								<p>The three servos, the logic control system for the DRV8825 controller, and the Braille grade switch are powered through 5V given by the Arduino (via serial connection). The Arduino is powered via USB from the computer.</p>
+								<p>The three servos, the logic control system for the DRV8825 controller, and the braille grade switch are powered through 5V given by the Arduino (via serial connection). The Arduino is powered via USB from the computer.</p>
 
 								<p>Below is a circuit diagram showing our system in detail. </p>
 								
@@ -74,7 +74,7 @@
 
 								<p>As a safeguard, we implemented an on/off switch for the entire system to control both power sources. This is a double pole, single throw switch that gives users an easy way to turn the system off even when it is plugged in.</p>
 								
-								<p>Another feature we implemented as a result of user consulting was a physical switch for changing between Braille 1 and Braille 2. We chose to implement this feature because we wanted to support changing between the two different types of Braille without having to go through the software user-interface. Braille 1 typically maps letters to cells directly, while Braille 2 has a variety contractions for more common words (such as the, and, or).</p>
+								<p>Another feature we implemented as a result of user consulting was a physical switch for changing between braille 1 and braille 2. We chose to implement this feature because we wanted to support changing between the two different types of braille without having to go through the software user-interface. Braille 1 typically maps letters to cells directly, while braille 2 has a variety contractions for more common words (such as the, and, or).</p>
 
 								<p>If we had more time, we would have implemented a safeguard for our NEMA17 stepper motor, as it sometimes stalls and draws more current than it can handle. We would likely implement an in-line fuse that could break at around 1.8A, so if our motor stalls and draws too much current, the fuse would break and force the motor to stop drawing power.</p>
 							
