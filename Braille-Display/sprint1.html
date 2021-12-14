@@ -56,31 +56,56 @@
 						<!-- Content -->
 							<article id="content">
 								<header>
-									<h2>No Sidebar</h2>
-									<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit
-									dolor neque semper.</p>
+									<h2>Sprint 1</h2>
+									<p>Goal: Create a proof-of-concept prototype for our pin actuation design</p>
 								</header>
-								<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<p>Ut sed tortor luctus, gravida nibh eget, volutpat odio. Proin rhoncus, sapien
-								mollis luctus hendrerit, orci dui viverra metus, et cursus nulla mi sed elit. Vestibulum
-								condimentum, mauris a mattis vestibulum, urna mauris cursus lorem, eu fringilla lacus
-								ante non est. Nullam vitae feugiat libero, eu consequat sem. Proin tincidunt neque
-								eros. Duis faucibus blandit ligula, mollis commodo risus sodales at. Sed rutrum et
-								turpis vel blandit. Nullam ornare congue massa, at commodo nunc venenatis varius.
-								Praesent mollis nisi at vestibulum aliquet. Sed sagittis congue urna ac consectetur.</p>
-								<p>Mauris eleifend eleifend felis aliquet ornare. Vestibulum porta velit at elementum
-								gravida nibh eget, volutpat odio. Proin rhoncus, sapien
-								mollis luctus hendrerit, orci dui viverra metus, et cursus nulla mi sed elit. Vestibulum
-								condimentum, mauris a mattis vestibulum, urna mauris cursus lorem, eu fringilla lacus
-								ante non est. Nullam vitae feugiat libero, eu consequat sem. Proin tincidunt neque
-								eros. Duis faucibus blandit ligula, mollis commodo risus sodales at. Sed rutrum et
-								turpis vel blandit. Nullam ornare congue massa, at commodo nunc venenatis varius.
-								Praesent mollis nisi at vestibulum aliquet. Sed sagittis congue urna ac consectetur.</p>
-								<p>Vestibulum pellentesque posuere lorem non aliquam. Mauris eleifend eleifend
-								felis aliquet ornare. Vestibulum porta velit at elementum elementum.</p>
+								<a href="images/sprint1/Sprint1-HeaderImage.jpg" class="image featured"><img src="images/sprint1/Sprint1-HeaderImage.jpg" alt="" /></a>
+								<h3>Mechanical</h3>
+								<p>Our main goal in Sprint 1 was to create proof-of-concept components for a single braille cell. We wanted to make sure that we could push up the pins to form braille dots, and use magnets to lock them into position. To accomplish these goals, we created two separate prototypes. </p>
+								<p>Our main goal in Sprint 1 was to create proof-of-concept components for a single braille cell. We wanted to make sure that we could push up the pins to form braille dots, and use magnets to lock them into position. To accomplish these goals, we created two separate prototypes. </p>
+								<h4>Prototype 1</h4>
+								<p>The first prototype was designed to test the feasibility of using a cam to push up a row of pins. It contained one braille cell (a 3D-printed block with six holes in it for braille pins), some braille pins (also 3D-printed), one cam (laser cut from clear acrylic) connected to a servo motor, and a housing that held everything together. Shown below is an image of the prototype with individual parts labeled.</p>
+
+								<a href="images/sprint1/Sprint1-camPrototype.jpg" class="image centered"><img src="images/sprint1/Sprint1-camPrototype.jpg" alt="" /><caption><em>Photograph of the cam prototype for Sprint 1</em></caption></a>
+								<a href="images/sprint1/camTest.gif" class="image centered"><img src="images/sprint1/camTest.gif" alt="" /><caption><em>GIF of the cam prototype moving pins</em></caption></a>
+								
+								<p>As we made these prototypes, we realized that our 3D printers did not have high enough resolution to accurately print the pins. The pins that were printed had a tendency to jam in their holes. Looking forward, we decided to find a part to use for the pins that would move more smoothly in the cell holes.</p>
+								<p>To figure out the cam geometry, we made a few design iterations: first using cardboard and then using acrylic and the laser cutter so we could test a number of designs at one. The cam design shown in the prototype above has a 4mm travel distance, which was enough to move the pins up.</p>
+								<p>We decided to focus on braille cells with a 2x3 dot pattern, instead of the 8-dot pattern (2x4) often used in refreshable braille displays (<a href="https://en.wikipedia.org/wiki/Braille#Eight-dot_braille">Wikipedia - Braille</a>). Our design doesn't allow us to properly utilise the extra row that's used to indicate cursor position and other information about interacting with a webpage.</p>
+								<p>Maintaining the proper dimensions for a braille cell is crucial to reader comprehension. However, braille is very small. To work around this, we decided to scale up the cells and related components by a factor of 2 so we could easily source parts. This allowed us to maintain the ratios between the dimensions of a braille cell while working on a design that was larger and easier to manufacture.</p>
+
+								<h4>Prototype 2</h4>
+								<p>The second prototype was a scaled-up version of a pin that snapped to an "up" position and a "down" position using magnets. The magnets were mounted on the upper and lower inner surfaces of a bracket, and they attached to the washer around the pin when it was pushed up or down. The pin was a screw with two spacers and a nut to hold the washer in place.</p>
+								<p>We wanted to use magnets to hold the pin in place to prevent readers from accidentally pushing down the pins as they're reading. Magnets also ensure that the pin will not fall to the "up" position when it's upside-down on the bottom part of the chain. We needed pins to be in the "down" position when they reached the cams so they were ready to be pushed up again.</p>
+								<div class="row features">
+									<section class="col-6 col-12-narrower feature">
+										<div class="image-wrapper">
+											<a href="images/sprint1/Sprint1-magnetPrototype.jpg" class="image centered"><img src="images/sprint1/Sprint1-magnetPrototype.jpg" alt="" /><caption><em>Photograph of magnet prototype for Sprint 1</em></caption></a>
+										</div>
+									</section>
+									<section class="col-6 col-12-narrower feature">
+										<div class="image-wrapper">
+											<a href="images/sprint1/magnetPinPrototype.gif" class="image portrait"><img src="images/sprint1/magnetPinPrototype.gif" alt="" /><caption><em>GIF of magnet prototype for Sprint 1 showing the magnets holding the pin in place</em></caption></a>
+										</div>
+									</section>
+								</div>
+								<p>For the magnets, we experimented with a fridge magnet and neodymium magnets. We originally thought that neodymium magnets would be too strong, but once we found smaller magnets and built the pin prototype we realized they were the right choice for our mechanism.</p>
+
+								<h3>Electrical</h3>
+								<p>On the electrical side, we wanted to create a solid foundation for the rest of the project. To do this, we thought about using the servos to control cams, how to drive the cell chain, and general Arduino considerations and constraints.</p>
+								<p>We quickly wired a basic system to power one servo, with materials borrowed from the studio. This took no time at all, and allowed us to better visualize how the cams would actually move. This helped the team better understand how the different subsystems would interact.</p>
+								<p>We considered using either DC motors or stepper motors to drive the cell chain. After talking to course assistants, we decided to move forward with stepper motors. None of us had ever researched motors, so ordering one took a bit of time. This was complicated by not knowing how much holding torque we would need. Near the end of Sprint 1, we decided to purchase a NEMA 17 High Torque stepper motor with 42N.cm of torque.</p>
+								<p>We also discussed the limited storage space on the Arduino Uno and whether it would be a problem. After brainstorming, we decided to send instructions cell by cell (as opposed to all at once). This way, we knew we wouldn't have buffer overflow on the Arduino.</p>
+
+								<h3>Software/Firmware</h3>
+								<p>On the software/firmware side, our goal was to read a text file and convert that text file to braille 1 instructions to actuate a single cam system (one servo).</p>
+								<p>The program starts by reading a text file via Python's built-in file reader library. We chose not to create a GUI (graphical user interface) during Sprint 1 so we could prioritize working on Python/Arduino communication, our biggest software roadblock.</p>
+								<p>After it reads a text file, the program converts the text character-by-character to braille 1 mappings. While this worked for braille 1, we realized that later on in Sprint 2 that we would have to read things not character-by-character, but word-by-word to capture the contractions required in braille 2.</p>
+								<p>Last but not least, we send each character to the Arduino, which translates each braille mapping to a position on the servo. The largest challenge in Sprint 1 was communicating the braille 1 mappings to Arduino. We developed two protocols during this Sprint, one in Python for communicating/receiving from the Arduino, and one in the Arduino for communicating/receiving from Python.</p>
+
 							</article>
 
-						<div class="row features">
+						<!-- <div class="row features">
 							<section class="col-4 col-12-narrower feature">
 								<div class="image-wrapper first">
 									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
@@ -120,7 +145,7 @@
 									<li><a href="#" class="button">Elevate my awareness</a></li>
 								</ul>
 							</section>
-						</div>
+						</div> -->
 					</div>
 				</div>
 

@@ -127,11 +127,19 @@ input, select, textarea {
 	h2 {
 		font-size: 2em;
 		line-height: 1.25em;
+		/* font-weight: 500; */
 	}
 
 	h3 {
 		font-size: 1.5em;
 		line-height: 1.5em;
+		font-weight: 500;
+	}
+
+	h4 {
+		font-size: 1.1em;
+		font-weight: 500;
+		line-height: 1.25em;
 	}
 
 	a {
@@ -446,6 +454,14 @@ input, select, textarea {
 
 		.row > .off-2 {
 			margin-left: 16.66667%;
+		}
+
+		.row > .col-5col {
+			width: 20%;
+		}
+
+		.row > .off-5col {
+			margin-left: 20%;
 		}
 
 		.row > .col-3 {
@@ -1891,7 +1907,7 @@ input, select, textarea {
 		.image.centered {
 			display: block;
 			/* margin: 0 0 3em 0; */
-			margin: 0 auto;
+			margin: 0 auto 1em auto;
 			width: auto;
 		}
 
@@ -1912,6 +1928,12 @@ input, select, textarea {
 			/* margin: 0 0 3em 0; */
 			margin: 0 auto;
 			width: 50%;
+		}
+
+		.image.portrait{
+			display: block;
+			width: 50%;
+			margin: 0 auto;
 		}
 
 	a.image:hover {
@@ -2220,6 +2242,19 @@ input, select, textarea {
 	#header-wrapper {
 		position: relative;
 		padding: 4em 0 2em 0;
+		background-image: url("images/header.svg");
+		background-image: url("images/overlay.png"), url("images/header.svg"), -moz-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
+		background-image: url("images/overlay.png"), url("images/header.svg"), -webkit-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
+		background-image: url("images/overlay.png"), url("images/header.svg"), -ms-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
+		background-image: url("images/overlay.png"), url("images/header.svg"), linear-gradient(75deg, #f0294b 15%, #e07243 55%);
+		/* background-color: #f08c89; */
+		background-color: #f08c89;
+		background-size: 100% 620%;
+		background-size: 128px 128px, 100% 620%, auto;
+		background-repeat: repeat, no-repeat, no-repeat;
+	}
+
+	#line-wrapper-homepage {
 		background-image: url("images/header.svg");
 		background-image: url("images/overlay.png"), url("images/header.svg"), -moz-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
 		background-image: url("images/overlay.png"), url("images/header.svg"), -webkit-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);

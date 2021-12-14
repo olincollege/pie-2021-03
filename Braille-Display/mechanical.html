@@ -60,22 +60,23 @@
 				<article id="content">
 					<header>
 						<h2>Mechanical</h2>
-						<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit
-							dolor neque semper.</p>
+						<!-- <p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit
+							dolor neque semper.</p> -->
 					</header>
 					<a href="images/FullAssemblyRender-dimetric.JPG" class="image featured"><img
 							src="images/FullAssemblyRender-dimetric.JPG"
 							alt="Render of full braille display assembly" />
 							<caption>A render of the CAD for our full assembly.</caption>
-						</a>
+						</a>					
 					
 					<div class="containerbeforeafter">
 						<figure>
 							<div id="compare"></div>
+							
 						</figure>
 						<input oninput="beforeAfter()" onchange="beforeAfter()" type="range" min="0" max="100" value="50" id="slider"/>
-						</div>
-				
+					</div>
+		
 					<h3>Housing</h3>
 					<!-- <div class="row features">
 						<section class="col-6 col-12-narrow feature">
@@ -90,8 +91,6 @@
 					<a href="images/Housing.jpg" class="image centered-small"><img src="images/Housing.jpg" alt="A long rectangular box made of clear plastic sits on a table top." />
 					<caption>The empty housing assembled and waiting for parts!</caption></a>
 
-					
-
 					<h3>Mounts</h3>
 					<p>The micro-servos are all mounted in-line, parallel to the bottom plate of the chassis. Due to this and the cams sharing a common axis of rotation, they had to be mounted such that the linkages would not interfere with one another. To keep this from happening, the farther away a servo is from its cam, the farther away it is from the back of the housing. The mount is a single 3D printed piece that mounts to the inside of back wall of housing. </p>
 					<p>The stepper motor mount attaches to the outside of the back of the housing. One set of bolts attaches the stepper motor to both the mount and to the back of the housing. Another set of bolts only connects the mount to the housing. In addition to the bolts, the motor has a platform that it rests on, keeping it from floating with only the bolts holding it up.</p>
@@ -100,7 +99,7 @@
 					<p>One of the primary costs of a traditional braille display is the high number of actuators needed for each cell of braille. As the number of cells available in the display increases, so does the cost of the display. Our budget constraints meant that we could not follow the traditional path of six to eight actuators for each braille cell. If we wanted to create a braille display with a useful number of characters, we needed to get creative with our design.</p>
 					<!-- INSERT IMAGE OF BELT CHAIN -->
 					<!-- UPDATE src, href, AND alt text -->
-					<a href="#" class="image centered-small"><img src="images/pic03.jpg" alt="" /></a>
+					<a href="images/belt-chain.jpg" class="image centered-small"><img src="images/belt-chain.jpg" alt="" /></a>
 
 					
 					<p>To work around the limited number of actuators, we decided to create a chain of braille cells (Cell Chain) that would move relative to a fixed actuator mechanism. Using this method, we can create a braille display of any size, and the cost of actuators does not increase.</p>
@@ -109,6 +108,7 @@
 					<h3>Braille Cells and Dots</h3>
 					<p>Braille Cell: Each braille cell in the Cell Chain was 3D-printed. They each have a top half and a bottom half that get glued together to form a single cell. The cells are supported by one sprocket on each side of the cell. A single cell is wide enough that it connects to two sprockets, one on each side of the cell.</p>
 					<p>Braille Dots: To create the braille dots, we're using 1/8" steel dowel pins that have a sliding friction fit with the six holes in the cells. We use those same pins to connect the cells together to form the Cell Chain.</p>
+					<a href="images/cams-sideview.jpg" class="image centered-small"><img src="images/cams-sideview.jpg" alt="" /></a>
 
 					<h3>Sprockets</h3>
 					<p>We designed and 3D-printed custom sprockets to drive the Cell Chain. We have one driven/powered sprocket that connects to the stepper motor and 3 idle sprockets. The profile of the sprockets was dictated by the width of a cell.</p>
@@ -127,9 +127,9 @@
 					<p>Once we started testing our system, we discovered that it's almost impossible to fully tension the braille chain. As a result, the chain always has some give to it. This causes issues when the cams have to interact with the bottoms of the pins. The friction holding some of the pins in was so great that when the cams tried to push up those pins, the pins would stay in place and instead the chain would get pushed up. The cell ceiling was added to keep the chain from getting pushed up by the cams. It serves as a "ceiling" that the cell gets pushed against so that the pins get moved instead, as intended. It mounts on slots to the front and back walls of the housing. The slots allow for adjustability so that we have more adjustment with where exactly on the cams that the pins hit. The cell ceiling was laser cut out of acrylic. </p>
 
 					<h3>Reset Mechanism</h3>
-					<!-- INSERT RESET MECHANISM TEXT -->
-					<p>INSERT RESET MECHANISM TEXT HERE</p>
-
+					<p>After the pins get set by the cams and read by the user, they all have to be set to the down position before they can be set by the cams again. To reduce complexity, we decided to do this mechanically by taking advantage of the rotation of the cell chain. Further along in the travel of the cell chain, there is a wedge that the top of the pins hit. As the cell chain rotates, the pins get forced down. </p>
+					
+					
 				</article>
 
 				<!-- <div class="row features">
