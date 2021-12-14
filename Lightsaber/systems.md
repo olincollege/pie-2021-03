@@ -43,7 +43,7 @@ The mechanical design was broken into two parts for the detachable and extendabl
 The detachable lightsaber has two main components: the hilt which holds the electronics and the blade which houses the LED strip.
 
 <p align="center">
-  <img src="./Photos!/detachableFinalBlade.jpg" alt="Completed Detachable Blade">
+  <img src="./Photos!/finalDetachableBlade.jpg" alt="Completed Detachable Blade">
 </p>
 
 The blade is made of a piece of diffused polycarbonate tubing with two endcaps holding a strip of LEDs in the center. The diffusion was done by rubbing the polycarbonate tubing with an emery cloth and placing 0.002 inch thick polycarbonate film on the inside of the tube. The upper endcap covers the top of the blade and is connected to the top of the LED strip, so the LEDs hang through the blade tubing. The lower endcap, shown in green in the CAD models below, also holds a connector that interfaces with a matching connector on the hilt. Together, the lower endcap and matching connector, shown in purple in the CAD models below, act as the deaching mechanism to remove the blade from the hilt, allowing the LED strip to be connected to the hilt electronics when the blade is attached.
