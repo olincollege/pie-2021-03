@@ -1,0 +1,199 @@
+<!DOYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>GREMLIN: Design Sprints</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">GREMLIN</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="home.html">Home</a></li>
+											<li><a href="sprints.html">Sprints</a></li>
+											<li><a href="systems.html">Systems</a></li>
+											<li><a href="gallery.html">Gallery</a></li>
+											<li><a href="budget.html">Budget</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Design Sprints</h2>
+							<p>See how our progress developed over the semester.</p>
+						</header>
+						<section class="wrapper style5">
+				<!-- Intro -->
+					<article id="intro">
+							<section class="wrapper style5 special">
+							<div class="inner">
+								<h2>The Sprint Process</h2>
+								<p>For the second half of our Priciples of Engineering course, we completed three two-week design sprints. After each sprint we would present our work to our peers and professors for feedback. The following sprint descriptions demonstrate the evolution of GREMLIN from ideation to final product.</p>
+								<hr />
+							</div>
+						</section>
+					</article>
+				<!-- One -->
+					<section id="one" class="wrapper style3 special">
+						<div class="inner">
+							<header class="major">
+								<h2 style=color:white;">Sprint One</h2>
+								<p style=color:white;">Our initial design goals for sprint one were ambitious. We hoped to have a robot that traverses across the whiteboard with a stationary vertical axis and stationary marker. As we began the project, however, we realized the intricacies of the design and decided to focus on the three components of our mechanical system individually. This pivot had us working on the preliminary designs of the chassis, marker actuator, and gantry system design.</p>
+							</header>
+									<div class="table">
+										<table>
+											<thead>
+												<tr>
+													<th><b><center>Mechanical</th>
+													<th><b><center>Electrical</th>
+													<th><b><center>Software</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>The first design sprint was very mechanical heavy. This team worked on the construction and testing of the chassis, marker actuator, and gantry system's initial design.</td>
+													<td>The electrical team specced out the parts necessary to drive the motors. They also designed basic stepper motor and servo circuits, which allowed for the preliminary testing of mechanical components.</td>
+													<td>The software team focused on developing stepper and servo motor test code capable of controlling  a stepper and servo at the same time.  This allowed for preliminary testing of mechanical and electrical integration.</td>
+												</tr>
+										</table>
+									</div>
+								<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+								<ul class="features">
+									
+								<li>			<div class="col-4"><span class="image fit"><img src="images/sprint1.jpg" alt="" /></span></div>
+								</li>
+								<li>			<div class="col-4"><span class="image fit"><img src="images/actuatorgif1.gif" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/Rohith&Katie&Cara2.jpg" alt="" /></span></div>
+								</li>
+								</ul>
+								</div></div>
+					</section>
+				<!-- Two -->
+					<section id="two" class="wrapper style4 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Sprint Two</h2>
+								<p>For sprint two, we hoped to assemble the three parts we designed in the first sprint into a single robot that traversed the whiteboard with a working vertical axis and working marker actuator. We also wanted to iterate upon our last design by including more traction for the wheels, designing a more compact electrical implementation, developing code that reliably moves the robot to a given x and y position with one color, and beginning image to array conversion and mapping.</p>
+							</header>
+									<div class="table">
+										<table>
+											<thead>
+												<tr>
+													<th><b><center>Mechanical</th>
+													<th><b><center>Electrical</th>
+													<th><b><center>Software</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td style=color:black;">This team met its goal of building a full assembly of all three mechanical systems. This allowed them to figure out precision of vertical gantry, marker actuator, and drive base.<br>
+													During testing, they discovered that the classroom whiteboards are not flat surfaces. This warping prevented a guarantee of marker-whiteboard contact. This inspired redesign for the marker actuator, now using springs to implement compliance with the variations in the whiteboard. </td>
+													<td style=color:black;">The electrical team pivoted to developing a wireless application after an unforeseen stress test; excessive wire length proved to be unwieldly and hazardous. To address this, they specced out a 11.1V battery. <br>
+													Trial runs also revealed issues with the marker actuator overrunning the constraints of the y-axis. To prevent damage to the motors, limit switches were ordered.</td>
+													<td style=color:black;">The software team spent sprint two researching and developing code to divide photos into white, red, and blue pixels. They also hardcoded shapes for testing the design changes made by the mechanical team, which helped identify the board warping issue. <br>
+													Finally, they filtered images to extract the borders and created simple dot drawings from images. </td>
+												</tr>
+										</table>
+									</div>
+
+								<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+								<ul class="features">
+									
+								<li>			<div class="col-4"><span class="image fit"><img src="images/Rohith&Aaron.jpg" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/firstrobot.png" alt="" /></span></div>
+								</li>
+								<li>
+											<div class="col-4"><span class="image fit"><img src="images/dottinggif.gif" alt="" /></span></div>
+								</li>
+								</ul>
+								</div></div>
+					</section>
+				<!-- Three -->
+					<section id="three" class="wrapper style1 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Sprint Three</h2>
+								<p>For Sprint Three, our main priorities were to tune the springs in the marker actuator, build enclosures for all electronics, integrate the 12V battery into our electrical system, efficiently manage wires and components, and finalize our electrical schematic. Additionally, we were able to produce dot and line drawings from user-inputted images and start testing our fully integrated system.</p>
+							</header>
+									<div class="table">
+										<table>
+											<thead>
+												<tr>
+													<th><b><center>Mechanical</th>
+													<th><b><center>Electrical</th>
+													<th><b><center>Software</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>In this sprint, the mechanical team redesigned the drive base, marker actuator, chassis, and board sliders. We also designed the snap on electronics enclosure and implemented limit switches for the ends of the Y axis. </td>
+													<td>The electrical team completed all wire management systems. This procedure included soldering all wires where we previously used jumper cables and rearranging wires and components to prevent any failures due to wire interference. We also received a XT60 plug connector to use to charge our 12V battery. Additionally, we began implementing the 12V battery and both limit switches. We were also able to finalize our electrical schematic.</td>
+													<td>The software team was able to filter user-inputted images into a script to extract borders, create simple dot drawings from images, produce hardcoded shape drawings, shorten creation time, and reduce issues with markers running dry.</td>
+												</tr>
+										</table>
+									</div>
+
+								<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+								<ul class="features">
+									
+								<li>			<div class="col-4"><span class="image fit"><img src="images/Trevor&Aaron.jpg" alt="" /></span></div>
+								</li>
+								<li>			<div class="col-4"><span class="image fit"><img src="images/actuatorgifsprint3.gif" alt="" /></span></div>
+											<div class="col-4"><span class="image fit"><img src="images/fish.jpg" alt="" /></span></div>
+								</li>
+								</ul>
+								</div></div>
+							<ul class="actions stacked">
+								<li><a href="systems.html" class="button fit primary">Final System Overview</a></li>
+								<li><a href="gallery.html" class="button fit primary">View Our Art</a></li>
+							</ul>
+					</section>
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://grabcad.com/library/g-r-e-m-l-i-n-1">GrabCAD</a></p></li>
+							<li><a href="https://github.com/tzou2024/PIEFinalProj" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; GREMLIN</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
