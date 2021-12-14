@@ -50,7 +50,13 @@ In the end we were able to deliver on our project goals and create both Lightsab
 
 Demos of both Lightsabers can be found below:
 
-**Add links to videos**
+<!-- [![Detachable Lightsaber](./Photos!/About/team.jpg)](https://youtu.be/RMrMl14pZ-I) -->
+
+##### Detachable
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RMrMl14pZ-I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+##### Extendable
+[Embeded 2 NEEEDED]
 
 
 
@@ -59,10 +65,85 @@ Demos of both Lightsabers can be found below:
 
 #### Abby Omer
 
+<p align="center">
+  <img style="float:Left" src="./Photos!/About/abby_head.jpg" alt="Abby Omer"  width="150">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+<br>
+<br>
+<br>
+<br>
+
+
 #### Jacob Uy
+
+<p align="center">
+  <img style="float:Left" src="./Photos!/About/jacob_head.jpg" alt="Jacob Uy"  width="150">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+<br>
+<br>
+<br>
+
+
 
 #### Laurel Rodriguez Mitton
 
+<p align="center">
+  <img style="float:Left" src="./Photos!/About/laurel_head.jpg" alt="Laurel Rodriguez Mitton"  width="150">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+<br>
+<br>
+<br>
+<br>
+
+
+
 #### Nabih Estefan
 
+<p align="center">
+  <img style="float:Left" src="./Photos!/About/nabih_head.jpg" alt="Nabih Estefan" width="150">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+<br>
+<br>
+<br>
+<br>
+
+
 #### Oscar G. De La Garza
+
+<p align="center">
+  <img style="float:Left" src="./Photos!/About/Oscar_head.jpg" alt="Oscar G. De La Garza"  width="150">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+<br>
+<br>
+<br>
+<br>
