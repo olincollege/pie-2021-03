@@ -145,8 +145,39 @@
 													<p>Threaded rod second axis mount: this mount goes on the opposite side of the y-axis of the stepper mount. It houses a ball bearing to make the x-axis threaded rod move freely and a nut to connect it to the y-axis threaded rod.</p>
 													<span class="image fit"><img src="images/Unthreaded Rod Mount.PNG" alt="" /></span>
 													<p>Unthreaded rod mount: This is a simple mount to house the y-axis unthreaded rod. This was designed so that the center of the rod was 25mm from the ground, allowing the pieces to move freely.</p>
+												
 
-											</article>		
+											</article>	
+						<!-- Post -->
+						<article class="post">
+							<header>
+								<div class="title">
+									<h2>Electrical</h2>
+								
+								</div>
+							</header>				
+							The 8x8 Hall Effect Sensor Matrix used two CD4051BE multiplexer/decoders to read the digital values of the A3144 Hall effect sensors. This was done by iterating through each of the rows of the matrix using the CD4051BE decoder feeding its output to transistors to only low one of the rows at a time to ground. This activated the hall effect sensors for that row and allowed only those sensors to control the column connected hall effect sensor outputs. The sensor output columns were then read using the CD4051BE multiplexer to iterate through each of the columns and read one sensor at a time. Below is a 2x2 Hall Effect Sensor Matrix illustrating how the multipliers and decoders selected which sensors to read.
+							<span class ="image fit"><img src="images/Chess_Matrix.png" alt="Chess Matrix" ></span>
+								<p>The electromagnet was controlled using a 2N3904 NPN switching transistor and was powered through a separate power supply at 12v. Below is the schematics for the electromagnet being switched off and on by a transistor.</p>
+								<span class = "image fit"><img src="images/Electromagnet.png" alt=""></span>
+								<p>The two Nema 17 Stepper motors were connected to A4988 Hybrid Stepper Motor Drivers on a Arduino CNC shield V3.0 mounted on an Arduino Uno R3. The stepper motors were powered from a 12v power supply.To allow the gantry to reset itself and return to a known position, two Hall Effect sensors were installed along the two axes along with magnets mounted to different assemblies for Hall Effect sensors to detect. The outputs Hall effect Sensors were read by the Arduino Uno R3. Below is an image of the schematics for the Hall effect sensors used to detect magnets mounted to the gantry system.</p>
+								
+								<div class="row">
+									<div class="col-3">
+									  <img src="images/Bump_sensor.png" alt="Top" style="width:70%;">
+									  <h6>Sprint One Box Top</h6>
+									</div>
+									<div class="col-3">
+									  <img src="images/Data_flow.jpg" alt="Bottom" style="width:70%">
+									  <h6>Sprint One Box Bottom</h6>
+									</div>
+									<div class="col-3">
+										<img src="images/Power_Flow2.jpg" alt="Top" style="width:70%;">
+										<h6>Sprint One Box Top</h6>
+								
+								  </div>
+
+						</article>												
 
 					</div>
 
