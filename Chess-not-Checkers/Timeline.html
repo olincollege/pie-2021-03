@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Single - Future Imperfect by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Chess Not Checkers </a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="Timeline.html">Timeline</a></li>
+								<li><a href="Subsystems.html">Subsystems</a></li>
+								<li><a href="Bill of Materials.html">Bill of Materials</a></li>
+								<li><a href="About Us.html">About Us</a></li>
+								<li><a href="Resources.html">Resources</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="Timeline.html">
+											<h3>Timeline</h3>
+											<p>The project in sprints </p>
+										</a>
+									</li>
+									<li>
+										<a href="Subsystems.html">
+											<h3>Subsystems</h3>
+											<p>All the teams and thier contributions</p>
+										</a>
+									</li>
+									<li>
+										<a href="Bill of Materials.html">
+											<h3>Bill of Materials</h3>
+											<p>A list of all materials used in project</p>
+										</a>
+									</li>
+									<li>
+										<a href="About Us.html">
+											<h3>About Us</h3>
+											<p>Get to Know the Team!</p>
+										</a>
+									</li>
+									<li>
+										<a href="Resources.html">
+											<h3>Rsources</h3>
+											<p>All links to external resources</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li><a href="#" class="button large fit">Log In</a></li>
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a >Sprint One</a></h2>
+										<p>October 11th,2021 - November 7th,2021</p>
+									</div>
+								</header>
+								<div class="row">
+									<div class="column">
+									  <img src="images/IMG_7500.jpg" alt="Top" style="width:100%;height:80%">
+									</div>
+									<div class="column">
+									  <img src="images/IMG_7502.jpg" alt="Buttom" style="width:100%">
+									</div>
+									</div>
+								<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
+								<p>In this sprint, we decided on the chess board idea before choosing what specific features we wanted it to have. We knew that the board’s purpose was to help the user practice chess without needing another person while preserving the feel of a real-life game. We also knew that we wanted to have pieces move on their own to create the feel of an invisible opponent playing against the user.</p>
+								<p>We decided on our chess pieces during this sprint and used a design from Thingiverse and further iterated on them.</p>
+								<span class="image"><img src="images/CADofPawn.jpg" alt="CAD of a Pawn"  style="width:128px;height:128px;" /></span>
+								<p>We built an independent, simple LED matrix to try to control the lights. The goal of Sprint 1 was to create a 8 by 4 Individually addressable LED matrix and we began by creating a 2 by 2 matrix LED matrix as seen below.</p>
+								<span class="image fit"><img src="images/2by2Matrix.jpg" alt="2 by 2 LED Matrix" /></span>
+								<p>This is our larger 4 x 4 LED matrix that was our second iteration</p>
+								<span class="image fit"><img src="images/LED_Matrix.jpg" alt="4x4 LED Matrix"  /></span>
+								<p>We also began exploring how we would write the code to accomplish our technical goals. </p>
+								<p>By the end of the sprint, we were still waiting on the stepper motors to arrive so we used a small DC motor to test. The official electromagnet we wanted to use was also not available yet so we used a small electromagnet unneeded by another team to test the attraction between the electromagnet and the magnet in the piece. As seen in our test video below, we were able to turn on the electromagnet and move the test piece in one-dimension.</p>
+								 Insert video
+
+							</article>
+
+							<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2>Sprint Two</h2>
+										<p>November 8th,2021 - November 11th,2021</p>
+									</div>
+								</header>
+								<p>In this sprint, we finished the first drafts of the box designs that would hold the gantry and other relevant components of the board and went through multiple iterations for the final 3D-printed pieces that would hold the electromagnet and stepper motors in place.</p>
+								<p>We also completed the code to implement the chess engine and have it respond to user-inputted moves types into the terminal (this was our MVP in case we could not get the hall effect sensors working).</p>
+								<p>At the beginning of this sprint, we made progress integrating the LEDs and the hall effect sensors in a 2x2 matrix as seen below.</p>
+								<span class="image fit"><img src="images/Hall effect and LED matrix.jpg" alt=""></span>
+								<p>We planned to have LEDs under each square that would light up according to moves a player made (for example, once a player picked up a piece, all possible squares that piece could be moved to would light up green until the player put the piece back down) in order to allow a beginner player to become familiar with the behavior of pieces. However, as the sprint progressed, issues that arose with practically setting up 64 LEDs to perform this task proved to be numerous so this feature was dropped from our design plan.</p>
+							</article>
+
+							<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2>Sprint Three</h2>
+										<p>November 28th,2021 - December 12th,2021</p>
+									</div>
+								</header>
+								!Videos of Stepper motor movement and piece detection!
+							<p>In this Sprint, we finalized our board after iterating through the wall designs and working out structural issues. For example, one obstacle we ran into was that our board was too big to laser cut in one piece on the Laser Shop’s machine, so we had to split the bottom board into fours and sides into twos.</p>
+							<p>One of the stepper motors would not consistently move the rods when we tested it. Through significant trial and error, we figured out that lowering the acceleration of the motors improved consistency. We also had to cut down the threaded rods because they were too long for the board.</p>
+							<p>The hall sensor matrix was built during this sprint, which can be seen below:</p>
+							<span class="image fit" ><img src="images/IMG_7523.jpg" alt="Hall Sensors"></span>
+							<p>We also got the player move-detecting sensors working such that when a piece is moved the correct translated chess move is picked up and the official stepper motors connected to the gantry and moving. The axis that directly controlled the electromagnet’s movement worked very well from the beginning. But we had numerous issues with the axis that indirectly moved the electromagnet. We found that the issue was interdisciplinary and involved mechanical, software, and electrical at times. </p>
+							<p>Getting the motors to move how we wanted has been the biggest obstacle for this project. We had multiple issues with seemingly faulty drivers, scares when we thought we had caused the motors and CNC shield to break during testing. Sometimes we just needed to give them a “reset” of sorts and they worked again, and other times our equipment had really broken. Finding ways to overcome these obstacles and get new equipment in a short time on a low budget made this sprint quite an arduous journey for all members on the team. </p>
+							<p></p>
+
+						</article>
+
+
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

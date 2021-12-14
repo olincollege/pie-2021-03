@@ -628,8 +628,10 @@ input, select, textarea {
   
   .icon-bawistaboticon:before {
 	content: "\e900";
-	font-size: 55px;
-	line-height: 90px;
+	align-items: center;
+    justify-content: center;
+	max-width:100%;
+    height:auto;
   }
 
 /* Image */
@@ -718,13 +720,13 @@ input, select, textarea {
 /*Meet the Team*/
 	.iconimage {
 		text-align: left;
-		font-size:12px;
+		font-size:11px;
 	}
 		.iconimage img{
 		float:left;
 		text-align:left;
 		padding:5px;
-		max-width:20%;
+		max-width:19%;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -1315,7 +1317,7 @@ input, select, textarea {
 		}
 
 			#header .logo .icon:before {
-				font-size: 2rem;
+				font-size: 10rem;
 			}
 		/*lines above title*/
 		#header .content {
@@ -1463,7 +1465,7 @@ input, select, textarea {
 			}
 
 				#header .logo .icon:before { /* size of icon */
-					font-size: 1.75rem;
+					font-size: 10rem;
 				}
 
 			#header .content .inner {

@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Software & Firmware - Braille Display</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="software is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+            <div id="header-wrapper">
+                <div id="header" class="container">
+
+                    <!-- Logo -->
+                        <h1 id="logo"><a href="index.html">Braille Display</a></h1>
+
+                    <!-- Nav -->
+                    <nav id="nav">
+                        <ul>
+                            <li>
+                                <a href="systems.html">Systems</a>
+                                <ul>
+                                    <li><a href="mechanical.html">Mechanical</a></li>
+                                    <li><a href="electrical.html">Electrical</a></li>
+                                    <li><a href="software.html">Software/Firmware</a></li>
+                                </ul>
+                            </li>
+                            <li class = "break">
+                                <a href="process.html">Process</a>
+                                <ul>
+                                    <li><a href="sprint1.html">Sprint 1</a></li>
+                                    <li><a href="sprint2.html">Sprint 2</a></li>
+                                    <li><a href="sprint3.html">Sprint 3</a></li>
+                                    <li><a href="billOfMaterials.html">Bill of Materials</a></li>
+                                </ul>
+                            </li>
+                            <li ><a href="team.html">Team</a></li>
+                        </ul>
+                    </nav>
+
+					<!-- Breadcrumbs -->
+					<ul class="breadcrumb">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="systems.html">Systems</a></li>
+						<li><a href="software.html">Software/Firmware</a></li>
+					</ul> 
+                </div>
+			</div>
+
+			<!-- Main -->
+				<div class="wrapper">
+					<div class="container" id="main">
+
+						<!-- Content -->
+							<article id="content">
+								<header>
+									<h2>Software and Firmware</h2>
+									<p>See the 1s and 0s to make everything move and come together and <a href="https://github.com/caitlincoffey/braille-display"> view the source code!</a></p>
+								</header>
+								
+								<h2>Firmware</h2>
+								<p>Our Arduino Uno runs the firmware which controls and reads data from our stepper motor, our servos, and the braille grade switch. It has a few major components: a portion that captures data from the software interface, a portion that moves the servos and stepper motor, and a portion that sends information back to the software interface (braille 1 vs. braille 2 settings from the switch, whether the text to pin movements have finished).</p>
+
+								<p>The firmware is modular in design, allowing for reusable functions. For example, the instructions for reading input from the user interface via serial is encapsulated in our recvWithStartEndMarkers() function. This allows us to reuse the function when we need to collect information from the software interface, such as the braille mappings or confirmation that the user pressed the 'send to braille display' button. </p>
+
+								<h3>Servo and Stepper Motor Movement</h3>
+								<p>Our servo movement is encapsulated in the moveServos() function. For each braille mapping sent to the Arduino from the software program, the Arduino responds by calling the moveServos() function, which moves each servo to the appropriate position to activate the necessary pins.</p>
+
+								<p>One challenge we faced was that each servo had different levels of positioning and movement precision, which forced us to code movement uniquely for each servo. For example, moving a servo to hit the right-most pin on a braille cell meant sending an instruction to move 80 degrees for servo 3, but only 64 degrees for servo 2. We compensated for this difference by using switch statements to give each servo different angle instructions adjusted to their level of position and sensitivity. </p>
+
+								<p>The stepper motor is set to move at 1/16 micro-steps per full step to create a more smooth and precise Cell Chain movement. We conducted substantive testing to calibrate our stepper motor and found that approximately 1100 micro-steps consistently moved one cell forward; this is reflected in our code, where we set our belt to move 1100 micro-steps for each process.</p>
+
+								<p>All of our source code can be found on our <a href="https://github.com/caitlincoffey/braille-display"> Github repository</a>. The main script used in our final product is sprint3DriveCode.ino, and the supporting script used to calibrate our stepper motor and servo motor positions is beltCalibration.ino.</p>
+
+								<h3>Requirements and Dependencies</h3>
+								<ul>
+									<li>Arduino Uno, or equivalent</li>
+									<li>Arduino standard libraries</li>
+									<li>Arduino Servo, Stepper, and Wire libraries</li>
+								</ul>
+							<br> 
+							<br>
+							<h2>Software</h2>
+							The software contains the following major components: a graphical user interface that takes text input and allows the user to interact with the display, a text to braille instructions converter, and serial communication with the Arduino via Serial.
+
+							<h3>Graphical User Interface (GUI)</h3>
+							<p>To create the graphical user interface, we used the built-in Python Tkinter library. A minimal GUI was created, as we wanted as much of the user interaction to be physical as possible. The user can either copy or paste text or upload a .txt file. Clicking the "Upload Text File" button launches the default operating system file explorer.</p>
+
+							<a href="images/gui.png" class="image centered-small-extra"><img src="images/gui.png" alt="A screenshot of the gui showing the textbox, upload text file button, send to braille display button, and quit button"/></a>
+
+							<p>If we had more time during our last sprint, we would have redesigned our user interface to be compatible with a screen reader. We built it using the Tkinter Python library and Tkinter is not screen reader accessible. We would either use a different Python library, such as WxPython, or create a simple web application to improve accessibility.</p>
+
+							<h3>Text To Braille Conversion</h3>
+							<p>After extracting the text from the GUI, we convert the raw English text to braille based on the grade received from the physical system. For grade 1 braille, we use our own implementation, while for grade 2 braille we leverage the Pybrl library. After translating, we package the text into a form to streamline sending the data to the Arduino. Since there are only 4 possible states each row can be in, we encode the state of each row into a letter ('A' 'B' 'C' or 'D'), and package these into a list. For example, a space (all pins low, or 0 in braille) is encoded as 'AAA'. This allows us to send instructions for each braille cell in just three bytes.</p>
+
+							<a href="images/pinPositions.jpg" class="image centered-small"><img src="images/pinPositions.jpg" alt="A diagram showing the four possible positions for each row and the corresponding encodings"/></a>
+
+							<h3>Serial Communication</h3>
+							<p>Once the GUI is launched, Python constantly communicates with the Arduino via Serial. Basic Serial communication, such as send and read, encapsulated within the textReader class. This allows us to send the braille instruction for the cams (such as 'AAA' for a space) and easily know when the Arduino is ready for the next braille instruction. A diagram outlining the serial communication process is below.</p>
+
+							<a href="images/serialComm.jpg" class="image centered-small"><img src="images/serialComm.jpg" alt="A diagram showing the serial communication process between Arduino and Python"/></a>
+
+							<h3>Requirements and Dependencies</h3>
+							<ul>
+								<li>Python 3</li>
+								<li>Pybrl</li>
+								<li>Tkinter</li>
+								<li>Serial</li>
+							</ul>
+							</article>
+							
+						
+					</div>
+				</div>
+
+			<!-- Footer -->
+			<div id="footer-wrapper">
+				<div id="copyright">
+					<ul class="menu">
+						<li>&copy; 2021 Braille Display. All rights reserved.</li>
+						<li> Principles of Integrated Engineering Fall 2021.</li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
