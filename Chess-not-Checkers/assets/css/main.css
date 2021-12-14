@@ -2321,15 +2321,8 @@ input, select, textarea {
 		}
 
 			.image.fit img {
-				width: 50%;
+				width: 30%;
 			}
-
-		.image.small {
-			display: block;
-			margin: 0 0 2em 0;
-			width: 30%;
-
-		}
 
 		.image.featured {
 			display: block;
@@ -2361,7 +2354,7 @@ input, select, textarea {
 			.column {
 				float: left;
 				width: 50%;
-				padding: 5px;
+				padding: 3px;
 			  }
 			  
 			  /* Clear floats after image containers */
