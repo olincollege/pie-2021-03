@@ -448,6 +448,14 @@ input, select, textarea {
 			margin-left: 16.66667%;
 		}
 
+		.row > .col-5col {
+			width: 20%;
+		}
+
+		.row > .off-5col {
+			margin-left: 20%;
+		}
+
 		.row > .col-3 {
 			width: 25%;
 		}
@@ -2220,6 +2228,19 @@ input, select, textarea {
 	#header-wrapper {
 		position: relative;
 		padding: 4em 0 2em 0;
+		background-image: url("images/header.svg");
+		background-image: url("images/overlay.png"), url("images/header.svg"), -moz-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
+		background-image: url("images/overlay.png"), url("images/header.svg"), -webkit-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
+		background-image: url("images/overlay.png"), url("images/header.svg"), -ms-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
+		background-image: url("images/overlay.png"), url("images/header.svg"), linear-gradient(75deg, #f0294b 15%, #e07243 55%);
+		/* background-color: #f08c89; */
+		background-color: #f08c89;
+		background-size: 100% 620%;
+		background-size: 128px 128px, 100% 620%, auto;
+		background-repeat: repeat, no-repeat, no-repeat;
+	}
+
+	#line-wrapper-homepage {
 		background-image: url("images/header.svg");
 		background-image: url("images/overlay.png"), url("images/header.svg"), -moz-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
 		background-image: url("images/overlay.png"), url("images/header.svg"), -webkit-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
