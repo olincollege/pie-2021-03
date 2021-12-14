@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<!--
+	Template: Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+	Olin College of Engineering, Principles of Integrated Engineering Fall 2021
+	Team: Gati Aher, Mari Kang, Cory Knox, Efe Gulcu, Max Stopyra
+-->
+<html>
+	<head>
+		<title>Bill of Materials</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Disco Cats</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="mechanical.html">Mechanical</a></li>
+								<li><a href="electrical.html">Electrical</a></li>
+								<li><a href="software.html">Software</a></li>
+								<li><a href="bill_of_materials.html">Bill of Materials</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>Bill of Materials</h2>
+								<p>An account of how we spent our $250 budget</p>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+
+									<h3 class="major">Electrical and Mechanical Components</h3>
+									<table>
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Description</th>
+												<th>Price</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Item One</td>
+												<td>Ante turpis integer aliquet porttitor.</td>
+												<td>29.99</td>
+											</tr>
+											<tr>
+												<td>Item Two</td>
+												<td>Vis ac commodo adipiscing arcu aliquet.</td>
+												<td>19.99</td>
+											</tr>
+											<tr>
+												<td>Item Three</td>
+												<td> Morbi faucibus arcu accumsan lorem.</td>
+												<td>29.99</td>
+											</tr>
+											<tr>
+												<td>Item Four</td>
+												<td>Vitae integer tempus condimentum.</td>
+												<td>19.99</td>
+											</tr>
+											<tr>
+												<td>Item Five</td>
+												<td>Ante turpis integer aliquet porttitor.</td>
+												<td>29.99</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<td colspan="2"></td>
+												<td>100.00</td>
+											</tr>
+										</tfoot>
+									</table>
+
+									<h3 class="major">List of All External Software Dependencies</h3>
+									
+									<b>Serial</b>
+									<ul>
+										<li><a href="https://pyserial.readthedocs.io/en/latest/">pySerial</a></li>
+										<li><a href="http://timidity.sourceforge.net/#info">TiMidity++ software synthesizer</a></li>
+										<li><a href="http://www.varal.org/ttymidi/">ttyMIDI</a></li>
+									</ul>
+
+									<b>Motor Control</b>
+									<ul>
+										<li><a href="https://www.arduino.cc/reference/en/libraries/accelstepper/">AccelStepper</a></li>
+									</ul>
+									
+									<b>Music Generation and MIDI File Processing</b>
+									<ul>
+										<li><a href="https://magenta.tensorflow.org/multitrack">Google Magenta's open-source MultiTrackVAE</a></li>									
+									</ul>
+									<pre><code>
+# pySerial
+import serial
+
+# ML libraries
+import numpy as np
+import tensorflow.compat.v1 as tf
+import magenta.music as mm
+from magenta.music.sequences_lib import concatenate_sequences
+from magenta.models.music_vae import configs
+from magenta.models.music_vae.trained_model import TrainedModel
+
+# MIDI file processing
+import pretty_midi
+from mido import MidiFile
+
+# file system management
+import glob
+import os
+
+# run bash commands from within Python script
+import subprocess as sp
+import multiprocessing as mp
+
+# assorted Python3 utilities
+import fire
+									</code></pre>
+								</div>
+							</div>
+
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">About Us</h2>
+							<ul>
+								<li><b>Software:</b> Gati Aher & Mari Kang</li>
+								<li><b>Mechanical & Design:</b> Efe Gulcu & Cory Knox (also PM)</li>
+								<li><b>Electrical:</b> Max Stopyra</li>
+							</ul>
+							<ul class="contact">
+								<li class="icon solid fa-home">
+									Olin College of Engineering<br/>
+									1000 Olin Way, Needham, MA<br/>
+									Principles of Integrated Engineering, Fall 2021<br/>
+								</li>
+								<li class="icon brands fa-github"><a href="https://github.com/GatiAher/disco_cats">GatiAher/disco_cats</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

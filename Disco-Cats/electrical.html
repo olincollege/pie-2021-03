@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<!--
+	Template: Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+	Olin College of Engineering, Principles of Integrated Engineering Fall 2021
+	Team: Gati Aher, Mari Kang, Cory Knox, Efe Gulcu, Max Stopyra
+-->
+<html>
+	<head>
+		<title>Electrical</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Disco Cats</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="mechanical.html">Mechanical</a></li>
+								<li><a href="electrical.html">Electrical</a></li>
+								<li><a href="software.html">Software</a></li>
+								<li><a href="bill_of_materials.html">Bill of Materials</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>Electrical</h2>
+								<p>Our electrical system utilizes an Arduino Mega, an Arduino Uno, 9 DC stepper motors, 9 stepper motor drivers, a 12V 5A AC→DC power supply, 64 LEDs, a MAX7219 multiplexing LED driver, and an input panel with push-down buttons and status LEDs.</p>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+
+									<h3 class="major">The LED Matrix + MA7219 Chip</h3>
+									<p>64 LEDs are hooked up in a parallel grid layout with the common anodes being attached in rows, and the cathodes being attached in columns.
+									
+									<p>The Arduino Mega interfaces with a <a href="https://datasheets.maximintegrated.com/en/ds/MAX7219-MAX7221.pdf">MAX7219 multiplexing LED driver</a> to control the LED matrix. The MAX7219 is an integrated circuit that normally drives a 7-segment display, but can be configured to drive an 8x8 LED matrix. We chose this chip because it only needed to use 3-pins (CLK, LOAD, and DATA), as the dancing cat motor controllers occupied most of the Arduino Mega’s pins.</p>
+
+									<div class="box alt">
+										<div class="row gtr-uniform" padding="4em">									
+											<div class="col-4">
+												<span class="image fit">
+													<p><i>Parallel grid layout for 64 LEDs</i></p>
+													<img src="images/diagram/LED_Matrix_Wiring.JPG">
+												</span>
+											</div>
+
+											<div class="col-4">
+												<span class="image fit">
+													<p><i>MAX7219 pin configuration. DIG 0-7 map to columns, SEG DP-G map to rows</i></p>
+													<img src="images/diagram/MAX7219_pin_configuration.png">
+												</span>
+											</div>
+										</div>
+									</div>
+
+									<p>The MAX7219 chip uses a SPI protocol to activate one LED column at a time. On each CLK pulse, the chip shifts in 3 bits of column address selection and 8 bits of data. By multiplexing, it connects the chosen column to GND and pulls all other columns to 5V. The 8 bits of data get moved across the chip by shift registers. When the LOAD signal pulses, all the data in shift registers are transferred to latch registers. If the latch register is HIGH, this gives power to an LED row. By rapidly iterating between all the columns, persistence of vision makes it appear like all the LED columns and rows are powered at once!</p>
+
+									<p>On the chip, a 10kΩ current-limiting resistor is hooked up to the chip’s power source. This controls the current that powers the LEDs. The chip is powered by the 5V signal from the Arduino Mega. To ensure that the power signal is free of noise, a 100pF bypass capacitor has been placed near the chip’s power source.</p>
+
+									<h3 class="major">DC Stepper Motors + ULN2003 Driver Boards</h3>
+									<p>To express full 360-degree motion in our dancing cat design, we chose to use stepper motors. More specifically, we chose <a href="https://www.mouser.com/datasheet/2/758/stepd-01-data-sheet-1143075.pdf">28-BYJ48 stepper motors</a> and <a href="https://www.electronicoscaldas.com/datasheet/ULN2003A-PCB.pdf">ULN2003 driver boards</a> because they are the most common stepper drivers and thus have ready-made compatible arduino libraries. In total, we use nine 28-BYJ48 stepper motors with ULN2003 driver boards. Each stepper motor requires 4 I/O pins, using 36 pins in total. The Arduino Mega is a large Arduino board with enough I/O pins to control both the 9 motor drivers and the LED Matrix.</p>
+									
+									<span class="image fit">
+										<p><i>The circuit diagram below shows how each stepper motor is connected to specific I/O pins and the power supply.</i></p>
+										<img src="images/diagram/motor_schematic_top.png" alt=""/>
+										<img src="images/diagram/motor_schematic_bottom.png" alt=""/>
+									</span>
+
+									<p>At first, we were supplying 5V to the motors from the Arduino, but when we connected more than 3 motors at the same time the motors started to move slowly or wiggling back and forth instead of moving smoothly in one direction.</p>
+
+									<p>Through testing and reading the spec sheet, we determined that the problem was caused by insufficient power. Since the ULN2003 driver boards have a maximum voltage of 12V, and the stepper motors work best with ~260mA of current, to drive all 9 motors simultaneously, we use a 12V 5A AC-DC power supply. We also experimented with different motor speeds and found the optimal speed was 600 steps per second.</p>
+
+									<h3 class="major">User Input Panel</h3>
+									<p>An Arduino UNO is hooked up to an input panel with 9 push buttons with 9 corresponding status LEDs. Pull down resistors are used to minimize noise and limit current through the LEDs.</p>
+
+									<span class="image fit">
+										<img src="images/photo_booth/user_input_breadboard.PNG" alt=""/>
+									</span>
+
+								</div>
+							</div>
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">About Us</h2>
+							<ul>
+								<li><b>Software:</b> Gati Aher & Mari Kang</li>
+								<li><b>Mechanical & Design:</b> Efe Gulcu & Cory Knox (also PM)</li>
+								<li><b>Electrical:</b> Max Stopyra</li>
+							</ul>
+							<ul class="contact">
+								<li class="icon solid fa-home">
+									Olin College of Engineering<br/>
+									1000 Olin Way, Needham, MA<br/>
+									Principles of Integrated Engineering, Fall 2021<br/>
+								</li>
+								<li class="icon brands fa-github"><a href="https://github.com/GatiAher/disco_cats">GatiAher/disco_cats</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
