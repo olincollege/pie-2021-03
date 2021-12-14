@@ -77,18 +77,31 @@
 								<p>Here you can see the mechanical design of the BaristaBot2.0 from the 
 									heating water container, bean grinder, ingredient dispensing, and the cup stirrer.
 								</p>
-								<h3>Water Heating</h3>
-								<!-- Schematic goes here -->
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>The coil heats up the water poured into the container and is poured out through
-									a solunoid dispenser into the cup.
-								</p>
 								<h3>Bean Grinder</h3>
 								<!-- Schematic goes here -->
 								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>The bean grinder uses a motor running at 84 rpm at 12V DC to drive a modified hand crank coffee grinder
-									attached with 3D printed motor and grinder mounts. The grinded beans will be dispensed into a dispenser container
-								so it can be poured into the cup</p>
+								<p>When seeing how the original BaristaBot team implemented bean grinding, we tried to 
+									create a unique solution. When that did not work, we traced back our steps and 
+									attempted to recreate their solution which was put take a hand bean grinder and 
+									attach a strong 12V DC motor to it. We acquired a hand grinder and stripped it so 
+									that it would fit out purpose.
+									
+									Later, we harvested a motor from an old cordless hand drill that had a bad battery
+									as we had tried to grind beans with a smaller 5V DC motor but that failed. Still,
+									as great as the larger 12V bean grinding motor was, it posed many issues for both
+									the mechanical and electrical teams. On the mechanical side, it was quite bulky, 
+									heavy, and had a planetary transmission that we had to keep. If we had not kept it,
+									we would not have been able to connect the shaft of the bean grinder to the chuck of 
+									the drill. We would have had to make out own coupling to connect them and that was 
+									deemed not worth the time. After CADing a mount for both the grinder and the motor,
+									we connected the two using wooden dowels to constrain the torqy movement of the motor.
+
+									For as much as we wanted to have this in the final iteration, we could not keep it in
+									due to complications in the electrical components needed to power the motor as it 
+									ran at a variable amperage that bounced from 3.5A to 4.8A thus making it difficult to 
+									build a circuit for, especially when we were already doing a complicated one for the
+									water heating elements.
+								</p>
 								<h3>Ingredient Dispensers</h3>
 								<!-- Schematic goes here -->
 								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
