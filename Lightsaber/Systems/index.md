@@ -92,4 +92,10 @@ Unfortunately, since we chose to create two different lightsabers, we could not 
 
 ## Software
 
-Future iterations add kylo ren unstable blade effects - vary intensity of red leds? add some orange in? could follow a pattern 
+We developed a software system that turns the Lightsaber on and off, changes the color of the blade, and plays music and lightsaber sounds. The code can be found in our Github repository and is separated by detachable and extendable for ease of use.
+
+[Lightsaber Repo](https://github.com/nabihestefan/Lightsaber)
+
+The software is written in python and is based of off existing lightsaber code ([Source](https://learn.adafruit.com/hallowing-lightsaber/program-with-circuitpython)). This initial code powers the blade on and plays humming sounds based on accelerometer values. Additional code was added to switch between blade colors based on button input. There are four different blade colors with corresponding audio files that play music when the blade is extended. Originally, there was a fifth color with music, but memory limitations with the board prevented it from being added to the lightsaber. 
+
+In future iterations, we would like to modify the code to create unstable blade effects, as seen with Kylo Ren's blade in The Force Awakens. 
