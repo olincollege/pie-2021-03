@@ -4,6 +4,18 @@ title: Sprints
 permalink: /Sprints/
 ---
 
+<a name="top"></a>
+
+This project was divided into three sprints of two weeks in class each.
+
+[Sprint 1](#sprint-1)
+
+[Sprint 2](#sprint-2)
+
+[Sprint 3](#sprint-3)
+
+<a name="sprint-1"></a>
+
 ## Sprint 1
 In Sprint 1, our team decided we wanted to create a replica lightsaber. We decided our MVP would be a lightsaber with a detachable blade with a reach goal of recreating Disney's new extendable blade lightsaber. 
 
@@ -32,28 +44,26 @@ For electrical, we put the FeatherWing onto the Feather M4 Express and then conn
 #### Software
 The board we got runs CircuitPython natively, so the software is done directly on the board. The base code for the lightsaber already exists ([Source](https://learn.adafruit.com/hallowing-lightsaber/program-with-circuitpython)), so we started with getting the base code running on our board, before making tweaks. This initial code powered the blade on and played humming sounds based on accelerometer values.
 
+[Back to top](#top)
+
+
+<a name="sprint-2"></a>
 
 ## Sprint 2
 In Sprint 2, we wanted to see how far along we could get with the extendable lightsaber, before deciding whether we should focus on only the detachable lightsaber or both the detachable and extendable ones. We ultimately decided to continue pursuing both, leading us to purchase another Adafruit Propmaker kit. Luckily, we found an LED strip to use for this blade, so we wouldn't have to purchase another which would have put us way over budget.
 
+<a name="sprint-2-mech"></a>
+
 #### Mechanical
-For the detachable blade, this sprint we modified the electronics packaging, so that the hilt of the lightsaber would fit into a 2 inch diameter hilt, more closely resemble Disney's lightsaber dimensions. 
-
-<p align="center">
-  <img src="../Photos!/sprint2detachabledesign.png" alt="Sprint 2 Detaching Mechanism Design">
-</p>
-
-Additionally, we began working on the detaching mechanism of the blade. We began by creating a proof of concept with a small blade and placeholder to for plug on the side of the endcap.
-
-<p align="center">
-  <img src="../Photos!/sprint2detachablev1.jpg" alt="Sprint 2 Detaching Mechanism Version 1">
-</p>
-
-For our next iteration of the detachable mechanism we increased the size of the blade tubing and added a wire channel to the plug holder. 
+For the detachable blade, this sprint we modified the electronics packaging, so that the hilt of the lightsaber would fit into a 2 inch diameter hilt, more closely resemble Disney's lightsaber dimensions. Additionally, we began working on the detaching mechanism of the blade, making versions 1-2. 
 
 <p align="center">
   <img src="../Photos!/sprint2detachablev2.jpg" alt="Sprint 2 Detaching Mechanism Version 2">
 </p>
+
+More information on this feature and the different versions can be found at the link below.
+
+[Detaching Mechanism](../DetachableMechanism/)
 
 For the extendable blade, we reverse engineered a motorized tape measure. We found that the motor was sufficient for our needs, so we switched the battery out for a 9 volt one because we wanted more power for the extending and retracting motions. We then connected the tape measure and LEDs, although the diameter of the LED spool was too small, leading to problems when retracting the blade. 
 
@@ -73,51 +83,28 @@ For software, we added the ability to switch between blade colors based on butto
 
 [Github Repo](https://github.com/nabihestefan/Lightsaber)
 
+[Back to top](#top)
+
+
+<a name="sprint-3"></a>
+
 ## Sprint 3
 In Sprint 3, we finished up both the extendable and detachable blades. Additionally, early on, we ordered the polycarbonate tubing for the detachable blade and the films to test thermoforming for the extendable blade. This order caused us to go over budget because the shipping for the tubing was $37. 
 
 [Presentation](https://docs.google.com/presentation/d/1FsrQfatEuBN9W9HeRLlkH6D4EyJWSfqdYsHG7buiOm8/edit?usp=sharing)
- 
+
+<a name="sprint-3-mech"></a>
+
 #### Mechanical
-During sprint 3, we went through several versions of the detaching mechanism for the detachable blade before we finalized it.
-
-**MOVE ALL VERSION BUT FINAL IN SPRINTS TO ANOTHER PAGE IF TIME**
-
-For version 3, we tested using the socket instead of the plug on the blade side adn added space for the connector on the hilt side. 
-
-<p align="center">
-  <img src="../Photos!/sprint3detachablev3.jpg" alt="Sprint 3 Detaching Mechanism Version 3">
-</p>
-
-For version 4, added an auxiliary stabilizer across from the plug to increase stability and increased clearances for plug and socket.
-
-<p align="center">
-  <img src="../Photos!/sprint3detachablev4.jpg" alt="Sprint 3 Detaching Mechanism Version 4">
-</p>
-
-For version 5, we reduced teh height of the stabilizer and added a thread to the hilt side to attach to the rest of the hilt.
-
-<p align="center">
-  <img src="../Photos!/sprint3detachablev5.jpg" alt="Sprint 3 Detaching Mechanism Version 5">
-</p>
-
-For version 5.5, we reduced the height of spline behind plug passthrough on endcap.
-
-<p align="center">
-  <img src="../Photos!/sprint3detachablev5.5.jpg" alt="Sprint 3 Detaching Mechanism Version 5.5">
-</p>
-
-For version 6, we tested adding a third stabilizer and modifying placement and clearance for connectors. We also modified the thread to match the rest of the hilt.
-
-<p align="center">
-  <img src="../Photos!/sprint3detachablev6.jpg" alt="Sprint 3 Detaching Mechanism Version 6">
-</p>
-
-For version 7, the final version, we moved the connectors to center of endcap instead of side and changed to first plug in wires manually, then twist the blade into place.
+During sprint 3, we went through versions 3-6 of the detaching mechanism for the detachable blade before we finalized it with version 7. 
 
 <p align="center">
   <img src="../Photos!/sprint3detachablev7.jpg" alt="Sprint 3 Detaching Mechanism Version 6">
 </p>
+
+More information on this feature and the different versions can be found at the link below.
+
+[Detaching Mechanism](../DetachableMechanism/)
 
 Additionally, we designed the casing of the hilt. The first version of the hilt shown below is made of 3D printed sections. This allows for easy access to the battery to recharge it. Additionally, it features a cutout to show off the board we are using. Originally, we had hoped to implement a kyber crystal reveal, however since we did not have the time to develop this feature, we made a board reveal instead.
 
@@ -150,3 +137,5 @@ For electrical, there were problems LED wires twisting too much in the extendabl
 
 #### Software
 We finished the software for the blade last sprint, so we focused on documentation for this sprint.
+
+[Back to top](#top)
