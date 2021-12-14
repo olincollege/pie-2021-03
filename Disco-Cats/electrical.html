@@ -87,9 +87,8 @@
 									<p>To express full 360-degree motion in our dancing cat design, we chose to use stepper motors. More specifically, we chose <a href="https://www.mouser.com/datasheet/2/758/stepd-01-data-sheet-1143075.pdf">28-BYJ48 stepper motors</a> and <a href="https://www.electronicoscaldas.com/datasheet/ULN2003A-PCB.pdf">ULN2003 driver boards</a> because they are the most common stepper drivers and thus have ready-made compatible arduino libraries. In total, we use nine 28-BYJ48 stepper motors with ULN2003 driver boards. Each stepper motor requires 4 I/O pins, using 36 pins in total. The Arduino Mega is a large Arduino board with enough I/O pins to control both the 9 motor drivers and the LED Matrix.</p>
 									
 									<span class="image fit">
-										<p><i>The circuit diagram below shows how each stepper motor is connected to specific I/O pins and the power supply.</i></p>
-										<img src="images/diagram/motor_schematic_top.png" alt=""/>
-										<img src="images/diagram/motor_schematic_bottom.png" alt=""/>
+										<p><i>The circuit diagram below shows how 28-BYJ48 stepper motors, ULN2003 driver boards, MAX7219 chip, and the LED Matrix is connected to specific I/O pins on the Arduino Mega and the power supply.</i></p>
+										<img src="images/diagram/motor_schematic.png" alt=""/>
 									</span>
 
 									<p>At first, we were supplying 5V to the motors from the Arduino, but when we connected more than 3 motors at the same time the motors started to move slowly or wiggling back and forth instead of moving smoothly in one direction.</p>
@@ -101,6 +100,7 @@
 
 									<span class="image fit">
 										<img src="images/photo_booth/user_input_breadboard.PNG" alt=""/>
+										<img src="images/diagram/user_input_schematic.png" alt=""/>
 									</span>
 
 								</div>
