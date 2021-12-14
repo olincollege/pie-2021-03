@@ -71,10 +71,10 @@
 								<a href="images/circuitDiagram.png" class="image centered-small"><img src="images/circuitDiagram.png" alt="A circuit diagram showing the connections for all the components."/></a>
 
 								<h3>Design Decisions</h3>
-								
-								<p>As a safeguard, we implemented an on/off switch for the entire system to control both power sources. This is a double pole, single throw switch that gives users an easy way to turn the system off even when it is plugged in.</p>
 
 								<p>As a safeguard, we implemented an on/off switch for the entire system to control both power sources. This is a double pole, single throw switch that gives users an easy way to turn the system off even when it is plugged in.</p>
+								
+								<p>Another feature we implemented as a result of user consulting was a physical switch for changing between Braille 1 and Braille 2. We chose to implement this feature because we wanted to support changing between the two different types of Braille without having to go through the software user-interface. Braille 1 typically maps letters to cells directly, while Braille 2 has a variety contractions for more common words (such as the, and, or).</p>
 
 								<p>If we had more time, we would have implemented a safeguard for our NEMA17 stepper motor, as it sometimes stalls and draws more current than it can handle. We would likely implement an in-line fuse that could break at around 1.8A, so if our motor stalls and draws too much current, the fuse would break and force the motor to stop drawing power.</p>
 							

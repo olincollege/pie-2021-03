@@ -1907,6 +1907,13 @@ input, select, textarea {
 			width: 75%;
 		}
 
+		.image.centered-small-extra{
+			display: block;
+			/* margin: 0 0 3em 0; */
+			margin: 0 auto;
+			width: 50%;
+		}
+
 	a.image:hover {
 		opacity: 0.85;
 	}
