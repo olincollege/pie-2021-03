@@ -448,6 +448,14 @@ input, select, textarea {
 			margin-left: 16.66667%;
 		}
 
+		.row > .col-5col {
+			width: 20%;
+		}
+
+		.row > .off-5col {
+			margin-left: 20%;
+		}
+
 		.row > .col-3 {
 			width: 25%;
 		}
