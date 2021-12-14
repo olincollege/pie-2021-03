@@ -58,18 +58,25 @@
 								The BaristaBot2.0 is a new take on the original <a href="http://poe.olin.edu/2018/flair_barista/index.html" target="_blank" >BaristaBot, 
 								</a>which aimed to fully automate the coffee brewing process with an assembly-line-style aesthetic.</p>
 							<p>For our iteration, we decided to aim for an open-view, more compact experience that not only dispenses coffee, 
-								but the additional capability to add milk and sugar.</p>
+								but the additional capability to add milk, sugar and stirring.</p>
 							<h3>System Integration</h3>
 							<span class="image main"><img src="images/total_system.png" alt="" /></span>
 							<p>As seen in our total system above, our mechanical, electrical, and software work together to create the BaristaBot.
 								The software receives input from the user of what ingredients they wish to place in their cups and communicates
 							with the electrical components through the Arduino to trigger events that get supported from the mechanical portions
-						of the project.</p>
-							<p>When the user selects the type of coffe they want, the electrical components triggers the mechanical components to 
-								make the coffee to dispense the sugar and/or milk, brewing the coffee with hot water on the grinds, and stirring the final mixture.
+						of the project. The Arduino communicates to the cup surface servo to start rotating to go towards the four stations: coffee brewing, milk dispensing, sugar dispensing, and stirring.</p>
+							<p>
+								The coffee brewing communicates to the heating coil to the thermistor, which is able to tell the temperature of the water inside the container.
+								If the water is not at the ideal temperature, the heating coil will start boiling the water until the thermistor indicates that the ideal temperature has been reached.
+								The relay will trigger for the water to be dispensed over the coffee grinds, which will brew the coffee into the cup through the solenoid. 
+							</p>
+							<p>
+								The cup surface servo will rotate towards the milk and sugar dispensers, depending on whether or not the user chose both or only one of the ingredients, where the servo will turn and dispense the ingredients. 
+								Whether or not the user wishes for milk and/or sugar in their drink, the cup will rotate to its final destination at the stirrer. The servo of the stirring mechanism will bring down the stirring motor.
+								When lowered, the stirring motor will run and stir the drink. When completed, the servo will raise back to its original position and conclude the program.
 							</p>
 							<h3>The Team</h3>
-							<span class="iconimage"><img src="images/white_circle.png" alt=""/></span>
+							<span class="iconimage"><img src="images/ivonne_portrait.png" alt=""/></span>
 							<span class="iconimage"><img src="images/dan-2.png" alt=""/></span>
 							<span class="iconimage"><img src="images/charlotte_portrait.PNG" alt=""/></span>
 							 <span class="iconimage"><img src="images/moises_portrait.png" alt=""/></span>
@@ -80,19 +87,70 @@
 						<!-- Mechanical Subsystem -->
 							<article id="mechanical">
 								<h2 class="major">Mechanical</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+								<span class="image main"><img src="images/render4.png" alt="" /></span>
 								<p>Here you can see the mechanical design of the BaristaBot2.0 from the 
-									heating water container, bean grinder, ingredient dispensing, and the cup stirrer.
+									housing, bean grinder, ingredient dispensing, and the cup stirrer.
+									<br>
+									<br>
+									For access to our CAD files, visit https://workbench.grabcad.com/workbench/myprojects#/account/1952748/projects
+									or request access to the project to msabidogarcia@olin.edu
+								</p>
+								<h3>Housing</h3>
+								<span class="image main"><img src="images/box.png" alt="" /></span>
+                                <p>When drawing out what we wanted our final project to look like, a larger 
+								need was to have everything be in a single compact housing. Immediately, we
+								CADed a box that would fit the dimensions we believed we would need and that
+								would be viable to create using easy to source material. Based on our budget,
+								we opted for plywood over a higher quality wood (especially once we went to
+								purchase it and saw that even the more expensive sheets of wood were extremely
+								warped). We then took our 4' X 8' sheet and CNC milled it on the "Shopbot" with
+								very accurate tolerances! To ensure stability, we center drilled many spots on
+								the finger joints of the box and then inserted wood screws. We also created a 
+								lid but later determined that it was less useful to have it since some of our 
+								elements were taller than what fit inside the box.
+								<br>
+								<br>
+
+								<h3>Tiered Design</h3>
+								<p>The inside of the box is a three tiered design, in which the top and middle 
+									tiers are static and the bottom tier rotates. The design is laid out as follows:
+									<br>
+									<br>
+									Top tier - contains the water heating and bean grinding mechanism
+									<br>
+									Middle tier - contains the powder creamer and sugar dispensers, as well 
+									as the coffee filter cup that dispenses the coffee
+									<br>
+									Bottom tier - contains the coffee mug that rotates to each dispenser 
+									<br>
+									<span class="image main"><img src="images/circle mount.png" alt="" /></span>
+									
+									The top and middle tiers have holes relative to the shape of the part or mechanism
+									 that goes on that tier. The top tier has a hexagon-shaped hole for the nut at the 
+									 bottom of the water bottle, as well as a circle with two notches across from each 
+									 other for the dispenser. 
+									 <br>
+									 <br>
+									 <span class="image main"><img src="images/top tier.png" alt="" /></span>
+								
+									
+									The middle tier has one regular-shaped hole, and two circles with notches. This design was made so that we could slide the dispensers in and then lock them in place.
+									<br>
+									<br>
+									<span class="image main"><img src="images/middle tier.png" alt="" /></span>
+								</p>
+
 								</p>
 								<h3>Bean Grinder</h3>
 								<!-- Schematic goes here -->
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								<span class="image main"><img src="images/beangrinder.png" alt="" /></span>
 								<p>When seeing how the original BaristaBot team implemented bean grinding, we tried to 
 									create a unique solution. When that did not work, we traced back our steps and 
 									attempted to recreate their solution which was put take a hand bean grinder and 
 									attach a strong 12V DC motor to it. We acquired a hand grinder and stripped it so 
 									that it would fit out purpose.
-									
+									<br>
+									<br>
 									Later, we harvested a motor from an old cordless hand drill that had a bad battery
 									as we had tried to grind beans with a smaller 5V DC motor but that failed. Still,
 									as great as the larger 12V bean grinding motor was, it posed many issues for both
@@ -102,7 +160,8 @@
 									the drill. We would have had to make out own coupling to connect them and that was 
 									deemed not worth the time. After CADing a mount for both the grinder and the motor,
 									we connected the two using wooden dowels to constrain the torqy movement of the motor.
-
+									<br>
+									<br>
 									For as much as we wanted to have this in the final iteration, we could not keep it in
 									due to complications in the electrical components needed to power the motor as it 
 									ran at a variable amperage that bounced from 3.5A to 4.8A thus making it difficult to 
@@ -111,7 +170,7 @@
 								</p>
 								<h3>Ingredient Dispensers</h3>
 								<!-- Schematic goes here -->
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								<span class="image main"><img src="images/dispenser_in.gif" alt="" /></span>
 								<p>Having had experience with the creation of food safe containers, our team opted to purchase
 									COTS dispensing containers from Amazon. The containers were originally intended to be used
 									with cereal, so adjusting them to work with finer ingredients was something that we knew would
@@ -119,18 +178,26 @@
 									would then make the gap between the flippers and the sidewalls of the containers small enough
 									to limit the amount of spillage. The ingredients we were putting inside these containers were 
 									bean grinds, powdered creamer, and granulated sugar.
-
+                                    <br>
+									<br>
 									These COTS containers were perfect for our team in the sense that we were able to quickly and 
 									easily motorize them. We simply took the handle that had a D-shaft attached to it (which 
 									attached to the flippers), sanded it flat, and put a servo mount that was available to us in 
 									the PIE room. Just like that, we now had motorized dispensers. 
-
-									For more on how these were mounted in the system, read the section on the Box housing/tiered system.
+                                    <br>
+									<br>
+									For more on how these were mounted in the system, read the section on the  housing/tiered system.
 								</p>
 								<h3>Cup Stirrer</h3>
 								<!-- Schematic goes here -->
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>And finally, when all the coffee ingredients are in the cup, the mixer will automatically mix the cup for the user.</p>
+								<span class="image main"><img src="images/stirring.gif" height= 400 alt="" /></span>
+								<p>
+									And finally, when all the coffee ingredients are in the cup, the mixer will automatically mix the cup for the user.
+									With a <a href="https://www.thingiverse.com/thing:3170748" target="_blank" >custom 3D printed rack and pinion system</a>
+									and a servo controlling the actuator, we were able to move the rod up and down into the cup for mixing.
+									At the end of the actuator, there was a small 5V motor and modified fan to stir the contents of the cup.
+									This system was attached to the PVC pipe in the middle to be part of the rotation as the final step of the coffee making process.
+								</p>
 							</article>
 
 						<!-- Electrical -->
@@ -140,12 +207,22 @@
 								<p>The Electrical System is composed of multiple modules defined by the Arduinos that drives the coffee machine 
 									from water heating, coffee bean grinding, ingredient dispensing, and cup stirring.</p>		
 								<h3>A. Water Heating</h3>
+								<br>
 								<h3>B. Water Dispensing</h3>
+								<p>Water dispensing is controlled by a 12-Volt Solenoid. The valve screws into the bottom of the water bottle and
+								when a high voltage is pushed to the solenoid the valve, the valve opens and allows for water to flow through. 
+								In order to control the 12-Volt Solenoid, we utilized an NMOS transistor. The NMOS transisor's gate is connected 
+								to an Arduino with a 10k Resistor running to ground in parallel. The source is connected to the ground of the 
+								solenoid pin and the drain is connected to the ground of the Arduino. The 12V pin of the solenoid is connected to 
+								a 12V 1.5A power supply, which is also connected to the ground. When the Arduino pushes a high voltage from a 
+								digital pin to the gate of the transistor, the circuit completes and allows for the solenoid to connect to ground</p>
+								<br>
 								<h3>C. Ingredient Dispensing</h3>
 								<p>The powdered milk and sugar ingredients are dispensed using containers and a dispensing mechanism controlled by a servo.
 									When the ingredient needs to be dispensed, the servo rotates, dropping in some sugar and milk into the cup.
 								</p>
 								<h3>D. Cup Rotating</h3>
+								<span class="image main"><img src="images/rotating.jpg" alt="" /></span>
 								<p>When alternating between the coffee brewer, ingredient dispensers, and cup stirrer, 
 									the surface where the cup is held rotates with a servo that is placed underneath each dispenser.
 								</p>
