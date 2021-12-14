@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gallery on BB-Gr8</title>
+    <link>https://olincollege.github.io/pie-2021-03/BB-GR8/gallery/</link>
+    <description>Recent content in Gallery on BB-Gr8</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Feb 2018 11:52:18 +0700</lastBuildDate><atom:link href="https://olincollege.github.io/pie-2021-03/BB-GR8/gallery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sprint 1</title>
+      <link>https://olincollege.github.io/pie-2021-03/BB-GR8/gallery/sprint1/</link>
+      <pubDate>Sun, 18 Nov 2018 12:33:46 +1000</pubDate>
+      
+      <guid>https://olincollege.github.io/pie-2021-03/BB-GR8/gallery/sprint1/</guid>
+      <description>Our goal for this sprint was to design and build a two-wheel robot that drives in a sphere based on a pre-programmed path.
+Subteam Progress Software In this sprint, we were able to preload a set of drive commands to the robot to enable it to drive in the hamster ball. The robot is controlled via Arduino Uno. Future steps include wireless control of the robot using Bluetooth and some controller such as a joystick or laptop arrow keys.</description>
+    </item>
+    
+    <item>
+      <title>Sprint 2</title>
+      <link>https://olincollege.github.io/pie-2021-03/BB-GR8/gallery/sprint2/</link>
+      <pubDate>Sun, 18 Nov 2018 12:33:46 +1000</pubDate>
+      
+      <guid>https://olincollege.github.io/pie-2021-03/BB-GR8/gallery/sprint2/</guid>
+      <description>In this sprint, we wanted to make our robot wireless. This included incorporating our Bluetooth module and adding batteries.
+Subteam Progress Software Our goal for this sprint was to incorporate the HC-05 bluetooth module onto the robot chassis in order to communicate wirelessly with the Arduino and sent commands in real-time. Our approach was to write a Python script that converted keyboard presses into commands that were sent over Serial to the Bluetooth module.</description>
+    </item>
+    
+    <item>
+      <title>Sprint 3 and Beyond</title>
+      <link>https://olincollege.github.io/pie-2021-03/BB-GR8/gallery/sprint3/</link>
+      <pubDate>Sun, 18 Nov 2018 12:33:46 +1000</pubDate>
+      
+      <guid>https://olincollege.github.io/pie-2021-03/BB-GR8/gallery/sprint3/</guid>
+      <description>Our goal for this sprint was to integrate the wireless drive code with the newly built, three-wheel chassis, as well as fully integrate all mechanical and electrical components. A demo of the robot can be found here
+Subteam Progress Software Our goal for the final sprint was to update the firmware to drive with three wheels instead of two, and to make the controller more intuitive by creating a virtual joystick controller that would send commands to the robot.</description>
+    </item>
+    
+  </channel>
+</rss>

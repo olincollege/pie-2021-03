@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Features on BB-Gr8</title>
+    <link>https://olincollege.github.io/pie-2021-03/BB-GR8/features/</link>
+    <description>Recent content in Features on BB-Gr8</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Feb 2018 11:52:18 +0700</lastBuildDate><atom:link href="https://olincollege.github.io/pie-2021-03/BB-GR8/features/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Electrical</title>
+      <link>https://olincollege.github.io/pie-2021-03/BB-GR8/features/electrical/</link>
+      <pubDate>Sun, 18 Nov 2018 12:33:46 +1000</pubDate>
+      
+      <guid>https://olincollege.github.io/pie-2021-03/BB-GR8/features/electrical/</guid>
+      <description>An Arduino controls all of the electrical components on BB-8. The Arduino is connected to various other components, including motors and a bluetooth module, to drive BB-8.
+Circuit Design Here is the layout of our circuit:
+The circuit includes an Arduino, a motor shield, and an HC-05 bluetooth chip. The bluetooth module pairs with a laptop and connects to the Arduino to send and receive commands. The motor shield sends power to the motors to drive them.</description>
+    </item>
+    
+    <item>
+      <title>Mechanical</title>
+      <link>https://olincollege.github.io/pie-2021-03/BB-GR8/features/mechanical/</link>
+      <pubDate>Wed, 28 Nov 2018 15:14:39 +1000</pubDate>
+      
+      <guid>https://olincollege.github.io/pie-2021-03/BB-GR8/features/mechanical/</guid>
+      <description>The main mechanical function of our BB-8 was to get a small robot to drive within a sphere. We built a bottom heavy robot inside of a spherical shell to mimic the functionality of BB-8.
+Creating the Sphere Making the Ball Openable Fabricating a sphere that is smooth inside &amp;amp; out is hard enough, but building it such that we could easily access the robot inside made it even more challenging.</description>
+    </item>
+    
+    <item>
+      <title>Software</title>
+      <link>https://olincollege.github.io/pie-2021-03/BB-GR8/features/software/</link>
+      <pubDate>Wed, 28 Nov 2018 15:15:34 +1000</pubDate>
+      
+      <guid>https://olincollege.github.io/pie-2021-03/BB-GR8/features/software/</guid>
+      <description>The software, written in Python, creates a clean interface for sending commands to BB-8, converting a joystick input to BB-8 commands.
+Joystick The joystick is written in HTML/JS using a canvas element. Since this code is very generic and not central to BB-8&amp;rsquo;s functionality, the frontend of this was based off of an existing HTML joystick. This code was modified to send the position of the joystick (indicating magnitude and direction) to a Python server.</description>
+    </item>
+    
+    <item>
+      <title>Firmware</title>
+      <link>https://olincollege.github.io/pie-2021-03/BB-GR8/features/firmware/</link>
+      <pubDate>Wed, 28 Nov 2018 15:15:26 +1000</pubDate>
+      
+      <guid>https://olincollege.github.io/pie-2021-03/BB-GR8/features/firmware/</guid>
+      <description>The Arduino&amp;rsquo;s firmware is all written in Arduino C and allows BB-8 to receive commands from a laptop and output speeds to its motors. The firmware is short and to the point, as firmware should be.
+Code Summary The code starts by setting all of the speeds to zero. When a bluetooth signal is received, it parses the command, which gives it three numbers: the signed percentage power values for the three motors.</description>
+    </item>
+    
+    <item>
+      <title>Low Cost</title>
+      <link>https://olincollege.github.io/pie-2021-03/BB-GR8/features/budget/</link>
+      <pubDate>Wed, 28 Nov 2018 15:15:34 +1000</pubDate>
+      
+      <guid>https://olincollege.github.io/pie-2021-03/BB-GR8/features/budget/</guid>
+      <description>This project could be replicated with a $250 budget, as our team was resourceful in its use of materials to create an effective robot at a low cost.
+Budget     Material Used Estimated Cost Amount Taken out of Budget     Borrowed Adafruit Motorshield $19.95 $0.00    Arduino Uno $23.00 $0.00    Roll of Duct Tape $8.58 $0.00    4V Rechargeable Batteries (3x) $7.</description>
+    </item>
+    
+  </channel>
+</rss>
