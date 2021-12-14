@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Electrical Subsystem</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1><a href="index.html">Swervin'</a></h1>
+			<nav id="nav">
+				<ul>
+					<li class="special">
+						<a href="#menu" class="menuToggle"><span>Menu</span></a>
+						<div id="menu">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="system_overview.html">System Overview</a></li>
+								<li>
+									<ul>
+										<li><a href="mechanical.html">Mechanical</a></li>
+										<li><a href="electrical.html">Electrical</a></li>
+										<li><a href="software.html">Software</a></li>
+									</ul>
+								</li>
+								<li><a href="budget.html">Budget</a></li>
+								<li><a href="team.html">Team</a></li>
+								<li><a href="media.html">Media</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<article id="main">
+			<header>
+				<h2>Electrical Subsystem</h2>
+			</header>
+			<section class="wrapper style5">
+				<div class="inner">
+					<h2>Electrical Design</h2>
+					<p><i>An overview of key electrical design decisions we made.</i></p>
+
+					<h3>Computers</h3>
+					<p>For the electrical design, we decided to use LiPo batteries and a Raspberry Pi to communicate
+						over wifi with a laptop in order to create an untethered robot. To control the motors and
+						servos, we used Arduinos rather than the Pi because we were more familiar with that setup, and
+						started out with two Arduino Unos because one Uno did not have enough PWM pins for all of our
+						motors and servos. When our Arduino Mega arrived during Sprint 3, we found that it was having
+						communication problems with the Pi. After trying to debug for hours, we didn’t think we would be
+						able to get it working and went back to using the Unos as they were already a functional
+						solution. </p>
+
+					<h3>Motor Drivers</h3>
+					<p>We also had some trouble with our motor controllers and ended up trying out three different ones
+						to find one that worked. We first tried Amazon RC Car Motor Controllers rated for up to 40A, but
+						could not find a manual anywhere on the internet. After unsuccessfully trying to induce a
+						response by sending signals over PWM at different frequencies and duty cycles, we gave up and
+						borrowed an L298N Motor Driver. The L298 had a manual and tutorials and we were able to
+						successfully operate it, but the problem was that it was heating up due to having only a 2A peak
+						output current which was too low for even a single one of our motors. At that point, we
+						researched high-current rated motor drivers with good supporting documentation at a low price
+						point and found the BTS7960 High Power Motor Driver Module which came with arduino example code
+						and was rated up to 43A. This experience taught us a lot about how to use motor drivers and what
+						factors are important to take into account when choosing one. </p>
+
+					<h3>RGB LED Strips</h3>
+					<p>After adding LEDs, it seemed that the wifi signal from the pi would stop working at random times
+						including while the robot was driving, and continue driving until it hits something. We think
+						this was because the Pi is sensitive to power changes. We added a second portable power bank
+						rated for 5V and 2A to power the pi which fixed the issue.</p>
+
+
+					<h3>Layout</h3>
+					<div class="row">
+						<div class="col-6 col-12-medium">
+							<p>In terms of the physical layout of the electronics on the robot, we made several
+								decisions which contributed to overall success. Firstly, we stacked the breadboard for
+								power distribution on top of the battery since we wanted the battery to be in the center
+								for weight distribution and the breadboard to be in the center to reduce wire lengths.
+								To make this stacked configuration work, we put together a quick battery box which held
+								the battery and allowed it to be swapped out easily. We bolted down the battery box as
+								well as many of the other electrical components to prevent them from falling off since
+								we tended to flip the robot over often for both storage and testing purposes. This
+								layout also helped keep our electronics compact in the center of the robot.</p>
+						</div>
+						<div class="col-6 col-12-medium">
+							<figure>
+								<img style='height: 100%; width: 100%; object-fit: contain'
+									src="images/electrical_board.PNG" alt="" />
+								<figcaption>Electronics board without LEDs and batteries.</figcaption>
+							</figure>
+
+						</div>
+					</div>
+
+					<h3>Circuit Diagram</h3>
+					<p>Please to the following schematic for details of our electrical wiring:</p>
+					<div class="row">
+						<div class="col-2 col-12-medium"></div>
+						<div class="col-8 col-12-medium"><img style='height: 100%; width: 100%; object-fit: contain'
+								src="images/circuit_diagram.png" alt="" /></div>
+						<div class="col-2 col-12-medium"></div>
+					</div>
+
+
+
+
+
+
+				</div>
+			</section>
+		</article>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="copyright">
+				<li>&copy; Swervin'</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
