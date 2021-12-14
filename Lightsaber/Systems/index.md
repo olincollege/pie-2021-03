@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Systems
-permalink: /systems/
+permalink: /Systems/
 ---
 
 While the electrical and software systems remain the same for both blades, the mechanical systems differ. The system diagrams along with the final lightsabers are shown below. 
