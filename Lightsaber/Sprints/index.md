@@ -141,7 +141,9 @@ We found that this did not provide enough diffusion and added 0.002 inch thick p
 
 For the extendable blade, we fixed the LED spool, so that the LEDs wrap around the spool without loosening when retracting, and we printed the casing for the hilt. Additionally, we successfully thermoformed the film, creating the proof of concept for the clear blade, but we did not have the time or material to implement it. 
 
-**ADD PHOTO OF CASING PRINTS/CAD DESIGN - EXTENDABLE**
+<p align="center">
+  <img src="../Photos!/sprint3extendablecad.png" alt="Extendable Blade Hilt Casing">
+</p>
 
 #### Electrical
 For electrical, there were problems LED wires twisting too much in the extendable blade when the LED spool rotated to extend. This was solved by adding longer wires connecting to the LEDs, giving the wires more room to twist without breaking. 

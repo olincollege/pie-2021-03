@@ -4,15 +4,29 @@ title: Systems
 permalink: /systems/
 ---
 
+## Detachable
+<p align="center">
+  <img src="../Photos!/finalDetachableOnDark.jpg" alt="Powered On Detachable Lightsaber">
+</p>
+
+[Video of Detachable Blade]()
+
+## Extendable
+<p align="center">
+  <img src="../Photos!/finalExtendableOnDark.jpg" alt="Powered On Extendable Lightsaber">
+</p>
+
+[Video of Extendable Blade]()
+
 ## Mechanical
 The mechanical design was broken into two parts for the detachable and extendable blade.
 
 #### Detachable
 
-The detachable lightsaber has 2 main components: the hilt which holds the electronics and the blade which houses the LED strip.
+The detachable lightsaber has two main components: the hilt which holds the electronics and the blade which houses the LED strip.
 
 <p align="center">
-  <img src="../Photos!/" alt="Completed Detachable blade">
+  <img src="../Photos!/" alt="Completed Detachable Blade">
 </p>
 
 The blade is made of a piece of diffused polycarbonate tubing with two endcaps holding a strip of LEDs in the center. The diffusion was done by rubbing the polycarbonate tubing with an emery cloth and placing 0.002 inch thick polycarbonate film on the inside of the tube. The upper endcap covers the top of the blade and is connected to the top of the LED strip, so the LEDs hang through the blade tubing. The lower endcap, in black, also holds a connector that interfaces with a matching connector on the hilt. Together, the lower endcap and matching connector act as the deaching mechanism to remove the blade from the hilt, allowing the LED strip to be connected to the hilt electronics when the blade is attached.
@@ -32,38 +46,32 @@ The hilt is made of several cylinders which thread together and each hold variou
 **PICTURE OF FINAL HILT PRINT? IF NOT USE VERSION 1**
 
 #### Extendable
-Extendable/Retractable Blade Mechanism:
 
-3 primary components: 
-LED Strip spool connected to electronics 
+The extendable lightsaber has three main components: the LED strip spool which connects to the electronics, the tape measure spool which connects to the motor fiction wheel, and the motor friction wheel driving the tape measure wheel.
 
-Tape measure spool connected to motor friction wheel
+**IS THERE SOME SORT OF BLOCK DIAGRAM TO EXPLAIN THIS?**
 
-Motor friction wheel driving tape measure spool
+<p align="center">
+  <img src="../Photos!/finalAssembledExtendable.jpg" alt="Completed Extendable Blade">
+</p>
 
-Brief Overview:
-The ends of the LED strip and the tape measure are connected and secured together via hot glue. There are 3 primary electronic switches: 1 moves the tape measure blade forward, 1 moves the tape measure blade backwards and 1 turns on/off the LED strip and sound effects. By pressing both the blade forward and blade on buttons, the lightsaber blade is extended and activated. By pressing both the blade backward and blade off buttons, the blade is retracted and turned off. 
-
-The motor friction wheel drives the tape measure blade forward or backward by applying a torque to the outside of the coiled tape measure blade.
-
-Both LED strip spool and tape measure blade spool installed with clock springs that provide a constant counterclockwise torque acting to pull the LED strip and tape measure blade back into the hilt. Consequently, these clock springs provide tension that keeps the blade straight.
-
-Blade angle tensioner (metal rod that can rotate with nominal friction) present in the blade opening presses the LED strip flat against the tape measure blade, ensures that the force applied by the LED strip to the end of tape measure blade (at the connection) is  as close to parallel to the tape measure blade as possible. This force needs to be parallel, or else the tension from the LED strip will pull the tape measure blade upwards and crumple the tape measure blade.
-
-3 primary components:The detachable lightsaber has 2 main components, the hilt and the blade.
-
-  - LED Strip spool connected to the electronics
-  - Tape measure spool connected to motor friction wheel
-  - Motor friction wheel driving tape measure spool
-
-Brief Overview:
-The ends of the LED strip and the tape measure are connected and secured together via hot glue. There are 3 primary electronic switches: 1 moves the tape measure blade forward, 1 moves the tape measure blade backwards and 1 turns on/off the LED strip and sound effects. By pressing both the blade forward and blade on buttons, the lightsaber blade is extended and activated. By pressing both the blade backward and blade off buttons, the blade is retracted and turned off.
+The ends of the LED strip and the tape measure are connected and secured together via hot glue. There are three primary electronic switches: 1 moves the tape measure blade forward, 1 moves the tape measure blade backwards and 1 turns on/off the LED strip and sound effects. By pressing both the blade forward and blade on buttons, the lightsaber blade is extended and activated. By pressing both the blade backward and blade off buttons, the blade is retracted and turned off. 
 
 The motor friction wheel drives the tape measure blade forward or backward by applying a torque to the outside of the coiled tape measure blade.
 
-Both LED strip spool and tape measure blade spool installed with clock springs that provide a constant counterclockwise torque acting to pull the LED strip and tape measure blade back into the hilt. Consequently, these clock springs provide tension that keeps the blade straight.
+Both the LED strip spool and the tape measure blade spool are installed with clock springs that provide a constant counterclockwise torque acting to pull the LED strip and tape measure blade back into the hilt. Consequently, these clock springs provide tension that keeps the blade straight.
 
-Blade angle tensioner (metal rod that can rotate with nominal friction) present in the blade opening presses the LED strip flat against the tape measure blade, ensures that the force applied by the LED strip to the end of tape measure blade (at the connection) is  as close to parallel to the tape measure blade as possible. This force needs to be parallel, or else the tension from the LED strip will pull the tape measure blade upwards and crumple the tape measure blade.
+The blade angle tensioner, a metal rod that can rotate with nominal friction, is present in the blade opening. It presses the LED strip flat against the tape measure blade, ensuring that the force applied by the LED strip to the end of tape measure blade (at the connection) is as close to parallel to the tape measure blade as possible. This force needs to be parallel, or else the tension from the LED strip will pull the tape measure blade upwards and crumple the tape measure blade. 
+
+<p align="center">
+  <img src="../Photos!/extendableHiltContents.jpg" alt="Extendable Blade Hilt Contents">
+</p>
+
+The casing of the extendable blade hilt is very boxy and bulky due to housing the LED spool and the tape measure blade spool and the electronics are stuffed in the bottom to save room. In future iterations, we want focus on making the hilt more compact and cylindrical and having a secure electronics layout within the hilt.
+
+<p align="center">
+  <img src="../Photos!/sprint3extendablecad.png" alt="Extendable Blade Hilt Casing">
+</p>
 
 ## Electrical
 We developed a system that allowed the user to change the color of the lightsaber and made the lightsaber react to movement. We needed the system to be compact such that it could be contained in the hilt of the lightsaber, which needs to fit comfortably in someone's hand.
