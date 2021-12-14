@@ -56,31 +56,31 @@
 						<!-- Content -->
 							<article id="content">
 								<header>
-									<h2>No Sidebar</h2>
-									<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit
-									dolor neque semper.</p>
+									<h2>Electrical</h2>
+									<p>Read about the components and decisions to connect everything.</p>
 								</header>
-								<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<p>Ut sed tortor luctus, gravida nibh eget, volutpat odio. Proin rhoncus, sapien
-								mollis luctus hendrerit, orci dui viverra metus, et cursus nulla mi sed elit. Vestibulum
-								condimentum, mauris a mattis vestibulum, urna mauris cursus lorem, eu fringilla lacus
-								ante non est. Nullam vitae feugiat libero, eu consequat sem. Proin tincidunt neque
-								eros. Duis faucibus blandit ligula, mollis commodo risus sodales at. Sed rutrum et
-								turpis vel blandit. Nullam ornare congue massa, at commodo nunc venenatis varius.
-								Praesent mollis nisi at vestibulum aliquet. Sed sagittis congue urna ac consectetur.</p>
-								<p>Mauris eleifend eleifend felis aliquet ornare. Vestibulum porta velit at elementum
-								gravida nibh eget, volutpat odio. Proin rhoncus, sapien
-								mollis luctus hendrerit, orci dui viverra metus, et cursus nulla mi sed elit. Vestibulum
-								condimentum, mauris a mattis vestibulum, urna mauris cursus lorem, eu fringilla lacus
-								ante non est. Nullam vitae feugiat libero, eu consequat sem. Proin tincidunt neque
-								eros. Duis faucibus blandit ligula, mollis commodo risus sodales at. Sed rutrum et
-								turpis vel blandit. Nullam ornare congue massa, at commodo nunc venenatis varius.
-								Praesent mollis nisi at vestibulum aliquet. Sed sagittis congue urna ac consectetur.</p>
-								<p>Vestibulum pellentesque posuere lorem non aliquam. Mauris eleifend eleifend
-								felis aliquet ornare. Vestibulum porta velit at elementum elementum.</p>
+								<a href="#" class="image featured"><img src="images/Electrical-cover-photo.jpg" alt="" /></a>
+								<p> Our system uses 3 SG90 9g Micro Servos, 1 NEMA17 Stepper Motor, 1 DRV8825 motor controller, a SPDT slide switch, a DPST power switch, and an Arduino Uno. </p>
+								
+								<p>We used an external 12V 5A power supply to power our NEMA 17 stepper motor and by extension, our DRV8825 motor controller. This was able to provide enough current and voltage for the motor, which in return could drive the Cell Chain with a steady holding torque of 42 N/m. We also included a 100μf capacitor to regulate the voltage entering the system.</p>
+
+								<p>The three servos, the logic control system for the DRV8825 controller, and the Braille grade switch are powered through 5V given by the Arduino (via serial connection). The Arduino is powered via USB from the computer.</p>
+
+								<p>Below is a circuit diagram showing our system in detail. </p>
+								
+								<a href="images/circuitDiagram.png" class="image centered-small"><img src="images/circuitDiagram.png" alt="A circuit diagram showing the connections for all the components."/></a>
+
+								<h3>Design Decisions</h3>
+								
+								<p>As a safeguard, we implemented an on/off switch for the entire system to control both power sources. This is a double pole, single throw switch that gives users an easy way to turn the system off even when it is plugged in.</p>
+
+								<p>As a safeguard, we implemented an on/off switch for the entire system to control both power sources. This is a double pole, single throw switch that gives users an easy way to turn the system off even when it is plugged in.</p>
+
+								<p>If we had more time, we would have implemented a safeguard for our NEMA17 stepper motor, as it sometimes stalls and draws more current than it can handle. We would likely implement an in-line fuse that could break at around 1.8A, so if our motor stalls and draws too much current, the fuse would break and force the motor to stop drawing power.</p>
+							
 							</article>
 
-						<div class="row features">
+						<!-- <div class="row features">
 							<section class="col-4 col-12-narrower feature">
 								<div class="image-wrapper first">
 									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
@@ -120,7 +120,7 @@
 									<li><a href="#" class="button">Elevate my awareness</a></li>
 								</ul>
 							</section>
-						</div>
+						</div> -->
 					</div>
 				</div>
 
