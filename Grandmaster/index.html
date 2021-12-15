@@ -42,8 +42,8 @@
 				<section id="banner">
 					<div class="content">
 						<header>
-							<h2 id="logo"><a href="index.html"><object data ="images/Grandmaster.svg" width="400" height="100"> </object> </a></h2>
-							<p>Play a game of single player chess using a physical chessboard.<br />
+							<h2 id="logo"><a href="index.html"><object data ="images/logo.png" width="400" height="100"> </object> </a></h2>
+							<p>Single Player Chess on a Physical Chessboard<br />
 							</p>
 						</header>
 						<span class="image fit main"><img src="images/IMG_1813.jpg" alt="Chess" /></span>
@@ -75,11 +75,11 @@
 									</p>
 								</div>
 								<div class="col-4 col-12-medium">
-									<p>We ended up deciding to make a chessboard. We wanted to be able to play single player chess against
+									<p>We decided to make a chessboard. We wanted to be able to play single player chess against
 										a computer as if it were a human. This meant having a physical chessboard 
 										(as opposed to a virtual one) and integrating a way for the computer to
-										detect the state of the board and move pieces. This included using an electromagnet
-										and a camera. </p>
+										detect the state of the board and physically move its own pieces.
+										</p>
 									</div>
 							</div>
 						</div>
@@ -96,12 +96,13 @@
 							<p></p>
 						</header>
 						<p>Our project consists of several integrated systems: a 2D gantry 
-							that moved an electromagnet underneath the board, 3D printed
-							chess pieces with magnets on the bottom, an actual chess box,
-							and a computer AI that could see moves with a camera and control
-							the electromagnet to move its own pieces. We focused on visual
-							design as well as functionality, and this took the form of an
-							arcade-like color theme and lights.</p>
+							that moves an electromagnet underneath the board, a set of 3D-printed
+							chess pieces with magnets on the bottom, the chess board itself,
+							and a chess AI capable of using computer vision to detect its pieces on the board and
+							using the electromagnet and gantry to move them.
+							
+							We focused on visual design as well as functionality, and this took the form of an
+							arcade-inspired color theme and lights.</p>
 						<ul class="actions">
 							<li><a href="System.html" class="button">Learn More</a></li>
 						</ul>
@@ -118,11 +119,13 @@
 							<p>
 							</p>
 						</header>
-						<p> After discussing various ideas, we were inspired by the 2014 Harry Potter style Wizards Chess team and
-							decided to iterate upon their POE project. We were fans of the hidden electromagnet that makes the chess pieces
-							move on its own, but wanted to take a different approach on the visual theme. Our software team
-							was more interested in implementing a chess AI and learning about computer vision than spending time with
-							voice recognition technology.
+						<p>We were inspired by the Harry Potter-style Wizard's Chess team from POE 2014 and
+							decided to iterate on their project. We loved their hidden electromagnet that made the chess pieces
+							move on their own, but wanted to take a different approach on the theme.
+
+							Instead of implementing voice control for the pieces, our software team was more
+							interested in developing a computer vision system to recognize the pieces on the board.
+							This allowed the human to simply move their pieces and the computer to react appropriately.
 						</p>
 						<ul class="actions">
 							<li><a href="http://poe.olin.edu/2014/knights/index.html" class="button">Wizards Chess</a></li>
@@ -136,16 +139,16 @@
 					<div class="container">
 						<header class="major">
 							<h2>Meet Our Team</h2>
-							<p> We are team Grandmaster, a group of 5 sophomores at <b><a href="https://www.olin.edu/">
+							<p> We are Team Grandmaster, a group of 5 sophomores at the <b><a href="https://www.olin.edu/">
 								Olin College of Engineering</a></b>.
-								We have interests ranging from robotics, sustainability, mechanical design, material science, and visual design!</p>
+								We have a wide range of interests including robotics, sustainability, mechanical design, and material science, and visual design!</p>
 
 						</header>
 						<div class="box alt">
 							<div class="row gtr-uniform">
 								<section class="col-4 col-6-medium col-12-xsmall">
 									<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/Arla.jpg" alt="Arla" /></span></div>
-									<h3>Arla Sutton</h3>
+									<h3><a href="https://www.linkedin.com/in/arla-sutton-4662811b9/">Arla Sutton</a></h3>
 									<p>Arla's an Engineering: Design major interested in Mechanical Design, and helped to fill the shoes of a
 										mechanical engineer for this project. She focused primarily on creating a working gantry, cutting the
 										pieces for the box, and crafting a comprehensive Solidworks assembly.  Arla has defeated her dad in chess
@@ -153,7 +156,7 @@
 								</section>
 								<section class="col-4 col-6-medium col-12-xsmall">
 									<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/ari.jpeg" alt="Ari" /></span></div>
-									<h3>Ari Porad</h3>
+									<h3><a href="https://linkedin.com/in/ariporad">Ari Porad</a></h3>
 									<p>As a robotics-focused Engineering: Computing major, Ari is a lover of all things software and most things
 										 robotic. He loved building the software that powers the Grandmaster Chess Board, especially getting to 
 										 tightly integrate the physical and virtual.
@@ -177,7 +180,7 @@
 								</section>
 								<section class="col-4 col-6-medium col-12-xsmall">
 									<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/headshot1 (2).jpg" alt="Claire" /></span></div>
-									<h3>Claire Hashizume</h3>
+									<h3><a href="https://www.linkedin.com/in/claire-hashizume/">Claire Hashizume</a></h3>
 									<p>Claire is planning to major in Human-centered Design Engineering and loves to make things pretty. Despite 
 										not knowing how to play chess (and having no plans to learn), she was very excited to work on the visual design of this project, and she spent her
 										time building the website and helping to laser cut parts. </p>
@@ -187,7 +190,7 @@
 									<h3>Computer AI</h3>
 									<p>Throughout the duration of the project, our computer chess algorithm learned to check the location of chess pieces and to use
 										 the stepper motor gantry system to make basic chess moves. A pacifist at heart, it currently refuses to make captures, but we hope that in the future it learns to make more difficult moves such knights,
-										  captures, and castles so that it can win a game.
+										  captures, and castles so that it can finally achieve its dream of winning a game.
 									</p>
 								</section>
 							</div>
