@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Grandmaster- Electrical</title>
+		<title>Grandmaster- System</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -43,37 +43,18 @@
 				<div id="main" class="wrapper style1">
 					<div class="container">
 						<header class="major">
-							<h2>Electrical Subsystem</h2>
-							<p>A detailed description of our electrical design</p>
+							<h2>System Overview</h2>
+							<p>A system diagram depicting the schematic relationships between all
+								of the different subsystems comprising our final system</p>
 						</header>
 
 						<!-- Content -->
 							<section id="content">
-								<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-								<h3>Dolore Amet Consequat</h3>
-								<p>The Grandmaster Chess Board consists of a 2D gantry system which holds an electromagnet
-									in order to move pieces. The electrical complexity begins at the two 12V stepper motors
-									used to control the horizontal and vertical displacement. Using a CNC shield (which connects
-									to all necessary ports of an A4988 chip), we were able to easily wire the stepper motors by
-									attaching a female to female connector to the motor and connecting them to the shield.
-									<br> <br>
-									Once the stepper motors were functioning, we worked on the electromagnet. This diagram consists of
-									a NPN transistor, a zener diode, and a resistor. The zener diode is connected across the magnet
-									to ensure current flows only across the magnet. The magnet and diode are then connected to the
-									transistors C port. We then connect the B port to ground. The E port is connected to a resistor
-									between the transistor and the arduino's digital pin.
-									<br> <br>
-									For aesthetics, we added NeoPixel W2811
-									lights which are individually wired leds that send commands to the adjacent led. To wire these,
-									we simply connected it to 5V and ground and connected a 300 Ohm resistor between the input of the leds
-									and the arduino digital port. 
+								<a href="#" class="image fit"><img src="images/system architecture.png" alt="System architecture diagram" /></a>
+								<h3></h3>
+								<p>
 									
-									<br> <br>
-									Lastly, we have buttons that correspond to several actions within
-									the realm of chess, namely the stop clock both parties use. 
-									The buttons were simply connected to
-									power and a digital pin. The buttons also contain leds around the button which are separately wired.
-								
+							</section>
 
 					</div>
 				</div>

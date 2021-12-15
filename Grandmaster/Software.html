@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Right Sidebar - Landed by HTML5 UP</title>
+		<title>Grandmaster- Software</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -22,14 +22,16 @@
 						<ul>
 							<li><a href="index.html">Home</a></li>
 							<li>
-								<a href="#">Layouts</a>
+								<a href="System.html">System</a>
 								<ul>
 									<li><a href="Electrical.html">Electrical</a></li>
 									<li><a href="Software.html">Software</a></li>
 									<li><a href="Mechanical.html">Mechanical</a></li>
+									
 								</ul>
 							</li>
-							<li><a href="elements.html">Elements</a></li>
+							<li><a href="Budget.html">Budget</a></li>
+							<li><a href="Process.html">Process</a></li>
 							<!--
 								<li><a href="#" class="button primary">Sign Up</a></li>
 							-->
@@ -41,64 +43,143 @@
 				<div id="main" class="wrapper style1">
 					<div class="container">
 						<header class="major">
-							<h2>Right Sidebar</h2>
-							<p>Ipsum dolor feugiat aliquam tempus sed magna lorem consequat accumsan</p>
-						</header>
-						<div class="row gtr-150">
-							<div class="col-8 col-12-medium">
+							<h2>Software Subsystem</h2>
+							<p>A detailed description of the firmware and software design with links to complete source code</p>
+						<ul class="icons">
+							<li><a href="https://github.com/ariporad/PIE-Grandmaster" class="icon brands alt fa-github"><span class="label">Github</span></a></li>
+						</ul>
+					</header>
+						
 
-								<!-- Content -->
-									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-									<section id="content">
-										<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-										<h3>Dolore Amet Consequat</h3>
-										<p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at magna consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
-										<p>Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum porta cursus justo. Quisque ultricies lorem in ligula condimentum, et egestas turpis sagittis. Cras ac nunc urna. Nullam eget lobortis purus. Phasellus vitae tortor non est placerat tristique.</p>
-										<h3>Sed Magna Ornare</h3>
-										<p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus.</p>
-										<ul>
-											<li>Faucibus orci lobortis ac adipiscing integer.</li>
-											<li>Col accumsan arcu mi aliquet placerat.</li>
-											<li>Lobortis vestibulum ut magna tempor massa nascetur.</li>
-											<li>Blandit massa non blandit tempor interdum.</li>
-											<li>Lacinia mattis arcu nascetur lobortis.</li>
-										</ul>
-									</section>
+						<!-- Content -->
+							<!-- Content -->
+							<section id="content">
+								<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+								<h3></h3>
+								<p>The Grandmaster Chess Board requires four devices, each with a different program, to be running simultaneously. 
+									Three of these devices (two Arduinos and the Raspberry Pi) have minimal logic and simply serve as a digital-physical interface. 
+									The fourth (a laptop, termed the Game Controller) connects to the other three and is responsible for state management and all high-level organization. </p>
+									<br>
+									<br> 
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/BoardTopView.jpg" alt="Gantry CAD top view" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/OneAxisTake2.jpg" alt="Close up view of axis with electromagnet" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/IMG_7894.jpg" alt="Physical photo of gantry" /></span></div>
+									</div>
+									<br>
+									<h4>Arduinos: Board and Gantry</h4>
 
-							</div>
-							<div class="col-4 col-12-medium">
+									Two Arduinos are responsible for controlling all electromechanical systems. One controls the gantry system, while the other, called the “board” Arduino, controls
+									everything else (buttons, lights, and the electromagnet). Both Arduinos communicate with the Game Controller over the USB Serial connection.
+									<br><br>
+									The code for these Arduinos (<a href="https://github.com/ariporad/PIE-Grandmaster/blob/main/arduino/board/board.ino">board</a>, <a href="https://github.com/ariporad/
+									PIE-Grandmaster/blob/main/arduino/gantry/gantry.ino">gantry</a>) is extremely primitive: they receive low level commands from the Game Controller (for example, “move to square (3, 4)” 
+									or “turn on the LED for Button #2”) and send a response once that action has been completed. They also proactively communicate status updates on a regular basis
+									 (several times per second), which include information like the current position of the gantry or the state of all buttons.
+									<br><br>
+									The communication protocol between the Game Controller and the Arduinos is a bitwise protocol with one byte (eight bit) messages. This protocol was adopted over
+									 a simpler text-based protocol while we were having issues with serial communication (see below), with the thinking that it was unlikely for a single byte to be
+									  partially corrupted. While this wasn't the solution to the issue and we probably could have reverted to our older protocol, this one was working well and so wasn't
+									   worth changing (see the Python-side implementation <a href="https://github.com/ariporad/PIE-Grandmaster/blob/b889eea2c4014942ddb13aa759578c0393960424/main/arduino_manager.py">here</a>). 
+									<br> <br>
 
-								<!-- Sidebar -->
-									<section id="sidebar">
-										<section>
-											<h3>Magna Feugiat</h3>
-											<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit..</p>
-											<footer>
-												<ul class="actions">
-													<li><a href="#" class="button">Learn More</a></li>
-												</ul>
-											</footer>
-										</section>
-										<hr />
-										<section>
-											<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-											<h3>Amet Lorem Tempus</h3>
-											<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
-											<footer>
-												<ul class="actions">
-													<li><a href="#" class="button">Learn More</a></li>
-												</ul>
-											</footer>
-										</section>
-									</section>
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/WholeBoardTopOff.jpg" alt="CAD Whole chess board without the top" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/IMG_1844.jpg" alt="Photo of chessboard and camera mount" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/IMG_1802.jpg" alt="Top view photo of chessboard (no mount)" /></span></div>
+									</div>
+									<br>
 
-							</div>
-						</div>
+									<h4>Raspberry Pi</h4>
+									The Raspberry Pi connects to our overhead camera and transmits images to the Game Controller over HTTP and WiFi. This system is far from ideal: the Pi is 
+									strangely and inconsistently slow, and sometimes disconnects entirely without explanation. It usually takes several seconds and often multiple attempts to 
+									transfer an image.
+									<br><br>
+									Unfortunately, much debugging has proved fruitless in trying to debug our Raspberry Pi issues. In fact, we had originally intended for the Pi to run the Game Controller with no laptop present, 
+									but it proved far too unreliable for this purpose. Most significantly, the Pi wasn't capable of reliable Serial communication with the Arduinos, instead taking dozens of seconds to send even a
+									 one-byte message. When it did send or receive a message, it was usually incomplete or corrupted. These issues proved resistant to significant debugging effort, so we were ultimately forced to
+									  abandon using the Pi as our Game Controller and introduce the laptop. This subsystem would be a high priority for modification in a future version of the Grandmaster Chess Board.
+
+									<br><br>
+
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/chess pieces.jpg" alt="All chess pieces" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/IMG_1770.jpg" alt="Blue chess pieces" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/chess pieces magnet.jpg" alt="Magnet attached to chess piece bottom" /></span></div>
+									</div>
+									<br>
+									<h4>Game Controller</h4>
+									<p>The heart and brain of the Grandmaster Chess Board in the Game Controller. The Game Controller is written in Python and communicates with both Arduinos and the Raspberry Pi. It is responsible
+										 for all game logic, including managing the state of the game (human's turn vs. computer's turn vs. demonstration mode, etc.), our computer vision system, and the chess algorithm. It also provides
+										  a dashboard and user interface for debugging purposes.
+										  <br><br> On the Grandmaster Chess Board, the computer's turn begins when the human player moves one of their pieces and presses their button. The 
+										  computer begins its turn by using the computer vision system to determine the state of the board, then picks its next move with our chess algorithm, and finally uses the gantry system and
+										   electromagnet to physically execute its chosen move. Once its turn is over, the computer waits for the human to move again.</p>
+
+									<br><br>
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/chess pieces.jpg" alt="All chess pieces" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/IMG_1770.jpg" alt="Blue chess pieces" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/chess pieces magnet.jpg" alt="Magnet attached to chess piece bottom" /></span></div>
+									</div>
+									<br>
+									<h4>Computer Vision Pipeline</h4>
+									<p>To select its move, Grandmaster first needs to know where the pieces are on the board. It does this using a camera mounted over the board. The Game Controller requests an image from the Raspberry Pi,
+										 which activates the camera and corrects for lens distortion using <a href="https://opencv.org/">OpenCV</a>, then sends the resulting image back to the Game Controller. This image is fed through our 
+										 <a href="https://github.com/ariporad/PIE-Grandmaster/blob/main/main/detector.py">piece recognition pipeline</a>,
+										  which has three steps: board orientation, square calculation, and finally piece detection. This process gives us a robust and efficient mechanism to extract piece positions in chess-space (that is, “knight on C2”).
+										  <br><br> The process starts with board orientation. The Grandmaster Chess Board has an Apriltag in each of its four corners. These tags are precisely positioned such that, if the chessboard continued for one
+										   additional square in each direction, they would be in the center of the extra square. This positioning allows us to think of the corner <a href="https://april.eecs.umich.edu/software/apriltag">Apriltags</a> as being precisely nine square-widths apart, which drastically
+										    simplifies the algorithm.
+										<br><br> We start the analysis pipeline by using an off-the-shelf Apriltag library to precisely locate the center positions of each of the corner tags, and we use that information to extrapolate the center position of each square on the chess board. 
+										Because we compute the center position of each chess square, we are able to establish a mapping between image-space (ie. pixels) and chess-space (ie. ranks and files). This is vital, because chess algorithms exclusively operate in chess-space.
+										Each chess piece also has a unique top-mounted Apriltag, which we find the center of using the same library. We then match each piece's Apriltag's location to the closest square center location, and assume the piece is on that square.
+										<br><br> This system isn't perfect, but it's suitably robust for our purposes. Most notably, we use a fish-eye lens to ensure the camera can see the whole board, but it also introduces substantial distortion to the image. We're
+										 able to correct some of this using OpenCV's image correction tools, but not all of it. Most significantly, the detected location of an Apriltag on top of a tall piece (ex. a queen) in the corner of the board may differ significantly
+										  from the piece's actual position. We've been able to correct for most of this error by adjusting the size of the Apriltags, although future improvements to this system might be necessary.</p>	   
+
+									<div class="box alt">
+										<div class="row gtr-50 gtr-uniform">
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/chess pieces.jpg" alt="All chess pieces" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/IMG_1770.jpg" alt="Blue chess pieces" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/chess pieces magnet.jpg" alt="Magnet attached to chess piece bottom" /></span></div>
+									</div>
+									<br>
+									<h4>Chess Algorithm</h4>
+									<p>Once the Game Controller has identified the position of each piece in chess-space, it feeds that data into Python Chess. Python Chess is a library which provides a robust representation of a chess board and an implementation of the rules of chess.
+										 Python Chess isn't a chess algorithm though: it can only say what moves you could make, not which move you should make. So we use Python Chess to determine all the possible legal moves based on the current state of the board, then feed that list
+										  into our chess algorithm to pick the computer's next move.
+										<br><br>
+										For this version of the Grandmaster Chess Board, our chess algorithm is fairly primitive: it selects moves at random. While this is sufficient for a simple demo, incorporating a more robust system would absolutely improve the experience.
+										
+									<br><br> On the Grandmaster Chess Board, the computer's turn begins when the human player moves one of their pieces and presses their button. The 
+											 computer begins its turn by using the computer vision system to determine the state of the board, then picks its next move with our chess algorithm, and finally uses the gantry system and
+											 electromagnet to physically execute its chosen move. Once its turn is over, the computer waits for the human to move again.</p>
+									<br><br>
+
+									<h4>Move Execution</h4>
+									<p>Once the Game Controller has picked its next move, it sends commands to the Arduinos to execute that move on the board. For a normal one-piece move, this includes moving the gantry to the current location of the piece, engaging the electromagnet, 
+										moving the gantry to the piece's new location, and disabling the electromagnet. The computer's turn is then over, so it updates the board's lights and waits for the human to move.
+									<br><br>
+
+									<h4>Debugging Dashboard</h4>
+									<p>The Game Controller also runs a dashboard for debugging purposes. This dashboard is entirely text-based and runs in the terminal. It consists of logging output from the Game Controller and a prompt which allows low-level control of the system
+										 (moving the gantry, toggling the magnet, setting the LEDs, etc.). It also allows for inspection of the computer vision and game logic pipeline. The dashboard is built using <a href="https://github.com/prompt-toolkit/python-prompt-toolkit">prompt_toolkit</a>.
+									<br><br>
+
+
+							</section>
+
 					</div>
 				</div>
 
 			<!-- Footer -->
 				<footer id="footer">
+					<!--
 					<ul class="icons">
 						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -107,8 +188,9 @@
 						<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
 						<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
+					-->
 					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; 2021 Grandmaster. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</footer>
 
