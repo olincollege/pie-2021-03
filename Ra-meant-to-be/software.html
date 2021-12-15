@@ -27,7 +27,6 @@
 											<li><a href="software.html">Software Breakdown</a></li>
 											<li><a href="budget.html">Budget</a></li>
 											<li><a href="Process.html">Process</a></li>
-											<li><a href="elements.html">Elements</a></li>
 										</ul>
 									</div>
 								</li>
@@ -41,7 +40,7 @@
 							<h2>Software Breakdown</h2>
 							<p style="margin: 5%; margin-bottom: 0%;">
 								Our goal was to make the firmware for this project simplistic and efficient. 
-								The biggest parts of the firmware can be divided into 3 different sections: The hotplate, 
+								The majority of the firmware can be divided into 3 different sections: The hotplate, 
 								Dispensers, and the User Interface. 
 							</p>
 							<a href="https://github.com/sdutta21/ramen_team" class="button small" style="margin-top: 5%;">GitHub Link</a>
@@ -50,14 +49,14 @@
 							<div class="inner">
 								<p>
 									<span class="image right"><img src="images/software_main.jpg" alt="" /></span>
-									The Hotplate portion of the firmware includes the on and off switch for the hotplate 
+									The hotplate portion of the firmware includes the on and off switch for the hotplate 
 									and the temperature sensor. These two have been mechanically integrated to use servos 
 									- so the firmware for this sector is the control of 3 servos. Because we popped the 
-									top of the hotplate and pulled out the internal switch pcb of the hotplate to the 
+									top of the hotplate and pulled out the internal switch PCB of the hotplate to the 
 									electrical box, we needed a method to turn on the hotplate on command. The original 
 									switches of the hotplate was a capacitive touch sensor, so we approached the issue 
 									using a servo to touch the sensor when it was time to turn it on. There were 2 buttons 
-									to manage, which led me to program two servos to turn on and touch the sensor 
+									to manage, which led us to program two servos to turn on and touch the sensor 
 									separately - there was an issue of the touch sensor not responding, so the servo 
 									for the boil sensor was programmed to move twice. (The on servo also acts as an off 
 									servo, so this was not pressed twice.) The final function for switching on the servo 
@@ -91,9 +90,8 @@
 								</p>
 
 								<p>
-									The dispensers were also very servo focused because of the mechanical design. The water 
-									dispenser relies on gravity to release water and a simple turn valve, which can be turned 
-									on and off with a servo. As with the temperature servo, the program only had to specify 
+									The dispenser code was also very servo focused because of the mechanical design. The water 
+									dispenser relies on gravity to release water through a simple valve, which was turned by a servo. As with the temperature servo, the program only had to specify 
 									which angle was the closing angle and which was the opening angle. The powder dispenser 
 									was identical to the water dispenser in terms of setting the starting and ending position, 
 									but because of the output of the powder dispenser being smaller than the amount of powder 
@@ -101,7 +99,7 @@
 									times, where n could be edited by the user. Finally, the ramen dispenser was a mix of a 
 									stepper motor and servo motor. Because the algorithm for this module was to first push 
 									the ramens forward until the limit switch on the front of the module is pressed by the 
-									pressure of the ramens, then retreat back a small amount for the relief of pressure, 
+									pressure of the noodles, then retreat back a small amount for the relief of pressure, 
 									then the actuation of the servo motor to push a single block of ramen out of the module. 
 									To do this, We had to figure out that direction spun the stepper motor in what direction, 
 									and how much it spun with a given speed. With much experimentation, we found the perfect 
@@ -146,12 +144,12 @@
 									</ol>
 
 								<p>
-									There are mainly 2 waiting phases in this process. First the program needs to wait 
-									for the water to reach 90 degrees, and after it does, it needs to wait for 4 minutes. 
-									Of course, we needed to update the lcd to display between all this, so during the 
-									while loop of waiting for the water to reach 90C, we set the time left as a question 
+									There are 2 waiting phases in this process. First the program needs to wait 
+									for the water to reach 90 degrees, and after it does, it needs to time for 4 minutes. 
+									Of course, we needed to update the LCD to display between all this, so during the 
+									while loop of waiting for the water to reach 85C, we set the time left as a question 
 									mark and for every loop, the temperature would be read again and be updated. After 
-									the temperature reaches 90, it would start displaying the time left as well, using a 
+									the temperature reaches 85, it would start displaying the time left as well, using a 
 									simple timer. we created a very simple delay timer that would decrement the seconds 
 									with a delay of 1000ms - and visa versa with the minutes. This would be formatted 
 									into string like the temperature and be passed onto the lcd code. Once the timer’s 
@@ -161,7 +159,7 @@
 									The integration of the multiple modules posed a difficult challenge in terms of 
 									when and when not to set the delays. Because the code sometimes starts to run the 
 									next in line before finishing one part of the code, delays are very important with 
-									servos. Once we figured this out, the rest of the process was smoothsailing. 
+									servos. Once we figured this out, the rest of the process was smooth sailing. 
 									<br>
 									<br>
 									After the initial MVP of the firmware was achieved, we turned our eyes towards a bigger 
@@ -178,7 +176,7 @@
 									use later for sending out messages. 
 									<br>
 									<br>
-									However, this code was only tested with the arduino uno and not the ramen machine because 
+									However, this code was only tested with the Arduino UNO and not the ramen machine because 
 									for some reason, the board caught on fire and the communications chip was burned to ashes. 
 									To compensate for this, we searched for alternative methods for remote connection into the 
 									ramen machine and decided that we would utilize the ESP8266 Wireless Networking module to 
@@ -191,12 +189,14 @@
 
 								<p>
 									<br>
-									The code for the telegram bot is also quite simple. After generating the bot itself 
+									The code for the Telegram bot is also quite simple. After generating the bot itself 
 									using BotFather and getting all the credentials needed to connect to the bot, we set 
-									up the module with the UTC time and connect it to the WIFI. The module then waits and 
+									up the module with the UTC time and connect it to the WiFi. The module then waits and 
 									listens for new updates from the telegram bot, and when it is received, it passes the 
 									information received into an if conditional to check if the person wants ramen, that 
-									sends a digital write signal to the start switch of the ramen machine. 
+									sends a digital write signal to the start switch of the ramen machine. Due to time 
+									constraints, this was never incorporated into the final machine, but would be an 
+									interesting extension someone building a new ramen maker.
 									<br>
 								</p>
 
