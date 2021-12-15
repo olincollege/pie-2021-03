@@ -42,12 +42,18 @@
                         <div class="col-12">
                             <section>
                                 <header class="major">
-                                    <h2>Mechanical System</h2>
+                                    <h2>Mechanical System (Link to GrabCAD)</h2>
                                 </header>
 								<div class="row">
+									<div class="col-6 col-6-medium col-12-small">
+										<img src="images/mechanical/legsanimation.gif" />
+									</div>
+									<div class="col-6 col-6-medium col-12-small">
+										<img src="images/mechanical/slotslideranimation.gif" />
+									</div>
 									<div class="col-8 col-6-medium col-12-small">
 										<section class="box"> 
-											<h3>Summary</h3>
+											<header><h2>Summary</h2></header>
 											<p>
 												The robot is built to look and act similarly to a hermit crab. 
 												It has a shell that hides its electronics, and two curved legs 
@@ -55,74 +61,82 @@
 												into the shell until it is put back down. The basic design is built 
 												from 2 base plates that hold all the components of the robot. 
 												These components sit in snug 3D printed mounts. One plate is 
-												mounted to the other with 3D printed triangular pieces. Two large 
-												motors drive semicircular metal sheet legs, and two castor wheels 
+												mounted to the other at an angle with 3D printed triangular pieces. Two large 
+												DC motors drive semicircular aluminum sheet legs, and two caster wheels 
 												also support the robot. A servo motor and linkage system can 
-												retract the “head” along a slot slider. 
+												retract the crab's “head” along a slot slider mechanism. 
 											</p>
 										</section>
 									</div>
 									<div class="col-4 col-6-medium col-12-small">
-										<a href="#" class="image"><img src="images/mechanical/hermie.jpg" alt="" /></a>
+										<a href="#" class="image"><img src="images/mechanical/hermie.JPG" alt="" /></a>
 									</div>
-									<div class="col-12 col-12-medium col-12-small">
-										<section class="box"> 
-											<h3>Base plates</h3>
-											<p>
-												The angled design for the base plates was chosen to optimize space 
-												usage and allow the shell to cover a significant amount of the 
-												electronics without interfering with the legs. The angled plate 
-												also lets the slot slider move at that angle, making it easier 
-												to retreat into the shell. The plates were laser cut from 
-												Eucaboard, which is strong yet light, to minimize the weight of 
-												our robot. The plates are held together and at an angle using 
-												two 3D printed triangular mounting blocks. Each block has two 
-												screw holes for each plate, and holds the top plate at the 
-												ideal 35° angle for the head to be parallel to the ground. 
-												The triangles are large since they are the only support for 
-												the top plate and hold the robot together. 
-											</p>
-										</section>
-									</div>		
+									<div class="row" style="padding-top:5%;">
+										<div class="col-4 col-4-medium col-12-small">
+											<a href="#" class="image"><img src="images/mechanical/baseplates.JPG" /></a>
+										</div>
+										<div class="col-8 col-8-medium col-12-small">
+											<section class="box"> 
+												<header><h2>Base Plates</h2></header>
+												<p>
+													The angled design for the base plates was chosen to optimize space 
+													usage and allow the shell to cover a significant amount of the 
+													electronics without interfering with the legs. The angled plate 
+													also lets the slot slider move at an angle, making it easier 
+													to retreat into the shell. The plates were laser cut from 
+													Eucaboard, which is strong yet light, to minimize the weight of 
+													our robot. The plates are held together and at an angle using 
+													two 3D printed triangular mounting blocks. Each block has two 
+													screw holes for each plate, and holds the top plate at the 
+													ideal 35° angle for the head to be parallel to the ground. 
+													The triangles are large since they are the only support for 
+													the top plate and hold the robot together. 
+												</p>
+											</section>
+										</div>		
+									</div>
 								</div>
 								<div class="row" style="padding-top: 5%;">
 									<div class="col-8 col-6-medium col-12-small">
 										<section class="box"> 
-											<h3>Movement</h3>
+											<header><h2>Movement</h2></header>
 											<p>
-												The movement of our robot was inspired by the R-Hex robot. 
+												The movement of our robot was inspired by the 
+												<a href="https://robots.ieee.org/robots/rhex/" target="_blank">R-Hex robot</a>. 
 												We have two curved legs made of sheet metal with added 
-												traction to move the robot forward, along with two castor 
-												wheels to support the robot. The sheet metal has some 
-												springiness to it, and is strong enough to push the robot. 
-												The motors do not have encoders, so the legs do not move 
-												in sync with each other. This is a drawback to switching 
-												to more powerful motors, but the wobbly movement also looks 
-												similar to an animal. The speed of each motor can be adjusted 
-												to allow the robot to turn when following a person. 
+												traction to move the robot forward by using the compliance
+												in the shape to spring the robot upwards and forwards.
+												Because we chose to use only 2 legs instead of 6 like the original
+												R-Hex, we also included two caster wheels to stablize
+												the movement. Our final motors do not have encoders, so the legs do not move 
+												in the ideal way, which is perfectly alternating. This drawback
+												resulted from switching to more powerful motors. The wobbly movement 
+												is mostly intended, however, to look more like the movement of
+												a real hermit crab. The speed of each motor can be adjusted 
+												to allow the robot to turn to follow a person with the PIR sensors
+												discussed in the <a href="software.html">software</a> and 
+												<a href="electrical.html">electrical</a> pages. 
 											</p>
 										</section>
 									</div>		
 									<div class="col-4 col-6-medium col-12-small">						
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image"><img src="images/mechanical/movement.png" alt="" /></a>
-										</div>
+										<a href="https://robots.ieee.org/robots/rhex/" target="_blank" class="image"><img src="images/mechanical/rhex.jpg" alt="" /></a>
 									</div>
 								</div>
 								<div class="row" style="padding-top: 5%;">
 									<div class="col-4 col-6-medium col-12-small">
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image"><img src="images/mechanical/slotslider1.jpg" alt="" /></a>
+											<a href="#" class="image"><img src="images/mechanical/slotslider1.JPG" alt="" /></a>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image"><img src="images/mechanical/slotslider2.jpg" alt="" /></a>
+											<a href="#" class="image"><img src="images/mechanical/slotslider2.JPG" alt="" /></a>
 										</div>
 									</div>
 									<div class="col-8 col-6-medium col-12-small">
 										<section class="box"> 
-											<h3>Slot slider</h3>
+											<header><h2>Slot Slider</h2></header>
 											<p>
-												The head retraction movement of our hermit crab was controlled 
+												The head retraction movement of our hermit crab is controlled 
 												by a slot slider mechanism. This consists of one head (which 
 												acts as a sensor mount), two linkages, and a servo. The head 
 												is supported by a “neck” at a 35 degree angle: this way, the 
@@ -136,7 +150,7 @@
 												connected to the servo with the use of a servo horn screwed 
 												into the linkage. 
 											</p>
-											<h3>Component mounts</h3>
+											<header><h2>Component Mounts</h2></header>
 											<p>
 												Component mounts were carefully measured and 3D printed to 
 												keep everything secure. We created mounting fixtures for the DC motors,
@@ -155,7 +169,7 @@
 								<div class="row">
 									<div class="col-6 col-6-medium col-12-small">
 										<section class="box">
-											<h3>Throwing</h3>
+											<header><h2>Throwing</h2></header>
 											<p>
 												One of our original goals was to make our hermit crab durable 
 												enough to be thrown without significant damage. Because of time 
@@ -171,7 +185,7 @@
 									</div>
 									<div class="col-6 col-6-medium col-12-small">
 										<section class="box">
-											<h3>Slot slider</h3>
+											<header><h2>Slot Slider</h2></header>
 											<p>
 												We began designing the slot slider mechanism in Sprint 2. Originally, 
 												the sensors were both facing forward. In the final design, they are 
@@ -198,20 +212,24 @@
 										<a href="#" class="image"><img src="images/mechanical/originaldesign2.jpg" alt="" /></a>
 									</div>
 									<div class="col-4 col-4-medium col-12-small">
-										<a href="#" class="image"><img src="images/mechanical/currentdesign.jpg" alt="" /></a>
+										<a href="#" class="image"><img src="images/mechanical/slotslideranimation2.gif" alt="" /></a>
 									</div>
 								</div>
                                 <header class="major" style="padding-top: 5%;">
-                                    <h2>Sprint Progress</h2>
+                                    <h2>Design Sprint Progress</h2>
                                 </header>
 								<div class="row">
 									<div class="col-8 col-6-medium col-12-small">
 										<section class="box"> 
+											<header><h2>Sprint 1</h2></header>
 											<p>
-												We started testing our hermit crab using the MP3 car kits. 
+												We started testing our hermit crab using motorized car kits
+												from a previous mini-project in PIE.
 												From here, we had our first taste of how important motor 
-												torque would be when speccing motors (the motors that came 
-												with the kit were nowhere near torque-y enough). 
+												torque would be when speccing motors. The small DC motors
+												that came with the kit proved to be too low torque to lift
+												the weight of the electronics and other components using
+												our compliant legs.
 											</p>
 										</section>
 									</div>									
@@ -225,12 +243,13 @@
 									</div>
 									<div class="col-8 col-6-medium col-12-small">
 										<section class="box"> 
+											<header><h2>Sprint 2</h2></header>
 											<p>
 												In Sprint 2, we introduced the idea of using 2 baseplates to save space, 
 												allow the slot slider to slide up into the shell, and potentially allow 
 												for protecting more sensitive parts on the top baseplate (assuming they 
 												would be the most safe within the shell). When fabricating, we laser-cut 
-												what you see below. We then drilled holes into the baseplates where we 
+												what you see to the left. We then drilled holes into the baseplates where we 
 												needed them. We had some small problems with the holes not lining up 
 												properly, so we made sure to include holes with precise locations when 
 												we laser cut our final baseplate structure. In Sprint 2, we also 
@@ -253,15 +272,20 @@
 									</div>
 									<div class="col-4 col-4-medium col-12-small">
 										<section class="box"> 
+											<header><h2>Sprint 3</h2></header>
 											<p>
-												Our motor mounts needed to change as we got new motors.
-												The original design is seen to the upper left, and its
+												Much of our development in Sprint 3 centered around building new
+												components to accomodate our new, larger motors. Our first motors
+												were very small N20 geared motors, and we switched to much
+												larger 12V geared motors.
+												The original motor mount design is seen to the upper left, and its
 												iteration is shown to the lower left. 
 											</p>
 											<p>
 												In Sprint 2, our leg mounts were two halves, which were press-fit 
 												onto the motor shafts. In Sprint 3, we used a set screw to secure 
-												the leg mount to the motor. The leg mounts are shown to the right.
+												the leg mount to the motor, as the D shaft was much less
+												pronounced on the new motors. The leg mounts are shown to the right.
 											</p>
 										</section>
 									</div>
