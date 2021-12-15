@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Electrical</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Dancing Wall-E</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="about.html">About Us</a></li>
+							<li><a href="financials.html">Financials</a></li>
+							<li><a href="system.html">System Diagram</a></li>
+							<li><a href="mechanical.html">Mechanical</a></li>
+							<li><a href="electrical.html">Electrical</a></li>
+							<li><a href="firmware.html">Firmware</a></li>
+							<li><a href="process.html">Process</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+								<h1>Electrical</h1>
+								<h2>Schematic</h2>
+								<p style="text-align:center"><img src="images/electricalschematic.jpeg" alt="" height="600" /></p>
+								<h2>Component Details</h2>
+								<ul>
+									<li><b><a href="https://www.pololu.com/product/4745">DC Motors (x2):</a></b> Wall-E is moderately heavy. After all, he is a trash compactor. We therefore required motors that were able to move Wall-E with precision and through possibly rough terrain.
+										This meant selecting motors with high torque. We chose our motors because of the high amount of torque it provided at a manageable price range.</li>
+									<li><b><a href="https://www.adafruit.com/product/815">PWM Servo Driver:</a></b> Wall-E has a lot of moving components. After drafting a basic design of our loveable robot, we realized that we would require a minimum of five (maximum of 7+) servo drivers to build our MVP.
+										We therefore required a board capable of driving all of these motors simultaneously as efficiently and precisely as possible. This Servo Driver board fulfills both requirements of providing adequate pin allocation and adjustable PWM frequency.</li>
+									<li><b><a href="https://www.adafruit.com/product/1143">Micro Servo Motors (x5):</a></b> We used these smaller servo motors to drive the more intricate connections in Wall-E’s neck/head. We initially attempted to use full-size servos, but found that Wall-E would then become the size of a small toddler if fully assembled. </li>
+									<li><b><a href="https://www.towerpro.com.tw/product/mg996r/">Standard Servo Motor (x2):</a></b> These full-sized servo motors manipulate both arms of Wall-E. Since the motors are stored inside of Wall-E’s body, we did not have to think much about space conservation.
+										Thus, we were able to use the cheaper, more widely available regular servo motors.</li>
+									<li><b><a href="https://www.adafruit.com/product/1713">Microphone:</a></b> A basic and small microphone mounted to the front of Wall-E to detect a provided BPM for Wall-E to dance to.</li>
+									<li><b><a href="https://www.adafruit.com/product/2130?gclid=Cj0KCQiAsqOMBhDFARIsAFBTN3fq7jYC3K0x5sTyK55XK0zBQaED1819FJkOpziGO0WP9_W-kAfiDEIaAo_QEALw_wcB">Audio Amplifier:</a></b> Choosing a small and simple speaker provided an unexpected challenge: we could not effectively transmit the sound that we wanted for Wall-E. We therefore invested in an audio amplifier to better hear what Wall-E is saying.</li>
+									<li><b><a href="https://www.amazon.com/gp/product/B0718T232Z?psc=1&fbclid=IwAR3Zf8NNAkbNJctpWW5JwPwrA2av9Lp5Um4CYBV7GaSqmHA-UA72pv10wVo">ESP32:</a></b> ESP32s are advantageous compared to Arduino Unos due to their increased memory capacity and more versatile pins. Initially, we chose a different ESP32 board to use than the one selected. While testing, we discovered that our original ESP32 was not capable of audio processing. We quickly found a replacement and continued our work.</li>
+									<li><b><a href="https://www.adafruit.com/product/3968">Speaker:</a></b> An extremely basic and small speaker that can be used to play sounds from Wall-E.</li>
+									<li><b><a href="https://www.amazon.com/Qunqi-Controller-Module-Stepper-Arduino/dp/B014KMHSW6/ref=asc_df_B014KMHSW6/?tag=hyprod-20&linkCode=df0&hvadid=167139094796&hvpos=&hvnetw=g&hvrand=5392937667713608223&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1018317&hvtargid=pla-306436938191&psc=1">DC Motor Driver:</a></b> This motor driver is an intermediary between the motors and the control board (ESP32). The motors require a higher current when compared to the ESP32, and therefore need a board to mediate the current.</li>
+									<li><b><a href="https://www.amazon.com/ACEIRMC-Converter-Regulator-Transformer-Charging/dp/B08FHYK1PB/ref=sr_1_21?keywords=buck+converter+12+to+5&qid=1636429100&sr=8-21">Buck Converter (x2):</a></b> Since we are utilizing a couple of 12V DC motors, we required a board to step down our power supply voltage to the 5V needed to power our servo driver and ESP32.</li>
+									<li><b><a href="https://www.imrbatteries.com/samsung-25r-18650-2500mah-20a-battery/">Samsung 25R 18650 Cell (x4):</a></b> Using a 18650 battery pack, we were able to create a 4S1P 2.5Ah 14.4V battery. We used these cells due to both availability and familiarity of use. Half of our team use these batteries in our Olin Electric Motorsports car, and have experience using them.</li>
+									<li><b><a href="https://www.amazon.com/AmazonBasics-Volt-Everyday-Alkaline-Battery/dp/B081FGCRQQ/ref=sr_1_8?keywords=9v%2Bbattery&qid=1639492039&rdc=1&sr=8-8&th=1">9V All-Purpose Battery:</a></b> “Why does Wall-E have two batteries?” Excellent question. While our pack of 18650 batteries certainly pack a punch, our Wall-E requires a lot of current to run its several components at once. As such, we did not want to risk losing power mid-dance to any one of our boards/mechanisms. This small 9V battery provides power to our less energy-intensive systems in lieu of our 18650s.</li>
+								</ul>
+						</div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner" style="padding-left:3rem">
+						<section>
+							<h2>Our Repository</h2>
+							<ul class="icons">
+								<li><a href="https://github.com/jellyyams/pie-wallE" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+						<ul class="copyright">
+							<li>&copy; 2021. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
