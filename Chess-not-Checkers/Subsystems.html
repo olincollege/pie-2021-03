@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Single - Future Imperfect by HTML5 UP</title>
+		<title>Subsystems - Chess Not Checkers</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -113,8 +113,9 @@
 								<p>The class that controls the game and keeps track of the player’s and AI’s moves is the Board class from the documented Python Chess Library. This library does the heavy lifting in terms of checking for invalid moves, wins, checkmates, etc. The Chess Drive Class translates chess moves (i.e. move x squares) to commands for the motors (move x steps) and calls the Motor Class to send those commands to the Serial Class which handles communication between our python programs and our Arduinos. The Digital Output Class controls the electromagnet, also using Serial to send information to the Arduino.</p>
 								<p>The sensor matrix switching is handled by the Arduino and transmitted to Python through the Serial Class. When Python then asks for an output from one of those sensors, the Arduino will automatically switch through all 64 states and print out the values as a Matrix, which Python reads and interprets.</p>
 								<p>We Implemented a MoveSensor class to handle translating the sensor inputs into moves. It stores the previous state of the hall effects and compares that to the current. When it does not see a magnet where there used to be one, we know a piece has been picked up. When it does see a magnet where there used to not be one, we know a piece has been set down. The MoveSensor class will keep track of the previous pick up. When a piece has been set down after that, it knows where the piece moved from and where it landed. To do captures, the MoveSensor keeps track of the last two piece pickups. If it detects two pickups before a put down, and the user puts down a piece on the most recent pick up square, it assumes a capture has been made. En passant and castling have not been handled, but could be with more time and a similar strategy to that as above.</p>
-								<h4><a href="https://github.com/gabbyblake/PIE-Final-Project-Chess"> Github Repository</a></h4>
+								<h4><a href="https://github.com/gabbyblake/PIE-Final-Project-Chess"> The Github Repository</a></h4>
 								<p>The chess engine we used to be the AI chess player was the Stockfish 14.1 chess engine. Through the Pychess library and the UCI (Universal chess interface), the chess engine receives the moves of the player and responds accordingly. Then the engine’s move is translated to physical changes.</p>
+								<p>All links to external sources used can be found in <a href="Resources.html">Resources</a></p>
 
 
 							</article>
@@ -127,55 +128,59 @@
 													
 													</div>
 												</header>
-												<span class="image featured"><img src="images/Full Assembly.PNG" alt="" /></span>
-												<p>The two goals for the mechanical subsystem was to find a way to move the pieces across the board, and build an external structure to house the components. To house the gantry system, we laser cut boards of MDF to specific dimensions</p>
-												<p>The first of the two was done using an electromagnet moved by a two-axis gantry system, in turn controlled by two NEMA 17 stepper motors. We designed and 3D printed all mounts for the steppers, rods, electromagnets and bearings, allowing us to achieve very precise fits and iterate quickly between versions of the parts. (Optional: Insert CAD of electromagnet mount).The stepper motors themselves were connected to m8 “fast threaded” rods, typically used in 3D printers, by couplings. Two unthreaded rods were added to provide stability to the system.</p>
+												<p>The two goals for the mechanical subsystem was to find a way to move the pieces across the board, and build an external structure to house the components.</p>
+												<span class = "image featured"><img src="images/Full Assembly.PNG" alt="Full Assembly"><br><h6>Full assembly: This is the full assembly of our hardware system. Its main components are two: the box and the gantry.</h6></span>
+												<h3>Gantry Design</h3>
 												
-												<p>We decided to make the playing field 20x20”. This is the standard size used in American tournaments and would allow our pieces enough space to pass in between squares without disturbing other pieces that may reside in those squares.</p>
-										
-												<span class ="image fit"><img src="images/Ball Bearing Mount.PNG" alt="Ball Bearing" ></span>
-													<p>Ball Bearing Mount: This is used to hold the ball bearing that allows one of the two rods (y-axis) to spin without resistance. This was designed so that the center of the rod was 25mm from the ground, allowing the pieces to move freely.</p>
-													<span class ="image fit"><img src="images/Electromagnet mount.PNG" ></span>
-													<figcaption>Electromagnet Mount: This is used to hold the electromagnet that makes the piece move across the board. It is stabilised by two rods: one threaded, connected to the mount via a special nut that allows it to move, and one unthreaded, connected to the mount via a linear bearing.</figcaption>
-													<span class = "image fit"><img src="images/Full Assembly.PNG" alt=""></span>
-													<p>Full assembly: This is the full assembly of our hardware system. Its main components are two: the box and the gantry.</p>
-													<span class="image fit"><img src="images/Stepper and Linear Bearing Mount.PNG" alt="" /></span>
-													<p>Stepper and Linear Bearing Mount: This mount goes on the unthreaded side of the y-axis. It houses a stepper motor and an unthreaded rod, and moves along its axis through two linear bearings.</p>
-													<span class="image fit"><img src="images/Threaded Rod Second axis mount.PNG" alt="" /></span>
-													<p>Threaded rod second axis mount: this mount goes on the opposite side of the y-axis of the stepper mount. It houses a ball bearing to make the x-axis threaded rod move freely and a nut to connect it to the y-axis threaded rod.</p>
-													<span class="image fit"><img src="images/Unthreaded Rod Mount.PNG" alt="" /></span>
-													<p>Unthreaded rod mount: This is a simple mount to house the y-axis unthreaded rod. This was designed so that the center of the rod was 25mm from the ground, allowing the pieces to move freely.</p>
+												<p>The first goal was done using an electromagnet moved by a two-axis gantry system, in turn controlled by two NEMA 17 stepper motors. We designed and 3D printed all mounts for the steppers, rods, electromagnets and bearings, allowing us to achieve very precise fits and iterate quickly between versions of the parts. The stepper motors themselves were connected to m8 “fast threaded” rods by couplings.This is what will move the electromagnet mount when the stepper motors are active. Two unthreaded rods were added to provide stability to the system.</p>
+												<div class = "align-center"><img src="images/Gantry Assbly.PNG" alt="Gantry system" style="width:50%;"><br><h6>This is the full assembly of the two-axis gantry system.</h6></div>
+												<ul>
+													<li><h4>Mounts</h4></li>
+												</ul>
 												
+												<div class = "align-center"><img src="images/Ball Bearing Mount.PNG" alt="Ball Bearing" style="width:50%;"><br><h6> This is used to hold the ball bearing that allows one of the two rods (y-axis) to spin without resistance. This was designed so that the center of the rod was 25mm from the ground, allowing the pieces to move freely.</h6></div>
+												
+												<div class = "align-center"><img src="images/Electromagnet mount.PNG" alt="" style="width:50%;"><br><h6>This is used to hold the electromagnet that makes the piece move across the board. It is stabilised by two rods: one threaded, connected to the mount via a special nut that allows it to move, and one unthreaded, connected to the mount via a linear bearing.</h6></div>
+												
+												<div class = "align-center"><img src="images/Stepper and Linear Bearing Mount.PNG" alt="" style="width:50%;"><br><h6> This mount goes on the unthreaded side of the y-axis. It houses a stepper motor and an unthreaded rod, and moves along its axis through two linear bearings.</h6></div>
+												
+												<div class = "align-center"><img src="images/Threaded Rod Second axis mount.PNG" alt="" style="width:50%;"><br><h6>This mount goes on the opposite side of the y-axis of the stepper mount. It houses a ball bearing to make the x-axis threaded rod move freely and a nut to connect it to the y-axis threaded rod.</h6></div>
+												
+												<div class = "align-center"><img src="images/Unthreaded Rod Mount.PNG" alt="" style="width:50%;"><br><h6>This is a simple mount to house the y-axis unthreaded rod. This was designed so that the center of the rod was 25mm from the ground, allowing the pieces to move freely.</h6></div>
 
+												<div class="section-special"><p>On a final note,we decided to make the playing field 20x20”. This is the standard size used in American tournaments and would allow our pieces enough space to pass in between squares without disturbing other pieces that may reside in those squares.</p>
+												</div>
 											</article>	
 						<!-- Post -->
 						<article class="post">
 							<header>
 								<div class="title">
-									<h2>Electrical</h2>
+									<h2>Electrical/Firmware</h2>
 								
 								</div>
 							</header>				
 							The 8x8 Hall Effect Sensor Matrix used two CD4051BE multiplexer/decoders to read the digital values of the A3144 Hall effect sensors. This was done by iterating through each of the rows of the matrix using the CD4051BE decoder feeding its output to transistors to only low one of the rows at a time to ground. This activated the hall effect sensors for that row and allowed only those sensors to control the column connected hall effect sensor outputs. The sensor output columns were then read using the CD4051BE multiplexer to iterate through each of the columns and read one sensor at a time. Below is a 2x2 Hall Effect Sensor Matrix illustrating how the multipliers and decoders selected which sensors to read.
-							<span class ="image fit"><img src="images/Chess_Matrix.png" alt="Chess Matrix" ></span>
+								<div class ="align-center"><img src="images/Chess_Matrix.png" alt="Chess Matrix" ><br><h6>Chess Matrix</h6></div>
 								<p>The electromagnet was controlled using a 2N3904 NPN switching transistor and was powered through a separate power supply at 12v. Below is the schematics for the electromagnet being switched off and on by a transistor.</p>
-								<span class = "image fit"><img src="images/Electromagnet.png" alt=""></span>
+								<div class = "align-center"><img src="images/Electromagnet.png" alt=""><br><h6>Electromagnet Schmatic</h6></div>
 								<p>The two Nema 17 Stepper motors were connected to A4988 Hybrid Stepper Motor Drivers on a Arduino CNC shield V3.0 mounted on an Arduino Uno R3. The stepper motors were powered from a 12v power supply.To allow the gantry to reset itself and return to a known position, two Hall Effect sensors were installed along the two axes along with magnets mounted to different assemblies for Hall Effect sensors to detect. The outputs Hall effect Sensors were read by the Arduino Uno R3. Below is an image of the schematics for the Hall effect sensors used to detect magnets mounted to the gantry system.</p>
 								
+								<div class="align-center">
+									<img src="images/Bump_sensor.png" alt="Top" style="width:80%;" > 
+									<br><h6>Bump Sensor</h6>
+								</div>
+
+									<p>_</p>
+
 								<div class="row">
-									<div class="col-3">
-									  <img src="images/Bump_sensor.png" alt="Top" style="width:70%;">
-									  <h6>Sprint One Box Top</h6>
+									
+									<div class="column">
+									  <img src="images/Data_flow.jpg" alt="Bottom" style="width: 100%;"><h6> Describes how data and commands flowed through the electrical system</h6>
 									</div>
-									<div class="col-3">
-									  <img src="images/Data_flow.jpg" alt="Bottom" style="width:70%">
-									  <h6>Sprint One Box Bottom</h6>
-									</div>
-									<div class="col-3">
-										<img src="images/Power_Flow2.jpg" alt="Top" style="width:70%;">
-										<h6>Sprint One Box Top</h6>
-								
-								  </div>
+									<div class="column">
+										<img src="images/Power_Flow2.jpg" alt="Top" style="width: 100%;" ><h6>Describes how the different voltages flowed through the system to power different components.</h6>
+									</div>	
+								</div>
 
 						</article>												
 
