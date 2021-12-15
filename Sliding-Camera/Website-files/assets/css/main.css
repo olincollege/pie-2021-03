@@ -3839,10 +3839,10 @@ input, select, textarea {
 	}
 
 	#details-banner > header {
-		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/IMG_6988.jpg");
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/IMG_6988.jpg");
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/imagedetailbanner.jpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/imagedetailbanner.jpg");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/banner.jpg");
-		background-image: linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/IMG_6988.jpg");
+		background-image: linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../../images/imagedetailbanner.jpg");
 		padding: 12em 0 10em 0 ;
 		background-attachment: fixed;
 		background-position: center center;
