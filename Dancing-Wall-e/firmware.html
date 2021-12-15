@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Firmware</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Dancing Wall-E</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="about.html">About Us</a></li>
+							<li><a href="financials.html">Financials</a></li>
+							<li><a href="system.html">System Diagram</a></li>
+							<li><a href="mechanical.html">Mechanical</a></li>
+							<li><a href="electrical.html">Electrical</a></li>
+							<li><a href="firmware.html">Firmware</a></li>
+							<li><a href="process.html">Process</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+								<h1>Firmware</h1>
+								<p>Our firmware was split into three distinct parts: audio processing (for beat detection), servo control (for movement coordination) and motor control (also for movement coordination).</p>
+								<h2>Audio Processing</h2>
+									<div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+									</div>
+									<p>Originally, we wanted Wall-E to be able to detect the BPM of a song that he listens to. Upon further research, we realized that doing beat analysis with the microphone chip and microcontrollers we had available was a fairly difficult task, and we pivoted to doing beat detection using a metronome rather than a song. Our new goal was to be able to determine the BPM of the beat being played from our phone from <a href="https://www.metronomeonline.com">this website</a>.</p>
+									<p>Using the <a href="https://www.arduino.cc/reference/en/libraries/arduinofft/">arduino FFT library</a>, we extract the frequency of the audio input from our microphone chip. Before actually performing the Fourier transform, we also filter frequencies greater than 20hz from the analogue audio signal with a digital butterworth filter. The code for this filter was provided by <a href="https://tttapa.github.io/Arduino-Filters/Doxygen/d9/de0/Butterworth_8ino-example.html">this filter library</a>.</p>
+									<p>Once we were able to successfully process and filter our audio input, we worked on detecting the frequency of the audio beat. If the detected frequency exceeds a certain threshold, we assume that the microphone picked up on a metronome beat, and our program calculates the elapsed time between then and the last time a beat was detected. Our BPM detection algorithm essentially calculates the median amount of time in between detecting the frequency of the metronome beat for a given number of samples</p>
+									<p>After finalizing the pipeline for processing audio input, we tuned the filter cut off frequency, sampling frequency, and threshold frequency to optimize for detecting the metronome beat.</p>
+								<h2>Servo Control</h2>
+									<p>Wall-E has 7 servos - two in the eyes, one that swivels the head, two that control the neck, and two more that control the arms. We wanted the body parts to move in accordance with the BPM, but we needed to limit the speed of the servos as well as define absolute minimum and maximum positions to avoid breaking parts or damaging the servos. Since servos are position-controlled rather than speed-controlled, we needed to slowly feed the servos intermediary positions in order to move the servos at a safe speed. To determine those intermediary positions, we did the following:</p>
+									<ul>
+											<li>We set a constant timestep of 30ms, and created a function to calculate how many degrees each servo should move during each timestep so that the servos would reach the minimums and maximums of their ranges at the end of each beat. For any given servo, if the angular distance it was calculated to move during each timestep was too small, the function would configure the servo to move twice the distance every other timestep (or 3 times the distance every third timestep) in order to keep the servo movement consistent.</li>
+											<li>Alternatively, if the calculated speed for the servo is too fast (which could potentially damage some of the more fragile fasteners) then the range is reduced so that the servo doesn't have to move as quickly to reach each end of the range. Once any necessary adjustments have been made, the function gives the final minimum and maximum positions, the time interval on which the servo should move (as a multiple of the timestep), and the distance (in degrees) the servo should move at each interval.</li>
+											<li>This function is called once per servo when a new BPM is measured.</li>
+									</ul>
+									<p>The servos are fed new positions (the last position plus the step distance) at each interval. They switch direction when it reaches a min or maximum position. The time and degree steps were calculated by multiplying the BPM by a constant depending on which servos we were calculating for. For servos in the head assembly, this constant was set so that the servos changed direction every 2 beats rather than every beat to make sure WallE didn’t accidentally injure himself by moving too fast. For servos where motion isn’t as limited, such as the arms, we could set the servos to change direction every beat.</p>
+								<h2>Motor Control</h2>
+									<p>Wall-E had 2 DC motors that allowed him to move forwards, backwards, or spin in circles. The motors change direction every four beats, and are controlled through four digital output pins from the ESP32. Each motor has two pins, and will move forwards or backwards depending on which pins are set to HIGH and which ones are set to LOW.</p>
+								<h2>Our Code</h2>
+									<p>Find all of our code on <a href="https://github.com/jellyyams/pie-wallE">Github</a>.</p>
+						</div>
+					</div>
+
+					<!-- Footer -->
+					<footer id="footer">
+						<div class="inner" style="padding-left:3rem">
+							<section>
+								<h2>Our Repository</h2>
+								<ul class="icons">
+									<li><a href="https://github.com/jellyyams/pie-wallE" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; 2021. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
