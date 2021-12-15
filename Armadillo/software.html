@@ -1,24 +1,5 @@
 <!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
-<!--
-THEME: Small Apps | Bootstrap App Landing Template
-VERSION: 1.0.0
-AUTHOR: Themefisher
-
-HOMEPAGE: https://themefisher.com/products/small-apps-free-app-landing-page-template/
-DEMO: https://demo.themefisher.com/small-apps/
-GITHUB: https://github.com/themefisher/Small-Apps-Bootstrap-App-Landing-Template
-
-Get HUGO Version : https://themefisher.com/products/small-apps-hugo-app-landing-theme/
-
-WEBSITE: https://themefisher.com
-TWITTER: https://twitter.com/themefisher
-FACEBOOK: https://www.facebook.com/themefisher
+Team Armadillo
 -->
 
 <!DOCTYPE html>
@@ -81,14 +62,15 @@ FACEBOOK: https://www.facebook.com/themefisher
         <div class="row">
             <div class="col-lg-6">
                 <div class="image" data-aos="flip-right">
-                    <img class="img-fluid h-25" src="images/mechanical/BW4.png" alt="mechanical">
+                    <img class="img-fluid h-25" src="images/software/bg.png" alt="mechanical">
                 </div>
             </div>
             <div class="col-lg-6 align-self-center">
                 <div class="block">
                     <h1>Software Design</h1>
                     <p>
-
+                        <a href="https://github.com/teadetime/armadillo/blob/main/python/jenga.py">Robot Control Source Code</a>
+                        <a href="https://github.com/teadetime/armadillo/blob/gh-pages/Code/python/vision.py">View Vision Source Code</a>
                     </p>
                 </div>
             </div>
@@ -97,13 +79,13 @@ FACEBOOK: https://www.facebook.com/themefisher
 </div>
 <!--====  End of Banner  ====-->
 
-<section id="Arm Overview" class="feature section pt-0">
+<section id="Overview" class="feature section pt-0">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 ml-auto justify-content-center">
                 <!-- Feature Mockup -->
                 <div class="image-content" data-aos="fade-right">
-                    <img class="img-fluid" src="images/background/CADOverview4.png" alt="jenga">
+                    <img class="img-fluid" src="images/software/apriltag2.jpg" alt="jenga">
                 </div>
             </div>
             <div class="col-lg-8 mr-auto align-self-center">
@@ -111,10 +93,53 @@ FACEBOOK: https://www.facebook.com/themefisher
                     <!-- Feature Title -->
                     <h3>Overview</h3>
                     <!-- Feature Description -->
-                    <p class="desc">The main mechanical component is the arm itself. Designed similarly to
-                    industrial palletizing robots, it features a total of 3 four bar linkages which serve
-                    to keep the steppers at the base of the robot, and also keep the end effector level.
-                    This makes the arm light and perfect for stacking jenga blocks.</p>
+                    <p class="desc">This robotic arm is practically useless without the software and firmware to control it! We modeled a control scheme like that of industrial robot arms where there is a dedicated robot controller taking care of the arm’s movements and a different computer and piece of software telling the arm what to actually do. To accomplish our goal of stacking jenga blocks we also utilized <a style="color:yellow" href="https://opencv.org/">OpenCV</a>  to accomplish various vision related tasks like locating the jenga blocks within the world!
+                    </p>
+                    <p>
+                        The software behind this project is broken into four main chunks:
+                        <ol>
+                            <li>Computer Vision (Block detection and pixel to coordinate mapping)</li>
+                            <ol>
+                                <li>Establish new basis based on vision tags to map pixel space to world space</li>
+                                <li>Detect Blocks using color masks and OpenCV contours and minAreaRect</li>
+                            </ol>
+                            <li>Kinematics and Inverse Kinematics (Establish how to change joint positions to cartesian coordinates and back again)</li>
+                            <li>Arduino Robot Controller Firmware (Interface with all hardware and implement serial interface for higher level commands)</li>
+                        </ol>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="CV" class="feature section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 ml-auto justify-content-center">
+                <!-- Feature Mockup -->
+                <div class="image-content" data-aos="fade-right">
+                    <img class="img-fluid" src="images/software/grid.jpg" alt="jenga">
+                    <img class="img-fluid pt-4" src="images/software/aruco3.jpg" alt="jenga">
+                </div>
+            </div>
+            <div class="col-lg-8 mr-auto align-self-center">
+                <div class="feature-content">
+                    <!-- Feature Title -->
+                    <h3>Computer Vision</h3>
+                    <!-- Feature Description -->
+                    <p class="desc">A frame is captured from the overhead camera each time the robot completes a block placement. We use OpenCV, a popular computer vision package for Python, to orient the frame relative to the baseboard, and to detect block locations in world coordinates for our robot to pick up. Because we have a clean black background, we can perform basic color masking to detect blocks with a high degree of accuracy. We use OpenCV to detect the corner locations, derive the center point and angle of rotation, and pass it on to the inverse kinematics algorithm.
+                    </p>
+                    <p>
+                        Some limitations of our simple color masking approach are that it is difficult to detect individual blocks when they are clustered together, or when they are partially obscured by, e.g., the robot arm if it is in the frame. It can also cause false detection, particularly near the edges of the baseboard. To remedy this, we identified strict bounding sizes, and we filtered for rectangles with the exact dimensions of a Jenga block.
+                    </p>
+                    <p>
+                        Another technique we explored was <a style="color:yellow" href="https://docs.opencv.org/3.4/d9/d61/tutorial_py_morphological_ops.html">erosion and dilation</a> of the image prior to color masking. This was remarkably effective at distinguishing individual blocks in clusters; however, it also shifted the center of the block in an unreliable way. Lasly, we also captured binary images of regions where we manually classified the presence of blocks. Using a semiautomated workflow, we classified over 1,500 images; these could be fed into a machine learning algorithm to more accurately identify blocks, even when in clusters or partially obscured.
+                    </p>
+                    <p>
+                        Our basis calculations that are used to map pixel coordinates to world coordinates went through several iterations. We started by having multiple colored squares in known positions on the board, and we detected them with similar color-masking techniques to what we used for detecting blocks. We knew the locations of the center of these squares and used those points to determine the rotation and position of the board within the camera frame. This information is combined into basis vectors that we can use to convert between pixel coordinates and world coordinates. The picture with a red grid shows how the 2 tags were detected and then used to determine basis vectors that then are used to create the red dot grid that is world coordinates spaced 50mm apart.
+                    </p>
                 </div>
 
             </div>
@@ -128,19 +153,33 @@ FACEBOOK: https://www.facebook.com/themefisher
             <div class="col-lg-8 mr-auto align-self-center">
                 <div class="feature-content">
                     <!-- Feature Title -->
-                    <h3>Materials</h3>
+                    <h3>Kinematics and Inverse Kinematics</h3>
                     <!-- Feature Description -->
-                    <p class="desc">For modularity, the arm is made up of many small 3d printed components.
-                    This allowed us to prototype quickly and change only the components we needed to. The long
-                    linkage sections of the arm are made from carbon fiber tubes, which provide the rigidity
-                    necessary for precision movement without making the end of the arm too heavy to drive. To further
-                    lightweight the arm, the top pivot is a 3D printed bolt, much lighter than the steel alternative.</p>
+                    <p class="desc">For our purposes it is essential to establish a mapping of the robot into the world space! These are called the inverse kinematics. In industrial applications <a style="color:yellow" href="https://en.wikipedia.org/wiki/Inverse_kinematics">inverse kinematics </a> allow for the smooth movement of robots along any vector. This is accomplished by mapping the partial derivatives of cartesian space into partial derivatives of each joint.
+                    </p>
+                    <p>
+                        Fortunately for us the forward kinematics of this arm are quite simple and just involve decomposing the various angles into x,y, and z components.
+                    </p>
+                    <p>
+                        The inverse kinematics, or figuring out how to position the robot to reach a point in space is a little more difficult! We have a 4 axis system, which actually allows us to reach each position in a variety of positions. This design was intentional because we want to be able to be able to have different end effector rotations to pick up the blocks for stacking.
+                    </p>
+                    <p>
+                        The way we constrain these solutions is picking up the block in a reliable manner. We chose to always have the final joint rotated normal to a block as that gives us the ability to place it. This means that for any point in space we also specify the rotation of the block at that point. You can see an example of this below.
+                    </p>
+                    <p>
+                        We then work backwards from this point to calculate the rest of the arm. We know the rotation of the final joint and block, which means we can decompose it’s X and Y coordinates. We also know the height of the suction cup and servo which allows us to work backwards from in the Z coordinate direction. We have now calculated the desired position of the servo horn. We know that it is in the same plane as our arm so we can determine the bottom joint angle needed to get to that position. We can then subtract out the offset from the servo horn to the final pivot point in the arm linkages!
+                    </p>
+                    <p>
+                        At this point we just need to solve a triangle to get the two angles of the arms(j2 and j3). This can be done using the law of cosines since all side lengths are known! The triangle angles are then converted to the angles of the arms! Tada! -- we just converted cartesian coordinates to joint positions that the robot can understand.
+
+                    </p>
                 </div>
             </div>
             <div class="col-lg-4 mr-auto justify-content-center">
                 <!-- Feature Mockup -->
                 <div class="image-content" data-aos="fade-right">
-                    <img class="img-fluid" src="images/background/CADOverview4.png" alt="jenga">
+                    <img class="img-fluid" src="images/software/angle1.jpg" alt="jenga">
+                    <img class="img-fluid pt-4" src="images/software/math.jpg" alt="jenga">
                 </div>
             </div>
         </div>
@@ -153,18 +192,23 @@ FACEBOOK: https://www.facebook.com/themefisher
             <div class="col-lg-8 mr-auto align-self-center">
                 <div class="feature-content">
                     <!-- Feature Title -->
-                    <h3>Power Transfer</h3>
+                    <h3>What we would do differently!</h3>
                     <!-- Feature Description -->
-                    <p class="desc">The base of the arm features 3 NEMA 17 stepper motors.
-                    Since these motors provide more speed than we needed, we belted them in a 3:1 ratio to increase
-                    torque. These 3 belt systems also make the design compact and keep the heavy steppers as low as
-                    possible to increase stability.</p>
+                    <p class="desc">
+                        So it turns out that this was wildly successful for a first attempt at this problem, however we were starting to get limited by some things. The mechanical design of the robot was making it hard to tell if the round tubes were lined up and other weird rotation/offsets were introduced. We had a hard time picking up blocks from the center. This was largely due to mapping the joints of the robot into the world frame. We think this was caused by errors in the mechanical design but also in our inability to accurately measure the groundtruth positions during homing.
+                    </p>
+                    <p>
+                        In the future we think adding encoders, and other measurement devices to the arm would allow us to get greater position and more accurate positioning. We also want to represent our kinematics in matrix form such that it is easier to obtain smooth motion by looking at derivatives along axes. This would enable many more use cases for our robot but would necessitate precise closed loop speed control.
+                    </p>
+                    <p>
+                        From a software side, we are starting to get a little slow, it would be awesome to take this up a level and run ROS2 on a Raspberry Pi and See if we can run things fast enough to maintain closed loop control of the motors and message between things. Our control scheme is very linear right now, but with ROS it would be awesome and possible to do vision processing at the same time as robot movement/calculations!
+                    </p>
                 </div>
             </div>
             <div class="col-lg-4 mr-auto justify-content-center">
                 <!-- Feature Mockup -->
                 <div class="image-content" data-aos="fade-right">
-                    <img class="img-fluid" src="images/mechanical/Belt1.png" alt="jenga">
+                    <img class="img-fluid" src="images/team/all.jpg" alt="jenga">
                 </div>
             </div>
         </div>
@@ -180,72 +224,11 @@ FACEBOOK: https://www.facebook.com/themefisher
     <div class="footer-main">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-12 m-md-auto align-self-center">
-                    <div class="block">
-                        <a href="index.html"><img src="images/logo-alt.png" alt="footer-logo"></a>
-                        <!-- Social Site Icons -->
-                        <ul class="social-icon list-inline">
-                            <li class="list-inline-item">
-                                <a href="https://www.facebook.com/themefisher"><i class="ti-facebook"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="https://twitter.com/themefisher"><i class="ti-twitter"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="https://www.instagram.com/themefisher/"><i class="ti-instagram"></i></a>
-                            </li>
-                        </ul>
+                <div class="col-lg-12 col-md-12 align-self-center">
+                    <div class="text-center">
+                        <img src="images/favicon.png" class="rounded" alt="footer-logo">
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
-                    <div class="block-2">
-                        <!-- heading -->
-                        <h6>Product</h6>
-                        <!-- links -->
-                        <ul>
-                            <li><a href="unused/team.html">Teams</a></li>
-                            <li><a href="unused/blog.html">Blogs</a></li>
-                            <li><a href="unused/FAQ.html">FAQs</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
-                    <div class="block-2">
-                        <!-- heading -->
-                        <h6>Resources</h6>
-                        <!-- links -->
-                        <ul>
-                            <li><a href="unused/sign-up.html">Singup</a></li>
-                            <li><a href="unused/sign-in.html">Login</a></li>
-                            <li><a href="unused/blog.html">Blog</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
-                    <div class="block-2">
-                        <!-- heading -->
-                        <h6>Company</h6>
-                        <!-- links -->
-                        <ul>
-                            <li><a href="unused/career.html">Career</a></li>
-                            <li><a href="unused/contact.html">Contact</a></li>
-                            <li><a href="unused/team.html">Investor</a></li>
-                            <li><a href="privacy.html">Terms</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
-                    <div class="block-2">
-                        <!-- heading -->
-                        <h6>Company</h6>
-                        <!-- links -->
-                        <ul>
-                            <li><a href="unused/about.html">About</a></li>
-                            <li><a href="unused/contact.html">Contact</a></li>
-                            <li><a href="unused/team.html">Team</a></li>
-                            <li><a href="unused/privacy-policy.html">Privacy Policy</a></li>
-                        </ul>
-                    </div>
+                    <!-- Social Site Icons -->
                 </div>
             </div>
         </div>
