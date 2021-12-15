@@ -66,7 +66,8 @@
 						simultaneously.
 						Three of these devices (two Arduinos and the Raspberry Pi) have minimal logic and simply serve
 						as a digital-physical interface.
-						The fourth (a laptop, termed the Game Controller) connects to the other three and is responsible
+						The fourth (a laptop,<a id="to-footnote-1" href="#footnote-1" class="footnote">1</a> termed the
+						Game Controller) connects to the other three and is responsible
 						for state management and all high-level organization. </p>
 
 					<h4>Arduinos: Board and Gantry</h4>
@@ -82,8 +83,8 @@
 							href="https://github.com/ariporad/PIE-Grandmaster/blob/main/arduino/board/board.ino">board</a>,
 						<a href="https://github.com/ariporad/
 									PIE-Grandmaster/blob/main/arduino/gantry/gantry.ino">gantry</a>) is extremely primitive: they receive low
-						level commands from the Game Controller (for example, “move to square (3, 4)”
-						or “turn on the LED for Button #2”) and send a response once that action has been completed.
+						level commands from the Game Controller (for example, <code>move to square (3, 4)</code>
+						or <code>turn on the LED for Button #2</code>) and send a response once that action has been completed.
 						They also proactively communicate status updates on a regular basis
 						(several times per second), which include information like the current position of the gantry or
 						the state of all buttons.
@@ -105,7 +106,8 @@
 					<h4>Raspberry Pi</h4>
 					<p>
 						The Raspberry Pi connects to our overhead camera and transmits images to the Game Controller
-						over HTTP and WiFi. This system is far from ideal: the Pi is
+						over HTTP and WiFi.<a id="to-footnote-2" href="#footnote-2" class="footnote">2</a> This system
+						is far from ideal: the Pi is
 						strangely and inconsistently slow, and sometimes disconnects entirely without explanation. It
 						usually takes several seconds and often multiple attempts to
 						transfer an image.
@@ -152,15 +154,17 @@
 							does this using a camera mounted over the board. The Game Controller requests an image from
 							the Raspberry Pi,
 							which activates the camera and corrects for lens distortion using <a
-								href="https://opencv.org/">OpenCV</a>, then sends the resulting image back to the Game
+								href="https://opencv.org/">OpenCV</a>,<a id="to-footnote-4" href="#footnote-4"
+								class="footnote">4</a> then sends the resulting image back to the Game
 							Controller. This image is fed through our
 							<a href="https://github.com/ariporad/PIE-Grandmaster/blob/main/main/detector.py">piece
 								recognition pipeline</a>,
 							which has three steps: board orientation, square calculation, and finally piece detection.
 							This process gives us a robust and efficient mechanism to extract piece positions in
-							chess-space (that is, “knight on C2”).
+							chess-space (that is, <code>knight on C2</code>).
 						</p>
-						<p>The process starts with board orientation. The Grandmaster Chess Board has an Apriltag in
+						<p>The process starts with board orientation. The Grandmaster Chess Board has an Apriltag<a
+								id="to-footnote-5" href="#footnote-5" class="footnote">5</a> in
 							each of its four corners. These tags are precisely positioned such that, if the chessboard
 							continued for one
 							additional square in each direction, they would be in the center of the extra square. This
@@ -170,11 +174,14 @@
 							simplifies the algorithm.
 						</p>
 						<p>
-							We start the analysis pipeline by using an off-the-shelf Apriltag library to precisely
+							We start the analysis pipeline by using an off-the-shelf Apriltag library<a
+								id="to-footnote-6" href="#footnote-6" class="footnote">6</a> to precisely
 							locate the center positions of each of the corner tags, and we use that information to
-							extrapolate the center position of each square on the chess board.
+							extrapolate the center position of each square on the chess board.<a id="to-footnote-7"
+								href="#footnote-7" class="footnote">7</a>
 							Because we compute the center position of each chess square, we are able to establish a
-							mapping between image-space (ie. pixels) and chess-space (ie. ranks and files). This is
+							mapping between image-space (ie. pixels) and chess-space (ie. ranks and files<a
+								id="to-footnote-8" href="#footnote-8" class="footnote">8</a>). This is
 							vital, because chess algorithms exclusively operate in chess-space.
 							Each chess piece also has a unique top-mounted Apriltag, which we find the center of using
 							the same library. We then match each piece's Apriltag's location to the closest square
@@ -220,7 +227,8 @@
 						</p>
 						<p>
 							On the Grandmaster Chess Board, the computer's turn begins when the human player moves one
-							of their pieces and presses their button. The
+							of their pieces and presses their button.<a id="to-footnote-3" href="#footnote-3"
+								class="footnote">3</a> The
 							computer begins its turn by using the computer vision system to determine the state of the
 							board, then picks its next move with our chess algorithm, and finally uses the gantry system
 							and
@@ -262,6 +270,61 @@
 
 				</section>
 
+				<hr />
+				<section>
+					<h4>Footnotes</h4>
+					<p>
+					<ol>
+						<li id="footnote-1">Specifically, a Macbook Pro with an Apple M1 Pro chip running macOS Monterey
+							12.0.1.</li>
+						<li id="footnote-2">We use <a href="https://flask.palletsprojects.com/">Flask</a> to run a
+							simple
+							web server for this purpose. See the source code for the server <a
+								href="https://github.com/ariporad/PIE-Grandmaster/blob/main/main/camserver.py">here</a>.
+						</li>
+						<li id="footnote-3">Grandmaster uses the buttons that would be the clock on a traditional chess
+							board as an indication of when the human has finished their turn. However, Grandmaster games
+							are
+							not timed in the spirit of fun and learning. </li>
+						<li id="footnote-4"> We use OpenCV throughout the image lipcessing lipipine to lipse and store
+							images,
+							although we only use the very basics of its functionality. </li>
+						<li id="footnote-5"> Apriltags are a series of standardized computer vision targets that are
+							designed to be quickly and easily recognized and located, even when not scanned head-on.
+						</li>
+						<li id="footnote-6"> The official Apriltag library is published in C by the <a
+								href="https://april.eecs.umich.edu/software/apriltag">APRIL Robotics Laboratory</a> at
+							the
+							University of Michigan, and various wrappers exist to make it easily usable from Python. We
+							couldn't find a module which worked consistently on both macOS and Linux (both arm64), so we
+							built a small wrapper which allows us to use the <a
+								href="https://github.com/duckietown/lib-dt-apriltags">dt-apriltags bindings</a> on Linux
+							and
+							<a href="https://github.com/swatbotics/apriltag">the SWAT Robotics bindings</a> on macOS.
+							The
+							Linux version is no longer used in normal operation now that we use a Mac as the Game
+							Controller.
+						</li>
+						<li id="footnote-7"> The algorithm we use for this includes some heuristic-based tuning (ex. to
+							account for the board not being perfectly aligned with the camera without having to fully
+							model
+							it in 3D), but is conceptually similar to making the distance between the center line of
+							each
+							row one-ninth of the distance between the bottom-left and top-left corner tags, then
+							repeating
+							that process for each column. See <a
+								href="https://github.com/ariporad/PIE-Grandmaster/blob/main/main/detector.py"><code>Detector.calculate_board_dimensions</code></a>
+							for details. </li>
+						<li id="footnote-8"> In chess parlance, a rank is a row of the chess board with Rank 1 being in
+							front of the white player. Similarly, a file is a column of the chess board, with the A-File
+							being the leftmost from white's perspective. Squares are notated as <code>e1</code> (the white king's
+							starting location) or <code>b7</code> (starting position of a black pawn). For more details on chess
+							notation, see <a
+								href="https://en.wikipedia.org/wiki/Algebraic_notation_(chess)">Wikipedia</a>.
+						</li>
+					</ol>
+					</p>
+				</section>
 			</div>
 		</div>
 
