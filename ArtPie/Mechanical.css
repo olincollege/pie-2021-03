@@ -176,6 +176,7 @@
 .u-section-2 .u-btn-1 {
   background-image: none;
   border-style: none none solid;
+  font-size: 1.5rem;
   margin: 94px auto 0;
   padding: 0;
 }
@@ -399,6 +400,7 @@
 .u-section-4 .u-image-1 {
   width: 525px;
   height: 519px;
+  object-position: 2.1% 100%;
   margin: 39px 0 0 auto;
 }
 
@@ -416,6 +418,7 @@
 
 .u-section-4 .u-text-2 {
   font-style: italic;
+  font-size: 1.25rem;
   margin: 60px 40px 0;
 }
 
@@ -561,33 +564,33 @@
 }
 
 .u-section-5 .u-image-4 {
-  background-image: url("images/5c679eb27864734d565e7a88bbee32f1.jpeg");
+  background-image: url("images/pic3.jpg");
   background-position: 50% 50%;
   min-height: 376px;
 }
 
 .u-section-5 .u-image-5 {
-  background-image: url("images/df46dc6eadb93b85a9ebbf052af68f9f.jpeg");
+  background-image: url("images/pic41.jpg");
   background-position: 50% 50%;
   min-height: 376px;
 }
 
 .u-section-5 .u-image-6 {
-  background-image: url("images/5d64b51bdeb8ba43b5c7af02fcfac821.jpeg");
+  background-image: url("images/cool2.jpg");
   min-height: 376px;
-  background-position: 50% 50%;
+  background-position: 50% 48.68%;
 }
 
 .u-section-5 .u-image-7 {
   min-height: 376px;
-  background-image: url("images/88b3a82b7de48ceb91f027e38aafcbaa.jpeg");
+  background-image: url("images/fullassembly.jpg");
   background-position: 50% 50%;
 }
 
 .u-section-5 .u-image-8 {
   min-height: 376px;
-  background-image: url("images/1867b26d0396e71e1c72e8fb5cfc7b0a.jpeg");
-  background-position: 50% 50%;
+  background-image: url("images/fullassembly2.jpg");
+  background-position: 47.67% 50%;
 }
 
 @media (max-width: 1199px) {

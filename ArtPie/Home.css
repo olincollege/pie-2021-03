@@ -156,12 +156,12 @@
   text-transform: uppercase;
   letter-spacing: normal;
   font-size: 1.5rem;
-  margin: 52px 0 0;
+  margin: 55px 0 0;
 }
 
 .u-section-2 .u-text-4 {
   font-style: italic;
-  margin: 71px 0 0;
+  margin: 55px 0 0;
 }
 
 .u-section-2 .u-layout-cell-2 {
@@ -217,7 +217,7 @@
 
 .u-section-2 .u-text-8 {
   font-style: italic;
-  margin: 71px 7px 0;
+  margin: 55px 7px 0;
 }
 
 @media (max-width: 1199px) {
@@ -1265,6 +1265,7 @@
 }
 
 .u-section-7 .u-text-4 {
+  background-image: none;
   margin: 20px auto 0;
 }
 
