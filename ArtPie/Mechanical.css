@@ -28,8 +28,8 @@
 }
 
 .u-section-1 .u-text-2 {
-  font-weight: 600;
   font-style: italic;
+  font-weight: 700;
   margin: 20px 20px 25px;
 }
 
@@ -170,13 +170,13 @@
 
 .u-section-2 .u-text-2 {
   font-style: italic;
-  margin: 126px 20px 0 60px;
+  margin: 124px 40px 0;
 }
 
 .u-section-2 .u-btn-1 {
   background-image: none;
   border-style: none none solid;
-  margin: 92px auto 0;
+  margin: 94px auto 0;
   padding: 0;
 }
 
@@ -233,8 +233,8 @@
   }
 
   .u-section-2 .u-text-2 {
-    margin-right: 0;
-    margin-left: 7px;
+    margin-right: 4px;
+    margin-left: 4px;
   }
 
   .u-section-2 .u-image-1 {
@@ -416,7 +416,7 @@
 
 .u-section-4 .u-text-2 {
   font-style: italic;
-  margin: 60px 26px 0 54px;
+  margin: 60px 40px 0;
 }
 
 @media (max-width: 1199px) {
