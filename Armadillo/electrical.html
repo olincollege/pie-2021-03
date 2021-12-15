@@ -1,0 +1,304 @@
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<!--
+THEME: Small Apps | Bootstrap App Landing Template
+VERSION: 1.0.0
+AUTHOR: Themefisher
+
+HOMEPAGE: https://themefisher.com/products/small-apps-free-app-landing-page-template/
+DEMO: https://demo.themefisher.com/small-apps/
+GITHUB: https://github.com/themefisher/Small-Apps-Bootstrap-App-Landing-Template
+
+Get HUGO Version : https://themefisher.com/products/small-apps-hugo-app-landing-theme/
+
+WEBSITE: https://themefisher.com
+TWITTER: https://twitter.com/themefisher
+FACEBOOK: https://www.facebook.com/themefisher
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Armadillo | Electrical</title>
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Bootstrap App Landing Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="author" content="Themefisher">
+    <meta name="generator" content="Themefisher Small Apps Template v1.0">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+
+    <!-- PLUGINS CSS STYLE -->
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="plugins/slick/slick.css">
+    <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+    <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="plugins/aos/aos.css">
+
+    <!-- CUSTOM CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top px-2 px-sm-0 py-2 py-lg-0">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="ti-menu"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#Technical">Back</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--============================
+=            Banner            =
+=============================-->
+<div class="section banner-full">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="image" data-aos="flip-right">
+                    <img class="img-fluid h-100" src="images/electrical/banner.png" alt="mechanical">
+                </div>
+            </div>
+            <div class="col-lg-6 align-self-center">
+                <div class="block">
+                    <h1>Electrical Design</h1>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--====  End of Banner  ====-->
+
+<section id="Overview" class="feature section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mr-auto align-self-center">
+                <div class="feature-content">
+                    <!-- Feature Title -->
+                    <h3>Schematic Overview</h3>
+                    <!-- Feature Description -->
+                    <p class="desc">The main electrical components are the three stepper drivers, a vacuum pump and solenoid, the Arduino Uno, and limit switches on the robot. The Arduino receives commands from a laptop via the serial port and controls homing and actuation of the arm. The robot is equipped with limit switches at the extreme allowed positions; these are used to home the arm to a consistent position before beginning any operation, as well as to interrupt execution if the robot is moving to a position that could be damaging. It also has a suite of potentiometers, which are used for live tuning of the joint angles.
+
+                        Most of the components are mounted to solderable protoboards. We completed a schematic and layout for a custom PCB (KiCad files are in our GitHub repo), but we could not order it due to budget and time constraints. For the PCB, we had planned to use an Arduino Nano to make everything more compact (and the Nano even has a few more IO pins than the Uno!), but we kept the Arduino Uno and simply increased the size of the electronics box.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 ml-auto justify-content-center">
+                <!-- Feature Mockup -->
+                <div class="image-content" data-aos="fade-right">
+                    <img class="img-fluid" src="images/electrical/full_schematic.png" alt="jenga">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="Suction" class="feature section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 mr-auto justify-content-center">
+                <!-- Feature Mockup -->
+                <div class="image-content" data-aos="fade-right">
+                    <img class="img-fluid" src="images/electrical/vacuum.png" alt="jenga">
+                </div>
+            </div>
+            <div class="col-lg-5 mr-auto justify-content-center">
+                <!-- Feature Mockup -->
+                <div class="image-content" data-aos="fade-right">
+                    <img class="img-fluid" src="images/electrical/vacuum_pic.png" alt="jenga">
+                </div>
+            </div>
+            <div class="col-lg-4 mr-auto align-self-center">
+                <div class="feature-content">
+                    <!-- Feature Title -->
+                    <h3>Suction Subsystem</h3>
+                    <!-- Feature Description -->
+                    <p class="desc">The vacuum pump creates negative pressure at the end effector suction cup, which is just enough force to pick up a Jenga block, or maybe a phone. (insert image?) The pump is in series with a solenoid valve, which opens and closes the air flow. The pump and solenoid are switched on and off with transistors on the low side, with pull down resistors on the gate pins.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="Suction" class="feature section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mr-auto align-self-center">
+                <div class="feature-content">
+                    <!-- Feature Title -->
+                    <h3>Power Supply</h3>
+                    <!-- Feature Description -->
+                    <p class="desc">The vacuum pump, Arduino, and any components interfacing with it, like transistors, input potentiometers, and limit switches, operate at 5V, while the stepper motors and the solenoid run at 12V. Initially, we were running the vacuum pump using the Arduino’s 5V output, but this created strange behavior on the motor drivers, causing the main load-bearing stepper to skip steps and lose torque. This actually prompted some of our lightweighting measures on the robot arm, as well as replacing the main stepper with a much stronger model to increase torque. This made our robot much more robust, but did not solve the problems. Eventually, we realized that when the pump was not plugged in, our torque issues went away. After we identified the real issue, we switched to a power supply that had both 5V and 12V outputs, and powered the vacuum pump completely separately from the Arduino.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mr-auto justify-content-center">
+                <!-- Feature Mockup -->
+                <div class="image-content" data-aos="fade-right">
+                    <img class="img-fluid" src="images/background/CADOverview4.png" alt="jenga">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="Suction" class="feature section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mr-auto align-self-center">
+                <div class="feature-content">
+                    <!-- Feature Title -->
+                    <h3>Drive Subsystem</h3>
+                    <!-- Feature Description -->
+                    <p class="desc">The stepper motors are controlled by three DRV8825 stepper drivers, which are commanded by the Arduino. The stepper drivers are set to 1/16 microstepping, which makes the robot arm move very smoothly and precisely, while still moving fast enough for our purposes. The microstepping level is assigned in hardware with jumper caps between the DRV8825 step size selector pins and a 5V rail. Stepper motors hold their position when powered on, locking the arm in place. The enable pins on the drivers are software-controlled, so that the motors can be turned off to manually reposition the arm.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 mr-auto justify-content-center">
+                <!-- Feature Mockup -->
+                <div class="image-content" data-aos="fade-right">
+                    <img class="img-fluid" src="images/electrical/drive.png" alt="jenga">
+                </div>
+            </div>
+            <div class="col-lg-3 mr-auto justify-content-center">
+                <!-- Feature Mockup -->
+                <div class="image-content" data-aos="fade-right">
+                    <img class="img-fluid" src="images/electrical/drive_pic.png" alt="jenga">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!--============================
+=            Footer            =
+=============================-->
+<footer>
+    <div class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 m-md-auto align-self-center">
+                    <div class="block">
+                        <a href="index.html"><img src="images/logo-alt.png" alt="footer-logo"></a>
+                        <!-- Social Site Icons -->
+                        <ul class="social-icon list-inline">
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/themefisher"><i class="ti-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://twitter.com/themefisher"><i class="ti-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.instagram.com/themefisher/"><i class="ti-instagram"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+                    <div class="block-2">
+                        <!-- heading -->
+                        <h6>Product</h6>
+                        <!-- links -->
+                        <ul>
+                            <li><a href="unused/team.html">Teams</a></li>
+                            <li><a href="unused/blog.html">Blogs</a></li>
+                            <li><a href="unused/FAQ.html">FAQs</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+                    <div class="block-2">
+                        <!-- heading -->
+                        <h6>Resources</h6>
+                        <!-- links -->
+                        <ul>
+                            <li><a href="unused/sign-up.html">Singup</a></li>
+                            <li><a href="unused/sign-in.html">Login</a></li>
+                            <li><a href="unused/blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+                    <div class="block-2">
+                        <!-- heading -->
+                        <h6>Company</h6>
+                        <!-- links -->
+                        <ul>
+                            <li><a href="unused/career.html">Career</a></li>
+                            <li><a href="unused/contact.html">Contact</a></li>
+                            <li><a href="unused/team.html">Investor</a></li>
+                            <li><a href="privacy.html">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+                    <div class="block-2">
+                        <!-- heading -->
+                        <h6>Company</h6>
+                        <!-- links -->
+                        <ul>
+                            <li><a href="unused/about.html">About</a></li>
+                            <li><a href="unused/contact.html">Contact</a></li>
+                            <li><a href="unused/team.html">Team</a></li>
+                            <li><a href="unused/privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center bg-dark py-4">
+        <small class="text-secondary">Copyright &copy; <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a></small class="text-secondary">
+    </div>
+</footer>
+
+
+<!-- To Top -->
+<div class="scroll-top-to">
+    <i class="ti-angle-up"></i>
+</div>
+
+<!-- JAVASCRIPTS -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<script src="plugins/slick/slick.min.js"></script>
+<script src="plugins/fancybox/jquery.fancybox.min.js"></script>
+<script src="plugins/syotimer/jquery.syotimer.min.js"></script>
+<script src="plugins/aos/aos.js"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
+<script src="plugins/google-map/gmap.js"></script>
+
+<script src="js/script.js"></script>
+</body>
+
+</html>
