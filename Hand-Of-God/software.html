@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Software Design</title>
+		<title>Hand of God</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -33,82 +33,88 @@
 								
 							</ul>
 						</li>
-						<li><a href="aboutus.html" class="button">Contact Us</a></li>
+						<li><a href="aboutus.html" class="button">About Us</a></li>
+						<li><a href="https://github.com/simrunm/HandofGod" class="icon brands fa-github"><span class="label">Github</span></a></li>
 					</ul>
 				</nav>
 			</header>
-
 			<!-- Main -->
 				<section id="main" class="container">
 					<header>
 						<h2>Software Design</h2>
-						<p></p>
+						<p>Predicting where a ball will land</p>
 					</header>
-					<div class="row">
+					<div class="box">
+						<span class="image featured"><img src="images/software_header.jpg" alt="" /></span>
+						<h3>About</h3>
+						<p>
+							The main task for the software in our project was to predict the position on the gantry where the ball was going to land.
+							We used webcams and openCV to track the position of the ball. We used curve fitting to predict where the ball would land.
+							
+						</p>
+						<h3>Tracking the Ball</h3>
+						<p>
+							In order to track the position of the ball, we used openCV that would read from the two webcams that we had. Our ping pong 
+							ball was bright green and we used color masking to track the position of the ball. We were able to get the coordinates of 
+							the centroid of the ball whenever it was in frame of either of the cameras through this method
+
+						</p>
+						<h3>
+							Demonstration of Software Tracking Ball
+						</h3>
+						<video width="1080" height="480" controls>
+							<source src="images/parabola_demo.mp4" type="video/mp4">
+						  Your browser does not support the video tag.
+						</video>
+						<p>
+
+						</p>
+						<h3>
+							Camera Layout
+						</h3>
+						<span class="image featured"><img src="images/both_cams.jpg" alt="" /></span>
+						<p>
+							To track the ball, we are using two webcams. One camera is on the size and tracks the horizontal motion. The other camera sits on the table facing upward and tracks 
+							motion in the lateral direction. In the image above, one can see the side camera on the whiteboard.
+						</p>
 						
+						<h3>
+							Tracking in the Y Direction
+						</h3>
+						<span class="image featured"><img src="images/side_cam.jpg" alt="" /></span>
+						<p>
+							We used our side view camera to track where the ball was going in the y-direction. After the camera got the first three points along the motion of the ball, we would 
+							fit a parabola onto the points to visualize where it would land. As the ball continues to move forward, the parabola continues to update based on the new position of 
+							the ball. We found the y-coordinate of the hand in the camera frame. Once we had a parabola, we would find the x-coordinate of the parabola at the place where it intersects 
+							with the y-coordinate of the hand to know how far the ball will travel in the y direction and predict the y-coordinate. Based on some testing, we decided that we should predict 
+							the y position after the camera has found 12 centroids as that gives us an accurate prediction. If we waited much longer, then the hand won't move fast enough to catch the ball.
+						</p>
 
-							<!-- Text -->
-								<section class="box">
-									<span class="image featured"><img src="images/software_header.jpg" alt="" /></span>
-										<p style="text-align:center"> </p>	
-									<p><span style="font-size: 22px;"><br></span></p>
-									<p >The main task for the software in our project was to predict the position on the gantry where the ball was going to land. We used webcams and openCV to track the position of the ball. We used curve fitting to predict where the ball would land.</span></p>
-									<p><span style="font-size: 22px;"><br></span></p>
-									<p style="color:black;font-size:36px;"><strong>Tracking the ball</strong></span></p>
-									<p >In order to track the position of the ball, we used openCV that would read from the two webcams that we had. Our ping pong ball was bright green and we used color masking to track the position of the ball. We were able to get the coordinates of the centroid of the ball whenever it was in frame of either of the cameras through this method</span></p>
-									<p><span style="font-size: 22px;"><br></span></p>
+						<h3>
+							Tracking in the X Direction
+						</h3>
+						<span class="image featured"><img src="images/top_cam.jpg" alt="" /></span>
+						<p>
+							We used our top view camera in order to calculate the x position of the ball. The camera was placed below looking up and when the ball was thrown over it, the coordinates of the 
+							ball on the camera show a straight line that indicates what angle the ball is being thrown at. We used this angle and the distance of the camera from the gantry to predict the x position.
+						</p>
+						<p>
+							Once we had both the x and y coordinates, we could send those points over to the motors in order to move the hand along the gantry.
+						</p>
 
-									<video width="1080" height="480" controls>
-										<source src="images/parabola_demo.mp4" type="video/mp4">
-										
-									  Your browser does not support the video tag.
-									  </video>
-									  
-				
-									<div class="box">
-										
-										<p style="text-align:center">Video of Camera </p>	
-									</div>
-									<p style="color:black;font-size:36px;"><strong>Position Prediction </strong></span></p>
-									<p><span style="font-size: 22px;"><br></span></p>
-									<div class="box">
-										<span class="image featured"><img src="images/both_cams.jpg" alt="" /></span>
-										<p style="text-align:center">General Camera Setup </p>	
-									</div>
-									<p style="color:black;font-size:36px;"><strong>Y position</strong></span></p>
-									<p style="color:black;font-size:24px;">We used our side view camera to track where the ball was going in the y-direction. After the camera got the first three points along the motion of the ball, we would &nbsp;fit a parabola onto the points to visualize where it would land. As the ball continues to move forward, the parabola continues to update based on the new position of the ball. We found the y-coordinate of the hand in the camera frame. Once we had a parabola, we would find the x-coordinate of the parabola at the place where it intersects with the y-coordinate of the hand to know how far the ball will travel in the y direction and predict the y-coordinate. Based on some testing, we decided that we should predict the y position after the camera has found 12 centroids as that gives us an accurate prediction. If we waited much longer, then the hand won&rsquo;t move fast enough to catch the ball.&nbsp;</span></p>
-									<p><span style="font-size: 22px;"><br></span></p>
-
-									<div class="box">
-										<span class="image featured"><img src="images/side_cam.jpg" alt="" /></span>
-										<p style="text-align:center">Side View Camera </p>	
-									</div>
-
-									<p style="color:black;font-size:36px;"><strong>X Position</strong></span></p>
-									<p style="color:black;font-size:24px;">We used our top view camera in order to calculate the x position of the ball. The camera was placed below looking up and when the ball was thrown over it, the coordinates of the ball on the camera show a straight line that indicates what angle the ball is being thrown at. We used this angle and the distance of the camera from the gantry to predict the x position.&nbsp;</span></p>
-									<p><span style="font-size: 22px;"><br></span></p>
-
-									<div class="box">
-										<span class="image featured"><img src="images/top_cam.jpg" alt="" /></span>
-										<p style="text-align:center">Top View Camera </p>	
-									</div>
-
-
-									<p style="color:black;font-size:24px;">Once we had both the x and y coordinates, we could send those points over to the motors in order to move the hand along the gantry. <br><br>
-										<p style="color:black;font-size:36px;"><strong>Sending Positions to Gantry</strong></p>
-										<pre>
-                # top_x = trackingFunctions.find_x(theta, predicted_y, cam_dist) # top x is x and side x is y from drawing  
-                predicted_x = x_start + x_change  
-                print("finished top prediction")             
-                print("Predicted x: ", predicted_x, "y: ", predicted_y)
-                MoveMotors(arduino, (int(predicted_x), int(predicted_y)))
-                return True
-		</pre></span></p>
-								</section>
-
-					
+						<h3>
+							Sending Position to Gantry
+						</h3>
+						<pre>
+# top_x = trackingFunctions.find_x(theta, predicted_y, cam_dist) # top x is x and side x is y from drawing  
+predicted_x = x_start + x_change  
+print("finished top prediction")             
+print("Predicted x: ", predicted_x, "y: ", predicted_y)
+MoveMotors(arduino, (int(predicted_x), int(predicted_y)))
+return True
+						</pre>
 					</div>
-					
+				</section>
 
 			<!-- Footer -->
 			<footer id="footer">
@@ -135,4 +141,3 @@
 
 	</body>
 </html>
-
