@@ -646,8 +646,20 @@
 }
 
 .u-section-4 .u-text-5 {
-  font-size: 1rem;
-  margin: 19px 30px 0;
+  font-weight: 400;
+  margin: 47px 30px 0;
+}
+
+.u-section-4 .u-list-icon-1 {
+  color: rgb(0, 0, 0) !important;
+}
+
+.u-section-4 .u-list-icon-2 {
+  color: rgb(0, 0, 0) !important;
+}
+
+.u-section-4 .u-list-icon-3 {
+  color: rgb(0, 0, 0) !important;
 }
 
 .u-section-4 .u-btn-1 {
@@ -683,8 +695,20 @@
 }
 
 .u-section-4 .u-text-8 {
-  font-size: 1rem;
-  margin: 19px 30px 0;
+  font-weight: 400;
+  margin: 47px 30px 0;
+}
+
+.u-section-4 .u-list-icon-4 {
+  color: rgb(0, 0, 0) !important;
+}
+
+.u-section-4 .u-list-icon-5 {
+  color: rgb(0, 0, 0) !important;
+}
+
+.u-section-4 .u-list-icon-6 {
+  color: rgb(0, 0, 0) !important;
 }
 
 .u-section-4 .u-btn-2 {
@@ -720,8 +744,20 @@
 }
 
 .u-section-4 .u-text-11 {
-  font-size: 1rem;
-  margin: 19px 30px 0;
+  font-weight: 400;
+  margin: 47px 30px 0;
+}
+
+.u-section-4 .u-list-icon-7 {
+  color: rgb(0, 0, 0) !important;
+}
+
+.u-section-4 .u-list-icon-8 {
+  color: rgb(0, 0, 0) !important;
+}
+
+.u-section-4 .u-list-icon-9 {
+  color: rgb(0, 0, 0) !important;
 }
 
 .u-section-4 .u-btn-3 {
@@ -939,8 +975,12 @@
     font-size: 1.625rem;
   }
 
+  .u-section-4 .u-text-11 {
+    margin-top: 71px;
+  }
+
   .u-section-4 .u-btn-3 {
-    margin-top: 228px;
+    margin-top: 17px;
   }
 }
 
