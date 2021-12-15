@@ -26,6 +26,7 @@
 											<li><a href="eletrical.html">Electrical Breakdown</a></li>
 											<li><a href="software.html">Software Breakdown</a></li>
 											<li><a href="budget.html">Budget</a></li>
+											<li><a href="Process.html">Process</a></li>
 											<li><a href="elements.html">Elements</a></li>
 										</ul>
 									</div>
@@ -37,14 +38,67 @@
 				<!-- Main -->
 					<article id="main">
 						<header>
-							<h2>Electrical Page</h2>
-							<p>Quick Top Summary</p>
+							<h2>Electrical Breakdown</h2>
+							<p style="margin: 5%; margin-bottom: 0%;";>
+								Our electrical system involves two power sources, a single Arduino Mega, 
+								a secondary Arduino Uno for extra power, one STSPIN820 stepper motor driver, 
+								one stepper motor, six servo motors, two vibration motors, one LCD display, 
+								a temperature sensing probe, the COTS Hotplate PCB, and multiple buttons. 
+							</p>
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
+								<h3 style="text-align: center;">Arduino Mega</h3>
+								<img src="images/circuit_diagram.jpg" alt="" style="width: 100%;"/>
+								<h3>Arduino Mega</h3>
+								<p>
+									We moved to an Arduino Mega in order to have enough pins for all of our operations. 
+								</p>
 
-								<h3>We love Ramen</h3>
-									<p>BLAH BLAH HEHE</p>
+								<h3>Secondary Arduino</h3>
+								<p>
+									For this arduino, we only used the 5V and Ground pins. These were plugged into our 
+									breadboard and used to power the 5v and ground portions of some of the servo motors. 
+								</p>
+
+								<h3>Servo Motors</h3>
+								<p>
+									We connected the servo motors to PWM pins on our Arduino Mega.
+								</p>
+
+								<h3>Stepper Motors and Drivers</h3>
+								<P>
+									We used an STSPIN820 stepper motor driver to control our stepper motor. This driver 
+									was connected to a 12V power supply.  We set the motor drivers to have an output 
+									current of around 1.5A, to power the steppers without frying any boards or chips. 
+								</P>
+
+								<h3>User Interface - LCD Screen and buttons</h3>
+								<P>
+									Our user interface uses a 16x2 character LCD screen and two buttons. The screen 
+									displays information from our temperature sensor and how much time until the next 
+									action, and the buttons work as start and emergency stop buttons. 
+								</P>
+
+								<h3>COTS Hotplate PCB</h3>
+								<p>
+									Our induction hotplate is controlled by multiple capacitive touch buttons. To 
+									interact with the hotplate, we unscrewed the PCB from its location in the hotplate 
+									and moved it closer to the electrical box. To trigger the buttons, we contact 
+									them with a large screw on a servo, as that simulates the capacitive touch of a person. 
+								</p>
+
+								<h3>Temperature Sensing Probe</h3>
+								<p>
+									To measure the temperature of the boiling water, we used the DS18B20 Waterproof 
+									Temperature Sensor, and dipped it in and out of the water with a servo. 
+								</p>
+
+								<h3>Vibration Motors</h3>
+								<p>
+									To shake the powder in the hopper we used a pack of OSSEP Vibration motors.
+								</p>
+
 							</div>
 						</section>
 					</article>

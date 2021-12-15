@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Ra-Meant-To-Be</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Ra-Meant-To-Be</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="mechanical.html">Mechanical Breakdown</a></li>
+											<li><a href="eletrical.html">Electrical Breakdown</a></li>
+											<li><a href="software.html">Software Breakdown</a></li>
+											<li><a href="budget.html">Budget</a></li>
+											<li><a href="Process.html">Process</a></li>
+											<li><a href="elements.html">Elements</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Process</h2>
+							<p style="margin: 5%; margin-bottom: 0%;";>
+								Our electrical system involves two power sources, a single Arduino Mega, 
+								a secondary Arduino Uno for extra power, one STSPIN820 stepper motor driver, 
+								one stepper motor, six servo motors, two vibration motors, one LCD display, 
+								a temperature sensing probe, the COTS Hotplate PCB, and multiple buttons. 
+							</p>
+							
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+								<h2 style="text-align: center;">Systems Overlook</h2>
+								<div class="image" style="display: flex; justify-content: center;">
+									<img src="images/system.jpg" alt="" style="width: 80%;"/>
+								</div>
+								<hr />
+								<h2 style="text-align: center;">Sprint 1</h2>
+
+								<h3>Goals: Is this Possible? </h3>
+								<p>
+									Powder and noodle dispensing, and controlling the hotplate
+								</p>
+								<p>
+									<b>Design:</b> We used sprint 1 as a proof of concept for our MVP components. 
+									We chose to focus on boiling the water, and adding noodles and powder to the 
+									bowl. As a reach, we also wanted to use a temperature sensor to detect when the 
+									water was boiling. 
+									<ul>
+										<li>Mechanical: Create a single noodle dispenser and powder dispenser.</li>
+										<li>Electrical: Interact with the hotplate to turn it on and off and connect the temperature sensor.</li>
+										<li>Software: Control the servos for all of the components, and read the temperature sensor</li>
+									</ul>
+								</p>
+
+								<p>
+									<b>Conclusion:</b> We can move the minimum necessary components into our bowl, and boil the bowl of 
+									ramen! It is super unstable and definitely not food safe at all. 
+								</p>
+
+								<div class="image" style="display: flex; justify-content: center;">
+									<img src="images/sprint_1.jpg" alt="" style="width: 50%;"/>
+								</div>
+								<hr />
+								<br>
+
+								<h2 style="text-align: center;">Sprint 2</h2>
+
+								<h3>Goals: Can We Make Things More Food Safe?</h3>
+								<p>
+									Multiple noodle and powder servings, water dispensing, and a user interface
+								</p>
+								<p>
+									<b>Design:</b> We wanted to create a more stable frame for all of our components to live on, and chose to use 
+									8020 as it was easy to use and move components about. 
+									<ul>
+										<li>Mechanical: Created dispensers to hold multiple noodle and powder servings, Added version 1 of the water dispenser.</li>
+										<li>Electrical: Created a user interface with LCD screens and buttons. </li>
+										<li>Software: Tested the text to order function, made the code modular for testing. </li>
+									</ul>
+								</p>
+
+								<p>
+									<b>Conclusion:</b> We need to combine all of these components, and fully test the noodle, powder, and water dispensers. 
+								</p>
+
+								<div class="image" style="display: flex; justify-content: center;">
+									<img src="images/sprint_2.jpg" alt="" style="width: 50%;"/>
+								</div>
+								<hr />
+								<br>
+
+								<h2 style="text-align: center;">Sprint 3</h2>
+
+								<h3>Goals: Polish and Integrate</h3>
+								<p>
+									Organized and mounted everything to a final position in the frame, worked on making things more consistent, and made RAMEN!!!!
+								</p>
+								<p>
+									<b>Design:</b> We wanted to finalize positions and materials, and focus on integration, as our components worked as individuals, 
+									but we were unable to test a full runthrough until we switched to an Arduino Mega which arrived at the start of this sprint. 
+									<ul>
+										<li>Mechanical: Multi noodle dispenser, powder dispenser, and water dispenser were fully tested and iterated, so the final versions were implemented</li>
+										<li>Electrical: Mounted components in a safe and stable way, cleaned up wiring to be easier to troubleshoot, integrated individual components onto
+											 one Arduino Mega. We ran into a few power issues as we have many components on our board, but those were resolved.  </li>
+										<li>Software: The wireless shield for the text to order function shorted, so we moved to polishing the code to make 
+											it easier to test and integrate. </li>
+									</ul>
+								</p>
+
+								<p>
+									<b>Conclusion:</b> While text to order doesn’t work, we can successfully make ramen, and the bot as a whole is easy to troubleshoot as the components are organized. 
+								</p>
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; Ra-Meant-To-Be</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
