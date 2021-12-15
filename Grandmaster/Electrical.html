@@ -5,101 +5,118 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Grandmaster - Electrical</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<div id="page-wrapper">
 
-			<!-- Header -->
-				<header id="header">
-					<h1 id="logo"><a href="index.html"><img alt="Logo" src ="images/crown.png" width="50" height="50"></a></h1>
-					<nav id="nav">
+<head>
+	<title>Grandmaster - Electrical</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1 id="logo"><a href="index.html"><img alt="Logo" src="images/crown.png" width="50" height="50"></a></h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li>
+						<a href="System.html">System</a>
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li>
-								<a href="System.html">System</a>
-								<ul>
-									<li><a href="Electrical.html">Electrical</a></li>
-									<li><a href="Software.html">Software</a></li>
-									<li><a href="Mechanical.html">Mechanical</a></li>
-									
-								</ul>
-							</li>
-							<li><a href="Budget.html">Budget</a></li>
-							<li><a href="Process.html">Process</a></li>
-							<!--
+							<li><a href="Electrical.html">Electrical</a></li>
+							<li><a href="Software.html">Software</a></li>
+							<li><a href="Mechanical.html">Mechanical</a></li>
+
+						</ul>
+					</li>
+					<li><a href="Budget.html">Budget</a></li>
+					<li><a href="Process.html">Process</a></li>
+					<!--
 								<li><a href="#" class="button primary">Sign Up</a></li>
 							-->
-						</ul>
-					</nav>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<div id="main" class="wrapper style1">
+			<div class="container">
+				<header class="major">
+					<h2>Electrical Subsystem</h2>
+					<p>The electrical subsystem fuses the virtual and physical worlds to bring the Grandmaster Chess
+						Board to life.</p>
+
 				</header>
 
-			<!-- Main -->
-				<div id="main" class="wrapper style1">
-					<div class="container">
-						<header class="major">
-							<h2>Electrical Subsystem</h2>
-							<p>The electrical subsystem fuses the virtual and physical worlds to bring the Grandmaster Chess Board to life.</p>
-						
-						</header>
+				<!-- Content -->
+				<section id="content">
+					<h4>Stepper Motors</h4>
+					<p>The Grandmaster Chess Board consists of a 2D gantry system which holds an electromagnet
+						in order to move pieces. The electrical complexity begins at the two 12V stepper motors
+						used to control the horizontal and vertical position of the magnet. Using a CNC shield (which
+						connects
+						to all necessary ports of an A4988 stepper driver chip), we were able to easily wire the stepper
+						motors by
+						attaching a female to female connector to the motor and connecting them to the shield. We also
+						included 2 limit switches to precisely calibrate the position of the gantry.
+					</p>
+					<h4>Electromagnet</h4>
+					<p>
+						Once the stepper motors were functioning, we worked on the electromagnet. Our electromagnet
+						system consists of
+						a NPN transistor, a zener diode, and a resistor. The zener diode is connected across the magnet
+						to ensure current flows only across the magnet. The magnet and diode are then connected to the
+						transistor's C port. We then connect the B port to ground and the E port to a resistor
+						between the transistor and the arduino's digital pin.
+						</br>
+						<i>Note: In our diagram (below), the electromagnet is shown as a solenoid due to the absence of
+							an actual electromagnet being present in the diagramming software.</i>
+					</p>
 
-						<!-- Content -->
-							<section id="content">
-								<h4>Stepper Motors</h4>
-								<p>The Grandmaster Chess Board consists of a 2D gantry system which holds an electromagnet
-									in order to move pieces. The electrical complexity begins at the two 12V stepper motors
-									used to control the horizontal and vertical position of the magnet. Using a CNC shield (which connects
-									to all necessary ports of an A4988 stepper driver chip), we were able to easily wire the stepper motors by
-									attaching a female to female connector to the motor and connecting them to the shield. We also
-									included 2 limit switches to precisely calibrate the position of the gantry.
-									</p>
-								<h4>Electromagnet</h4>
-								<p>
-									Once the stepper motors were functioning, we worked on the electromagnet. Our electromagnet system consists of
-									a NPN transistor, a zener diode, and a resistor. The zener diode is connected across the magnet
-									to ensure current flows only across the magnet. The magnet and diode are then connected to the
-									transistor's C port. We then connect the B port to ground and the E port to a resistor
-									between the transistor and the arduino's digital pin.
-								</br>
-								<i>Note: In our diagram (below), the electromagnet is shown as a solenoid due to the absence of an actual electromagnet being present in the diagramming software.</i>
-</p>
+					<h4>LEDs</h4>
+					<p>
+						For aesthetics, we added NeoPixel W2811
+						lights which are individually-controllable leds that send commands to the adjacent LED. To wire
+						these,
+						we simply connected it to 5V and ground and connected a 300 Ohm resistor between the input of
+						the leds
+						and the Arduino digital port.
+					</p>
+					<h4>Buttons</h4>
+					<p>
+						Lastly, we have buttons that correspond to several actions within
+						the realm of chess, namely start (to start a single player game), reset, and a button to
+						indicate a move is over.
+						The buttons were simply connected to
+						power and a digital pin. The buttons also contain leds around the button which are separately
+						wired.
+					</p>
 
-								<h4>LEDs</h4>	
-								<p>
-									For aesthetics, we added NeoPixel W2811
-									lights which are individually-controllable leds that send commands to the adjacent LED. To wire these,
-									we simply connected it to 5V and ground and connected a 300 Ohm resistor between the input of the leds
-									and the Arduino digital port. 
-</p>
-								<h4>Buttons</h4>	
-								<p>
-									Lastly, we have buttons that correspond to several actions within
-									the realm of chess, namely start (to start a single player game), reset, and a button to indicate a move is over. 
-									The buttons were simply connected to
-									power and a digital pin. The buttons also contain leds around the button which are separately wired.
-</p>
+					<div class="col-8 col-12-xsmall"><span class="image fit"><img src="images/circuit.jpg"
+								alt="Circuit diagram" /></span></div>
 
-									<div class="col-8 col-12-xsmall"><span class="image fit"><img src="images/circuit.jpg" alt="Circuit diagram" /></span></div>
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/magnet.jpg"
+										alt="Electromagnet" /></span></div>
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/IMG_1808.jpg"
+										alt="LED lights" /></span></div>
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/button.jpg"
+										alt="Start and reset buttons" /></span></div>
 
-								<div class="box alt">
-									<div class="row gtr-50 gtr-uniform">
-									<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/magnet.jpg" alt="Electromagnet" /></span></div>
-									<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/IMG_1808.jpg" alt="LED lights" /></span></div>
-									<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/button.jpg" alt="Start and reset buttons" /></span></div>
-									
-								</div>	
+						</div>
 
 					</div>
-				</div>
+			</div>
 
 			<!-- Footer -->
-				<footer id="footer">
-					<!--
+			<footer id="footer">
+				<!--
 					<ul class="icons">
 						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -109,22 +126,24 @@
 						<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
 					-->
-					<ul class="copyright">
-						<li>&copy; 2021 Grandmaster. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</footer>
+				<ul class="copyright">
+					<li>&copy; 2021 Grandmaster. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
 
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
-	</body>
+</body>
+
 </html>
