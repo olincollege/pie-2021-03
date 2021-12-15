@@ -61,13 +61,7 @@
 									The fourth (a laptop, termed the Game Controller) connects to the other three and is responsible for state management and all high-level organization. </p>
 									
 									<br> 
-									<div class="box alt">
-										<div class="row gtr-50 gtr-uniform">
-										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/BoardTopView.jpg" alt="Gantry CAD top view" /></span></div>
-										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/OneAxisTake2.jpg" alt="Close up view of axis with electromagnet" /></span></div>
-										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/IMG_7894.jpg" alt="Physical photo of gantry" /></span></div>
-									</div>
-									<br>
+									
 									<h4>Arduinos: Board and Gantry</h4>
 
 									Two Arduinos are responsible for controlling all electromechanical systems. One controls the gantry system, while the other, called the “board” Arduino, controls
@@ -84,13 +78,7 @@
 									   worth changing (see the Python-side implementation <a href="https://github.com/ariporad/PIE-Grandmaster/blob/b889eea2c4014942ddb13aa759578c0393960424/main/arduino_manager.py">here</a>). 
 									<br> <br>
 
-									<div class="box alt">
-										<div class="row gtr-50 gtr-uniform">
-										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/WholeBoardTopOff.jpg" alt="CAD Whole chess board without the top" /></span></div>
-										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/IMG_1844.jpg" alt="Photo of chessboard and camera mount" /></span></div>
-										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/IMG_1802.jpg" alt="Top view photo of chessboard (no mount)" /></span></div>
-									</div>
-									<br>
+									
 
 									<h4>Raspberry Pi</h4>
 									The Raspberry Pi connects to our overhead camera and transmits images to the Game Controller over HTTP and WiFi. This system is far from ideal: the Pi is 
@@ -162,7 +150,15 @@
 										moving the gantry to the piece's new location, and disabling the electromagnet. The computer's turn is then over, so it updates the board's lights and waits for the human to move.
 									<br><br>
 									
-									
+									<h4>LED Lights</h4>
+									<p>We programmed the LED lights to indicate the state of the game: </p>
+									<ul>
+										<li>Booting up: Rainbow gradient</li>
+										<li>Ready to play: pink and blue spiral</li>
+										<li>White chess piece's move: Pink spiral</li>
+										<li>Blue chess piece's move (Computer): Blue pulse when it's "thinking", blue spiral when it's moving a piece</li>
+									</ul>
+									<br>
 									<h4>Debugging Dashboard</h4>
 									<p>The Game Controller also runs a dashboard for debugging purposes. This dashboard is entirely text-based and runs in the terminal. It consists of logging output from the Game Controller and a prompt which allows low-level control of the system
 										 (moving the gantry, toggling the magnet, setting the LEDs, etc.). It also allows for inspection of the computer vision and game logic pipeline. The dashboard is built using <a href="https://github.com/prompt-toolkit/python-prompt-toolkit">prompt_toolkit</a>.

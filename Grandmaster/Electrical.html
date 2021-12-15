@@ -49,34 +49,40 @@
 
 						<!-- Content -->
 							<section id="content">
-								<h3>Dolore Amet Consequat</h3>
+								<h4>Stepper Motors</h4>
 								<p>The Grandmaster Chess Board consists of a 2D gantry system which holds an electromagnet
 									in order to move pieces. The electrical complexity begins at the two 12V stepper motors
 									used to control the horizontal and vertical displacement. Using a CNC shield (which connects
 									to all necessary ports of an A4988 chip), we were able to easily wire the stepper motors by
-									attaching a female to female connector to the motor and connecting them to the shield.
-									<br> <br>
+									attaching a female to female connector to the motor and connecting them to the shield. We also
+									included 2 limit switches to help home in the gantry.
+									<br> <br> 
+								<h4>Electromagnet</h4>
 									Once the stepper motors were functioning, we worked on the electromagnet. This diagram consists of
 									a NPN transistor, a zener diode, and a resistor. The zener diode is connected across the magnet
 									to ensure current flows only across the magnet. The magnet and diode are then connected to the
 									transistors C port. We then connect the B port to ground. The E port is connected to a resistor
 									between the transistor and the arduino's digital pin.
-									<br> <br>
+									<br><br><br>
+
+								<h4>LEDs</h4>	
 									For aesthetics, we added NeoPixel W2811
-									lights which are individually wired leds that send commands to the adjacent led. To wire these,
+									lights which are individually wired leds that send commands to the adjacent LED. To wire these,
 									we simply connected it to 5V and ground and connected a 300 Ohm resistor between the input of the leds
 									and the arduino digital port. 
-									
-									<br> <br>
+									<br><br><br>
+
+								<h4>Buttons</h4>	
 									Lastly, we have buttons that correspond to several actions within
-									the realm of chess, namely the stop clock both parties use. 
+									the realm of chess, namely start (to start a single player game), reset, and a button to indicate a move is over. 
 									The buttons were simply connected to
 									power and a digital pin. The buttons also contain leds around the button which are separately wired.
 								<div class="box alt">
 									<div class="row gtr-50 gtr-uniform">
 									<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/magnet.jpg" alt="Electromagnet" /></span></div>
 									<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/IMG_1808.jpg" alt="LED lights" /></span></div>
-									<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/chess pieces magnet.jpg" alt="Magnet attached to chess piece bottom" /></span></div>
+									<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/button.jpg" alt="Start and reset buttons" /></span></div>
+									
 								</div>	
 
 					</div>
