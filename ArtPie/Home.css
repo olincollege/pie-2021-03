@@ -142,6 +142,7 @@
   height: 78px;
   width: 78px;
   background-image: none;
+  color: rgb(75, 125, 225) !important;
   margin: 105px auto 0;
 }
 
@@ -169,6 +170,7 @@
   height: 78px;
   width: 78px;
   background-image: none;
+  color: currentcolor !important;
   margin: 105px auto 0;
 }
 
@@ -297,7 +299,6 @@
 .u-section-3 .u-group-1 {
   width: 507px;
   min-height: 810px;
-  height: auto;
   margin: 21px auto 0 0;
 }
 
@@ -416,10 +417,6 @@
   .u-section-3 .u-text-1 {
     margin-right: 0;
     margin-left: 453px;
-  }
-
-  .u-section-3 .u-group-1 {
-    height: auto;
   }
 
   .u-section-3 .u-text-2 {
@@ -978,7 +975,6 @@
 
 .u-section-5 .u-list-1 {
   grid-template-rows: auto;
-  height: auto;
   margin: 0;
 }
 
@@ -986,7 +982,6 @@
   grid-template-columns: calc(33.3333% - 6.66667px) calc(33.3333% - 6.66667px) calc(33.3333% - 6.66667px);
   grid-gap: 10px 10px;
   min-height: 245px;
-  grid-auto-columns: calc(33.3333% - 6.66667px);
 }
 
 .u-section-5 .u-container-layout-1 {
@@ -1031,6 +1026,7 @@
   }
 
   .u-section-5 .u-list-1 {
+    height: auto;
     margin-right: initial;
     margin-left: initial;
   }
@@ -1038,7 +1034,6 @@
   .u-section-5 .u-repeater-1 {
     grid-template-columns: calc(25% - 7.5px) calc(25% - 7.5px) calc(25% - 7.5px) calc(25% - 7.5px);
     min-height: 202px;
-    grid-auto-columns: calc(33.333333333333336% - 6.66667px);
   }
 
   .u-section-5 .u-text-1 {
@@ -1090,7 +1085,6 @@
   .u-section-5 .u-repeater-1 {
     grid-template-columns: calc(50% - 5px) calc(50% - 5px);
     min-height: 464px;
-    grid-auto-columns: calc(50% - 5.0000025px);
   }
 }
 
@@ -1104,10 +1098,6 @@
     margin-bottom: -59px;
     margin-right: initial;
     margin-left: initial;
-  }
-
-  .u-section-5 .u-repeater-1 {
-    grid-auto-columns: calc(100% - 0px);
   }
 
   .u-section-5 .u-container-layout-1 {
@@ -1140,7 +1130,6 @@
 
   .u-section-5 .u-repeater-1 {
     grid-template-columns: 100%;
-    grid-auto-columns: 100%;
   }
 }.u-section-6 .u-sheet-1 {
   min-height: 100vh;
@@ -1499,7 +1488,7 @@
 
 .u-section-7 .u-image-5 {
   height: 198px;
-  background-image: url("images/fsr.jpg");
+  background-image: url("images/makenzi.jpg");
   background-position: 50% 50%;
   width: 198px;
   margin: 0 auto;
@@ -1831,6 +1820,11 @@
   font-style: italic;
   font-weight: 700;
   margin: 60px auto;
+}
+
+.u-section-8 .u-btn-2 {
+  background-image: none;
+  padding: 0;
 }
 
 @media (max-width: 1199px) {
