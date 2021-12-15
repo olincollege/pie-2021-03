@@ -19,7 +19,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo">Make an order now!</a>
+						<a href="https://cup-noodle-app.herokuapp.com/" class="logo">Make an order now!</a>
 					</header>
 
 				<!-- Nav -->
@@ -50,13 +50,39 @@
 								
 								<!-- First feature -->
 								
-								<h3> Overview </h3>	
-								<p class='tab'> Here is a <a href="">link </a>to our Arduino code. <br/> </p>
+								<h3> Order Handler:</h3>	
+								<p class='tab'> Here is our <a href="https://github.com/jonaskaz/Noodle-Order-Handler"> Github repo</a><br/> </p>
     
-								<p class='tab'> Regarding our firmware, one the largest issues we encountered in this project was with having our ESP32 try to take orders and simultaneously perform motor control. This resulted in a lot of lag, so we weren’t able to accurately send our cup holder to the correct positions. To account for this, we had our ESP solely take order information and pass it to the Arduino which could parse the information and control our motors much more successfully. <br/></p>
+								<p class='tab'> We wrote an order handler class that runs on the ESP8266 and is responsible for getting orders from the API and sending them via serial to the Arduino. The order handler works by sending a get request to our API to get the latest order in the queue. If an order is found, the handler sends the order over serial to the Arduino, and waits until it receives a message back from the arduino that the order has been completed.<br/></p>
+
+								<p class='tab'> We wrote the order handler using platformio to manage libraries and compiling. We used the ESPAsyncWebServer-esphome library to send get requests and the ArduinoJson library to handle parsing the json payload from the api. The bulk of the order class that handles getting and sending orders can be viewed here: <a href="https://github.com/jonaskaz/Noodle-Order-Handler/blob/main/Handler/lib/Order/Order.cpp"> Github repo. </a><br/></p>
+
+
+								<p class='tab'>There are 4 methods in this class. The connectWifi connects the ESP to the Olin devices wifi. One problem we have with the current implementation of this function is that the passwords are stored in the code rather than passed in from a configuration file that is hidden. The getOrder sends a get request to our API at <a href="https://cupnoodle-api.herokuapp.com/order">https://cupnoodle-api.herokuapp.com/order</a> to get the latest order as json data. Next, the json data is parsed using the parseOrder method. This stores the mode, flavor, and toppings of the order. The mode of an order is included to differentiate when a customer wants to manually control the machine versus having the machine create it for you. We did not end up implementing manual controls.  Lastly, after the data has been parsed the order is sent by printing to serial using the sendOrder method. <br/></p>
                                 <hr/>
+
+
+								<!-- Second feature -->
 								
-                               
+								<h3> Noodle Controller: </h3>	
+								<p class='tab'> Here is our <a href="https://github.com/jonaskaz/Noodle-Order-Handler"> Github repo</a><br/> </p>
+    
+								<p class='tab'>The noodle controller is responsible for receiving orders and fulfilling them using our machine. The controller features a step motor class for controlling our gantry as well as a chef class for integrating all of our subsystems to create an order. We wrote the noodle controller using platformio to manage libraries and compiling. Full source code can be found <a href="https://github.com/jonaskaz/Noodle-Controller.">here.</a> 
+									<br/></p>
+
+								<h5> Steps of an order: </h5>
+									<ol>
+										<li>Our gantry system first calibrates by traveling to three corners of the gantry to find the maximums and minimums.</li>
+										<li>Upon receiving an order, the gantry then travels to the correct flavor of ramen, stops below the dispenser, and a motor spins a spiral of wire for a set time to dispense a cup noodle. The wire pushes the cup forward so it falls in our holder, which then travels up towards our hot water dispenser.</li>
+										<li> The holder pushes the cup into the sharpened straw so that hot water can be dispensed into the ramen. A stepper motor turns a valve which allows hot water to fall through the straw. After a period of time, the stepper motor closes the valve and the cup holder drops down to the bottom of the vending machine so the customer can obtain their order when they are ready.</li>
+									</ol>	
+								<br/>
+
+
+								<p class='tab'>The code for our step motor class can be viewed <a href="https://github.com/jonaskaz/Noodle-Controller/blob/main/Controller/lib/StepMotor/StepMotor.cpp.">here.</a> We used the popular AccelStepper library to interact directly with our stepper motors. The main methods to highlight in this class are the calibrate and goToB methods. After the stepper motors have been attached and set up with speeds and acceleration, the calibrate method can be called. This moves the gantry to the left and right until a limit switch is activated, which defines the x range of the gantry. It then moves the gantry up until another limit switch is hit, setting our maximum y range. After this method has been called, the goToB method can be used. This method takes in an x percentage and y percentage. These percentages represent what percentage of the total range for x and y to move the gantry to. For example, calling goToB(50, 50) will send the gantry to the center of our machine. One note is that goToB is a blocking method that does not allow other processes to happen while it is running. This was by design, as we want our processes to occur in a specific order.<br/></p>
+								
+								<p class='tab'> Our Chef class was written using the ArduinoJson and Adafruit_MotorShield libraries and the code can be viewed  <a href="https://github.com/jonaskaz/Noodle-Controller/blob/main/Controller/lib/Chef/Chef.cpp">here.</a> The main method in this class is the make method. This method takes in a flavor and a JsonArray of toppings, and makes that specific order. We did not end up implementing the toppings in our final iteration. The make method calls a helper method called getFlavor. Given a flavor, getFlavor sends the gantry to a specific position corresponding to that flavor. Next, the DC motor in that position is turned on for a set amount of time. The gantry is then sent back to position (50, 0). After getting a given flavor, the make method calls getWater. This method moves the gantry upwards, puncturing the cup noodle with our water injection tool. Next, the stepper motor that is on the kettle valve is turned to position 300 in order to open it, and after a delay of 2300 ms the motor is turned back to position 0. Ideally, we would have a way to calibrate the kettle valve motor, but currently we must ensure that its starting position is closed. Lastly, the make method sends the gantry to position (50, 0) and the machine is delayed to allow the customer to pick up their cup noodles.<br/></p>
+                                <hr/>
                                 <!-- Add a video -->
 								<!-- <div style="justify-content: center">
 									<video width="100%" controls>
