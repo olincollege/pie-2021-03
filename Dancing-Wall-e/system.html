@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>System Diagram</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Dancing Wall-E</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="about.html">About Us</a></li>
+							<li><a href="financials.html">Financials</a></li>
+							<li><a href="system.html">System Diagram</a></li>
+							<li><a href="mechanical.html">Mechanical</a></li>
+							<li><a href="electrical.html">Electrical</a></li>
+							<li><a href="firmware.html">Firmware</a></li>
+							<li><a href="process.html">Process</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+								<h1>System Diagram</h1>
+								<h2>How is Wall-E built?</h2>
+								<div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+									<p style="text-align:center"><img src="images/CAD-full_assembly.jpeg" alt="" height="500" /></p>
+									<p style="text-align:center"><img src="images/wall_e-full.png" alt="" height="400" /></p>
+								</div>
+								<p>Our assembly consists of three different subsystems: the “head”, the “body”, and the “drivetrain”. Shown here is the full Wall-E CAD versus the final product, which we will elaborate more on in <a href="mechanical.html">mechanical</a>.
+								There is also a more in-depth discussion on how our electronics are connected to each other (to power each subsystem) in our <a href="electrical.html">electrical</a> page.</p>
+								<h2>How does Wall-E work?</h2>
+								<p style="text-align:center"><img src="images/buttondiagram.png" alt="" height="800" /></p>
+								<p>Wall-E operates in 4 different modes. Pressing button 1 will incrementally switch between these modes. Pressing button 2 toggles between running a button 1 mode or not running any code as well.
+									Button 2 essentially acts as a kill switch without shutting down power in case Wall-E needs to stop moving immediately. The four modes that button 1 moves between are:</p>
+								<ul>
+									<li><b>Mode 1:</b> Upon being powered on, Wall-E will play a greeting sequence of motions to indicate that its servos move properly, and he’s ready to take audio input.</li>
+									<li><b>Mode 2:</b> Wall-E will listen for a metronome beat and run a simple frequency analysis algorithm to determine the bpm being played. Wall-E blinks LED1 to the calculated BPM.</li>
+									<li><b>Mode 3:</b> Wall-E will move its servos and dc motors to the BPM. We will play a song that matches the bpm we gave Wall-E during mode 2. </li>
+									<li><b>Mode 4:</b> Wall-E will reset all of its global variables so its ready to run through modes 1-3 again. </li>
+								</ul>
+						</div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner" style="padding-left:3rem">
+						<section>
+							<h2>Our Repository</h2>
+							<ul class="icons">
+								<li><a href="https://github.com/jellyyams/pie-wallE" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+						<ul class="copyright">
+							<li>&copy; 2021. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
