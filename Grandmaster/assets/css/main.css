@@ -110,13 +110,13 @@ input, select, textarea {
 		-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		border-bottom: dotted 1px;
-		color: #e44c65;
+		border-bottom: none;
+		color: rgb(255, 255, 255);
 		text-decoration: none;
 	}
 
 		a:hover {
-			color: #e44c65 !important;
+			color: rgb(8, 247, 254) !important;
 			border-bottom-color: transparent;
 		}
 
@@ -146,6 +146,12 @@ input, select, textarea {
 		}
 
 	h2 {
+		color: rgb(154, 252, 255);
+		text-shadow:
+		  0 0 4px #fff,
+		  0 0 3px #fff,
+		  0 0 2px rgb(8, 247, 254),
+		  0 0 10px rgb(8, 247, 254);
 		font-size: 2em;
 		line-height: 1.5em;
 		letter-spacing: -0.025em;
@@ -2186,7 +2192,7 @@ input, select, textarea {
 	}
 
 		header.major:after {
-			background: #e44c65;
+			background:rgb(241, 72, 251);
 			content: '';
 			display: inline-block;
 			height: 0.2em;
@@ -2255,7 +2261,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #e44c65;
+			border-color: rgb(241, 72, 251);
 		}
 
 	select {
@@ -2358,7 +2364,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #e44c65;
+			border-color: rgb(241, 72, 251);
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2855,8 +2861,8 @@ input, select, textarea {
 		input[type="button"]:active,
 		.button:hover,
 		.button:active {
-			box-shadow: inset 0 0 0 1px #e44c65;
-			color: #e44c65 !important;
+			box-shadow: inset 0 0 0 1px rgb(245, 56, 255);
+			color: rgb(241, 72, 251) !important;
 		}
 
 		input[type="submit"]:active,
@@ -2898,7 +2904,7 @@ input, select, textarea {
 		input[type="reset"].primary,
 		input[type="button"].primary,
 		.button.primary {
-			background-color: #e44c65;
+			background-color: rgb(241, 72, 251);
 			box-shadow: none;
 			color: #ffffff !important;
 		}
@@ -2907,14 +2913,14 @@ input, select, textarea {
 			input[type="reset"].primary:hover,
 			input[type="button"].primary:hover,
 			.button.primary:hover {
-				background-color: #e76278;
+				background-color: rgb(354, 213, 33);
 			}
 
 			input[type="submit"].primary:active,
 			input[type="reset"].primary:active,
 			input[type="button"].primary:active,
 			.button.primary:active {
-				background-color: #e13652;
+				background-color: rgb(241, 72, 251);
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -3139,15 +3145,15 @@ input, select, textarea {
 		}
 
 		.spotlight.style1 .content {
-			border-color: #e44c65;
+			border-color: rgb(241, 72, 251);
 		}
 
 		.spotlight.style2 .content {
-			border-color: #5480f1;
+			border-color: rgb(8, 247, 254);
 		}
 
 		.spotlight.style3 .content {
-			border-color: #39c088;
+			border-color: rgb(254, 213, 33);
 		}
 
 		.spotlight.inactive .content {
@@ -3201,7 +3207,7 @@ input, select, textarea {
 	}
 
 		.wrapper.style2 {
-			background: #e44c65;
+			background: rgb(241, 72, 251);
 		}
 
 			.wrapper.style2 input[type="text"]:focus,
@@ -3236,7 +3242,7 @@ input, select, textarea {
 			.wrapper.style2 input[type="button"].primary,
 			.wrapper.style2 .button.primary {
 				background-color: #ffffff;
-				color: #e44c65 !important;
+				color: rgb(241, 72, 251) !important;
 			}
 
 				.wrapper.style2 input[type="submit"].primary:hover, .wrapper.style2 input[type="submit"].primary:active,
@@ -3340,7 +3346,7 @@ input, select, textarea {
 			}
 
 			.dropotron > li.active > a, .dropotron > li.active > span {
-				color: #e44c65;
+				color: rgb(241, 72, 251);
 			}
 
 		.dropotron.level-0 {
@@ -3430,7 +3436,7 @@ input, select, textarea {
 						}
 
 					#header nav ul li.active > a, #header nav ul li.active > span {
-						color: #e44c65;
+						color: rgb(241, 72, 251);
 					}
 
 					#header nav ul li > ul {
@@ -3930,7 +3936,7 @@ input, select, textarea {
 					}
 
 					#titleBar .toggle:before {
-						background: #e44c65;
+						background: rgb(241, 72, 251);
 						color: rgba(255, 255, 255, 0.5);
 						content: '\f0c9';
 						display: block;
