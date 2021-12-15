@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Mechanical Design</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">PIE Drink Mixer</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="mechanical.html">Mechanical</a></li>
+						<li><a href="electrical.html">Electrical</a></li>
+						<li><a href="firmware.html">Firmware</a></li>
+						<li><a href="software.html">Software</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Mechanical Design</h1>
+							<h2>Overview</h2>
+							<p>We faced a significant challenge developing food safe methods of moving liquids and keeping electronic systems safe. With the goal to develop an appealing yet compact system, we decided to pivot our system to focus on achieving our goal of accurate measurements and away from food safety. Our ultimate goal was to create a tight, appealing assembly that moved liquid from the bottle quickly to the cup.
+							</p>
+							<!-- <p>From a high level view our mechanical system flow from bottle to cup looks like this:
+							</p> -->
+							<span class="image fit"><img src="" alt=""></span>
+							<p>We used SolidWorks as our CAD software to create an assembly that helped us visualize the layout of our dispenser and create clearances for the electrical team to work before having to manufacture our parts.
+							</p>
+							<img src="images/finalAssembly.png" width="500" alt="Our Final Assembly">
+							<h1>Parts</h1>
+							<section id="one" class="wrapper style2 spotlights">
+								<section>
+									<img class="image" src="images/AcrylicCoverPart1.png" alt="" data-position="25% 25%" /></a>
+									<div class="content">
+										<div class="inner">
+											<h3>Acrylic Top Design</h3>
+											<p>The top layer of the assembly went through a series of changes during development. The panel was iterated 5 different times to accommodate different spacing situations for the LCD screen, tubing and mounts.
+												The final design consists of an acrylic plate laser cut with a variety of slots and holes to accommodate each need. The panel has through holes (shown in black) to screw into the 3D-printed walls. The yellow holes allow screws to mount the standoffs that hold the bottles at the correct height. The blue holes mount the LCD screen standoffs, where the writes travel through the green, rectangular slot. The red through holes allow the tubing from the bottle to travel to each solenoid.
+												</p>
+										</div>
+									</div>
+								</section>
+								<section>
+									<div class="content">
+										<div class="inner">
+											<h3>Acrylic Bottom Design</h3>
+											<p>The Acrylic Base Plate is one of the more complicated parts of the system. It served to not only hold the assembly together, but protect the electronics from flooding if there were any leaks, and mount each solenoid in the tightest configuration possible.
+												 The Base consists of a series of patterns revolving around the center. The Solenoids are screwed into a rectangular screw pattern (shown in red). The Receiving Dish is mounted through the base into the Cup Holder (shown in yellow). The electronics bay isolates the water and is mounted onto the base plate (shown in green). The slotted rectangles (shown in blue) allow for liquid to leave the system before flooding or reaching the electronics.
+												</p>											
+										</div>
+									</div>
+									<img class="image" src="images/AcrylicBasePart2.png" alt="" data-position="center center" />
+
+								</section>
+								<section>
+									<img class="image" src="images/SolenoidHolderPart3.png" alt="" data-position="center center" />
+									<div class="content">
+										<div class="inner">
+											<h3>Solenoid Holder Design</h3>
+											<p>The Solenoid Holder is designed to easily slide the solenoid and apply enough clamping force to prevent the solenoid from coming out. Two screws are placed through the top of the holder and tightened to apply clamping force to the solenoid. The bottom of the holder has 4 holes screws that are threaded through to attach the holder to the base.
+											</p>											
+										</div>
+									</div>
+								</section>
+								<section>
+									<img class="image" src="images/WallPart4.png" style="margin-top: 150px; margin-left: 50px;" alt="" data-position="center center" />
+									
+									<img class="image" src="images/StarPart5.png" style="margin-top: 150px; margin-left: 50px;" alt="" data-position="center center">
+								</section>
+								<section>
+									<div class="content">
+										<div class="inner">
+											<h3>Housing Walls Design</h3>
+
+											<p style="margin-right: -300px;">The wall design contains the largest pivot of the assembly. Originally consisting of a star shaped design using 956g (right) of filament the design was changed to consist of a 3D-Printed frame holding red powdered-coated sheet metal (left). This reduced our filament use to 285g: a 70% reduction in plastic. The wall is also split into two bodies to prevent the need of supports for the entire part. The entire assembly consists of 5 of these walls placed in a circle to form the enclosure of the assembly. </p>
+				
+										</div>
+									</div>
+								</section>
+								
+								
+								<section>
+									<div class="content">
+										<div class="inner">
+											<h3>Cup Holder Design</h3>
+											<p>The Cup Holder consists of the most interesting geometry in the system. The cup holder serves to hold a variety of cups and center them where the liquid dispenses.
+											</p>
+											<p>The middle of the cup holder caves in to hold most common shaped cups in the perfect position to receive liquid.
+											</p>
+										</div>
+									</div>
+									<img class="image" src="images/HolderPart6.png" alt="" data-position="center center" />
+
+								</section>
+								<section>
+									<img class="image" src="images/ExplodedPart7.png" alt="" data-position="center center" />
+									<div class="content">
+										<div class="inner">
+											<h3>Exploded View</h3>
+											<p>The exploded view shows an isolated view of how the system works. The liquid originally starts in the bottle and travels through a tube to the first adapter. The liquid there sits until the solenoid is switched to an open state, allowing liquid to pass through. Once liquid travels through it travels down the slide into the receiving dish.
+											</p>
+										</div>
+									</div>
+								</section>
+								</section>
+								<p></p>
+								<p></p>
+								<h2>Future Considerations</h2>
+								<p>Our original goal for the project was to create a food safe drink dispenser. We originally did so with tubing that would flow through rubber grommet to and from the solenoid. The tubes however would kink and prevent liquid from flowing pushing us to pivot to our 3D-Printed slide. 3D-Prints can grow bacteria because of the layers in the prints making it not safe for food. However, there are food safe coatings that can make printed food safe which would be a next step for this project. 
+								</p>
+								<p>The assembly is also difficult to assemble and disassemble. A future iteration would consist of magnets holding the top plate down, allowing for easy access to the inside of the assembly, whether than unscrewing and screwing in 10 different screws every time an adjustment needs to be made.
+								</p>
+								<h2>Other Explored Options</h2>
+								<section id="one" class="wrapper style2 spotlights">
+									<section>
+										<img class="image" src="images/peristalticpumpPart8.jpg" alt="" data-position="25% 25%" /></a>
+										<div class="content">
+											<div class="inner">
+												<p>Peristaltic pumps were initially investigated. They are great at creating food safe mechanisms because they pinch the outside of a tube without having to interact directly with a liquid. They did not work for the scope of this project because most pumps in our budget could only pump 10ml/min a rate too slow for the scope of our application.
+												</p>
+											</div>
+										</div>
+									</section>
+									<section>
+										<div class="content">
+											<div class="inner">
+												<p>After pivoting from the peristaltic pump we attempted to develop a mechanism that turned valves manually, a much more cost effective way of dispensing liquid than solenoid. However we found that the NEMA 17 stepper motor we had would have to be geared 1:80 to produce enough torque to turn the valve (something slightly difficult to do by hand) and decided to pivot once again.
+												</p>											
+											</div>
+										</div>
+										<img class="image" src="images/ballpumpPart9.jpeg" alt="" data-position="center center" />
+
+									</section>
+									<section>
+										<img class="image" src="images/SolenoidPart10.jpg" alt="" data-position="center center" />
+										<div class="content">
+											<div class="inner">
+												<p>Originally we purchased this solenoid valve from Amazon, a much smaller solenoid in comparison to our application now. We learned that some solenoids have a minimum working pressure and learned to include looking for key details as such when scoping out parts for our project.
+												</p>
+											</div>
+										</div>
+									</section>
+								</section>
+								<p></p>
+								<p></p>
+								<br>
+								<p>For our project we managed to share CAD files with GrabCAD. Here is a <b> <a href="https://workbench.grabcad.com/workbench/projects/gcaqBO6J-anhoTM5_NJtklmunZ_-XMDUh8KKOQuaAxy7Ys#/space/gc2ngN0xW7tFLwea5XNAzQQzd3vu_urma61csd0oMjEAAn">link to view the entire assembly and associated CAD files.</a> </b>
+								</p>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

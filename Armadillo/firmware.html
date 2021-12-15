@@ -1,0 +1,152 @@
+<!--
+Team Armadillo
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Armadillo | Firmware</title>
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Bootstrap App Landing Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="author" content="Themefisher">
+    <meta name="generator" content="Themefisher Small Apps Template v1.0">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+
+    <!-- PLUGINS CSS STYLE -->
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="plugins/slick/slick.css">
+    <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+    <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="plugins/aos/aos.css">
+
+    <!-- CUSTOM CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top px-2 px-sm-0 py-2 py-lg-0">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="ti-menu"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#Technical">Back</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--============================
+=            Banner            =
+=============================-->
+<div class="section banner-full">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="image" data-aos="flip-right">
+                    <img class="img-fluid h-25" src="images/firmware/arduino.png" alt="mechanical">
+                </div>
+            </div>
+            <div class="col-lg-6 align-self-center">
+                <div class="block">
+                    <h1>Firmware Design</h1>
+                    <p>
+                        <a href="https://github.com/teadetime/armadillo/blob/main/Arduino/roboSerialTestSendReceive/roboSerialTestSendReceive.ino">View Source Code</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--====  End of Banner  ====-->
+
+<section id="Arm Overview" class="feature section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mr-auto align-self-center">
+                <div class="feature-content">
+                    <!-- Feature Title -->
+                    <h3>Overview</h3>
+                    <!-- Feature Description -->
+                    <p class="desc">The firmware is responsible for interacting with the physical hardware to make the robot move (i.e. motors, limit switches, buttons). To accomplish this through robust serial communication, motor control, and homing sequences.</p>
+
+                    <p>Serial communication parses every incoming string into a command type and then values associated with that command. For example, as message like “M,0,0,0,0,1,50” will be parsed as “move to (0,0,0) with suction on and servo at 50 degrees”. A message is always composed of a char and 6 floats, even if the command doesn’t require six values. Our objective types include MOVE, HOME, SUCCESS, and FAIL. Move and home both move the robot and home it, respectively, while success and fail reports back whether the current robot state matches the intended robot state command sent from the control terminal. If they match, we send a success signal back so we are free to accept new objectives.</p>
+
+                    <p>We are using the very popular <a href="https://www.airspayce.com/mikem/arduino/AccelStepper/" style="color: yellow">AccelStepper</a> library to control our stepper motors. The library functions have to called in a non-blocking manner, which means they should be called pretty quickly inside the main control loop and avoid using delays. So when it receives and move command, it is parsing the coordinates and calling stepper.moveTo(position) until it reaches the desired position. AccelStepper’s .moveTo() function compares the input argument against the current stepper position at every call, and stops moving when they are the same. This is why it’s ok to call the same function repeatedly with the same position arguments.</p>
+
+                        <p>Homing also has to be non-blocking, not only because it involves moving the motors, but because any delay from reading limit switch data could catastrophically destroy the robot as it will continue to try and move where it is physically incapable of going. This is solved with a while loop inside our homing function that continuously moves the motors in the desired direction and stopping them when its respective limit switch is hit.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 ml-auto justify-content-center">
+                <!-- Feature Mockup -->
+                <div class="image-content" data-aos="fade-right">
+                    <img class="img-fluid" src="images/firmware/code2.jpg" alt="jenga">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!--============================
+=            Footer            =
+=============================-->
+<footer>
+    <div class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 align-self-center">
+                    <div class="text-center">
+                        <img src="images/favicon.png" class="rounded" alt="footer-logo">
+                    </div>
+                    <!-- Social Site Icons -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center bg-dark py-4">
+        <small class="text-secondary">Copyright &copy; <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a></small class="text-secondary">
+    </div>
+</footer>
+
+
+<!-- To Top -->
+<div class="scroll-top-to">
+    <i class="ti-angle-up"></i>
+</div>
+
+<!-- JAVASCRIPTS -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<script src="plugins/slick/slick.min.js"></script>
+<script src="plugins/fancybox/jquery.fancybox.min.js"></script>
+<script src="plugins/syotimer/jquery.syotimer.min.js"></script>
+<script src="plugins/aos/aos.js"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
+<script src="plugins/google-map/gmap.js"></script>
+
+<script src="js/script.js"></script>
+</body>
+
+</html>

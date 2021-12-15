@@ -1,0 +1,687 @@
+<!--
+Team Armadillo
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Armadillo: Jenga Stacking Robot Arm</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Bootstrap App Landing Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Small Apps Template v1.0">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- PLUGINS CSS STYLE -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="plugins/aos/aos.css">
+
+  <!-- CUSTOM CSS -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="body-wrapper" data-spy="scroll" data-target=".navbar">
+
+<!--
+<nav class="navbar main-nav navbar-expand-lg sticky-top px-2 px-sm-0 py-2 py-lg-0">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="ti-menu"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+		  <li class="nav-item">
+			  <a class="nav-link" href="#Home">Home</a>
+		  </li>
+		  <li class="nav-item @@gallery">
+			  <a class="nav-link" href="#Gallery">Gallery</a>
+		  </li>
+		<li class="nav-item @@technical">
+		  <a class="nav-link" href="about.html">Technical Overview</a>
+		</li>
+		  <li class="nav-item @@budget">
+			  <a class="nav-link" href="about.html">Budget Breakdown</a>
+		  </li>
+		  <li class="nav-item @@team">
+			  <a class="nav-link" href="#Team">The Team</a>
+		  </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+-->
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top px-2 px-sm-0 py-2 py-lg-0">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="ti-menu"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="#Home">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#Gallery">Gallery</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#Technical">Technical Overview</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#Budget">Budget Breakdown</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#Team">The Team</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<!--====================================
+=            Hero Section            =
+=====================================-->
+<section id="Home" class="section gradient-banner">
+	<div class="shapes-container">
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="1500" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-up-right" data-aos-duration="1000" data-aos-delay="200"></div>
+		<div class="shape" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"></div>
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="1000" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="1000" data-aos-delay="100"></div>
+		<div class="shape" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300"></div>
+		<div class="shape" data-aos="fade-down-right" data-aos-duration="500" data-aos-delay="200"></div>
+		<div class="shape" data-aos="fade-down-right" data-aos-duration="500" data-aos-delay="100"></div>
+		<div class="shape" data-aos="zoom-out" data-aos-duration="2000" data-aos-delay="500"></div>
+		<div class="shape" data-aos="fade-up-right" data-aos-duration="500" data-aos-delay="200"></div>
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-up" data-aos-duration="500" data-aos-delay="0"></div>
+		<div class="shape" data-aos="fade-down" data-aos-duration="500" data-aos-delay="0"></div>
+		<div class="shape" data-aos="fade-up-right" data-aos-duration="500" data-aos-delay="100"></div>
+		<div class="shape" data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="0"></div>
+	</div>
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-md-4 order-2 order-md-1 text-center text-md-left">
+				<h1 class="text-white font-weight-bold mb-4">Armadillo</h1>
+				<p class="text-white mb-5">The robot arm that stacks Jenga for you</p>
+				<a href="https://youtu.be/OjThIv59oXA" class="btn btn-main-md">Watch the Video</a>
+			</div>
+			<div class="col-md-8 text-center order-1 order-md-2">
+				<!--<img class="img-fluid" src="images/background/CADOverview2.png" alt="screenshot">-->
+				<img class="img-fluid" src="images/gallery/base2.png" alt="screenshot">
+			</div>
+		</div>
+	</div>
+</section>
+<!--====  End of Hero Section  ====-->
+
+<section class="section pt-0 position-relative pull-top">
+	<div class="container">
+		<div class="rounded shadow p-5 bg-dark">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
+					<i class="ti-settings text-primary h1"></i>
+					<h3 class="mt-4 h5 ">Lightweight and Powerful</h3>
+					<p class="regular text-muted">Armadillo uses carbon fiber and high-torque servos in a palletizing robot
+					package to move quickly and pick up heavy objects.</p>
+				</div>
+				<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
+					<i class="ti-target text-primary h1"></i>
+					<h3 class="mt-4 h5 ">Precision Pick and Place</h3>
+					<p class="regular text-muted">Using a vacuum end effector, Armadillo can pick up and place objects quickly
+					and precisely.</p>
+				</div>
+				<div class="col-lg-4 col-md-12 mt-5 mt-lg-0 text-center">
+					<i class="ti-camera text-primary h1"></i>
+					<h3 class="mt-4 h5 ">Jenga Recognition</h3>
+					<p class="regular text-muted">Armadillo identifies Jenga blocks with computer vision
+					before picking them up.</p>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--==================================
+=            Feature Grid            =
+===================================-->
+<section id="Gallery" class="feature section pt-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="section-title">
+					<h2>Gallery</h2>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-9">
+			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img class="d-block w-100" src="images/gallery/stacking1.gif" alt="First slide">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block w-100" src="images/mechanical/limitswitch.gif" alt="Second slide">
+					</div>
+					<div class="carousel-item">
+						<img class="d-block w-100" src="images/gallery/move1.gif" alt="Third slide">
+					</div>
+				</div>
+				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+			</div>
+			<div class="col-lg-3 ml-auto justify-content-center" style="margin-top:4%">
+				<!-- Feature Mockup -->
+				<div class="image-content">
+					<img class="img-fluid" src="images/gallery/iso2.jpg" alt="jenga">
+				</div>
+			</div>
+			<div class="col-lg-4 ml-auto justify-content-center" style="margin-top:4%">
+				<!-- Feature Mockup -->
+				<div class="image-content">
+					<img class="img-fluid" src="images/gallery/iso1.jpg" alt="jenga">
+				</div>
+			</div>
+			<div class="col-lg-4 ml-auto justify-content-center" style="margin-top:4%">
+				<!-- Feature Mockup -->
+				<div class="image-content">
+					<img class="img-fluid" src="images/software/apriltag.jpg" alt="jenga">
+				</div>
+			</div>
+			<div class="col-lg-4 ml-auto justify-content-center" style="margin-top:4%">
+				<!-- Feature Mockup -->
+				<div class="image-content">
+					<img class="img-fluid" src="images/gallery/stack1.jpg" alt="jenga">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--====  End of Feature Grid  ====-->
+
+<!--==============================
+=            Services            =
+===============================-->
+<section id="Technical" class="service section bg-gray">
+	<div class="container-fluid p-0">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="section-title">
+					<h2>Technical Overview</h2>
+					<p>Armadillo combines well developed mechanical, electrical, and firmware/software subsystem, integrated
+						into a functioning robot.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row no-gutters">
+			<div class="col-lg-1"></div>
+			<div class="col-lg-5 mr-auto align-self-center">
+				<div class="service-box">
+					<div class="row align-items-center">
+						<div class="col-md-6 col-xs-12 disp1">
+							<!-- Service 01 -->
+							<div class="service-item">
+								<!-- Icon -->
+								<i class="ti-settings"></i>
+								<!-- Heading -->
+								<h3>Mechanical Subsystem</h3>
+								<!-- Description -->
+								<p></p>
+								<a class="btn-link" href="mechanical.html">Learn More ></a>
+							</div>
+						</div>
+						<div class="col-md-6 col-xs-12 disp1">
+							<!-- Service 01 -->
+							<div class="service-item">
+								<!-- Icon -->
+								<i class="ti-bolt"></i>
+								<!-- Heading -->
+								<h3>Electrical Subsystem</h3>
+								<!-- Description -->
+								<p></p>
+								<a class="btn-link" href="electrical.html">Learn More ></a>
+							</div>
+						</div>
+						<div class="col-md-6 col-xs-12 disp1">
+							<!-- Service 01 -->
+							<div class="service-item">
+								<!-- Icon -->
+								<i class="ti-harddrive"></i>
+								<!-- Heading -->
+								<h3>Firmware Subsystem</h3>
+								<!-- Description -->
+								<p></p>
+								<a class="btn-link" href="firmware.html">Learn More ></a>
+							</div>
+						</div>
+						<div class="col-md-6 col-xs-12 disp1">
+							<!-- Service 01 -->
+							<div class="service-item">
+								<!-- Icon -->
+								<i class="ti-desktop"></i>
+								<!-- Heading -->
+								<h3>Software Subsystem</h3>
+								<!-- Description -->
+								<p></p>
+								<a class="btn-link" href="software.html">Learn More ></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 align-self-center">
+				<!-- Feature Image -->
+				<div class="service-thumb right">
+					<img class="img-fluid" src="images/gallery/SchematicDiagram.png" alt="iphone-ipad">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--====  End of Services  ====-->
+
+
+<!--=================================
+=            Video Promo            =
+==================================-->
+<section class="video-promo section bg-1" id="Budget">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="content-block">
+					<!-- Heading -->
+					<h2 style="color:white">Budget</h2>
+					<!-- Promotional Speech -->
+					<table class="table" style="color:white">
+						<thead>
+						<tr>
+							<th scope="col">Item</th>
+							<th scope="col">Unit Price</th>
+							<th scope="col">Quantity</th>
+							<th scope="col">Subtotal</th>
+							<th scope="col">Total After Tax</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<th scope="row">Carbon Fiber Rods</th>
+							<td>$13.95</td>
+							<td>1</td>
+							<td>$13.95</td>
+							<td>$14.82</td>
+						</tr>
+						<tr>
+							<th scope="row">PVC Pipe</th>
+							<td>$5.56</td>
+							<td>1</td>
+							<td>$5.56</td>
+							<td>$5.91</td>
+						</tr>
+						<tr>
+							<th scope="row">PVC Angled Elbow</th>
+							<td>$1.24</td>
+							<td>2</td>
+							<td>$2.48</td>
+							<td>$2.64</td>
+						</tr>
+						<tr>
+							<th scope="row">PVC Cap</th>
+							<td>$0.75</td>
+							<td>1</td>
+							<td>$0.75</td>
+							<td>$0.80</td>
+						</tr>
+						<tr>
+							<th scope="row">Particle Board</th>
+							<td>$8.97</td>
+							<td>2</td>
+							<td>$17.94</td>
+							<td>$19.06</td>
+						</tr>
+						<tr>
+							<th scope="row">Large Stepper Motor</th>
+							<td>$20.99</td>
+							<td>1</td>
+							<td>$20.99</td>
+							<td>$22.30</td>
+						</tr>
+						<tr>
+							<th scope="row">Home Depot Bolts</th>
+							<td>$14.73</td>
+							<td>various</td>
+							<td>$14.73</td>
+							<td>$14.73</td>
+						</tr>
+						<tr>
+							<th scope="row">M3 Bearings</th>
+							<td>$9.99</td>
+							<td>1</td>
+							<td>$9.99</td>
+							<td>$10.61</td>
+						</tr>
+						<tr>
+							<th scope="row">Timing Belts</th>
+							<td>$7.99</td>
+							<td>1</td>
+							<td>$7.99</td>
+							<td>$8.49</td>
+						</tr>
+						<tr>
+							<th scope="row">Pneumatic Tubing</th>
+							<td>$14.99</td>
+							<td>1</td>
+							<td>$14.99</td>
+							<td>$15.93</td>
+						</tr>
+						<tr>
+							<th scope="row">Limit Switches</th>
+							<td>$8.99</td>
+							<td>1</td>
+							<td>$8.99</td>
+							<td>$9.55</td>
+						</tr>
+						<tr>
+							<th scope="row">Solenoid</th>
+							<td>$16.89</td>
+							<td>1</td>
+							<td>$16.89</td>
+							<td>$17.95</td>
+						</tr>
+						<tr>
+							<th scope="row">Suction Cups</th>
+							<td>$9.49</td>
+							<td>1</td>
+							<td>$9.49</td>
+							<td>$10.08</td>
+						</tr>
+						<tr>
+							<th scope="row">Spray Paint</th>
+							<td>$5.46</td>
+							<td>2</td>
+							<td>$10.92</td>
+							<td>$11.60</td>
+						</tr>
+						<tr style="color:gray">
+							<th scope="row">Small Stepper Motors (FREE)</th>
+							<td>$12.99</td>
+							<td>2</td>
+							<td>$25.98</td>
+							<td>$25.98</td>
+						</tr>
+						<tr style="color:gray">
+							<th scope="row">Stepper Drivers (FREE)</th>
+							<td>$11.99</td>
+							<td>1</td>
+							<td>$11.99</td>
+							<td>$12.74</td>
+						</tr>
+						<tr style="color:gray">
+							<th scope="row">PLA (FREE)</th>
+							<td>$25.99/kg</td>
+							<td>700g</td>
+							<td>$18.20</td>
+							<td>$18.20</td>
+						</tr>
+						<tr style="color:gray">
+							<th scope="row">Eucaboard (FREE)</th>
+							<td>$16.98</td>
+							<td>1</td>
+							<td>$16.98</td>
+							<td>$16.98</td>
+						</tr>
+						<tr style="color:gray">
+							<th scope="row">Corrugated Cable Sheath (FREE)</th>
+							<td>$9.99/25ft</td>
+							<td>1ft</td>
+							<td>$0.40</td>
+							<td>$0.40</td>
+						</tr>
+						<tr style="color:gray">
+							<th scope="row">Power Supply (FREE)</th>
+							<td>$20.99</td>
+							<td>1</td>
+							<td>$20.99</td>
+							<td>$20.99</td>
+						</tr>
+						<tr style="color:gray">
+							<th scope="row">M3 Hardware (FREE)</th>
+							<td>$26.99</td>
+							<td>1</td>
+							<td>$26.99</td>
+							<td>$26.99</td>
+						</tr>
+						</tbody>
+						<thead>
+						<tr>
+							<th scope="col">Total Spent</th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+							<th scope="col">$177.21</th>
+						</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--====  End of Video Promo  ====-->
+
+<!--=================================
+=            The Team               =
+==================================-->
+<section id = "Team" class="design-team section" style="margin-top:6%">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="section-title">
+					<h2>The Team</h2>
+					<p></p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+				<div class="image">
+				<img class="w-100" src="images/team/all2.jpg" alt="all-image">
+				</div>
+			</div>
+		</div>
+		<div class="row pt-5 ">
+			<div class="col-lg-4 col-md-6">
+				<!-- Team -->
+				<div class="team-sm">
+					<!-- Team Member Image -->
+					<div class="image">
+						<img class="w-100" src="images/team/tigey.jpg" alt="member-image">
+						<!-- Social Contacts -->
+						<div class="social-links">
+							<ul class="list-inline">
+								<li class="list-inline-item"><a href="http://tigeysky.com/"><i class="ti-world"></i></a></li>
+								<li class="list-inline-item"><a href="https://www.linkedin.com/in/tiger-jewell-alibhai-aa22a316a/"><i class="ti-linkedin"></i></a></li>
+								<li class="list-inline-item"><a href="https://github.com/TigeyJewellAlibhai"><i class="ti-github"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- Name -->
+					<h3>Tigey Jewell-Alibhai</h3>
+					<!-- Position -->
+					<cite>Mechanical Design</cite>
+					<!-- Description -->
+					<p>Tigey works wonders with all things mechanical. He built a working prototype arm from scratch in the first three days of the project, so that the software team would have something to experiment with. He can often be found prowling the academic center with screwdriver in hand and safety glasses affixed to his forehead. He is a devoted member of Olin’s Design Build Fly aeronautics team and is experimenting with winding carbon fiber to make his own extra-lightweight components. He likes to collect articles of clothing with the word “Tiger” on them, and we had to talk him out of painting orange stripes on the robot.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<!-- Team -->
+				<div class="team-sm">
+					<!-- Team Member Image -->
+					<div class="image">
+						<img class="w-100" src="images/team/nathan.jpg" alt="member-image">
+						<!-- Social Contacts -->
+						<div class="social-links">
+							<ul class="list-inline">
+								<li class="list-inline-item"><a href="https://ntfaber.netlify.app/portfolio/"><i class="ti-world"></i></a></li>
+								<li class="list-inline-item"><a href="https://github.com/teadetime/"><i class="ti-github"></i></a></li>
+								<li class="list-inline-item"><a href="https://www.linkedin.com/in/nathanfaber/"><i class="ti-linkedin"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- Name -->
+					<h3>Nathan Faber</h3>
+					<!-- Position -->
+					<cite>Software Design</cite>
+					<!-- Description -->
+					<p>On the first week, Nathan said “let there be code”. At his words, robot arm to world coordinate conversions appeared in github and jenga block detection algorithms sprang to life. On the second week, Nathan said “let the robot be tuned” and the first prototype was put in motion. On the third week, Nathan said “let the robot stack jenga” but unfortunately the electrical and mechanical systems were not yet in place. He then spent the next 3 weeks making bad jokes and helping out the MechEs, then with the words “this code will work”, the robot stacked the jenga tower. </p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<!-- Team -->
+				<div class="team-sm">
+					<!-- Team Member Image -->
+					<div class="image">
+						<img class="w-100" src="images/team/ian.jpg" alt="member-image">
+						<!-- Social Contacts -->
+						<div class="social-links">
+							<ul class="list-inline">
+								<li class="list-inline-item"><a href="https://www.linkedin.com/in/ian-eykamp-3100a8210/"><i class="ti-linkedin"></i></a></li>
+								<li class="list-inline-item"><a href="https://github.com/ianeyk"><i class="ti-github"></i></a></li>
+								<li class="list-inline-item"><a href="mailto:ieykamp@olin.edu"><i class="ti-email"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- Name -->
+					<h3>Ian Eykamp</h3>
+					<!-- Position -->
+					<cite>Electrical and Software</cite>
+					<!-- Description -->
+					<p>Ian is our soft-spoken, beanie-wearing, juggling robot-whisperer. He is often found writing code that nobody asked for that does amazing things. Just ask him about making our robot do the Macarena–he has the code. Ian is a jack of all trades and has stepped up to any challenges we have had. Ian makes a wonderful addition to our team, despite the fact that he plugged our power in backwards three times in one day (don’t worry, we only fried one stepper driver). In his free time, he enjoys practicing karate and dancing the Macarena with the robot. </p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<!-- Team -->
+				<div class="team-sm">
+					<!-- Team Member Image -->
+					<div class="image">
+						<img class="w-100" src="images/team/sam.png" alt="member-image">
+						<!-- Social Contacts -->
+						<div class="social-links">
+							<ul class="list-inline">
+								<li class="list-inline-item"><a href="www.samkaplan.co"><i class="ti-world"></i></a></li>
+								<li class="list-inline-item"><a href="https://www.linkedin.com/in/sam-kaplan-026bb8164/"><i class="ti-linkedin"></i></a></li>
+								<li class="list-inline-item"><a href="mailto:samkapster@gmail.com"><i class="ti-email"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- Name -->
+					<h3>Sam Kaplan</h3>
+					<!-- Position -->
+					<cite>Electrical Design</cite>
+					<!-- Description -->
+					<p>Sam knows his electronics. Whether he’s combining systems onto perfboard or troubleshooting a grounding issue, Sam never stops working until everything is just right. Some say he’s still sitting in MAC309 making other teams listen to our vacuum pump rattling on the table. Toward the beginning of the project, Sam advocated for a Doc Ock-style backpack-mounted robot, but when he realized coordinate systems would be a challenge, he agreed that Jenga would be pretty cool too. Because Sam is a stoic guy, we can never quite tell whether he’s annoyed by our existence or just glad the robot is working as intended.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<!-- Team -->
+				<div class="team-sm">
+					<!-- Team Member Image -->
+					<div class="image">
+						<img class="w-100" src="images/team/zach.jpg" alt="member-image">
+						<!-- Social Contacts -->
+						<div class="social-links">
+							<ul class="list-inline">
+								<li class="list-inline-item"><a href="www.zacharysherman.com"><i class="ti-world"></i></a></li>
+								<li class="list-inline-item"><a href="www.linkedin.com/in/zacharysherman"><i class="ti-linkedin"></i></a></li>
+								<li class="list-inline-item"><a href="www.twitter.com/zachary3352"><i class="ti-twitter"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- Name -->
+					<h3>Zachary Sherman</h3>
+					<!-- Position -->
+					<cite>Mechanical Design</cite>
+					<!-- Description -->
+					<p>Zach is one of our Onshape experts and part of our mechanical engineering team. He is the champion of taking an idea and figuring out how to make it polished (read more black spray paint!) Zach is known for his practicality, level headedness and his sympathy laughs at Nathan’s particularly bad jokes. Zach is one of our resident night owls, often found painting or sending messages to the group in the hours the rest of us are sleeping!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--====  End of Design Team  ====-->
+
+<!--============================
+=            Footer            =
+=============================-->
+<footer>
+  <div class="footer-main">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 align-self-center">
+			<div class="text-center">
+				<img src="images/favicon.png" class="rounded" alt="footer-logo">
+			</div>
+            <!-- Social Site Icons -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center bg-dark py-4">
+	  <p>Team Armadillo, Olin College Principles of Integrated Engineering 2021</p>
+    <small class="text-secondary">Template Copyright &copy; <script>document.write(new Date().getFullYear())</script>. Template Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a></small class="text-secondary">
+  </div>
+</footer>
+
+
+  <!-- To Top -->
+  <div class="scroll-top-to">
+    <i class="ti-angle-up"></i>
+  </div>
+  
+  <!-- JAVASCRIPTS -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <script src="plugins/bootstrap/bootstrap.min.js"></script>
+  <script src="plugins/slick/slick.min.js"></script>
+  <script src="plugins/fancybox/jquery.fancybox.min.js"></script>
+  <script src="plugins/syotimer/jquery.syotimer.min.js"></script>
+  <script src="plugins/aos/aos.js"></script>
+  <!-- google map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
+  <script src="plugins/google-map/gmap.js"></script>
+  
+  <script src="js/script.js"></script>
+</body>
+
+</html>

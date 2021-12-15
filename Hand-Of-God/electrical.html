@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Hand of God</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header" class="colorblock black">>
+				<h1><a href="index.html">Hand of God</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li>
+							<a href="#" class="icon solid fa-angle-down">Features</a>
+							<ul>
+								<li><a href="gallery.html">Gallery</a></li>
+								<li><a href="mechanical.html">Mechanical Design</a></li>
+								<li><a href="software.html">Software Design</a></li>
+								<li><a href="electrical.html">Electrical Design</a></li>
+								<li><a href="firmware.html">Firmware Design</a></li>
+								<li><a href="budget.html">Budget Overview</a></li>
+								<li><a href="aboutus.html">About Us</a></li>
+								
+							</ul>
+						</li>
+						<li><a href="aboutus.html" class="button">About Us</a></li>
+						<li><a href="https://github.com/simrunm/HandofGod" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					</ul>
+				</nav>
+			</header>
+			<!-- Main -->
+				<section id="main" class="container">
+					<header>
+						<h2>Electrical System</h2>
+						<p><em>Shockingly</em> fast.</p>
+					</header>
+
+					<div class="box">
+						<span class="image featured"><img src="images/electrical.jpg" alt="" /></span>
+						<p>Where every other aspect of our project was novel and posed unique challenges, we went with a proven approach for the electrical system as to not needlessly cause ourselves trouble. Even then, we had to evaluate multiple options before coming to our final solution.</p>
+						<div class="row">
+							<div class="row-6 row-12-mobilep">
+								<h3>Exploration</h3>
+								<p>We initially experimented using H-Bridges instead of stepper drivers. While this was sufficient for completing sprint one, we realized that the overhead of controlling using an H-Bridge instead of a dedicated driver would result in lower speeds and limit the libraries available to us. Moving into sprint two, we explored using an off the shelf RAMPS shield on an arduino designed for CNCs and 3D printers. Unfortunately, either due to negligence or poor quality, we could not get the shield to work and burned out the drivers in the process.</p>
+								<p>We were convinced stepper drivers were the right solution space, so we purchased new drivers and ditched the shield for our own control circuitry. The drivers have a simple two pin interface, which makes hooking them up to the Arduino GPIO straightforward. At this point, we were able to crimp together some extension cables and start driving the gantry.</p>
+							</div>
+							<div class="row-6 row-12-mobilep">
+								<h3>Final System</h3>
+								<span class="image featured"><img src="images/finalcircuit.png" alt="" /></span>
+								<p>Our electrical system also includes two mechanical endstops placed at y=0 and x=0. These are connected to the hardware interrupt pins for use during zeroing and powered by the logic rail. All of the stepper drivers are configured the same except for the GPIO pins controlling them. They receive power from the logic rail (5V) and then motor rail (12-32V). ~ENABLE is pulled low to keep them enabled and microstepping is not configured as we care more about speed than ultra precise motion. We initially used 12V for the motor rail, but as we neared the speeds we were hoping for the steppers began to slip as soon as there was any load. After some research, we learned that increasing the motor voltage will increase torque allowing for higher speeds. Based on this, we switched to a 32V power supply as it is still safely within the 35V the drivers are rated for. When we revisited the datasheet was also added the suggest 47uF-100uF smoothing capacitor in the form of 5 100uF electrolytic capacitors to protect the power supply from current spikes.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					
+					<li><a href="https://github.com/simrunm/HandofGod" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

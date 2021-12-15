@@ -1,0 +1,261 @@
+<!--
+Team Armadillo
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Armadillo | Software</title>
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Bootstrap App Landing Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="author" content="Themefisher">
+    <meta name="generator" content="Themefisher Small Apps Template v1.0">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+
+    <!-- PLUGINS CSS STYLE -->
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="plugins/slick/slick.css">
+    <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+    <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="plugins/aos/aos.css">
+
+    <!-- CUSTOM CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top px-2 px-sm-0 py-2 py-lg-0">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="ti-menu"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#Technical">Back</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--============================
+=            Banner            =
+=============================-->
+<div class="section banner-full">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="image" data-aos="flip-right">
+                    <img class="img-fluid h-25" src="images/software/bg.png" alt="mechanical">
+                </div>
+            </div>
+            <div class="col-lg-6 align-self-center">
+                <div class="block">
+                    <h1>Software Design</h1>
+                    <p>
+                        <a href="https://github.com/teadetime/armadillo/blob/main/python/jenga.py">Robot Control Source Code</a>
+                        <a href="https://github.com/teadetime/armadillo/blob/gh-pages/Code/python/vision.py">View Vision Source Code</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--====  End of Banner  ====-->
+
+<section id="Overview" class="feature section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 ml-auto justify-content-center">
+                <!-- Feature Mockup -->
+                <div class="image-content" data-aos="fade-right">
+                    <img class="img-fluid" src="images/software/apriltag2.jpg" alt="jenga">
+                </div>
+            </div>
+            <div class="col-lg-8 mr-auto align-self-center">
+                <div class="feature-content">
+                    <!-- Feature Title -->
+                    <h3>Overview</h3>
+                    <!-- Feature Description -->
+                    <p class="desc">This robotic arm is practically useless without the software and firmware to control it! We modeled a control scheme like that of industrial robot arms where there is a dedicated robot controller taking care of the arm’s movements and a different computer and piece of software telling the arm what to actually do. To accomplish our goal of stacking jenga blocks we also utilized <a style="color:yellow" href="https://opencv.org/">OpenCV</a>  to accomplish various vision related tasks like locating the jenga blocks within the world!
+                    </p>
+                    <p>
+                        The software behind this project is broken into four main chunks:
+                        <ol>
+                            <li>Computer Vision (Block detection and pixel to coordinate mapping)</li>
+                            <ol>
+                                <li>Establish new basis based on vision tags to map pixel space to world space</li>
+                                <li>Detect Blocks using color masks and OpenCV contours and minAreaRect</li>
+                            </ol>
+                            <li>Kinematics and Inverse Kinematics (Establish how to change joint positions to cartesian coordinates and back again)</li>
+                            <li>Arduino Robot Controller Firmware (Interface with all hardware and implement serial interface for higher level commands)</li>
+                        </ol>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="CV" class="feature section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 ml-auto justify-content-center">
+                <!-- Feature Mockup -->
+                <div class="image-content" data-aos="fade-right">
+                    <img class="img-fluid" src="images/software/grid.jpg" alt="jenga">
+                    <img class="img-fluid pt-4" src="images/software/aruco3.jpg" alt="jenga">
+                </div>
+            </div>
+            <div class="col-lg-8 mr-auto align-self-center">
+                <div class="feature-content">
+                    <!-- Feature Title -->
+                    <h3>Computer Vision</h3>
+                    <!-- Feature Description -->
+                    <p class="desc">A frame is captured from the overhead camera each time the robot completes a block placement. We use OpenCV, a popular computer vision package for Python, to orient the frame relative to the baseboard, and to detect block locations in world coordinates for our robot to pick up. Because we have a clean black background, we can perform basic color masking to detect blocks with a high degree of accuracy. We use OpenCV to detect the corner locations, derive the center point and angle of rotation, and pass it on to the inverse kinematics algorithm.
+                    </p>
+                    <p>
+                        Some limitations of our simple color masking approach are that it is difficult to detect individual blocks when they are clustered together, or when they are partially obscured by, e.g., the robot arm if it is in the frame. It can also cause false detection, particularly near the edges of the baseboard. To remedy this, we identified strict bounding sizes, and we filtered for rectangles with the exact dimensions of a Jenga block.
+                    </p>
+                    <p>
+                        Another technique we explored was <a style="color:yellow" href="https://docs.opencv.org/3.4/d9/d61/tutorial_py_morphological_ops.html">erosion and dilation</a> of the image prior to color masking. This was remarkably effective at distinguishing individual blocks in clusters; however, it also shifted the center of the block in an unreliable way. Lasly, we also captured binary images of regions where we manually classified the presence of blocks. Using a semiautomated workflow, we classified over 1,500 images; these could be fed into a machine learning algorithm to more accurately identify blocks, even when in clusters or partially obscured.
+                    </p>
+                    <p>
+                        Our basis calculations that are used to map pixel coordinates to world coordinates went through several iterations. We started by having multiple colored squares in known positions on the board, and we detected them with similar color-masking techniques to what we used for detecting blocks. We knew the locations of the center of these squares and used those points to determine the rotation and position of the board within the camera frame. This information is combined into basis vectors that we can use to convert between pixel coordinates and world coordinates. The picture with a red grid shows how the 2 tags were detected and then used to determine basis vectors that then are used to create the red dot grid that is world coordinates spaced 50mm apart.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="Materials" class="feature section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mr-auto align-self-center">
+                <div class="feature-content">
+                    <!-- Feature Title -->
+                    <h3>Kinematics and Inverse Kinematics</h3>
+                    <!-- Feature Description -->
+                    <p class="desc">For our purposes it is essential to establish a mapping of the robot into the world space! These are called the inverse kinematics. In industrial applications <a style="color:yellow" href="https://en.wikipedia.org/wiki/Inverse_kinematics">inverse kinematics </a> allow for the smooth movement of robots along any vector. This is accomplished by mapping the partial derivatives of cartesian space into partial derivatives of each joint.
+                    </p>
+                    <p>
+                        Fortunately for us the forward kinematics of this arm are quite simple and just involve decomposing the various angles into x,y, and z components.
+                    </p>
+                    <p>
+                        The inverse kinematics, or figuring out how to position the robot to reach a point in space is a little more difficult! We have a 4 axis system, which actually allows us to reach each position in a variety of positions. This design was intentional because we want to be able to be able to have different end effector rotations to pick up the blocks for stacking.
+                    </p>
+                    <p>
+                        The way we constrain these solutions is picking up the block in a reliable manner. We chose to always have the final joint rotated normal to a block as that gives us the ability to place it. This means that for any point in space we also specify the rotation of the block at that point. You can see an example of this below.
+                    </p>
+                    <p>
+                        We then work backwards from this point to calculate the rest of the arm. We know the rotation of the final joint and block, which means we can decompose it’s X and Y coordinates. We also know the height of the suction cup and servo which allows us to work backwards from in the Z coordinate direction. We have now calculated the desired position of the servo horn. We know that it is in the same plane as our arm so we can determine the bottom joint angle needed to get to that position. We can then subtract out the offset from the servo horn to the final pivot point in the arm linkages!
+                    </p>
+                    <p>
+                        At this point we just need to solve a triangle to get the two angles of the arms(j2 and j3). This can be done using the law of cosines since all side lengths are known! The triangle angles are then converted to the angles of the arms! Tada! -- we just converted cartesian coordinates to joint positions that the robot can understand.
+
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 mr-auto justify-content-center">
+                <!-- Feature Mockup -->
+                <div class="image-content" data-aos="fade-right">
+                    <img class="img-fluid" src="images/software/angle1.jpg" alt="jenga">
+                    <img class="img-fluid pt-4" src="images/software/math.jpg" alt="jenga">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="Power Transfer" class="feature section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mr-auto align-self-center">
+                <div class="feature-content">
+                    <!-- Feature Title -->
+                    <h3>What we would do differently!</h3>
+                    <!-- Feature Description -->
+                    <p class="desc">
+                        So it turns out that this was wildly successful for a first attempt at this problem, however we were starting to get limited by some things. The mechanical design of the robot was making it hard to tell if the round tubes were lined up and other weird rotation/offsets were introduced. We had a hard time picking up blocks from the center. This was largely due to mapping the joints of the robot into the world frame. We think this was caused by errors in the mechanical design but also in our inability to accurately measure the groundtruth positions during homing.
+                    </p>
+                    <p>
+                        In the future we think adding encoders, and other measurement devices to the arm would allow us to get greater position and more accurate positioning. We also want to represent our kinematics in matrix form such that it is easier to obtain smooth motion by looking at derivatives along axes. This would enable many more use cases for our robot but would necessitate precise closed loop speed control.
+                    </p>
+                    <p>
+                        From a software side, we are starting to get a little slow, it would be awesome to take this up a level and run ROS2 on a Raspberry Pi and See if we can run things fast enough to maintain closed loop control of the motors and message between things. Our control scheme is very linear right now, but with ROS it would be awesome and possible to do vision processing at the same time as robot movement/calculations!
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 mr-auto justify-content-center">
+                <!-- Feature Mockup -->
+                <div class="image-content" data-aos="fade-right">
+                    <img class="img-fluid" src="images/team/all.jpg" alt="jenga">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!--============================
+=            Footer            =
+=============================-->
+<footer>
+    <div class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 align-self-center">
+                    <div class="text-center">
+                        <img src="images/favicon.png" class="rounded" alt="footer-logo">
+                    </div>
+                    <!-- Social Site Icons -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center bg-dark py-4">
+        <small class="text-secondary">Copyright &copy; <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a></small class="text-secondary">
+    </div>
+</footer>
+
+
+<!-- To Top -->
+<div class="scroll-top-to">
+    <i class="ti-angle-up"></i>
+</div>
+
+<!-- JAVASCRIPTS -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<script src="plugins/slick/slick.min.js"></script>
+<script src="plugins/fancybox/jquery.fancybox.min.js"></script>
+<script src="plugins/syotimer/jquery.syotimer.min.js"></script>
+<script src="plugins/aos/aos.js"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
+<script src="plugins/google-map/gmap.js"></script>
+
+<script src="js/script.js"></script>
+</body>
+
+</html>

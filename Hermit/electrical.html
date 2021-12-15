@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>H.E.R.M.I.T.</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="left-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+            <section id="header">
+
+                <!-- Logo -->
+                    <h1><a href="index.html">H.E.R.M.I.T.</a></h1>
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+							<li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="system.html">System</a></li>
+                            <li><a href="mechanical.html">Mechanical</a></li>
+                            <li class="current"><a href="electrical.html">Electrical</a></li>
+                            <li><a href="software.html">Software</a></li>
+                            <li><a href="budget.html">Budget</a></li>
+							<li><a href="team.html">Our Team</a></li>
+                        </ul>
+                    </nav>
+            </section>
+
+			<!-- Main -->
+            <section id="main">
+				<div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <section>
+                                <header class="major">
+                                    <h2>Electrical System</h2>
+                                </header>
+								<div class="col-12 col-12-medium col-12-small">
+									<section class="box"> 
+										<header><h2>Electrical Requirements</h2></header>
+										<p>
+											To meet the goal of having a crab that walks towards you and 
+											hides its head into its shell when picked up, we needed the 
+											following electrical requirements:
+										</p>
+										<ul>
+											<li>Motors that are powerful enough to move the weight of the crab forward</li>
+											<li>Sensors that can tell where a person is</li>
+											<li>A sensor to tell when the crab is picked up</li>
+											<li>A servo to move the crab's head out of and into its shell</li>
+											<li>A way to supply enough power to all of the above</li>
+										</ul>
+										<p>
+											The electrical schematic for this system is shown.
+										</p>
+									</section>
+								</div>
+								<div class="col-12 col-12-medium col-12-small" style="padding-top: 5%;">
+									<a href="#" class="image"><img src="images/electrical/hermit_schematic.png" alt="" /></a>
+								</div>
+								<div class="row" style="padding-top: 5%;">
+									<div class="col-8 col-6-medium col-12-small">
+										<section class="box">
+											<header><h2>Motors</h2></header>
+											<p>
+												To control the motors, we have a motor shield. The motor shield 
+												has a fully-dedicated PWM driver chip onboard that handles all 
+												the motor and speed controls over I2C. The Arduino is then able 
+												to communicate to the motor shield to apply power in pulses that 
+												effectively changes the speed of the motors. If we want the motors 
+												to go faster, we drive the PWM output to a higher duty cycle. If 
+												we want the motors to go slower, we drive the PWM output to a lower 
+												duty cycle. Note that the motors we used are rated for 12V so we 
+												used a 12V power supply for them (see Power section).
+											</p>
+										</section>
+									</div>									
+									<div class="col-4 col-6-medium col-12-small">
+										<a href="#" class="image"><img src="images/electrical/leg.jpg" alt="" /></a>
+									</div>
+								</div>
+								<div class="row" style="padding-top: 5%;">
+									<div class="col-4 col-6-medium col-12-small">
+										<a href="#" class="image"><img src="images/electrical/EYES.jpg" alt="" /></a>
+									</div>
+									<div class="col-8 col-6-medium col-12-small">
+										<section class="box"> 
+											<header><h2>Sensors</h2></header>
+											<p>
+												One of our requirements for our crab was to be able to tell where 
+												a person is. We accomplished this through Passive Infrared (PIR) 
+												sensors. A PIR motion sensor consists of two main parts: a 
+												pyroelectric sensing element and a Fresnel lens. The pyroelectric 
+												sensing element can detect infrared radiation. Note that human 
+												bodies emit heat energy in the form of infrared radiation. The 
+												white dome in front of the sensing element is a Fresnel lens. 
+												This lens focuses the infrared radiation onto the sensor.
+											</p>
+											<p>
+												We connected these sensors to analog pins on our Arduino that 
+												read the signals from the sensors. See the <a href="https://berwinl.com/pie-2021-03/Hermit/software.html">Software</a> section to 
+												learn more about how we used them to detect a person.
+											</p>
+										</section>
+									</div>
+								</div>
+								<div class="row" style="padding-top: 5%;">
+									<div class="col-8 col-6-medium col-12-small">
+										<section class="box"> 
+											<p>
+												Another one of our requirements for our crab was to be able to 
+												sense when it has been picked up. We were able to do this through 
+												a phototransistor. The phototransistor is a transistor that responds 
+												to light striking it by generating and amplifying an electric current. 
+												Therefore, we could use the phototransistor to detect a change in light. 
+												By putting the phototransistor on the bottom of our crab, we were able 
+												to tell when it has been picked up. When it was on the ground, its body 
+												would cast a shadow beneath it, meaning that there wasn’t a lot of light 
+												hitting the phototransistor. When it was picked up, the phototransistor 
+												could be exposed to the light in its surroundings, meaning that there was 
+												more light hitting the phototransistor. By doing some testing, we were 
+												able to find a threshold reading that we used to determine of the crab 
+												has been picked up. To learn more about how we did this, see the 
+												<a href="https://berwinl.com/pie-2021-03/Hermit/software.html">Software</a> section.
+											</p>
+										</section>
+									</div>
+									<div class="col-4 col-6-medium col-12-small">
+										<a href="#" class="image"><img src="images/electrical/phototransistor.png" alt="" /></a>
+									</div>
+								</div>
+								<div class="row" style="padding-top: 5%;">
+									<div class="col-6 col-6-medium col-12-small">
+										<section class="box"> 
+											<header><h2>Head Movement</h2></header>
+											<p>
+												When the crab is picked up, it retreats its head into its shell. In order to 
+												make this movement, we used a servo combined with a slot slider mechanism. 
+												This servo was controlled by a digital input on the Arduino. Therefore, to 
+												move the head, we programmed the servo to move between 0 and 180 degrees. 
+												See the <a href="https://berwinl.com/pie-2021-03/Hermit/software.html">Software</a> 
+												section for additional information about the sensing and logic.
+											</p>
+										</section>
+									</div>									
+									<div class="col-6 col-6-medium col-12-small">
+										<section class="box"> 
+											<header><h2>Power</h2></header>
+											<p>
+												To power our crab, we have two sources of power: A 9V battery and a 
+												12V power supply. In the schematic, we can see on the bottom right a 
+												9V battery connected to a Step Down Converter. This Step Down Converter 
+												converts the 9V to 5V. This 5V powers the arduino, the PIR Sensors, 
+												the phototransistor, and the servo. Note that even though the Arduino 
+												Uno has a built-in low drop-out voltage regulator, we opted to use an 
+												external switching regulator due to it being more efficient. 
+											</p>
+											<p>
+												In the schematic, we can see on the top right that the motor 
+												shield is powered by 12V. This 12V comes from a power supply 
+												and is only used to power the motors. This is due to the 
+												operating voltage of the crab being 12V. 
+											</p>
+										</section>
+									</div>	
+								</div>
+                                <header class="major" style="padding-top: 5%;">
+                                    <h2>Design Process</h2>
+                                </header>
+								<div class="row">
+									<div class="col-4 col-6-medium col-12-small">
+										<a href="#" class="image"><img src="images/electrical/PIR-testing.jpg" alt="" /></a>
+									</div>
+									<div class="col-8 col-6-medium col-12-small">
+										<section class="box"> 
+											<header><h2>Testing PIR Sensors</h2></header>
+											<p>
+												To first test the PIR sensors we connected the output to an LED as can be seen 
+												in the image of the breadboard. The PIR sensor sends high or low signals 
+												depending on if it senses anything. Therefore, at default this LED would be off, 
+												and when it detected a warm body, the LED would turn on. We used this setup as a 
+												means to test whether the PIR sensors worked as intended.
+											</p>
+										</section>
+									</div>
+								</div>
+								<div class="row" style="padding-top: 5%;">
+									<section class="box"> 
+										<header><h2>Testing Motors</h2></header>
+										<p>
+											When designing our crab, there were a couple of trade-offs that we had to take. 
+											The first tradeoff involved our motors. The motors that we first used were 6V 
+											motors with a 1:100 gear ratio. However, after mounting the motors to the crab, 
+											and driving them, we realized that the motors were not powerful enough to drive 
+											the crab forward. The legs/motors would simply stay in the same position.
+										</p>
+										<p>
+											Therefore, we decided to get more powerful motors. However, these motors required 
+											a higher voltage (12V) and drew a lot more current. When getting these motors we 
+											first tested them with a power supply at 12V. In doing so we found that they draw 
+											about 0.22 Amp when the leg is not in contact with anything, and they draw about 
+											0.29 Amps when stalled. Given this high draw of current, we decided to use a power 
+											supply to supply the 12V instead of finding a battery solution. This meant that we 
+											had to tether our crab to a wall outlet, but we wouldn’t have to worry about a 
+											battery that quickly used up its capacity. 
+										</p>
+									</section>
+								</div>			
+							</section>
+						</div>
+					</div>
+				</div>
+            </section>
+
+			<!-- Footer -->
+				<section id="footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<!-- Copyright -->
+									<div id="copyright">
+										<ul class="links">
+											<li>&copy; H.E.R.M.I.T. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										</ul>
+									</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -26,7 +26,7 @@
 											<li><a href="eletrical.html">Electrical Breakdown</a></li>
 											<li><a href="software.html">Software Breakdown</a></li>
 											<li><a href="budget.html">Budget</a></li>
-											<li><a href="elements.html">Elements</a></li>
+											<li><a href="Process.html">Process</a></li>
 										</ul>
 									</div>
 								</li>
@@ -35,12 +35,17 @@
 					</header>
 
 				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<h2>Ra-Meant-To-Be</h2>
-							<p>Facilitating the<br />
-							addiction of instant ramen<br />
-							for students </p>
+					<section id="banner" style="padding: 4em 4em 2em 6em ;
+					position: center;
+					text-align: center;
+					width: 100%;
+					background-color: rgba(0, 0, 0, 0.6);">
+						<div class="inner" style="border-color: rgba(0, 0, 0, 0.6);">
+							<h2 >Ra-Meant-To-Be</h2>
+							<p>
+								Facilitating students'<br />
+								addiction to instant ramen<br />
+							</p>
 						</div>
 						<a href="#one" class="more scrolly">Learn More</a>
 					</section>
@@ -56,6 +61,17 @@
 								lecture of the day, but rather look forward to the smell of <br />
 								freshly made ramen. </p>
 							</header>
+
+							<div style="display: flex; align-items: center; justify-content: center;">
+								<iframe 
+									width="560" height="315" 
+									src="https://www.youtube.com/embed/8gtCaNIg40k" title="YouTube video player" 
+									frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+									gyroscope; picture-in-picture" allowfullscreen>
+								</iframe>
+							</div>
+							<br>
+							<br>
 							<ul class="icons major">
 								<li><span class="icon fa-utensils major style1"><span class="label">Lorem</span></span></li>
 								<li><span class="icon fa-heart major style2"><span class="label">Ipsum</span></span></li>
@@ -78,7 +94,7 @@
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
+							<div class="image"><img src="images/electrical_box.jpg" alt="" /></div><div class="content">
 								<h2>Electrical Breakdown</h2>
 								<p>The electrical box is mounted to the frame of the ramen-maker. It makes use of a Ardunio Mega to power and control
 									the servos and stepper motors being used to prepare the ramen.
@@ -113,29 +129,72 @@
 							<ul class="features">
 								<li class="icon fa-bolt">
 									<h3>Electrical Box</h3>
-									<p>Content @OJ</p>
+									<p>
+										Our electrical system involves two power sources, a single Arduino Mega, a secondary Arduino 
+										Uno for extra power, one STSPIN820 stepper motor driver, one stepper motor, six servo motors, 
+										two vibration motors, one LCD display, a temperature sensing probe, the COTS Hotplate PCB, 
+										and multiple buttons. 
+									</p>
 								</li>
 								<li class="icon solid fa-laptop">
 									<h3>Software</h3>
-									<p>Content @Joon</p>
+									<p>
+										Our goal was to make the firmware for this project simplistic and efficient. The biggest 
+										parts of the firmware can be divided into three different sections: The Hotplate, Dispensers, 
+										and the User Interface. 
+									</p>
 								</li>
 								<li class="icon solid fa-utensils">
 									<h3>Ramen Dispenser</h3>
-									<p>Content @Han</p>
+									<p>
+										Ramen isn’t really ramen without the noodles, which means our ramen maker needed a way of storing 
+										and dispensing blocks of ramen noodles. The dispenser can hold eight blocks or ramen, dispensing 
+										them one at a time.
+									</p>
 								</li>
 								<li class="icon solid fa-water">
 									<h3>Water Dispenser</h3>
-									<p>The water dispenser can hold up to 2 liters of water which can roughly prepare 4 bowls of ramen. 
+									<p>
+										The water dispenser can hold up to 2 liters of water which can roughly prepare 4 bowls of ramen. 
 										It is built using food-safe components such as PVC pipes, plumbing valves, and plumbing water putty.
 									</p>
 								</li>
 								<li class="icon fa-utensil-spoon">
 									<h3>Powder Dispenser</h3>
-									<p>Content @Esme</p>
+									<p>
+										Good ramen starts with good broth, which means that our ramen maker needed a way of dispensing soup 
+										powder into the pan. The dispenser can hold 12 servings worth of soup powder, and dispenses precise 
+										amounts of powder into the soup. 
+									</p>
 								</li>
 							</ul>
 						</div>
 					</section>
+
+				<!-- Customer Reviews -->
+				<section id="three" class="wrapper style2 special">
+					<div class="inner">
+						<header class="major">
+							<h2>Customer Reviews</h2>
+						</header>
+						<img src="images/customer_reviews.jpg" alt="" style="width: 50%;"/>
+						<ul class="features">
+							
+							<li class="icon fa-utensils">
+								<h3>Raquel Dunoff</h3>
+								<p>
+									"It was the yummiest project. Rated 5 star!!!"
+								</p>
+							</li>
+							<li class="icon fa-water">
+								<h3>Amon Millner</h3>
+								<p>
+									"Yummmmmmmmy"
+								</p>
+							</li>
+						</ul>
+					</div>
+				</section>
 
 				<!-- CTA -->
 					<section id="three" class="wrapper style4 special">
@@ -145,34 +204,77 @@
 							</header>
 							<ul class="features">
 								<li>
-									<div class="image">
-										<img src="images/oj.jpeg" alt="" style="width: 100%; border-radius: 50%;"/>
+									<div class="image" style="display: flex; justify-content: center;">
+										<img src="images/oj.jpeg" alt="" style="width: 60%; border-radius: 50%;"/>
 									</div>
 									<h3 style="text-align: center;">Olivia Jo B.</h3>
+									<h5 style="text-align: center;">Engineering with Robotics</h5>
+									<p style="text-align: center; text-justify: yes;"> 
+										I focused on the electrical design and integration of our machine, and I wanted to push myself 
+										and do something that is super new to me. My favorite ramen is not ramen, but Mi Goreng!
+										<br>
+										<br>
+										Favourite Ramen: Mi Goreng
+									</p>
 								</li>
 								<li>
-									<div class="image">
-										<img src="images/joon.jpeg" alt="" style="width: 100%; border-radius: 50%;"/>
+									<div class="image" style="display: flex; justify-content: center;">
+										<img src="images/joon.jpeg" alt="" style="width: 60%; border-radius: 50%;"/>
 									</div>
 									<h3 style="text-align: center;">Joon K.</h3>
+									<h5 style="text-align: center;">Software Engineer</h5>
+									<p style="text-align: center; text-justify: yes;"> 
+										My focus of this project was the integration of software, electronics and hardware. 
+										I believe that I achieved my goals in balancing the timeline with everyone else thanks 
+										to our teamwork and communications.
+										<br>
+										<br>
+										Favourite Ramen: Jin Ramen
+									</p>
 								</li>
 								<li>
-									<div class="image">
-										<img src="images/sushmit.jpeg" alt="" style="width: 100%; border-radius: 50%;"/>
+									<div class="image" style="display: flex; justify-content: center;">
+										<img src="images/sushmit.jpeg" alt="" style="width: 60%; border-radius: 50%;"/>
 									</div>
 									<h3 style="text-align: center;">Sushmit D.</h3>
+									<h5 style="text-align: center;">Mechanical Engineer</h5>
+									<p style="text-align: center; text-justify: yes;"> 
+										My focus this project was the water dispenser and developing the team website. 
+										The goal I set out for myself was to prototype and iterate fast rather than 
+										tunnel visioning.
+										<br>
+										<br>
+										Favourite Ramen: Shin 2x spicy (I swear they are tears of joy)
+									</p>
 								</li>
 								<li>
-									<div class="image">
-										<img src="images/esme.jpeg" alt="" style="width: 100%; border-radius: 50%;"/>
+									<div class="image" style="display: flex; justify-content: center;">
+										<img src="images/esme.jpeg" alt="" style="width: 60%; border-radius: 50%;"/>
 									</div>
 									<h3 style="text-align: center;">Esme A.</h3>
+									<h5 style="text-align: center;">Mechanical Engineer</h5>
+									<p style="text-align: center; text-justify: yes;"> 
+										I focused on the powder dispenser and external frame for this project - fulfilling 
+										my goal of exploring new manufacturing techniques and materials! 
+										<br>
+										<br>
+										Favourite Ramen: Hot Take (I prefer Udon)
+									</p>
 								</li>
 								<li>
-									<div class="image">
-										<img src="images/han.jpeg" alt="" style="width: 100%; border-radius: 50%;"/>
+									<div class="image" style="display: flex; justify-content: center;">
+										<img src="images/han.jpeg" alt="" style="width: 60%; border-radius: 50%;"/>
 									</div>
 									<h3 style="text-align: center;">Han V.</h3>
+									<h5 style="text-align: center;">Engineering with Robotics</h5>
+									<p style="text-align: center; text-justify: yes;"> 
+										I focused on mechanical design work in this project, primarily on the noodle 
+										dispensing. I got to fulfill my goal of working with new machines and rapid 
+										iteration, and had a lot of fun learning sheet metal tools.
+										<br>
+										<br>
+										Favourite Ramen: Jin Ramen
+									</p>
 								</li>
 							</ul>
 						</div>

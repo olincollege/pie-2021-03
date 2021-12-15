@@ -127,11 +127,19 @@ input, select, textarea {
 	h2 {
 		font-size: 2em;
 		line-height: 1.25em;
+		/* font-weight: 500; */
 	}
 
 	h3 {
 		font-size: 1.5em;
 		line-height: 1.5em;
+		font-weight: 500;
+	}
+
+	h4 {
+		font-size: 1.1em;
+		font-weight: 500;
+		line-height: 1.25em;
 	}
 
 	a {
@@ -182,7 +190,7 @@ input, select, textarea {
 	}
 
 	p, ul, ol, dl, table {
-		margin-bottom: 1.5em;
+		margin-bottom: 1em;
 	}
 
 	br.clear {
@@ -278,6 +286,115 @@ input, select, textarea {
 
 		}
 
+	.containerbeforeafter { 
+		/* height: 73.5vw; */
+		margin: 1vw auto;
+		height: 675px;
+		width: 1200px;
+		overflow: visible;
+		/* width: 98vw; */
+		}
+		.containerbeforeafter figure { 
+			background-image:url("images/RearPhoto.JPG");
+			background-size: cover;
+			font-size: 0;
+			height: 100%;
+			margin: 0; 
+			position: relative;
+			width: 100%; 
+		   }
+		   #compare {
+			background-image: url("images/RearRender-match2.jpg");
+			background-size: cover;
+			bottom: 0;
+			border-right: 5px solid rgba(255,255,255,0.7);
+			box-shadow: 10px 0 15px -13px #000;
+			height: 100%;
+			max-width: 98.6%;
+			min-width: 0.6%;
+			overflow: visible;
+			position: absolute;
+			width: 50%; 
+			animation: first 2s 1 normal ease-in-out 0.1s; 
+			-webkit-animation: first 2s 1 normal ease-in-out 0.1s; 
+		   }
+		   input#slider {
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			border: none; 
+			background: transparent;
+			cursor: col-resize;
+			height: 100vw;
+			left: 0;
+			margin: 0;
+			outline: none; 
+			padding: 0;
+			position: relative;
+			top: -100vw;
+			width: 100%;
+		   }
+		   input#slider::-moz-range-track { 
+			background: transparent; 
+		   }
+		   input#slider::-ms-track {
+			border: none; 
+			background-color: transparent;
+			height: 100vw; 
+			left: 0; 
+			outline: none; 
+			position: relative;
+			top: -100vw; 
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			cursor: col-resize;
+			color:transparent;
+		   }
+		   input#slider::-ms-fill-lower {
+			background-color:transparent;
+		   }
+		   input#slider::-webkit-slider-thumb {
+			-webkit-appearance:none;
+			height: 100vw;
+			width: 0.5%;
+			opacity: 0;
+		   }
+		   input#slider::-moz-range-thumb {
+			-moz-appearance: none;
+			height: 100vw;
+			width: 0.5%;
+			opacity: 0;
+		   }   
+		   input#slider::-ms-thumb {
+			height: 100vw;
+			width: 0.5%; 
+			opacity:0;
+		   }
+		   input#slider::-ms-tooltip {
+			display:none;
+		   }
+		   #compare::before {
+			background: url(https://webdevtrick.com/wp-content/uploads/comparision.png) no-repeat scroll 0 center transparent;
+			background-size:contain;
+			content: " ";
+			float: right;
+			height: 100%;
+			margin-right: -34px;
+			position: relative;
+			top:0;
+			width: 64px;
+		   }
+		   @keyframes first {
+			 0% {width: 0%; }
+			 50% {width: 80%; }
+			 100% {width: 50%; }
+		   }
+		   @-webkit-keyframes first {
+			 0% {width: 0%; }
+			 50% {width: 80%; }
+			 100% {width: 50%; }
+		   }
+
 /* Row */
 
 	.row {
@@ -337,6 +454,14 @@ input, select, textarea {
 
 		.row > .off-2 {
 			margin-left: 16.66667%;
+		}
+
+		.row > .col-5col {
+			width: 20%;
+		}
+
+		.row > .off-5col {
+			margin-left: 20%;
 		}
 
 		.row > .col-3 {
@@ -1781,13 +1906,35 @@ input, select, textarea {
 
 		.image.centered {
 			display: block;
-			margin: 0 0 3em 0;
+			/* margin: 0 0 3em 0; */
+			margin: 0 auto 1em auto;
+			width: auto;
 		}
 
-			.image.centered img {
+			/* .image.centered img {
 				margin: 0 auto;
 				width: auto;
-			}
+			} */
+		
+		.image.centered-small{
+			display: block;
+			/* margin: 0 0 3em 0; */
+			margin: 0 auto;
+			width: 75%;
+		}
+
+		.image.centered-small-extra{
+			display: block;
+			/* margin: 0 0 3em 0; */
+			margin: 0 auto;
+			width: 50%;
+		}
+
+		.image.portrait{
+			display: block;
+			width: 50%;
+			margin: 0 auto;
+		}
 
 	a.image:hover {
 		opacity: 0.85;
@@ -2067,7 +2214,7 @@ input, select, textarea {
 		position: relative;
 		background: #fff;
 		overflow-x: hidden;
-		padding: 6em 0 6em 0;
+		padding: 6em 0 0em 0;
 	}
 
 	.image-wrapper {
@@ -2099,7 +2246,21 @@ input, select, textarea {
 		background-image: url("images/overlay.png"), url("images/header.svg"), -moz-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
 		background-image: url("images/overlay.png"), url("images/header.svg"), -webkit-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
 		background-image: url("images/overlay.png"), url("images/header.svg"), -ms-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
-		background-image: url("images/overlay.png"), url("images/header.svg"), linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
+		background-image: url("images/overlay.png"), url("images/header.svg"), linear-gradient(75deg, #f0294b 15%, #e07243 55%);
+		/* background-color: #f08c89; */
+		background-color: #f08c89;
+		background-size: 100% 620%;
+		background-size: 128px 128px, 100% 620%, auto;
+		background-repeat: repeat, no-repeat, no-repeat;
+	}
+
+	#line-wrapper-homepage {
+		background-image: url("images/header.svg");
+		background-image: url("images/overlay.png"), url("images/header.svg"), -moz-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
+		background-image: url("images/overlay.png"), url("images/header.svg"), -webkit-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
+		background-image: url("images/overlay.png"), url("images/header.svg"), -ms-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
+		background-image: url("images/overlay.png"), url("images/header.svg"), linear-gradient(75deg, #f0294b 15%, #e07243 55%);
+		/* background-color: #f08c89; */
 		background-color: #f08c89;
 		background-size: 100% 620%;
 		background-size: 128px 128px, 100% 620%, auto;
@@ -2113,22 +2274,25 @@ input, select, textarea {
 
 	#promo-wrapper {
 		position: relative;
-		background-image: url("images/overlay.png"), url("../../images/promo.jpg");
+		/* background-image: url("images/overlay.png"), url("../../images/promo.jpg"); */
 		background-size: 192px 192px, cover;
 		background-position: top left, center center;
-		color: #fff;
+		color: rgb(255, 87, 87);
 		text-align: center;
 		padding: 6em 0 6em 0;
 	}
 
-	#footer-wrapper {
+	/* #footer-wrapper { 
 		-webkit-transform: translate3d(0, 0, 0);
-		position: relative;
+		position: relative; 
 		border-top: solid 1px #c2c7cc;
-		padding: 6em 0 6em 0;
+		padding: 6em 6em 0;
 		background-image: url("images/overlay.png"), url("images/footer.svg");
 		background-size: 128px 128px,				100% 100%;
-	}
+		background-color: red;
+		height: 0px;
+
+	} */
 
 /* Header */
 
@@ -2343,7 +2507,8 @@ input, select, textarea {
 		#hero .button {
 			background: #fff;
 			border-color: rgba(255, 255, 255, 0);
-			color: #f08c89;
+			/* color: #f08c89; */
+			color: #cc433a;
 			font-size: 1.25em;
 		}
 
@@ -2433,9 +2598,9 @@ input, select, textarea {
 		z-index: 1;
 		text-align: center;
 		border-top: solid 1px #d2d7dc;
-		color: #a2a7ac;
-		padding-top: 4em;
-		margin-top: 6em;
+		color:#a2a7ac;
+		padding-top: 1em; 
+	    margin-top: 0; 
 	}
 
 /* Normal */
@@ -2471,9 +2636,9 @@ input, select, textarea {
 				padding: 5em 0 5em 0;
 			}
 
-			#footer-wrapper {
+			/* #footer-wrapper {
 				padding: 5em 0 5em 0;
-			}
+			} */
 
 	}
 
@@ -2516,9 +2681,9 @@ input, select, textarea {
 				padding: 2em;
 			}
 
-			#footer-wrapper {
+			/* #footer-wrapper {
 				padding: 4em 2em 4em 2em;
-			}
+			} */
 
 		/* Header */
 
@@ -2584,8 +2749,8 @@ input, select, textarea {
 		/* Copyright */
 
 			#copyright {
-				padding-top: 2em;
-				margin-top: 3em;
+				padding-top: 1em; 
+				margin-top: 0; 
 			}
 
 	}
@@ -2608,6 +2773,10 @@ input, select, textarea {
 			.features {
 				margin-bottom: 0;
 			}
+/* 
+			.image.centered-small{
+				width:auto;
+			} */
 
 		/* Sections/Article */
 
@@ -2765,9 +2934,9 @@ input, select, textarea {
 				padding: 20px;
 			}
 
-			#footer-wrapper {
+			/* #footer-wrapper {
 				padding: 3em 20px 3em 20px;
-			}
+			} */
 
 		/* Header */
 
@@ -3123,3 +3292,214 @@ input, select, textarea {
 	}
 	 /* Style the list */
 
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+/* BEGIN SLIDESHOW */
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #000000;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.video-container {
+    overflow: hidden;
+    position: relative;
+    width:100%;
+}
+
+.video-container::after {
+    padding-top: 56.25%;
+    display: block;
+    content: '';
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

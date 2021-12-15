@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Process Overview</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="right-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Inner -->
+						<div class="inner">
+							<header>
+								<h1><a href="index.html" id="logo">Project ROV-R</a></h1>
+								<hr />
+								<p>Robotic Operating Vehicle for Reconnaissance</p>
+							</header>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="project_mission.html">Project Mission</a></li>
+								<li>
+									<a href="#">Subsystems</a>
+									<ul>
+										<li><a href="subsystems/electrical.html">Electrical System</a></li>
+										<li><a href="subsystems/mechanical.html">Mechanical System</a></li>
+										<li><a href="subsystems/software.html">Software System</a></li>
+										<li><a href="subsystems/budget.html">Budget</a></li>
+										<!-- <li>
+											<a href="#">And a submenu &hellip;</a>
+											<ul>
+												<li><a href="#">Lorem ipsum dolor</a></li>
+												<li><a href="#">Phasellus consequat</a></li>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam dolore nisl</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Veroeros feugiat</a></li> -->
+									</ul>
+								</li>
+								<li><a href="process.html">Process Timeline</a></li>
+								<li><a href="about_us.html">About Us</a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Main -->
+				<div class="wrapper style1">
+
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-8 col-12-mobile" id="content">
+								<article id="main">
+									<header>
+										<h2><a href="#">Process Overview</a></h2>
+										<p>
+											A summary of our sprints and how we got here.
+										</p>
+									</header>
+									<p>
+										Our project was split up into three separate sprints before the unveiling of our final
+										product. During each sprint, we reflected on our current progress, evaluated it against our Minimum
+										Viable Product, and thought over our next steps and goals for the next sprint. Below are the three sprints,
+										where we discuss our progress throughout each one as well as how our project changed over time.
+									</p>
+									<section>
+										<header>
+											<h3>Sprint 1</h3>
+										</header>
+										<a href="#" class="image featured"><img src="images/Sprint1.jpg" alt="" /></a>
+										<a href="#" class="image featured"><img src="images/WebService.png" alt="" /></a>
+										<p>
+											At the very start of this project we obtained a small starter kit that provided the basics of our system.
+											It provided a small chassis that we would want to upgrade in the future, 4 TT motors, and most importantly
+											the 4 omnidirectional wheels. The electronics used in this sprint were an arduino board, a motor shield,
+											an ESP32, and two 9V batteries.
+										</p>
+										<p>
+											In this sprint, our main focus was testing if we can reliably control the motors remotely from a laptop
+											and learning how we will power all the electronics. The reason we have two 9V batteries is so that one powers
+											the motor shield and therefore the motors and the other was used to power both the arduino and the ESP32.
+											Once assembled we were able to successfully interface between our laptop and ROV-R and had full control over
+											the system.
+										</p>
+									</section>
+									<section>
+										<header>
+											<h3>Sprint 2</h3>
+										</header>
+										<a href="#" class="image featured"><img src="images/Sprint2.jpg" alt="" /></a>
+										<p>
+											For this sprint we increased the size of our chassis in order to manage the growing number of electrical
+											components on ROV-R. We wired in and programmed the motors that we would be using for our projectile launcher
+											to activate with the press of a button from our web service. We also increased maneuverability with the
+											addition of different key combinations that help display the uniqueness of omni wheels as our robot can move
+											in any direction and turn simultaneously.
+										</p>
+										<p>
+											Throughout this sprint we realized that an upper level of the chassis was necessary to house the electrical
+											components of the system safely as well as to be a base for our projectile launcher. We designed this system to
+											be laser cut but did not have it ready in time for this sprint.
+										</p>
+									</section>
+									<section>
+										<header>
+											<h3>Sprint 3</h3>
+										</header>
+										<a href="#" class="image featured"><img src="images/Sprint3.jpg" alt="" /></a>
+										<p>
+											First, we laser cut and assembled the upper level of our chassis. During this time we also integrated
+											a small receiver camera to display onto an LCD choosing to power it independently instead of through the Arduino.
+										</p>
+										<p>
+											Throughout the project thus far, we had a recurring issue of our components not getting enough power and failing
+											because of it. To address this we revamped our power system replacing our 9V Energizer battery with a 12 V 3s LiPo
+											and implemented a step down converter. This step down converter allows us to take the 12V from the LiPo down to 5V.
+											We’re using one of the LiPos to power our arduino directly and the LiPo with the step down to power our camera and ESP32.
+										</p>
+										<p>
+											During this sprint we also redesigned a nerf flywheel launcher system and 3D printed it for our own purposes.
+											Unfortunately there were issues with the design when printed making it nonfunctional for this sprint.
+										</p>
+										<p>
+											Finally, we invested in on-and-off switches to easily turn our system on and off.
+										</p>
+									</section>
+									<section>
+										<header>
+											<h3>Demo Day</h3>
+										</header>
+										<a href="#" class="image featured"><img src="images/FullCar1.jpg" alt="" /></a>
+										<p>
+											Our main task for demo day was getting the projectile launcher functional. To do this we
+											had to redesign the flywheel mounts, create a container for ammunition, and fabricate a loading mechanism.
+										</p>
+										<p>
+											In addition to this we 3D printed mounts for the camera and various electrical components, redesigned the
+											upper chassis so it was more stable, and edited the code to allow for a servo motor instead of a normal motor for
+											the loading mechanism.
+										</p>
+									</section>
+								</article>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<!-- Footer -->
+					<div id="footer">
+							<div class="row">
+								<div class="col-12">
+
+									<!-- Copyright -->
+										<div class="copyright">
+											<ul class="menu">
+												<li>&copy; Project ROV-R Team. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+											</ul>
+										</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

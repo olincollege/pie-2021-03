@@ -1,1 +1,1 @@
-If this folder matches your team's name, put your website files here.
+Website files for the Drink Mixer team for PIE Fall 2021.

@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<!--
+	Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Strandbeest - Mechanical Design</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header" class="wrapper">
+
+					<!-- Logo -->
+						<div id="logo">
+							<h1><a href="index.html">Mechanical Design</a></h1>
+						</div>
+
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li class="current"><a href="MechanicalDesign.html">Mechanical Design</a></li>
+							<li><a href="ElectricalDesign.html">Electrical Design</a></li>
+							<li><a href="SoftwareDesign.html">Software Design</a></li>
+							<li><a href="Budget.html">Budget</a></li>
+						</ul>
+					</nav>
+
+				</section>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style2">
+					<div class="title">Mechanical Overview</div>
+					<div class="container">
+						<!-- Content -->
+							<div id="content">
+								<article class="box post">
+									<header class="style1">
+										<h4>    The robot uses eight legs, two on the right and two on the left for steering, and 
+											four in the back for balance. It uses a differential drive system to steer the robot 
+											in the direction specified by the camera. We went through three iterations of the robot shown below. The first was a prototype 
+											primarily used to test the legs and develop an understanding of the problems we would encounter. 
+											The second iteration took steps towards developing the form of the beest, but some design 
+											problems prevented it from fully working. The third iteration improved on the second to 
+											produce a functional beest.  </h4>
+											<h4></h4>
+									</header>
+									<a href="#" class="image featured">
+										<img src="images/MechanicalIterations.png" alt="" />
+									</a>
+								</article>
+							</div>
+					</div>
+				</div>
+
+			<!-- Highlights -->
+				<section id="highlights" class="wrapper style3">
+					<div class="title">Leg Design</div>
+					<div class="container">
+						<div id="content">
+								<header class="style1">
+									<h2>Overall Leg Design</h2>
+								</header>
+
+								<div class="container">
+									<div class="row aln-center">
+										<div class="col-5 col-12-medium">
+											<section class="highlight">
+												<a href="#" class="image featured"><img src="images/Leg_v1.JPG" alt="" /></a>
+											</section>
+										</div>
+										<div class="col-5 col-12-medium">
+											<section class="highlight">
+												<a href="#" class="image featured"><img src="images/Leg_v2.JPG" alt="" /></a>
+											</section>
+										</div>
+									</div>
+								</div>
+								
+								<article class="box post">
+								<p>The leg design is based on Jansen's linkage, a linkage design made by 
+									Theo Jansen for his Strandbeest sculptures. The legs needed to transfer 
+									the rotation of the motor shaft into a stepping motion. The initial design 
+									(shown right) was made to replicate the motion of the Jansen linkage. 
+									Assuming we would need to make small adjustments, the first iteration of the 
+									linkages were designed with future modification in mind; each linkage contains 
+									bolt holes at 1 cm intervals to make small changes very easy. This ended up causing 
+									strength problems within the part so after the final lengths were determined the 
+									design shifted to solid parts (shown left) in the second iteration. The other change 
+									between the two designs are the modified linkage lengths. While the initial design 
+									was optimized for the step pattern, the second iteration was designed for simplicity 
+									while keeping a step pattern that would work on the robot. This simplification led 
+									to using five 9 unit linkages making construction much easier. </p>
+							</article>
+							<header class="style1">
+								<h2>Material Choice</h2>
+							</header>
+							
+							<article class="box post">
+							<p>The first iteration of the legs used 3d printed linkages made of PLA printer filament. 
+								This material was chosen because it’s a readily available prototyping material that our 
+								team had experience using. The material proved to have too much friction for the motors 
+								we were using, causing the legs to bind. In addition the print time for each leg was 
+								roughly 5 hours, and printing 8 legs for the final design would have been a challenge. </p> 
+							<p>We decided to move to ⅛th inch laser cut acrylic for the second iteration. This allowed 
+								us to cut all 8 legs on one sheet, reducing the manufacturing time significantly. The 
+								acrylic also proved to have lower friction than the PLA, and when combined with the 
+								higher torque motors we purchased (this is explained under motor selection) this solved 
+								the friction problem. However, the new motors increased the weight of the robot and the 
+								acrylic was not strong enough to counter the mass increase. The legs bent, and would not 
+								function properly when holding the full robot. To solve this we increase the ⅛th inch 
+								acrylic to ¼th inch acrylic. While there's still some bend in the legs, they are functional 
+								and are unlikely to break. 
+							</p>
+						</article>
+						<header class="style1">
+							<h2>Feet</h2>
+						</header>
+
+						<div class="container">
+							<div class="row aln-center">
+								<div class="col-4 col-12-medium">
+									<article>
+										<p>
+											Another factor that helped the bending problem was the addition of 3d printed feet. 
+											We made feet for each leg that prevented them from sliding to the side (shown Right). 
+											Initially the feet were just plastic, however on the tile floor the robot is designed 
+											to walk on, they couldn’t get enough traction to actually move the robot forward. 
+										</p>
+									</article>	
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="#" class="image featured"><img src="images/Foot base.JPG" alt="" /></a>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+								<section class="highlight">
+									<a href="#" class="image featured"><img src="images/Foot.JPG" alt="" /></a>
+								</section>
+								</div>	
+							</div>
+						</div>
+						<article>
+						<p>
+							To solve the traction problem we added rubber bands to the pads of the feet. But the bending of 
+							the legs meant that the feet would drag while trying to move forward. The solution was to make 
+							feet that only had friction in one direction, pulling the robot forward then sliding back into 
+							position. This was accomplished by putting the rubber bands on an angle, and adding a layer of 
+							tape to the top. This means when the foot is moving forward the foot slides along the tape, and 
+							when it is moving back the angled rubber catches the ground pulling the robot forward.  
+							</p>
+						</article>
+						</div>
+					</div>
+				</section>
+
+				<!-- Highlights -->
+				<section id="highlights" class="wrapper style2">
+					<div class="title">Chassis</div>
+					<div class="container">
+						<section class="highlight">
+							<a href="#" class="image featured"><img src="images/ChassisImage.PNG" alt="" /></a>
+						</section>
+						<article>
+							<p>
+							The chassis consists of 5 leg linkage mounts and a central chassis box which holds the 
+							electrical and hardware components of the robot. </p>
+						</article>
+						<div class="container">
+							<div class="row aln-center">
+								<div class="col-5 col-12-medium">
+									<section class="highlight">
+										<a href="#" class="image featured"><img src="images/MotorMount.PNG" alt="" /></a>
+									</section>
+								</div>
+								<div class="col-5 col-12-medium">
+									<section class="highlight">
+										<a href="#" class="image featured"><img src="images/MotorMount1.PNG" alt="" /></a>
+									</section>
+								</div>
+							</div>
+						</div>
+						<article>
+						<p>
+							Leg linkage mounts consist of 2 hardboard plates held together by PLA brackets which 
+							attach the leg linkages to the main chassis box. Leg mounts contain a space for the linkage’s 
+							fixed axle and a secondary space for the axle which powers the linkage, either directly from 
+							the motor shaft or through the offset system. 3 leg mounts hold motors, while 2 hold the 
+							offset axles of back legs in place. Leg mounts are attached to hardboard plates at the top and 
+							bottom, forming the central chassis box. 
+							</p>
+						</article>
+						<div class="container">
+							<div class="row aln-center">
+								<div class="col-6 col-12-medium">
+									<section class="highlight">
+										<a href="#" class="image featured"><img src="images/ChassisLayout.png" alt="" /></a>
+									</section>
+								</div>
+								<div class="col-6 col-12-medium">
+									<p>The chassis box is the main body of the robot, and holds the Arduino and motor shield, 
+									the battery, the camera, the RasPi, and a second battery for the RasPi. The motor shield, 
+									arduino, batteries and cables are all stored in spaces formed by the leg mounts to conceal 
+									them and give the robot a tidier appearance. The Raspi is secured under the main body to 
+									lower the center of mass and make the robot more stable, while the camera is mounted on top.</p>
+									
+									<p>The chassis plate is designed with slots at the leg mounting points. These slots allow the motor 
+										mounts to be slid along the chassis plate then re-tightened for on-the-fly repositioning of the 
+										legs-motor components. </p>
+								</div>
+							</div>
+						</div>
+						<article>
+
+							<p>The chassis plates were made of hardboard such that holes could easily be drilled in the plate to 
+								reposition fastening points for the RasPi and camera, which are held outside the main chassis box. 
+								Hardboard is also a fairly rigid material, which (especially configured in the box shape of the 
+								chassis center) will resist bending under the weight of the motors electronics.</p>
+
+						</article>
+
+					</div>
+				</section>
+			<!-- Highlights -->
+			<section id="highlights" class="wrapper style1">
+				<div class="title">Motor Selection</div>
+				<div class="container">
+					<div id="content">
+						<p>The primary factor in choosing motors was the torque, and speed was secondary. Our original motors 
+							were rated at 1.5 kg cm of torque with a speed of 200 rpm. After encountering issues with stalling, 
+							we selected motors rated at 7 kg cm of torque, 4.5 times higher than the original motors. Though the 
+							motors were heavier and the speed was much slower at 60 rpm. The speed is not a problem for the 
+							functionality of the robot, however, because of the friction decrease in the linkages, a higher speed 
+							lower torque motor would have been sufficient. The increased mass did prove to be a problem as 
+							explained in the section on material choice for leg design.  </p>
+					</div>	
+				</div>
+			</section>
+
+			<section id="highlights" class="wrapper style3">
+				<div class="title">Motor Axle Mounts</div>
+				<div class="container">
+					<div id="content">
+						<p>The legs all had to be driven by an offset axle because the movement of some of the linkages would 
+							interfere with a traditional axle. To address this with the front legs we chose motors that had an 
+							axle coming out of either side so the motor could be placed between the two legs to eliminate this 
+							interference. A 3D printed part was used to turn the rotation of the motor shaft into an offset axle 
+							movement to drive the legs. Each side was rotated 180 degrees from the other so the legs in the pair 
+							are in opposite positions from each other at all times. The motor shaft mount CAD is shown below as 
+							well as images of the assembled connection between the motor and front legs.</p>
+						<div class="container">
+							<div class="row aln-center">
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="#" class="image featured"><img src="images/ShaftMount.JPG" alt="" /></a>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="#" class="image featured"><img src="images/ShaftMountsOff.JPG" alt="" /></a>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="highlight">
+										<a href="#" class="image featured"><img src="images/ShaftMountsOn.JPG" alt="" /></a>
+									</section>
+								</div>
+							</div>
+						</div>
+						<p>We had challenges with the motor shaft deforming the PLA allowing the motor to turn freely so we 
+							added a heat seat insert and a set screw to the part to stop this from happening.</p>
+						<div class="row aln-center">
+							<div class="col-10 col-12-medium">
+								<section class="highlight">
+									<a href="#" class="image featured"><img src="images/FullBackLeg.JPG" alt="" /></a>
+								</section>
+							</div>
+						</div>
+						<div class="container" style="padding-bottom:3em">
+							<div class="row aln-center">
+								<div class="col-5 col-12-medium">
+									<article>
+										<p>For the set of back legs, all 4 legs are driven off of the same motor. To accommodate for 
+											this, we designed an extra part to act as an extension of the offset axle and transfer 
+											movement from the inner legs which were driven by the motor to the outer legs. It splits 
+											in half so that it can be inserted into the chassis panels that support it and has concealed 
+											teeth to lock the two sides at an offset angle. While the teeth themselves are not particularly 
+											strong in a 3D printed part, once they are held together with a bolt that runs through the 
+											center of the part as shown below they are adequately strong to not shear off and make the 
+											sides start slipping when the torques of the legs are applied to them.
+										</p>
+										<p>	The star pattern has 6 teeth because this allows for the angle between the two sides 
+											to be changed to any increment of 30 degrees. Strandbeest mechanisms that we referenced 
+											commonly had the legs offset from each other at 120 degree angles, but our front legs 
+											are based on a 180 degree offset because there are only 2 legs in the set. To account 
+											for this the part is designed to be able to easily switch angles so we could test 
+											different offsets. We ended up finding that a 180 degree offset worked the best because 
+											it meant 2 of the 4 back legs would touch the ground at the same time in each leg stroke 
+											which helped with stability. 
+										</p>
+									</article>
+								</div>
+								<div class="col-6 col-12-medium">
+									<div class="container">
+										<div class="row aln-center">
+											<div class="col-6 col-12-medium">
+												<section class="highlight">
+													<a href="#" class="image featured"><img src="images/Innie.JPG" alt="" /></a>
+												</section>
+											</div>
+											<div class="col-6 col-12-medium">
+												<section class="highlight">
+													<a href="#" class="image featured"><img src="images/Outie.JPG" alt="" /></a>
+												</section>
+											</div>
+										</div>
+									</div>
+									<section class="highlight">
+										<a href="#" class="image featured"><img src="images/InnieOutiePicture.JPG" alt="" /></a>
+									</section>
+								</div>
+							</div>
+						</div>
+						<section class="row aln-center">
+							<div class="col-10 col-12-medium">
+								<a href="#" class="image featured"><img src="images/AxelAngles.png" alt="" /></a>
+							</div>
+						</section>
+					</div>	
+				</div>
+			</section>
+			<!-- Footer -->
+				<section id="footer" class="wrapper">
+					<!-- <div class="title">The Rest Of It</div> -->
+						<div id="copyright">
+							<ul>Fun fact: The strandbeest weighs - too f*cking much. </ul>
+							<ul>
+								<li>&copy; Strandbeest</li><li>Design: Katherine Mackowiak <a href="#"></a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

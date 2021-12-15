@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Hand of God</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header" class="colorblock black">>
+				<h1><a href="index.html">Hand of God</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li>
+							<a href="#" class="icon solid fa-angle-down">Features</a>
+							<ul>
+								<li><a href="gallery.html">Gallery</a></li>
+								<li><a href="mechanical.html">Mechanical Design</a></li>
+								<li><a href="software.html">Software Design</a></li>
+								<li><a href="electrical.html">Electrical Design</a></li>
+								<li><a href="firmware.html">Firmware Design</a></li>
+								<li><a href="budget.html">Budget Overview</a></li>
+								<li><a href="aboutus.html">About Us</a></li>
+								
+							</ul>
+						</li>
+						<li><a href="aboutus.html" class="button">About Us</a></li>
+						<li><a href="https://github.com/simrunm/HandofGod" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					</ul>
+				</nav>
+			</header>
+			<!-- Main -->
+				<section id="main" class="container">
+					<header>
+						<h2>Mechanical Design</h2>
+						<p>A minimalist cable driven gantry system designed for speed.</p>
+					</header>
+					<div class="box">
+						<span class="image featured"><img src="images/gantry_render_top.PNG" alt="" /></span>
+						<video width="900" height="480" controls>
+							<source src="images/gantry_demo.mp4" type="video/mp4">
+							
+						  Your browser does not support the video tag.
+						  </video>
+						<h3>About</h3>
+						<p>
+							We had two primary goals when designing this gantry. The first was that the gantry should be as fast as possble.
+							We needed the gantry to be able to move the hand to any spot on our board within a fraction of a second. The second 
+							goal was that the gantry should be mechanically simple. First of all, none of us were particulalry excited about working
+							on the mechanical design, and secondly, the simpler the design, the faster it would be to iterate and make design improvements.
+						</p>
+							
+						<p>
+							We decided to use a rather unorthadox gantry system design to achieve these two goals. Rather than using belts to drive our gantry, 
+							we decided to use a set of cables. One benefit of this design is that we are able to minimize the weight that sits on the rails. With
+							a belt driven gantry system, often, a stepper motor is mounted onto the cross axis. With this system, we the only weight that sits on 
+							any of the rails is the hand. This allows us to accelearte the gantry at a faster rate. Another benefit of this design is that it is mechanically
+							very simple. The last benefit is that we can increase the speed of the gantry very easily. If we want to increase the overall speed of the gantry,
+							we can simple use larger spools to draw in and out cables. All we would need to do is print a new set of spools and pop them onto the motors; we
+							do not need to modify the gantry or cables at all. 
+
+						</p>
+						<p>
+							There are a few major drawbacks to this gantry setup. For one, the gantry is a contrained system. Unlike a traditional belt driven gantry,
+							not every combination of motor movements are valid. Each motor has to move in perfect sync with the other motors for the gantry to move. If
+							each motor is not in sync, the motors will begin to skip steps and we lose positional accuracy. Another drawback is that cables are inherently
+							difficult to work with. They become easily tangles, and they often lose tension. With a belt driven system, the belts are always tentioned. In 
+							this system, you are rellying on the motion of other motors to perfectly pick up the tention of every other motors. The last drawback of this setup
+							is that it requires more stepper motors that a traditional setup.
+						</p>
+
+						<p>
+							In the end, we decided that the benefits of this system outweight the drawbacks. For one, we had no shortage of stepper motors, so that was not an issue for us.
+							Secondly, given that our motors are only moving in a single short burst, we were not concerend with the motors losing positional accuracy over time due to
+							the cables gradually losing tention or slipping. While the math to drive this sytem is slightly more dificult than a traditional setup, it isn't too dificult. 
+							Lastly, and most importantly, this sytem simply allowed us the greatest travel speed, which was our primary goal. 
+						</p>
+					</div>
+				</section>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					
+					<li><a href="https://github.com/simrunm/HandofGod" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

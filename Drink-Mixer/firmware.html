@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Firmware Design</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">PIE Drink Mixe</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="mechanical.html">Mechanical</a></li>
+						<li><a href="electrical.html">Electrical</a></li>
+						<li><a href="firmware.html">Firmware</a></li>
+						<li><a href="software.html">Software</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Firmware Design</h1>
+							<!-- <span class="image fit"><img src="images/pic04.jpg" alt="" /></span> -->
+							<p>We went through a few iterations of finding the right firmware for our project. Broadly, these are:
+							</p>
+							<ol>
+								<li>Arduino with serial monitor
+								</li>
+								<li>Arduino and Raspberry Pi setup with touchscreen
+								</li>
+								<li>Teensy 4.0 with Touchscreen
+								</li>
+							</ol>
+							<h2>Iteration 1: Arduino with serial monitor
+							</h2>
+							<p>Initially, we dry-tested our circuit using just an Arduino and interfacing with it using the built-in <a href="https://www.arduino.cc/reference/en/language/functions/communication/serial/">Serial communication library</a>. We input typed out commands into the serial monitor specifying which ‘drink’ we wanted, and these commands would be used to control valves and produce an output message on the serial monitor. But this was really just for testing, and we knew that we wanted a more sophisticated, user friendly interface.
+							</p>
+							<h2>Iteration 2: Arduino and Raspberry Pi setup with touchscreen
+							</h2>
+							<p>Initially, we planned to use just an Arduino and its IDE to control our system, but we soon realised that integrating something like a touchscreen would involve something with much more computational power than just an Arduino. Therefore, we decided to use a Raspberry Pi to control the touchscreen. This would communicate with the Arduino and instruct it which valves to turn on, and the Arduino would send the appropriate signals to the valves and communicate back to the Arduino when it was done.
+							</p>
+							<p>This first involved installing the <a href="https://www.raspberrypi.com/software/">Raspberry Pi operating system (Raspbian)</a> onto the Raspberry Pi. Having never worked with a Raspberry Pi before, we got stuck at what seemed like a simple step that involved being able to connect the Raspberry Pi with our laptop. We spent a few days trying to do this and eventually succeeding in connecting through WIFi.
+							</p>
+							<p>Connecting the Raspberry Pi to the touchscreen was the next difficult task. It appeared fairly straightforward by installing the <a href="https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi/easy-install-2">Adafruit PiTFT Library</a> , but it nonetheless took us a while and involved a lot of troubleshooting. Once we were able to successfully operate the Pi to our touchscreen, we realized that we would need to program some sort of Python script with an interface that would auto-start when the Pi was switched on.
+							</p>
+							<img src="images/LCDClose.jpg" alt="" width="40%">
+							<p>At this point, we were quite frustrated, short on time, and recognizing the complexity of coding an entire interface in Python with just a week left for the project to finish. Yet we didn’t see any alternative and geared ourselves to keep chugging forward. Until… 
+							</p>
+							<h2>Iteration 3: Teensy User Interface
+							</h2>
+							<p>A conversation with an instructor of the course, Stan Reifel, was a game-changing moment in our journey - for an earlier project of his, he had created an entire library to run a touchscreen using a microcontroller! This library, <a href="https://github.com/Stan-Reifel/TeensyUserInterface/">which can be found on GitHub</a>, required purchasing a Teensy microcontroller and a different type of touchscreen, but it provided us with a ready-made interface which involved significantly less coding! We decided that, looking at our budget, it was a worthwhile investment - and it was (see <a href="software.html">software section</a> for more details).
+							</p>
+							<img src="images/teensy.jpg" alt="" width="40%">
+							<p>Our system was controlled using a Teensy 4.0 with an Arduino IDE. The primary piece of firmware was <a href="https://github.com/Stan-Reifel/TeensyUserInterface/">Stan Reifel’s Teensy User Interface</a> library which enabled us conveniently to set up screens on our touchscreen and switch between them. This library had a couple of dependencies.
+							</p>
+							<p>The first was the <a href="https://www.pjrc.com/teensy/td_download.html">Teensyduino</a> library which enables the Teensy to be programmed from the Arduino IDE. This allowed us to use normal Arduino commands such as <code>PINMODE</code> to receive and send signals the same way it would have been done in an Arduino.
+							</p>
+							<p>Next was two libraries to control the touchscreen from the Arduino IDE, these were <a href="https://www.arduino.cc/reference/en/libraries/ili9341_t3/">ILI9341_t3</a> and <a href="https://www.arduino.cc/reference/en/libraries/xpt2046_touchscreen/">XPT2046_Touchscreen</a>. These were used internally by Stan Reifel’s Teensy User Interface library to use the Teensy to communicate with the touchscreen.
+							</p>
+							<p>In addition, you may have seen from <a href="action.html">our demo video</a> that we integrated a flashing LED strip. This involved installing an additional <a href="https://github.com/adafruit/Adafruit_NeoPixel">Neopixel library</a> to communicate with the LED strip.
+							</p>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

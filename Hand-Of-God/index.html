@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<!--
+	Your final project website should accomplish these two objectives:
+
+Thoroughly document your project - design, technical, and appropriate process work.
+Develop media that is suitably polished to represent your finished work publicly on the web.
+ 
+
+Requirements
+
+Your final project site is required to contain the following elements.
+
+A high level summary description of the project’s objectives
+A system diagram depicting the schematic relationships between all of the different subsystems comprising your final system.
+An account of how you spent your $250 budget. You must include all components and materials and their estimated costs (even if you obtained them for free somehow). Please note where something was obtained for free and cost is just your best estimate.
+A detailed description of electrical design (circuit diagrams are appropriate) and any necessary analysis.
+A detailed description of your mechanical design (CAD images/renderings are appropriate) and any necessary analysis.
+A detailed description of the firmware design with links to complete source code (github or other repository is helpful).
+A detailed description of software design with links to complete source code (github or other repository is helpful). Please be sure to include a list of all external software dependencies (eg. OpenCV, Google Voice API, etc.)
+Photos or videos of your final system in action.
+-->
+
+
+<html>
+	<head>
+		<title>Hand of God</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" type="image/png" href="/images/hog_favicon.png"/>
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header" class="alt">
+					<h1><a href="index.html">Hand of God</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li>
+								<a href="#" class="icon solid fa-angle-down">Features</a>
+								<ul>
+									<li><a href="gallery.html">Gallery</a></li>
+									<li><a href="mechanical.html">Mechanical Design</a></li>
+									<li><a href="software.html">Software Design</a></li>
+									<li><a href="electrical.html">Electrical Design</a></li>
+									<li><a href="firmware.html">Firmware Design</a></li>
+									<li><a href="budget.html">Budget Overview</a></li>
+									<li><a href="aboutus.html">About Us</a></li>
+									
+								</ul>
+							</li>
+							<li><a href="aboutus.html" class="button">About Us</a></li>
+							<li><a href="https://github.com/simrunm/HandofGod" class="icon brands fa-github"><span class="label">Github</span></a></li>
+
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+				<section id="banner">
+					<h2>Hand of God</h2>
+					<p>A 2-dimensional gantry ball catcher.</p>
+					<ul class="actions special">
+						<!-- <li><a href="#" class="button primary">Sign Up</a></li> -->
+						<li><a href="gallery.html" class="button">Gallery!</a></li>
+					</ul>
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+							<h2>Our Project
+							<br />
+							</h2>
+							<p>Our goal in this project was to make an automated 2-dimensional gantry system which can catch a thrown ball based on camera recognition and prediction, with a focus on speed and accuracy</p>
+						</header>
+						<video width="720" height="480" controls>
+							<source src="images/patrick_demo_fast.mp4" type="video/mp4">
+							
+						  Your browser does not support the video tag.
+						  </video>
+					</section>
+
+					<section class="box special features">
+						<header class="major">
+							<h2>Project features
+							<br />
+							</h2>
+						</header>
+						<div class="features-row">
+							<section>
+								<span class="fa fa-camera" style="font-size:48px;color:black"></span>
+								<h3>Real-Time Camera Tracking</h3>
+								<p>Use of Integrated Web-Cam for Ball-Tracking for path prediction.</p>
+							</section>
+							<section>
+								<span class="fas fa-microchip" style="font-size:48px;color:black"></span>
+								<h3>Arduino Microcontroller</h3>
+								<p>Robust firmware for precise and fast stepper motor command</p>
+							</section>
+						</div>
+						<div class="features-row">
+							<section>
+								<span class="fas fa-cog"   style="font-size:48px;color:black"> </span>
+								<h3>Stepper Motor Control</h3>
+								<p>Precise movement and string control for accurate hand-motion.</p>
+							</section>
+							<section>
+								<span class="fas fa-signature" style="font-size:48px;color:black"></span>
+								<h3>String Tension Based Movement</h3>
+								<p>String-based gantry for cheap and ingenious x-y movement.</p>
+							</section>
+						</div>
+					</section>
+
+					<section class="box special features">
+					<header class="major">
+						<h2>Learn more about our project
+						<br />
+						</h2>
+					</header>
+
+					<div class="row">
+						<div class="col-6 col-12-narrower">
+
+							<section class="box special">
+								<span class="image featured"><img src="images/gantry_render_top.PNG"  width="500" height="280" alt=""  /></span>
+								<h3>Mechanical Design</h3>
+								<p>Come takea look at our gantry.</p>
+								<ul class="actions special">
+									<li><a href="mechanical.html" class="button alt">Learn More</a></li>
+								</ul>
+							</section>
+
+						</div>
+						<div class="col-6 col-12-narrower">
+
+							<section class="box special">
+								<span class="image featured"><img src="images/software_placeholder.jpg" width="500" height="280"alt="" /></span>
+								<h3>Software Design</h3>
+								<p>Come take a look at our software.</p>
+								<ul class="actions special">
+									<li><a href="software.html" class="button alt">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-6 col-12-narrower">
+
+							<section class="box special">
+								<span class="image featured"><img src="images/electrical.jpg" width="500" height="280" alt="" /></span>
+								<h3>Electrical Design</h3>
+								<p>Come take a look at our electronics.</p>
+								<ul class="actions special">
+									<li><a href="electrical.html" class="button alt">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+
+						<div class="col-6 col-12-narrower">
+
+							<section class="box special">
+								<span class="image featured"><img src="images/firmware.png" width="500" height="280" alt="" /></span>
+								<h3>Firmware Design</h3>
+								<p>Come take a look at our firmware.</p>
+								<ul class="actions special">
+									<li><a href="firmware.html" class="button alt">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+
+					</div>
+						
+					<div class="row">
+						<div class="col-6 col-12-narrower">
+
+							<section class="box special">
+								<span class="image featured"><img src="images/BillOfMaterials.png" width="500" height="280" alt="" /></span>
+								<h3>Bill of Materials</h3>
+								<p>Here's how we managed resources and what we spent our money on.</p>
+								<ul class="actions special">
+									<li><a href="budget.html" class="button alt">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-6 col-12-narrower">
+
+							<section class="box special">
+								<span class="image featured"><img src="images/banner_old_2.jpg"  width="500" height="280" alt=""  /></span>
+								<h3>Gallery</h3>
+								<p>Take a look at our journey to get here as well as our Hand of God in action!.</p>
+								<ul class="actions special">
+									<li><a href="gallery.html" class="button alt">Learn More</a></li>
+								</ul>
+							</section>
+
+						</div>
+					</div>
+					
+						
+					</section>
+				</section>
+
+
+
+
+			<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://github.com/simrunm/HandofGod" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
