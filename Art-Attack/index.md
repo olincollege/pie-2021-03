@@ -1,5 +1,5 @@
-## This PIE Team's project will appear here when the students finish it.
+# (404) We've moved!
 
-All sites for this class will be live after 12/15/2021 at the latest.
+Here's the link to our ACTUAL site: [https://mmadanguit.github.io/art-attack/](https://mmadanguit.github.io/art-attack/)
 
-Students: you can delete this file.
+(sorry PIE teaching team <3)
