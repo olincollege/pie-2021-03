@@ -29,17 +29,17 @@ Click on a link below to visit the website for that team's project.
 
 [Ferrofluid](https://olincollege.github.io/pie-2021-03/Ferrofluid)
 
-[FSM](https://olincollege.github.io/pie-2021-03/FSM)
+[FSM](https://olincollege.github.io/pie-2021-03/FSM/fsm-website-stellar/)
 
 [Grandmaster](https://olincollege.github.io/pie-2021-03/Grandmaster)
 
 [GREMLIN](https://olincollege.github.io/pie-2021-03/GREMLIN)
 
-[Hand of God](https://olincollege.github.io/pie-2021-03/Hand-of-God)
+[Hand of God](https://olincollege.github.io/pie-2021-03/Hand-Of-God)
 
 [Hermit](https://olincollege.github.io/pie-2021-03/Hermit)
 
-[Kinetic Sculpture](https://olincollege.github.io/pie-2021-03/Kinetic-Sculpture)
+[Kinetic Sculpture](https://olincollege.github.io/pie-2021-03/Reuse-Rebuild-React/about-us)
 
 [Lightsaber](https://olincollege.github.io/pie-2021-03/Lightsaber)
 
@@ -57,7 +57,7 @@ Click on a link below to visit the website for that team's project.
 
 [Skittles](https://olincollege.github.io/pie-2021-03/Skittles)
 
-[Sliding Camera](https://olincollege.github.io/pie-2021-03/Sliding-Camera)
+[Sliding Camera](https://olincollege.github.io/pie-2021-03/Sliding-Camera/Website-files)
 
 [SMAKS](https://olincollege.github.io/pie-2021-03/SMAKS)
 
