@@ -1,0 +1,438 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Our Process</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="https://cup-noodle-app.herokuapp.com/" class="logo">Make an order now!</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">This is Cup Noodle</a></li>
+							<li class="active"><a href="process.html">Our Process</a></li>
+							<li><a href="systemsoverview.html">Systems Overview</a></li>
+							<li><a href="aboutus.html"> About Us </a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>This is <br />
+									Our Process</h1>
+									<p> Take a look into the different stages in our design process. From our first to our final design sprint, see how the pieces come together as we go from the ideation to the implementation of Olin’s #1 ramen vending machine. </p>
+								</header>
+								<div class="image main"><img src="https://imgpile.com/images/w4hhmh.jpg" alt="" /></div>
+								
+								<!-- Sprint 1 -->
+								
+								<h3> Sprint 1 - November 4, 2021</h3>	
+								<p class='tab'> Our first design review was centered around choosing what the project was going to entail, what each of our team members wanted to focus on and learn, and seeing if we could test a piece of what was going to come further along in our project. During Sprint 1, we were able to establish all of the technologies, materials, and steps we would need to integrate the mechanical, hardware, and software in our project. <br/> </p>
+
+								<p class='tab'>We realized upon our first couple of meetings that most of the team had a strong software background, so we wanted to incorporate/consider several ways in which we could bring more software aspects into a mechanically dense project. <br/></p>
+
+								<p class='tab'>We narrowed down our options to creating a website that allows users to input their order by choosing their flavors and toppings. The website will send data to an API hosted on a WiFi module connected to an arduino. The Arduino will control our motors and send our gantry system to the correct location. Given extra time, we hoped to create a game mode where customers could move the ramen platform themselves and work to catch toppings falling from the top. In this sprint we began writing a stepper motor library on top of the popular AccelStepper library. This library will ultimately be used to control the final gantry. An explanation of the finished stepper motor library can be found in the system overview.
+									<br/> </p>
+								
+								<div class="image fit"><img src="images/process-1.jpg" alt="" /></div>
+
+								<p class="tab"> Mechanical-wise, this sprint we built a single-axis slider that we controlled through an Arduino and could send to a specific location in the x-axis. After doing some motor torque hand calculations, we decided to use three Nema 17 motors - two for the y-axis and one for the x-axis. We found some 80-20 aluminum rails and designed 3D-printed mounts for the bearings. For belt tensioning, we tried various methods including zip ties and torsion springs. To minimize cost, we reached out to the Wellesley Recycling and Disposal Facility to look for any parts. We were able to find a lot of scrap wood and a working kettle. We also had an existing 24 V PC power supply and used PIE motors instead of buying motors whenever we could. The CAD assembly for our two-axis gantry system was also created, shown below.
+
+								</p>
+
+								<div class="image fit"><img src="images/process-2.jpg" alt="" /></div>
+
+								<p class='tab'> We also worked on our website design and planned what ramen options we wanted to have available, and how interactive we would like it to be. Below is an image of a Figma design that we created to shape our final ordering website.
+
+								</p>
+								
+								<div class="image fit"><img src="images/process-3.jpg" alt="" /></div>
+								<div class="image fit"><img src="images/process-4.jpg" alt="" /></div>
+								<div class="image fit"><img src="images/process-5.jpg" alt="" /></div>
+								
+								<h4> First Iteration of our Slider</h4>
+								<div style="justify-content: center">
+									<video width="100%" controls>
+										<source src="videos/sprint1-1.mp4" type="video/mp4" >
+									</video>
+								</div>
+
+								<hr/>
+								<!-- Sprint 2 -->
+								
+								<h3> Sprint 2 - November 18, 2021</h3>	
+								<p class='tab'> For our second check-in, we wanted to have our second axis of our gantry built, as well as housing for the whole system. Two more Nema 17 motors were added to control the movement of the gantry in the y-axis and we devised a quick belt tensioning method with zip ties. A free air hockey board and various wooden planks were used to build the frame. To power all our motors and servos, we used a 24 V PC power supply. A lot of iteration (at least 3+ redesigns) was done for the 3D printed bearing and motor mounts to get the proper fit and smooth sliding motion in both axes. <br/> </p>
+
+									
+								<div style="justify-content: center">
+									<video width="100%" controls>
+										<source src="videos/sprint2-1.mp4" type="video/mp4">
+									</video>
+								</div>
+
+								<p class='tab'> We had created a design for our topping dispensing mechanism and printed out an initial idea. We had a servo that would turn a rounded piece that is held in 3D printed housing. We hoped that by turning the inside piece back and forth 180°, we could allow only one packet of each topping to fall out. We tested using pieces of cardboard similarly shaped to our topping packets and found that we could not reliably dispense with this design, as either many would fall out or none would. This design was also hard to manufacture. <br/></p>
+
+								<div class="image fit"><img src="images/sprint2-1.jpg" alt="" /></div>
+								<div class="image fit"><img src="images/sprint2-2.jpg" alt="" /></div>
+
+								<p class="tab"> During this sprint we later realized that we wanted to prioritize creating our hot water mechanism over creating our dispensing mechanism. A lot of ideas were thrown about but eventually we settled on the easiest and cheapest idea: attaching a valve to an existing kettle and dispensing water through a sharpened spike which would puncture the cup noodle. A motor would open and close the valve and 3D prints would connect and hold everything in place.</p>
+
+		
+
+
+								<p class="tab"> We also continued work on our website and began building the framework for it using React. A challenge that we faced while building this initial part of the React app was establishing how much of our initial design would be able to be converted to our app. </p>
+
+								<div class="image fit"><img src="images/sprint2-3.jpg" alt="" /></div>
+								<div class="image fit"><img src="images/sprint2-4.jpg" alt="" /></div>
+
+								<p class='tab'> A problem we faced while creating our second axis of our gantry was that our motors were constantly slipping when lifting the ramen up in the y-direction. We increased our output voltage from the PC power supply from 12 V, which is what we were initially using, to 24 V. We also increased the reference voltage of the stepper motors so that the controller fed more amperage to our motors. We initially were trying to have our ESP receive orders then control multiple motors at once. We found that the ESP could not consistently move all of our gantry motors at the same time. This meant that we were not able to send our cup holder to the locations we wanted. We changed our system so that our ESP solely received information from the API and sent it over to the Arduino, which completed the difficult processing of controlling multiple motors. We were then able to accurately send our cup holder to the correct locations.
+								</p>
+								
+								
+								<p class="tab"> During this sprint we created an API using Python that can communicate with our ESP8266 and hold ramen orders from the website. The following link leads to our hosted API:</p>
+									
+									
+								<p style="text-align: center"> <a href="https://cupnoodle-api.herokuapp.com/order">Cup Noodle API</a></p>	
+									
+								<p class='tab'>We also began development on the order handler code on the ESP that would send GET requests to the api, and send them over serial to the arduino. In this development we ran into issues managing https versus http requests. We settled on using the less secure but much simpler http requests for this iteration. In the future we would like to change to https.	</p>
+								<hr/>
+
+
+
+								<!-- Sprint 3 -->
+								
+								<h3> Sprint 3 - November 18, 2021</h3>	
+
+								<h5>Cup Holder:</h5>
+								<p class="tab">We first had a completely 3D printed ramen cup holder connected to bearings on our horizontal rail. We found issues with our holder being very wobbly and having our cup noodles falling out through the back as there was no railing to hold our cups in place. We started working on building a wooden holder with a lip but sourced a decorative metal cage creating a wooden platform for it to connect to a 3D printed mount which held the bearings. With this new holder iteration, we decreased the risk of our cup wobbling and having hot water fall out. More woodworking was generally favored over 3D prints because it fit with the wooden aesthetic of our system. </p>
+
+								<div class="image fit"><img src="images/sprint-3-cup-holder.jpg" alt="" /></div>
+								
+								<h5>Topping Dispenser:</h5>
+								<p class='tab'> Our existing topping dispenser was hard to manufacture and did not always dispense the correct number of topping packets, so we decided to focus on the remaining parts of our machine and focus on the dispenser afterwards with extra time.
+								</p>
+
+								<h5>Hot Water:</h5>
+								<p class='tab'> We created a successful hot water dispenser but through the process encountered many issues. Our kettle is placed at the top of our vending machine and is connected to a power strip via extension cord. To dispense the hot water, we drilled a hole into the side of the kettle attached to a mechanical valve. Solenoid valves were considered but they were too expensive for our budget, so we compromised on a motor turning a manual valve. Our valve opened and closed with a stepper motor and we 3D printed the motor mount and hardware necessary to be able to turn the valve. We had to ensure that everything the water passed through was food safe and could withstand boiling water. Our first valve required too much torque to turn, more than our stepper motor was able to output, so we purchased another valve that is much easier to turn but still fits in the hole we drilled into the side of the kettle and the bulkhead. The valve is connected to a sharpened copper toilet riser which we use as a straw, which is connected to the valve via a compression fitting. The ramen is raised to the copper straw and is punctured.
+								</p>
+
+								<div class="image fit"><img src="images/sprint-3-full-build.jpg" alt="" /></div>
+								
+								<p style="text-align: center">The entire system was finally put together in the final sprint.</p>
+
+								<h4>Software and Firmware</h4>
+								<p class='tab'> In this sprint we finalized the serial communication between the Arduino and ESP8266. The full explanation for this communication can be found in our system overview. We ran into problems where serial data was being sent from the ESP to the Arduino when the ESP was initially plugged in. This would send the gantry to unwanted positions. To solve this, we added a check to make sure the data being sent was expected. Only after this check is the gantry allowed to complete an order. Our final software and firmware pipeline is shown below:
+								</p> 
+
+								<div class="image fit"><img src="images/sprint3-2.jpg" alt="" /></div>
+
+								<p class='tab'> We are currently sending flavors as <strong>a</strong>, <strong>b</strong>, <strong>c</strong>, or <strong>d</strong>. The toppings are currently being sent as the word with an emoji next to it, for example: egg . The API is not able to parse data with emojis, so we were not able to send data from the website to the Arduino. We have been testing our vending machine by manually inputting data into the API since our website data cannot be sent. To fix this, we removed the emojis from the topping data and changed the website output so that the toppings are sent as a, b, d, or d instead.
+								</p>
+
+								<div class="image fit"><img src="images/sprint3-3.jpg" alt="" /></div>
+
+								<!-- Final Demo Video -->
+								<div style="justify-content: center">
+									<video width="100%" controls>
+										<source src="videos/kei-demo-video.mp4" type="video/mp4" scale="50%">
+									</video>
+								</div>
+
+								<hr/>
+
+								<h3> Budget </h3>	
+								<p class='tab'>Here is the budget for our project this year.</p>
+
+                                <table>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Link</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                        <th>Total</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Stepper motor</td>
+                                        <td><a href="https://www.amazon.com/dp/B00PNEQUZ2/ref=emc_b_5_t"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$20.99</td>
+                                        <td>$20.99</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Stepper motor driver</td>
+                                        <td><a href="https://www.amazon.com/BIQU-Compatible-Stepper-StepStick-Controller/dp/B01FFGAKK8/ref=pd_bxgy_2/139-8266457-6234248?pd_rd_w=ADqyV&pf_rd_p=c64372fa-c41c-422e-990d-9e034f73989b&pf_rd_r=5VV5WXKT16RBVDCDMXV2&pd_rd_r=b65b1ce3-7e6f-4b5a-8615-c84e4ba905c8&pd_rd_wg=YAxgl&pd_rd_i=B01FFGAKK8&psc=1#customerReviews"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$10.99</td>
+                                        <td>$10.99</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Limit Switches</td>
+                                        <td><a href="https://www.amazon.com/dp/B01G3FCH56?psc=1&ref=ppx_yo2_dt_b_product_details"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$8.05</td>
+                                        <td>$8.05</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Timing Belt kit - belt, pulleys, motor adapter </td>
+                                        <td><a href="https://www.amazon.com/KeeYees-Timing-Tensioner-Torsion-Printer/dp/B07JKT5BZQ/ref=sr_1_4?crid=JHEAIUIU8PLT&dchild=1&keywords=gt2+timing+belt&qid=1635281187&qsid=142-6686061-3916109&sprefix=timing+belts+g%2Caps%2C164&sr=8-4&sres=B07KK86NYX%2CB07JKT5BZQ%2CB08BJ2G2X6%2CB088M3V865%2CB071K8HYB4%2CB0776KXY8G%2CB0897CJKS1%2CB07Z51RKQ7%2CB08974S1CC%2CB08SQ32RSR%2CB07BRKZGMS%2CB08YX549JM%2CB077GMKW1C%2CB018HMU9NU%2CB07Y2VRSM3%2CB085NMDTDM"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$15.99</td>
+                                        <td>$15.99</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>6x19x6 mm bearings (10)</td>
+                                        <td><a href="https://www.amazon.com/BIQU-Compatible-Stepper-StepStick-Controller/dp/B01FFGAKK8/ref=pd_bxgy_2/139-8266457-6234248?pd_rd_w=ADqyV&pf_rd_p=c64372fa-c41c-422e-990d-9e034f73989b&pf_rd_r=5VV5WXKT16RBVDCDMXV2&pd_rd_r=b65b1ce3-7e6f-4b5a-8615-c84e4ba905c8&pd_rd_wg=YAxgl&pd_rd_i=B01FFGAKK8&psc=1#customerReviews"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$10.99</td>
+                                        <td>$10.99</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Nema 17 Stepper Motor</td>
+                                        <td><a href="https://www.amazon.com/gp/product/B00PNEQKC0/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1"/> Amazon Link </a></td>
+                                        <td>3</td>
+                                        <td>$13.99</td>
+                                        <td>$41.97</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Replacement Bearings</td>
+                                        <td><a href="https://www.amazon.com/dp/B075CM4WZQ?psc=1&smid=A1THAZDOWP300U&ref_=chk_typ_imgToDp"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$9.99</td>
+                                        <td>$9.99</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Various bolts from Harvey's hardware</td>
+                                        <td>No Link</td>
+                                        <td>1</td>
+                                        <td>$35.00</td>
+                                        <td>$35.00</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Wire </td>
+                                        <td><a href="https://www.amazon.com/gp/product/B000BPEQAE/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$6.18</td>
+                                        <td>$6.18</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>8mm universal motor hub</td>
+                                        <td><a href="https://www.amazon.com/gp/product/B0822425TT/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$8.99</td>
+                                        <td>$8.99</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Ball valve for kettle</td>
+                                        <td><a href="https://www.amazon.com/gp/product/B07F7VBMRH/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$13.99.99</td>
+                                        <td>$13.99</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>12 cups of ramen</td>
+                                        <td>No link</td>
+                                        <td>1</td>
+                                        <td>$19.68</td>
+                                        <td>$19.68</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Wood</td>
+                                        <td> No link</td>
+                                        <td>1</td>
+                                        <td>$20.00</td>
+                                        <td>$20.00</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Power Supply</td>
+                                        <td>No link</td>
+                                        <td>1</td>
+                                        <td>$10.00</td>
+                                        <td>$10.00</td> 
+                                    </tr>
+                                    <tr>
+                                        <td> ESP 8266</td>
+                                        <td> No link</td>
+                                        <td>1</td>
+                                        <td>$10.00</td>
+                                        <td>$10.00</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>Adafruit Motor Shield</td>
+                                        <td> No Link </td>
+                                        <td>1</td>
+                                        <td>$20.00</td>
+                                        <td>$20.00</td> 
+                                    </tr>
+                                    <tr>
+                                        <td> Kettle</td>
+                                        <td> No Link </td>
+                                        <td>1</td>
+                                        <td>$10.00</td>
+                                        <td>$10.00</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>DC Motors</td>
+                                        <td> No Link </td>
+                                        <td>4</td>
+                                        <td>$4.00</td>
+                                        <td>$16.00</td> 
+                                    </tr>
+									<tr>
+                                        <td>8020 aluminum extrusion</td>
+                                        <td> No Link </td>
+                                        <td>6</td>
+                                        <td>$5.00</td>
+                                        <td>$30.00</td> 
+                                    </tr>
+									<tr>
+                                        <td>Kettle Valve (easy-to-turn)</td>
+                                        <td> Home Depot </td>
+                                        <td>1</td>
+                                        <td>$8.48</td>
+                                        <td>$8.48</td> 
+                                    </tr>
+									<tr>
+                                        <td> Toilet Pipe</td>
+                                        <td> Home Depot </td>
+                                        <td>1</td>
+                                        <td>$4.35</td>
+                                        <td>$4.35</td> 
+                                    </tr>
+									<tr>
+                                        <td> Hose Clamps </td>
+                                        <td> Home Depot </td>
+                                        <td>3</td>
+                                        <td>$1.29</td>
+                                        <td>$3.87</td> 
+                                    </tr>
+									<tr>
+                                        <td>Plumbers Caulk</td>
+                                        <td> Home Depot </td>
+                                        <td>1</td>
+                                        <td>$4.19</td>
+                                        <td>$4.19</td> 
+                                    </tr>
+									<tr>
+                                        <td>5mm Motor Shaft Coupling </td>
+                                        <td><a href="https://www.amazon.com/Coupling-Support-Hardness-Fittings-Connector/dp/B07L1FMBBC?pd_rd_w=l3h3y&pf_rd_p=82585345-d4df-49b0-bbc1-c842d1dad3c9&pf_rd_r=ZEJ4MQVNQ5E47GQ4TDSQ&pd_rd_r=6ba784db-fc60-4a36-bf11-ef5f17aa2ffb&pd_rd_wg=eRLC2&pd_rd_i=B07L1FMBBC&psc=1&ref_=pd_bap_d_rp_1_t"/> Amazon Link </a></td>
+                                        <td>1</td>
+                                        <td>$8.99</td>
+                                        <td>$8.99</td> 
+                                    </tr>
+									<tr>
+                                        <td>Clothing Hanging Wire</td>
+                                        <td> No Link </td>
+                                        <td>6</td>
+                                        <td>$5.00</td>
+                                        <td>$30.00</td> 
+                                    </tr>
+									<tr>
+                                        <td>Wood Screws</td>
+                                        <td>No link</td>
+                                        <td>Lots</td>
+                                        <td>$5.00</td>
+                                        <td>$5.00</td> 
+                                    </tr>
+
+                                  </table>							
+
+							
+							</section>
+
+							
+
+					</di>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p> 1000 Olin Way <br/>
+									Needham, MA 02492</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(781) 292-2300</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">pie@olin.edu</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

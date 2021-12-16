@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Software</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="https://cup-noodle-app.herokuapp.com/" class="logo">Make an order now!</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">This is Cup Noodle</a></li>
+							<li><a href="process.html">Our Process</a></li>
+							<li class="active"><a href="systemsoverview.html">Systems Overview</a></li>
+							<li><a href="aboutus.html"> About Us </a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1> Software </h1>
+                                    <div class="image main"><img src="images/software-1.jpg" alt="" /></div>
+                                </header>
+								
+								<!-- First feature -->
+								
+								<h3> API Notes:</h3>	
+								<li> Here is our <a href="https://github.com/jonaskaz/Noodle-API"> Github repo.</a><br/> </li>
+                                
+								<li> We created a RESTful Python api using FastAPI to receive orders from the website and make them available to the ESP8266 on our machine.
+                                <br/></li>
+
+                                <li>The website routes can be seen <a href="https://cupnoodle-api.herokuapp.com/docs"> here.</a><br/> </li>
+
+								<li> The reason to create this api is that we needed a way for our website and machine to be able to communicate in an asynchronous way. If the machine is making an order, we do not want it to miss an order if it is placed before the current one finishes. <br/> </li>
+                                
+                                <li> The main code can be found  <a href="https://github.com/jonaskaz/Noodle-API/blob/main/noodle/main.py"> here</a>, and the tests are located <a href="https://github.com/jonaskaz/Noodle-API/blob/main/noodle/main.py"> here</a>. <br/> </li>
+
+                                <li> The API was implemented with 2 routes, a home / route and a /order route. The home route is used to display a welcome message. The /order route has two methods that can be called on it: GET and POST. Posting to /order is used by our website to post new orders. Example payloads can be found <a href="https://github.com/jonaskaz/Noodle-API/blob/main/tests/conftest.py"> here.</a> When an order is posted it is checked against our Payload class then stored in our orders order queue. This queue is local and not persistent. The queue ensures that the oldest order to go in is the first one to go out. To retrieve an order a GET request can be sent to /order. This removes the latest item from the queue and sends it as json data. If no orders are present an empty message is sent. 
+                                    <br/> </li>
+
+                                <li> To make future updates simpler our four kinds of ramen flavors and toppings are assigned to a, b, c, and d. If we need to update a flavor in our machine, we can simply change the front end website and leave the current a, b, c, d in the rest of our pipeline the same. <br/> </li>
+                         
+
+                                <hr/>
+								
+                                <!-- Second feature -->
+
+                                <h3> Ordering Website </h3>	
+								<p class='tab'> We decided to build an Order app in ReactJS since most of the team’s learning goals were to learn this specific Javascript framework. We started off with creating simple components that added functionality (like a homepage leading to an order page, and an order page having options to be able to choose certain flavors and options). Once we had some functionality down, we were able to go in and update the UI of the page, revamping the experience for our users. Lastly, we integrated the API that we created to our ‘Submit’ button on our Order app, and we tested the fetch and post methods to our vending machine. 
+                                    <br/> Check out our github repo <a href="https://github.com/notwaltervilla/Cup-Noodle-React-App"> here. </a> </p>
+                            
+                                <hr/>
+
+                                <h3> Website Design </h3>	
+								<p class='tab'>The UI Design was built on Figma. We were able to quickly generate a design and use Figma’s CSS property to quickly build out the UI of our order app.
+                                <hr/>
+
+                                <h3>Links to Github Repos</h3>
+                                <li><a href="https://github.com/jonaskaz/Noodle-Order-Handler">Noodle Order Handler</a></li>
+                                <li><a href="https://github.com/jonaskaz/Noodle-Controller">Noodle Controller</a></li>
+                                <li><a href="https://github.com/notwaltervilla/Cup-Noodle-React-App">Cup Noodle React App</a></li>
+                                <li><a href="https://github.com/jonaskaz/Noodle-API">Cup Noodle API</a></li>
+
+                                <!-- Add a video -->
+								<!-- <div style="justify-content: center">
+									<video width="100%" controls>
+										<source src="videos/sprint1-1.mp4" type="video/mp4" scale="50%">
+									</video>
+								</div> -->
+
+                                
+							</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p> 1000 Olin Way <br/>
+									Needham, MA 02492</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(781) 292-2300</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">pie@olin.edu</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
