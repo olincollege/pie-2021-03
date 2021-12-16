@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Software & Sensing Suite</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="article">
+
+					<!-- Inner -->
+						<div class="inner">
+							<header>
+								<h1 id="logo">Software & Sensing Suite</h1>
+							</header>
+						</div>
+
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#cara" class = "scrolly">System</a></li>
+
+							<li>Process
+								<ul>
+									<li><a href="#sprint1"class = "scrolly"> Sprint 1</a></li>
+									<li><a href="#sprint2"class = "scrolly"> Sprint 2</a></li>
+									<li><a href="#sprint3"class = "scrolly"> Sprint 3</a></li>
+								</ul>
+							</li>	
+							<li><a href="index.html#features" class = "scrolly">Meet the Team</a></li>
+							<!-- <li><a href="no-sidebar.html">No Sidebar</a></li> -->
+						</ul>
+					</nav>
+
+				</div>
+
+			<!-- Main -->
+				<div class="wrapper style1">
+
+					<div class="container">
+						<article id="main" class="special">
+							
+							<header>
+								<h2>
+									<a>
+										Software & Sensing Suite
+										
+									</a>
+								</h2>
+								<p>
+									In-depth documentation covering the implementation and design about software and the sensing suite it handles
+								</p>
+							</header>
+							<section>
+								<center><img src="images/electrical.png"alt="" width= auto height =400></center>
+								<!-- <a><img class="image featured" src="images/manuHEADER.jpg" max-width=100% height=40%></a> -->
+								<h3> Arduino Firmware </h3>
+								<p>
+									All control firmware runs in a super loop on an Arduino Mega. The objective of the control firmware is to safely operate the flywheel in an autonomous manner, and provide metrics about its operation to a user. The control firmware must be able to: 
+									<ul>
+										<li>Interface with the Odrive motor controller to set the velocity setpoint and velocity ramp rate of the flywheel motor.</li>
+										<li>Power and poll the sensing suite to collect critical data about the flywheel’s operation </li>
+										<li>Continuously perform safety checks and automatically shut the flywheel system down if needed </li>
+										<li>Relay sensor data & critical information over a serial connection to a connected laptop </li>
+									</ul>
+									<br>
+									The Arduino code features three finite state machines (FSM’s). Each of these FSM’s is implemented in code with a switch statement in the Arduino’s superloop, which executes the appropriate function respective to the state. The state machines track: 
+									<ul>
+										<li>System state, to track whether the overall system should spin or not. 
+											<ul><li>RUN</li><li>STOP</li></ul>	
+										</li>
+										<li>Odrive state to track exact state of flywheel spin.<ul><li>FAULT </li><li>IDLE_ </li> <li>STARTUP</li><li>REGEN_BRAKE </li><li>REGEN_SPINUP</li><li>SPINDOWN </li></ul></li>
+										<li>Startup state to track flywheel startup regime <ul><li>STOPPED  </li><li>SPINUP  </li> <li>MID </li><li>FAST  </li><li>COMPLETE </li></ul></li>
+									</ul>
+									<br>
+									In order for the Arduino to Interface with the Odrive motor controller, we use the Serial1 peripheral available on the Arduino Mega at a baud rate of 115200. We use 2 serial ports 
+									on the Mega, with Serial being used for communications to the laptop, and Serial1 being used for communicating with the Odrive. Using the Odrive’s ASCII Serial interface, we 
+									communicate to UART_A on the Odrive to read and write data from the Odrive and commands to the ODrive, respectively. More on the data we read from the Odrive later. The main commands 
+									that we write to the Odrive are setting the velocity setpoint and setting the velocity ramp rate. We also have the ability to clear errors on the odrive. 							
+								</p>
+							</section>
+							<section>
+								<header><h3>Our Sensing Suite</h3></header>
+								<p>
+									<h3>A GY-521 IMU breakout board</h3>
+									This board breaks out a MPU6050 IC, which yields 3 axis gyro & accelerometer that collect data at 8KHz and 1KHz respectively. We poll the IMU at 1KHz over 400KHz I2C. Ideally, we’d be able to poll it faster, but since our Arduino runs a superloop and also needs to manage high speed serial communications with the Odrive & the laptop and perform safety critical checks & basic floating point calculations, we decided to ease the load on the Arduino and reduce the rate at which we poll the IMU down to 20Hz. This is not ideal for collecting high frequency IMU data. We run an IMU to determine system vibration; it is mounted on the bottom bearing block, and its data is particularly useful for dynamic balancing and high speed RPM testing.  
+									<br><br>
+									<h3>Internal Neo motor temperature sense line: </h3>
+									This line is a low side 10K NTC thermistor. We have wired a 10K pullup and poll the voltage at 3Hz using the Mega’s onboard 10 bit ADC’s. The motor is one of the primary loss mechanisms in the system - the higher phase current we run through the motor, the higher power dissipation, and the hotter the motor gets. The motor’s internal temperature should not exceed 80 degrees C, and operating it continuously at high speeds requires constant monitoring of the internal motor temperature. Ideally we would have motor housing temperature data, ambient temperature data, and bearing block temperature data.
+									<br><br>
+									<h3>Input current & regen current sensing:</h3>
+									Both are tracked with separate ACHS-7124 Pololu breakout boards, that breakout ACHS-7124-000E 40A bidirectional ratiometric hall effect sensor IC’s. we poll both current sense lines at 3Hz using the Mega’s onboard 10 bit ADC’s. The max current spec on these sensors was likely too high, resulting in a lower precision current sensing setup. This data can help us indicate the input power to our electrical system, as well as the power being dissipated over the brake resistors. 
+									<br><br>
+									<h3>Additional Data that we poll from Odrive Motor Controller</h3>
+									<h4>VBUS - Bus voltage</h4>
+									Helpful in indicating input power to the system. 
+									<h4>Revolutions / Second (RPS) </h4>
+									We poll the Odrive’s encoder velocity estimate, stored in the axis1.encoder.vel_estimate variable, which is returned in a units of RPS. We multiply the returned value by 60 to track RPM data. 
+									<h4>Errors </h4>
+									<ul>
+										<li>System error
+										</li>
+										<li>Axis error
+										</li>
+										<li>Motor error
+										</li>
+										<li>Sensorless Estimator Error
+										</li>
+										<li>Encoder error
+										</li>
+										<li>Sensorless Estimator 
+										</li>
+									</ul>
+									(All 6 above errors are polled, stored, and checked in the firmware with a 6 int struct)
+									<br><br>
+									We send data over serial to the laptop at 50 Hz. Serial data is colon delimited to interface with the Serial Studio live plotting display software. 
+									<br><br>
+									Our fault checking consists of checking for motor overtemperature at 80C, any present odrive errors, and the kill/enable switch that we have on our system to power down.
+									<br><br>
+									In the current system, our fault handling procedure consists of simply setting the Odrive velocity setpoint to 0 RPM with a conservative (slow) vel_ramp_rate of 0.5. In future systems an active magnetic eddy-current brake may be utilized. 
+								</p>
+							</section>
+							<section>
+								<center><img src="images/serialstudio.jpg" alt="" width=auto height=400></center>
+								<header><h3>Data Vizualization with Serial Studio</h3></header>
+								<p>
+									Built right ontop of our serial port, on the laptop we have reading data from the Arduino is our configuration of Serial-Studio. While not much complexity exists in creating this setup, its addition allows for a clear visualization of the data that is being sent over serial as well as allow a great ui for saving the data too. Since one of the overarching goals of this project was to create a testbench for development post PIE, having a Labview-esk front-end live visualization of our data we found was a nice touch 
+								</p>
+							</section>
+							
+						</article>
+						<hr />
+						
+					</div>
+
+				</div>
+
+			<!-- Footer -->
+				<!-- Footer -->
+				<div id="footer">
+					<div class="container">
+						<!-- <div class="row"> -->
+							<!-- Tweets -->
+								<!-- <section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon fa-twitter circled"><span class="label">Tweets</span></h2>
+									</header>
+									<ul class="divided">
+										<li>
+											<article class="tweet">
+												Amet nullam fringilla nibh nulla convallis tique ante sociis accumsan.
+												<span class="timestamp">5 minutes ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Hendrerit rutrum quisque.
+												<span class="timestamp">30 minutes ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Curabitur donec nulla massa laoreet nibh. Lorem praesent montes.
+												<span class="timestamp">3 hours ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Lacus natoque cras rhoncus curae dignissim ultricies. Convallis orci aliquet.
+												<span class="timestamp">5 hours ago</span>
+											</article>
+										</li>
+									</ul>
+								</section> -->
+
+							<!-- Posts -->
+							
+								<section class="col-4 col-12-mobile">
+									<header>
+										<h1 id="footer"> Check out our Github for all files associated with our project</h1>
+										<a href="https://github.com/lxbtlr/Diskos"><h2 class="icon fa-github circled"></h2></a>
+									</header>
+										<!-- <li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Nisl fermentum integer</a></h3>
+												</header>
+												<span class="timestamp">3 hours ago</span>
+											</article>
+										</li> -->
+										<!-- <li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Phasellus portitor lorem</a></h3>
+												</header>
+												<span class="timestamp">6 hours ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Magna tempus consequat</a></h3>
+												</header>
+												<span class="timestamp">Yesterday</span>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Feugiat lorem ipsum</a></h3>
+												</header>
+												<span class="timestamp">2 days ago</span>
+											</article>
+										</li> -->
+								</section>
+
+							<!-- Photos -->
+								<!-- <section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon fa-camera circled"><span class="label">Photos</span></h2>
+									</header>
+									<div class="row gtr-25">
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic15.jpg" alt="" /></a>
+										</div>
+									</div>
+								</section> -->
+
+						<!-- </div> -->
+						<div class="row">
+							<div class="col-12">
+
+								<!-- Contact -->
+									<!-- <section class="contact">
+										<header>
+											<h3>Nisl turpis nascetur interdum?</h3>
+										</header>
+										<p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
+										<ul class="icons">
+											<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+											<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+											<li><a href="#" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
+										</ul>
+									</section> -->
+
+								<!-- Copyright -->
+									<div class="copyright">
+										<ul class="menu">
+											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										</ul>
+									</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

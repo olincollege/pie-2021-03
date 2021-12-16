@@ -1,0 +1,379 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Magnetic Modeling</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="article">
+
+					<!-- Inner -->
+						<div class="inner">
+							<header>
+								<h1 id="logo">Magnetic Modeling: Eddy Current Braking</h1>
+							</header>
+						</div>
+
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#cara" class = "scrolly">System</a></li>
+
+							<li>Process
+								<ul>
+									<li><a href="#sprint1"class = "scrolly"> Sprint 1</a></li>
+									<li><a href="#sprint2"class = "scrolly"> Sprint 2</a></li>
+									<li><a href="#sprint3"class = "scrolly"> Sprint 3</a></li>
+								</ul>
+							</li>	
+							<li><a href="index.html#features" class = "scrolly">Meet the Team</a></li>
+							<!-- <li><a href="no-sidebar.html">No Sidebar</a></li> -->
+						</ul>
+					</nav>
+
+				</div>
+
+			<!-- Main -->
+				<div class="wrapper style1">
+
+					<div class="container">
+						<article id="main" class="special">
+							<header>
+								<h2><a>What is an eddy current brake?</a></h2>
+								<p>
+									For many mechanical systems where linear or rotational motion is present, 
+									a component is added to the assembly that allows the device to slow this motion.
+									To do this, devices apply a force, often called a retarding force, that resists 
+									the motion of the moving element. In many cases, there are friction brakes, sometimes 
+									applied using cables (bikes) or hydraulic fluids (cars and other vehicles). 
+						
+									But friction is not the only method of applying a retarding force on a rotating or 
+									moving element to oppose its motion. In the case of eddy current brakes, the retarding 
+									force is created using magnets, either permanent magnets or electromagnets. 
+
+								</p>
+							</header>
+							<!-- <a href="#" class="image featured"><img src="images/magenticSimulation.jpg" alt="" /></a> -->
+							<h3><a>Operational Physics: High Level</a></h3>
+							<p>
+								The effect of the magnetic field can be understood with several different equations, 
+								but most simply can be approximated by Lenz’s law. It allows us to predict the direction 
+								of a variety of electromagnetic effects but does not quantify the magnitude of the effect. 
+								<blockquote>
+									“(Lenz’s law) says that the direction of the electric current induced in a conductor by a changing 
+									magnetic field is such that the magnetic field created by the induced current opposes changes in the 
+									initial magnetic field.”
+								</blockquote>
+								<b>Simply, this means magnets that move near conductors create magnetic fields that slow down their motion.</b>
+								If you accept that the permanent magnet induces an electric current in a moving conductor, Lenz’s law allows
+								 us to predict that there will be a retarding force that resists the motion of the magnet relative to the conductor. 
+								 This means that there is an opposite force applied to the conductor. In the case of the flywheel, this is a disk.
+							</p>
+							<a href="https://en.wikipedia.org/wiki/Eddy_current_brake#/media/File:Eddy_currents_due_to_magnet.svg"><img src="images/wikiimage.png" alt="" /></a>
+							<section>
+								<p><a href="https://en.wikipedia.org/wiki/Eddy_current_brake#/media/File:Eddy_currents_due_to_magnet.svg"><i>Image source: Wikipedia</i></a></p>
+								<header>
+									<h3>Why does the magnetic field induce a current?</h3>
+								</header>
+								<p>
+									If you consider each free electron in the metal, the motion of these charges can be understood using 
+									the Lorentz force. This equation states that for a charge, a force will be applied normally with respect
+									 to the plane created between the moving charge and direction of the magnetic field.
+								</p>
+								<h5><center><i> F = qV x B </i></center></h5>
+								<p>
+									This Lorentz force causes motion that can be predicted with the right-hand rule. From the perspective of the 
+									charge, the applied magnetic field goes into the conductor, and the conductor moves orthogonally with respect 
+									to the charge. This causes a force on the charge normal to the other two. 
+								</p>
+								<p>
+									If you complete this process for each free charge in the material, you can see circular rings of moving charges 
+									in the conductor. These moving charges cause a circular current, whose magnitude also changes over time. This 
+									changing current causes its own magnetic field, which opposes the applied field. In the diagram above, the blue 
+									arrows point in the direction of the induced magnetic field.
+								</p>
+								<p>
+									The eddy current density is modeled by the following, where  is the conductivity, and J and E are vectors
+									 representing the current density and electric field intensity respectively.
+								</p>
+								<h5><center>J = σ x E</center></h5>
+								<p>
+									The braking torque is then described by the following, where B is the magnetic flux density, and r is the radius of the disk.
+								</p>
+								<h5><center>T = (J x B) ⋅ r</center></h5>
+								<center>Note that this equation is similar to the lorentz force expression above!</center>
+								<p>
+								</p>
+							</section>
+							<section>
+								<header>
+									<h3>Modeling and Implementation</h3>
+								</header>
+								<p>
+									To predict the field of the disk and eddy current rotor, we used a physics simulator called COMSOL. This simulator 
+									uses a parametric solver to calculate the equations above (simplified for clarity) and a series of more complex 
+									interactions across the material at each step in time. For the final model, our input parameters were the following.	
+								</p>
+
+								<style type="text/css">
+									.tg  {border-collapse:collapse;border-color:#aaa;border-spacing:0;}
+									.tg td{background-color:#fff;border-color:#aaa;border-style:solid;border-width:1px;color:#333;
+									  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+									.tg th{background-color:#f38630;border-color:#aaa;border-style:solid;border-width:1px;color:#fff;
+									  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+									.tg .tg-0ok5{background-color:#FCFBE3;border-color:#000000;text-align:center;vertical-align:top}
+									.tg .tg-wp8o{border-color:#000000;text-align:center;vertical-align:top}
+									.tg .tg-mqa1{border-color:#000000;font-weight:bold;text-align:center;vertical-align:top}
+									</style>
+									<table class="tg">
+									<thead>
+									  <tr>
+										<th class="tg-mqa1"><span style="font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Parameter</span></th>
+										<th class="tg-mqa1"><span style="font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Thick Disk </span><br><span style="font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent">(Flywheel)</span></th>
+										<th class="tg-mqa1"><span style="font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Thin Disk </span><br><span style="font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent">(Eddy Current Rotor)</span></th>
+									  </tr>
+									</thead>
+									<tbody>
+									  <tr>
+										<td class="tg-0ok5"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Thickness</span></td>
+										<td class="tg-0ok5"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">52.25 mm</span></td>
+										<td class="tg-0ok5"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">3.17 mm</span></td>
+									  </tr>
+									  <tr>
+										<td class="tg-wp8o"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Radius</span></td>
+										<td class="tg-wp8o"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">74.25 mm</span></td>
+										<td class="tg-wp8o"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">74.25 mm</span></td>
+									  </tr>
+									  <tr>
+										<td class="tg-0ok5"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">B Field</span></td>
+										<td class="tg-0ok5"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">4 T</span></td>
+										<td class="tg-0ok5"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">4 T</span></td>
+									  </tr>
+									  <tr>
+										<td class="tg-wp8o"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">90% Spindown </span></td>
+										<td class="tg-wp8o"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">10 s+</span></td>
+										<td class="tg-wp8o"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">~2 s</span></td>
+									  </tr>
+									  <tr>
+										<td class="tg-0ok5"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">RPM</span></td>
+										<td class="tg-0ok5"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">1000</span></td>
+										<td class="tg-0ok5"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">5000</span></td>
+									  </tr>
+									</tbody>
+									</table>
+								<p>
+									These factors were computed using the parametric solver to inform part selection for the eddy current disk. 
+									This first iteration represents the case where the disk itself is used as the power dissipation material and 
+									the inductor. The current density (proportional to induced B field) is shown throughout the volume below.
+									<center><img src="images/magenticSimulation.jpg" atl="" width=960 height=540/></center>
+									The current density can also be modeled for the case of a thin disk. Notice that the peak current (red) is 
+									higher here than the thick disk.
+									<center><img src="images/thindisc.jpg" alt="" width= 960 height =540/></center>
+									The conductor-current penetration difference between the thick and thin disks can be seen when 
+									the cross-section of the conductor is shown below.
+									<center><img src="images/thinMAG.jpg" alt="" width= 960 height =540/></center>
+									<center><img src="images/thickMAG.jpg" alt="" width= 960 height =540/></center>
+									From looking at the plots, it is clear that there is a darker red region present at the cross-section 
+									of the thin conductor. In this case, the intuitive conclusion from these plots (that there is a larger braking force) 
+									is correct. The smaller conductor thickness allows greater interaction between the poles, this increasing induced current 
+									density. This result is consistent with other literature.
+									<blockquote>
+										“...loss and thus the braking force increase significantly, if the pole pairs are drawn nearer to each other. 
+										Therefore, if the aim is to attain a braking force as great as possible, the two poles should be set as near to 
+										each other as possible.” 
+									</blockquote>
+									Our simulator also allows us to verify this conclusion. The plots below show the angular velocity vs time 
+									during the first few seconds of the motion of the conductor.
+									<center><img src="images/flywheelplot.jpg" alt="" width= 960 height =540/></center>
+									<center><h5>The plot for the Flywheel</h5></center>
+									<center><img src="images/BearingBlockplot.jpg" alt="" width= 960 height =540/></center>
+									<center><h5>The plot for our thin braking disc</h5></center>
+								</p>
+							</section>
+							<section>
+								<header>
+									<h3>Conclusions</h3>
+								</header>
+								<p>
+									As with all modeling, it is important to consider the factors of error in the system. For this simulation, 
+									errors in B-Field calculation and RPM are likely the largest factors that will affect results. In this simulation, 
+									a B-field of 4T is (arguably) an overestimate for the B-Field achievable in this system. This magnitude was chosen 
+									to accentuate the braking effect and choose between a thin and thick conductor. For unknown reasons, the solver was 
+									unable to solve solutions with a thick conductor over 1000 RPM. For the thin conductor though, the higher RPMs represent 
+									a more realistic scenario that the disk would encounter. During our testing, we have hit upwards of 5600 RPM.
+									<br>
+									Generally, these models were made to inform part selection, and not to quantify theoretical performance. For this purpose, 
+									they succeeded in allowing us to pick a thin conductor over the default configuration.
+								</p>
+							</section>
+						</article>
+
+					</div>
+
+				</div>
+
+			<!-- Footer -->
+				<!-- Footer -->
+				<div id="footer">
+					<div class="container">
+						<!-- <div class="row"> -->
+							<!-- Tweets -->
+								<!-- <section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon fa-twitter circled"><span class="label">Tweets</span></h2>
+									</header>
+									<ul class="divided">
+										<li>
+											<article class="tweet">
+												Amet nullam fringilla nibh nulla convallis tique ante sociis accumsan.
+												<span class="timestamp">5 minutes ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Hendrerit rutrum quisque.
+												<span class="timestamp">30 minutes ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Curabitur donec nulla massa laoreet nibh. Lorem praesent montes.
+												<span class="timestamp">3 hours ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Lacus natoque cras rhoncus curae dignissim ultricies. Convallis orci aliquet.
+												<span class="timestamp">5 hours ago</span>
+											</article>
+										</li>
+									</ul>
+								</section> -->
+
+							<!-- Posts -->
+							
+								<section class="col-4 col-12-mobile">
+									<header>
+										<h1 id="footer"> Check out our Github for all files associated with our project</h1>
+										<a href="https://github.com/lxbtlr/Diskos"><h2 class="icon fa-github circled"></h2></a>
+									</header>
+										<!-- <li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Nisl fermentum integer</a></h3>
+												</header>
+												<span class="timestamp">3 hours ago</span>
+											</article>
+										</li> -->
+										<!-- <li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Phasellus portitor lorem</a></h3>
+												</header>
+												<span class="timestamp">6 hours ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Magna tempus consequat</a></h3>
+												</header>
+												<span class="timestamp">Yesterday</span>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Feugiat lorem ipsum</a></h3>
+												</header>
+												<span class="timestamp">2 days ago</span>
+											</article>
+										</li> -->
+								</section>
+
+							<!-- Photos -->
+								<!-- <section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon fa-camera circled"><span class="label">Photos</span></h2>
+									</header>
+									<div class="row gtr-25">
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic15.jpg" alt="" /></a>
+										</div>
+									</div>
+								</section> -->
+
+						<!-- </div> -->
+						<div class="row">
+							<div class="col-12">
+
+								<!-- Contact -->
+									<!-- <section class="contact">
+										<header>
+											<h3>Nisl turpis nascetur interdum?</h3>
+										</header>
+										<p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
+										<ul class="icons">
+											<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+											<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+											<li><a href="#" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
+										</ul>
+									</section> -->
+
+								<!-- Copyright -->
+									<div class="copyright">
+										<ul class="menu">
+											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										</ul>
+									</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
