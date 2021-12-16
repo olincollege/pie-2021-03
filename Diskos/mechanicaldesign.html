@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Mechanical Design</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="article">
+
+					<!-- Inner -->
+						<div class="inner">
+							<header>
+								<h1 id="logo">Mechanical Design</h1>
+							</header>
+						</div>
+
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#cara" class = "scrolly">System</a></li>
+
+							<li>Process
+								<ul>
+									<li><a href="#sprint1"class = "scrolly"> Sprint 1</a></li>
+									<li><a href="#sprint2"class = "scrolly"> Sprint 2</a></li>
+									<li><a href="#sprint3"class = "scrolly"> Sprint 3</a></li>
+								</ul>
+							</li>	
+							<li><a href="index.html#features" class = "scrolly">Meet the Team</a></li>
+							<!-- <li><a href="no-sidebar.html">No Sidebar</a></li> -->
+						</ul>
+					</nav>
+
+				</div>
+
+			<!-- Main -->
+				<div class="wrapper style1">
+
+					<div class="container">
+						<article id="main" class="special">\
+							
+							<header>
+								<h2><a>What is a flywheel?</a></h2>
+								<!-- <a><img class="image featured" src="images/manuHEADER.jpg" max-width=100% height=40%></a> -->
+								<p>
+									A flywheel is a device that stores kinetic energy in its rotational motion. This kinetic energy, the energy of motion, is different from other energy storage devices like batteries. Batteries store energy chemically, through charged ions in a chemical called an electrolyte. The flywheel has two main components: a heavy disk that spins at a high rotational speed and a motor that allows energy to be added or removed from the disk through changing its rotational speed.
+								</p>
+							</header>
+								<!-- <a href="#" class="image featured"><img src="images/bad.jpg" alt="" max-width=100% height=auto/></a> -->
+								<section>
+								<p>
+									<h3>The physics behind a flywheel</h3>
+									Fundamentally, a flywheel is governed by the equation E = ½*I*W2, where I is the moment of inertia of the flywheel, and W is the angular speed. In the case of a cylindrical flywheel rotating around its central axis, the moment of inertia is given by the equation I=½ MR2, where M is the mass of the cylinder, and R is the radius of the cylinder. 
+								</p>
+								<h3>Sizing our flywheel</h3>
+								<p>Our initial goal for the project was to create a flywheel that can store 15 Whr of energy (roughly equivalent to an iPhone 11 Pro Max battery). However, we had a few key constraints to navigate. Firstly, the radius of the flywheel was determined by the size of the available stock. To save money, the team decided to use a cylindrical low carbon steel blank from the shop's donation section with a diameter of 15.24cm instead of purchasing new stock. Our second limiting factor was RPM. Early on in the project proposal process, the teaching team expressed a desire that we keep the rotational speed of the flywheel relatively low for safety reasons. Because of this, we settled on a max rotational speed of 6000 RPM (200pi rad/sec). Many industrial flywheels have a thinner central disk and then a thicker outer section to reduce weight while minimally impacting the moment of inertia. We ultimately decided not to go this route since weight reduction was not a priority for our design. Given these constraints, we saw that a flywheel with a radius of 7.25cm and a height of 5.75cm would need to spin at nearly 21500 RPM to reach our energy target. We therefore scaled back our energy target to 0.75 Whr. 
+								<br>
+								For our final dimensions, we settled on a radius of 7.25cm, which is about a ⅓ centimeter less than our stock radius. From this radius, we determined that a height of 5.75cm and a rotational speed of 5000 RPM would meet our energy target. However, given that we wanted the flywheel to spin continuously (rather than spin up and then come to a complete stop), we decided that our effective energy capacity should only be 80% of our total energy capacity. This means that our flywheel's max rotational speed is increased to 5600 RPM, and cycles between ~5600 RPM to ~2700 RPM when outputting energy. 
+								<br>
+								Note: After measuring and weighing our finished flywheel, we updated our moment of inertia and found that the flywheel now theoretically stores 0.77Whr of energy at 5600rpm.
+								</p>
+							</section>
+							<section>
+								<header>
+									<h3>Shaft design</h3>
+								</header>
+								<p>
+									When designing the flywheel, we decided that the shaft and disk would be separate components that would be joined together after machining. We settled on using a shrink fit to join the components as it allowed for relatively good concentricity and minimal additional fabrication. After some deliberation and a failed test, we settled on a 1.5 thousandths inch interference for the shrink fit. We calculated the stress from this fit using the following equation: 
+									
+								</p>
+								<center><img src="images/eqmechdes.png" alt="" width= auto height =120></center>
+								<p>
+									In this equation, E is Young’s modulus, and the other values are determined by the following diagram.
+
+								</p>
+								<center><img src="images/youngsmod.png" alt="" width= auto height =300></center>
+								<p>
+									Our calculated shrink fit stress is 197 MPa.
+									<br>
+									To ensure that the shaft does not slip from the disk or exceed the yield stress of the material, we calculated the tangential and radial stresses in the disk. A graph of the stresses is shown below.
+								</p>
+								<center><img src="images/stress.png" alt="" width= auto height =400></center>
+								<p>We also calculated the stress in the shaft imparted by the runout from the flywheel. For this we assumed that the shaft is a beam fixed at both ends with a point load in the middle. In reality the load would be distributed but the point load simulates a worst case scenario. In this case we calculated the max stress to be less than 1 Pa.
+								</p>
+							</section>
+							<section>
+								<header>
+									<h3>Bearings and Bearing Blocks</h3>
+								</header>
+								<p>
+									To join our shaft and bearings, we decided to press fit them together. The fabrication section of this website contains more information about this process. The bearings were sized to meet our radial loads and to accommodate our planned RPM range. The bearing at the top of the shaft is a radial ball bearing designed to take radial loads, while our bottom bearing is a tapered roller bearing that takes both radial and thrust loads.</p>
+							</section>
+							<section>
+								<header>
+									<h3>Weldment and Top Plate Design									</h3>
+								</header>
+								<p>
+									To hold the bearing blocks, we designed a weldment using 1.25x1.25x0.07in square tube that would act as both a containment structure and a mounting point for the motor, electronics and sensing suite.
+									<center><img src="images/weldment.png" alt="" width= auto height =400></center>
+									<p>The weldment is sized such that the flywheel can be lifted off of its bearing block, rotated and then removed between the weldment through two of the side faces. The other sides of the weldment are designed to be too small for the flywheel to fit through, thus aiding in containment in the case of a failure. A top plate is bolted to the topmost face of the weldment. It serves as the mounting point for the motor and the uppermost bearing block. </p>
+									<center><img src="images/topplate.png" alt="" width= auto height =400></center>
+									<p>The top plate has a hole in its center to allow for shaft passthrough, and 4 holes spaced 90 degrees apart around the central hole. These 4 holes are for mounting the motor mount and uppermost bearing block, and are oversized in diameter. This allows users to move the upper bearing block in the XY plane to accurately align the bearings. Furthermore, the motor mount is designed such that the fasteners passing through the bearing block can also pass through the motor mount mounting holes. This allows the user to lock the relative movement of the motor mount and the bearing block to reduce alignment time. The motor and flywheel shaft are joined using a flexible shaft coupler to allow for misalignment. The motor mount is designed to hold the motor at the correct height for shaft coupling. The motor mount is made from 3D printed plastic as the hope is it would act as a sacrificial part to save the motor should an expected failure occur.
+									</p>
+							</section>
+							<section>
+								<h3>Modal Analysis</h3>
+								<p>
+									Before proceeding with fabrication of the weldment and flywheel assembly, a modal analysis was run on both the weldment and the flywheel in Solidworks.
+								</p>
+								<center><img src="images/disk.png" alt="" width= auto height =500></center>
+								<center><img src="images/stand.png" alt="" width= auto height =500></center>
+								<center><i>Solidworks frequency simulations of our flywheel and weldment in their first modes.
+								</i></center>
+								<p>
+									The results indicate that our flywheel should never approach our modes as the highest rotational frequency we can achieve is 100Hz.
+								</p>
+									<center><table style="border-collapse:collapse;border-color:#aaa;border-spacing:0" class="tg"><thead><tr><th style="background-color:#f38630;border-color:#aaa;border-style:solid;border-width:1px;color:#fff;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:top;word-break:normal"><span style="font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Component</span></th><th style="background-color:#f38630;border-color:#aaa;border-style:solid;border-width:1px;color:#fff;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:top;word-break:normal"><span style="font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Natural Frequency (Hz, 1st Mode)</span></th></tr></thead><tbody><tr><td style="background-color:#FCFBE3;border-color:#aaa;border-style:solid;border-width:1px;color:#333;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:top;word-break:normal"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Weldment</span></td><td style="background-color:#FCFBE3;border-color:#aaa;border-style:solid;border-width:1px;color:#333;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:top;word-break:normal"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">268.85</span></td></tr><tr><td style="background-color:#fff;border-color:#aaa;border-style:solid;border-width:1px;color:#333;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:top;word-break:normal"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Flywheel</span></td><td style="background-color:#fff;border-color:#aaa;border-style:solid;border-width:1px;color:#333;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:center;vertical-align:top;word-break:normal"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">425.48</span></td></tr></tbody></table></center>
+								<p>
+									We were initially planning to validate our analysis by measuring vibrations in our system over a range of rotational speeds using an IMU, but unfortunately technical issues prevented us from completing this system before the conclusion of the project.
+								</p>
+	
+							</section>
+							<section>
+								<center><img src="images/steadystate.png" alt="" width= auto height =500></center>
+								<h3>
+									Loss Estimation and Constant Power in Testing
+								</h3>
+								<p>
+									During the initial stages of this project, we hoped to model our expected bearing losses and aerodynamics losses. When diving into bearing losses, we found that they depend on a multitude of factors (<a href="https://www.skf.com/binaries/pub12/Images/0901d1968065e9e7-The-SKF-model-for-calculating-the-frictional-moment_tcm_12-299767.pdf">SKF has an excellent handbook on estimating bearing losses</a>), and calculating them was not the best use of our time. We found a similar issue with calculating the aerodynamic losses. Since the disk is spinning and there is no frontal area facing the flow, it isn’t possible to use a traditional first order approximation for calculating the drag force (such as ½ Cd A v2 p). We were able to find an <a href="https://researchrepository.wvu.edu/cgi/viewcontent.cgi?article=5451&context=etd">academic paper</a> regarding flywheel modeling though it did not yield any useful first order approximations for drag. The next step would have been to model the flywheel in CFD, but it was ultimately decided that the team's resources were better spent elsewhere. Since we were unable to calculate any approximations for the losses that we would see in the system, we instead experimentally determined the losses at a range of rotational speeds. There are many factors that make our data inconsistent between runs (such as changing shaft alignment during flywheel reinstallation), but we believe it is a good start. In the graph below, you can find the amount of power that it takes to sustain a given RPM. At 5500 RPM, we need approximately 76W of power to stay at a constant speed. This indicates that there is significant loss in our system. It is important to note that this loss is measured from the input power, and thus represents losses across the electrical system, motor and any mechanical losses.
+								</p>
+								</section>
+						</article>
+						<hr />
+						
+					</div>
+
+				</div>
+
+			<!-- Footer -->
+				<!-- Footer -->
+				<div id="footer">
+					<div class="container">
+						<!-- <div class="row"> -->
+							<!-- Tweets -->
+								<!-- <section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon fa-twitter circled"><span class="label">Tweets</span></h2>
+									</header>
+									<ul class="divided">
+										<li>
+											<article class="tweet">
+												Amet nullam fringilla nibh nulla convallis tique ante sociis accumsan.
+												<span class="timestamp">5 minutes ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Hendrerit rutrum quisque.
+												<span class="timestamp">30 minutes ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Curabitur donec nulla massa laoreet nibh. Lorem praesent montes.
+												<span class="timestamp">3 hours ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="tweet">
+												Lacus natoque cras rhoncus curae dignissim ultricies. Convallis orci aliquet.
+												<span class="timestamp">5 hours ago</span>
+											</article>
+										</li>
+									</ul>
+								</section> -->
+
+							<!-- Posts -->
+							
+								<section class="col-4 col-12-mobile">
+									<header>
+										<h1 id="footer"> Check out our Github for all files associated with our project</h1>
+										<a href="https://github.com/lxbtlr/Diskos"><h2 class="icon fa-github circled"></h2></a>
+									</header>
+										<!-- <li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Nisl fermentum integer</a></h3>
+												</header>
+												<span class="timestamp">3 hours ago</span>
+											</article>
+										</li> -->
+										<!-- <li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Phasellus portitor lorem</a></h3>
+												</header>
+												<span class="timestamp">6 hours ago</span>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Magna tempus consequat</a></h3>
+												</header>
+												<span class="timestamp">Yesterday</span>
+											</article>
+										</li>
+										<li>
+											<article class="post stub">
+												<header>
+													<h3><a href="#">Feugiat lorem ipsum</a></h3>
+												</header>
+												<span class="timestamp">2 days ago</span>
+											</article>
+										</li> -->
+								</section>
+
+							<!-- Photos -->
+								<!-- <section class="col-4 col-12-mobile">
+									<header>
+										<h2 class="icon fa-camera circled"><span class="label">Photos</span></h2>
+									</header>
+									<div class="row gtr-25">
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
+										</div>
+										<div class="col-6">
+											<a href="#" class="image fit"><img src="images/pic15.jpg" alt="" /></a>
+										</div>
+									</div>
+								</section> -->
+
+						<!-- </div> -->
+						<div class="row">
+							<div class="col-12">
+
+								<!-- Contact -->
+									<!-- <section class="contact">
+										<header>
+											<h3>Nisl turpis nascetur interdum?</h3>
+										</header>
+										<p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
+										<ul class="icons">
+											<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+											<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+											<li><a href="#" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
+										</ul>
+									</section> -->
+
+								<!-- Copyright -->
+									<div class="copyright">
+										<ul class="menu">
+											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										</ul>
+									</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
