@@ -31,7 +31,7 @@
   letter-spacing: 1px;
   text-transform: none;
   font-size: 3.75rem;
-  margin: 0 1px;
+  margin: 30px 1px 0;
 }
 
 .u-section-1 .u-btn-1 {
@@ -39,6 +39,7 @@
   border-style: solid;
   letter-spacing: 0px;
   text-transform: uppercase;
+  font-size: 0.875rem;
   font-weight: 700;
   margin: 46px auto 0;
   padding: 0 0 1px;
@@ -62,19 +63,17 @@
   }
 
   .u-section-1 .u-shape-1 {
-    height: 297px;
     margin-right: initial;
     margin-left: initial;
     width: auto;
   }
 
   .u-section-1 .u-group-1 {
-    width: 456px;
+    width: 540px;
   }
 
   .u-section-1 .u-text-1 {
     font-size: 3.4375rem;
-    width: auto;
     margin-left: 0;
     margin-right: 0;
   }
@@ -85,15 +84,8 @@
     min-height: 450px;
   }
 
-  .u-section-1 .u-shape-1 {
-    height: 234px;
-    width: auto;
-    margin-right: initial;
-    margin-left: initial;
-  }
-
   .u-section-1 .u-group-1 {
-    width: 280px;
+    width: 340px;
   }
 
   .u-section-1 .u-container-layout-1 {

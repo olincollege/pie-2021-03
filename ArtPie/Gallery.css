@@ -3,7 +3,7 @@
 }
 
 .u-section-1 .u-sheet-1 {
-  min-height: 540px;
+  min-height: 570px;
 }
 
 .u-section-1 .u-text-1 {
@@ -36,16 +36,13 @@
   top: -39%;
 }
 
-.u-section-1 .u-layout-cell-2 {
+.u-section-1 .u-video-2 {
   min-height: 400px;
+  transition-duration: 0.5s;
 }
 
 .u-section-1 .u-container-layout-2 {
   padding: 20px;
-}
-
-.u-section-1 .u-video-2 {
-  transition-duration: 1s;
 }
 
 .u-section-1 .embed-responsive-2 {
@@ -58,7 +55,7 @@
 
 .u-section-1 .u-text-2 {
   font-weight: 400;
-  margin: 30px auto 60px;
+  margin: 46px auto 44px;
 }
 
 @media (max-width: 1199px) {
@@ -68,10 +65,6 @@
 
   .u-section-1 .u-layout-wrap-1 {
     width: 940px;
-  }
-
-  .u-section-1 .u-video-2 {
-    transform: scale(1.2) translateX(0px) translateY(0px);
   }
 }
 
@@ -125,22 +118,22 @@
   }
 }
 
-.u-section-1 .u-video-2,
-.u-section-1 .u-video-2:before {
-  transition-property: fill, color, background-color, stroke-width, border-style, border-width, box-shadow, text-shadow, opacity, border-radius, stroke, border-color, font-size, font-style, font-weight, text-decoration, letter-spacing, transform, background-image, background-size, background-position;
-}
-
-.u-section-1 .u-video-2.u-video-2.u-video-2:hover {
-  transform: scale(1.2) translateX(0px) translateY(0px) !important;
-}
-
 .u-section-1 .u-video-1,
 .u-section-1 .u-video-1:before {
   transition-property: fill, color, background-color, stroke-width, border-style, border-width, box-shadow, text-shadow, opacity, border-radius, stroke, border-color, font-size, font-style, font-weight, text-decoration, letter-spacing, transform, background-image, background-size, background-position;
 }
 
 .u-section-1 .u-video-1.u-video-1.u-video-1:hover {
-  transform: scale(1.2) translateX(0px) translateY(0px) !important;
+  transform: scale(1.1) translateX(0px) translateY(0px) !important;
+}
+
+.u-section-1 .u-video-2,
+.u-section-1 .u-video-2:before {
+  transition-property: fill, color, background-color, stroke-width, border-style, border-width, box-shadow, text-shadow, opacity, border-radius, stroke, border-color, font-size, font-style, font-weight, text-decoration, letter-spacing, transform, background-image, background-size, background-position;
+}
+
+.u-section-1 .u-video-2.u-video-2.u-video-2:hover {
+  transform: scale(1.1) translateX(0px) translateY(0px) !important;
 } .u-section-2 {
   background-image: none;
   min-height: 1166px;
