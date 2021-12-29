@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Mechanical System</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+							<header id="header">
+								<!-- <a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a> -->
+								<ul class="icons">
+									<li><a href="https://github.com/wsh32/airhockey" class="fab fa-github"><span class="label">Github</span></a></li>
+								</ul>
+							</header>
+
+							<!-- Content -->
+							<section id="banner">
+								<div class="content">
+									<header>
+										<h1>Mechanical System</h1>
+										<p>Summary</p>
+									</header>
+									<p>The overall mechanical system is a two-axis gantry that moves with the use of pulleys and belts. The pulleys are driven with stepper motors. Aluminum rods are used to constrain the sliding movement and the edges of the table are also used as guides. Over the center of the table there is an adjustable height camera mount for the computer vision system.</p>
+								</div>
+								<span class="image object">
+									<img src="images/rohil_drilling.jpg" alt="" />
+								</span>
+							</section>
+							<section>
+								<h3>Speccing Motors</h3>
+								<p>Before we could start working on creating the mechanical system, we needed to figure out what motors we were going to use for the system. We looked into using stepper motors (PN can be found in the <a href="BudgetAndMaterials.html">budget spreadsheet</a>) and wanted to see if they would fulfill the project’s requirements. To check this we looked into the moment we expected the stepper would undergo and how fast the steppers were able to rotate. The equations below show how we came to the conclusion of using the steppers we have in the project. </p>
+								<p>Required Acceleration to Block Goals</p>
+								<span class="image"><img src="images/stepper1.png" alt="" width = "100%"/></span>
+								<p>Expected Torque for Required Acceleration</p>
+								<span class="image"><img src="images/stepper2.png" alt="" width = "100%"/></span>
+								<p>RPM from the Selected Steppers</p>
+								<span class="image"><img src="images/stepper3.png" alt="" width = "100%"/></span>
+								<p>Looking at the stepper spec sheet, we can see that the stepper we selected does fulfill the calculated requirements.</p>
+
+									<hr class="major" />
+									<h3>Version 1</h3>
+									<p>After constructing the first version of the gantry, we found that there were multiple issues with our initial prototype. First of all, we discovered that having single 0.25” rods as axial constraints was not rigid enough to stop the system from over-rotating due to torques induced by acceleration and deceleration. The plastic bushings we used to slide our 3D printed parts along the rods did help reduce some friction between the parts and the rods; however, they were still not smooth enough. Also, some of the 3D printed parts were not as strong as they needed to be, so they broke during assembly when fasteners were driven into them.</p>
+
+									<div class="row">
+										<div class="col-6 col-12-small">
+											<span class="image main"><img src="images/sr1_1axis.png" alt="" /></span>
+										</div>
+										<div class="col-6 col-12-small">
+											<span class="image main"><img src="images/sr1_camera.png" alt="" /></span>
+										</div>
+									</div>
+
+
+									<hr class="major" />
+									<h3>Version 2</h3>
+									<p>TThe second iteration of the design included some major improvements. For example, linear bearings helped reduce friction significantly and the second rod in each axis made the system much more stable. </p>
+									<p>However, we still ran into a myriad of issues. One issue was that in assembling the system, we hammered the linear bearings into the 3D prints, which damaged them and meant that the bearings had to be replaced. We then made sure to file down the insides of the parts before inserting the bearings so that the bearings wouldn’t be under large radial loads which would mess with the balls. By decreasing the radial load on the bearings, the assembly moved more smoothly.</p>
+									<p>Another major issue we ran into was that the linear travel across the beams was not smooth; the assembly seemed to get stuck in some places. There were a few reasons for this. For one, many of the rods were not perfectly smooth or were slightly bent. This meant that the 3D printed parts were getting stuck in certain places as they moved along the rods. In order to mitigate this issue, we sanded the rods and lubricated them with WD-40. It seemed like some of the issues with smooth movement were also caused by poor quality ball bearings—we found that even within a package of supposedly identical bearings, the quality of the bearings could vary significantly. Therefore, we tested the bearings out by seeing how easily they slid on the rods by themselves (independent of any 3D printed parts) and then replaced any poorly performing bearings with ones that had performed well during testing. We also noticed that the 3D printed parts were dragging against the table in some places, further impeding their movement. Therefore, we filed and sanded down the bottoms of the parts.</p>
+									<p>Despite making the travel as smooth as possible, the striker was unable to move fast enough for a hard hitting shot. We are not sure as to the reason the striker is too slow but we believe that it could be due to the stepper speed. When we ran the stepper at its fastest, the stepper would skip steps and wouldn’t move. This also brought up another problem where the system would think the striker is in a position that it’s not. </p>
+
+									<span class="image"><img src="images/2axisTable.jpg" alt="" /></span>
+								</section>
+
+						</div>
+					</div>
+
+					<!-- Sidebar -->
+						<div id="sidebar">
+							<div class="inner">
+
+								<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Homepage</a></li>
+										<li><a href="SystemOverview.html">System Overview</a></li>
+										<li>
+											<span class="opener">Subsystems</span>
+											<ul>
+												<li><a href="Mechanical.html">Mechanical Overview</a></li>
+												<li><a href="Electrical.html">Electrical Overview</a></li>
+												<li><a href="Software.html">Software Overview</a></li>
+											</ul>
+										</li>
+										<li><a href="OurProcess.html">Our Process</a></li>
+										<li><a href="AboutTheTeam.html">Our Team</a></li>
+										<li><a href="BudgetAndMaterials.html">Budget and Materials</a></li>
+									</ul>
+								</nav>
+
+
+								<!-- Section -->
+								<section>
+									<ul class="contact">
+										<li class="icon solid fa-home">1000 Olin Way<br />
+										Needham, MA 02492</li>
+									</ul>
+								</section>
+
+								<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">What the Puck? 2021. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+							</div>
+						</div>
+
+				</div>
+
+			<!-- Scripts -->
+				<script src="assets/js/jquery.min.js"></script>
+				<script src="assets/js/browser.min.js"></script>
+				<script src="assets/js/breakpoints.min.js"></script>
+				<script src="assets/js/util.js"></script>
+				<script src="assets/js/main.js"></script>
+
+		</body>
+	</html>

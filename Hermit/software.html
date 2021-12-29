@@ -42,10 +42,13 @@
                         <div class="col-12">
                             <section>
                                 <header class="major">
-                                    <h2>Software System (<a href="https://github.com/berwinlan/PIE-FinalProject">Code Repository</a>)</h2>
+                                    <h2>Software System (<a href="https://github.com/berwinlan/PIE-FinalProject">Link to GitHub Repo</a>)</h2>
                                 </header>
+								<div class="row">
+									<a href="#" class="image"><img src="images/software/Software Block Diagram.png" alt="" /></a>
+								</div>
 								<section class="box">
-									<h3>Software/Firmware Requirements</h3>
+									<header><h2>Software/Firmware Requirements</h2></header>
 									<ul>
 										<li>
 											Read from PIR sensors to drive motors at differential speeds
@@ -55,13 +58,21 @@
 										</li>
 									</ul>
 								</section>
+								<section class="box">
+									<header><h2>Firmware</h2></header>
+									<p>
+										We used an Arduino Uno Rev3 microcontroller and an Adafruit Motor Shield V2. Please refer
+										to the <a href="https://berwinl.com/pie-2021-03/Hermit/electrical.html">electrical documentation</a>
+										for further discussion.
+									</p>
+								</section>
 								<div class="row">
 									<div class="col-4 col-6-medium col-12-small">
 										<a href="#" class="image"><img src="images/software/PIR Diagram.png" alt="" /></a>
 									</div>
 									<div class="col-8 col-6-medium col-12-small">
 										<section class="box"> 
-											<h3>PIR sensing, PID, and differential drive</h3>
+											<header><h2>PIR sensing, PID, and differential drive</h2></header>
 											<p>
 												We use two PIR sensors to determine the location of a person. 
 												These are HC-SR501 PIR motion detectors, which output a digital 
@@ -90,10 +101,10 @@
 										</section>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row" style="padding-top: 5%;">
 									<div class="col-8 col-6-medium col-12-small">
 										<section class="box"> 
-											<h3>Phototransistor and head movement</h3>
+											<header><h2>Phototransistor and head movement</h2></header>
 											<p>
 												We use one HW5P-1 phototransistor to determine whether the hermit crab is upright or 
 												upside down. As discussed in the electrical documentation, the phototransistor outputs 

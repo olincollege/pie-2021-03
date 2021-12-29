@@ -1,0 +1,426 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Grandmaster- Process</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/linked_color.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1 id="logo"><a href="index.html"><img alt="Logo" src="images/crown.png" width="50" height="50"></a></h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="System.html">System Overview</a></li>
+					<li><a href="Electrical.html">Electrical</a></li>
+					<li><a href="Software.html">Software</a></li>
+					<li><a href="Mechanical.html">Mechanical</a></li>
+					<li><a href="Budget.html">Budget</a></li>
+					<li><a href="Process.html">Process</a></li>
+					<!--
+								<li><a href="#" class="button primary">Sign Up</a></li>
+							-->
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<div id="main" class="wrapper style1">
+			<div class="container">
+				<header class="major">
+					<h2>Process</h2>
+					<p>This project was divided into 3 sprints, each lasting for 2 weeks.
+						We presented our chess board during PIE Demo Day and the Olin Expo.</p>
+				</header>
+
+				<!-- Text -->
+				<section>
+					<h3>Sprint 1</h3>
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/Sprint 1 (1).jpg"
+										alt="1D Gantry and chess piece" /></span></div>
+
+							<div class="col-6 col-8-xsmall"><span class="image fit"><img src="images/Sprint 1 gif.gif"
+										alt="1D Gantry" /></span></div>
+						</div>
+					</div>
+
+					<h4>Sprint Goals</h4>
+					<p>Our goals were to have a 1D gantry with an electromagnet attached to it and be able to test if it
+						could
+						successfully move a magnet through a sheet of wood. </p>
+					<h5>At the end of our first sprint, we had:</h5>
+					<ul>
+						<li>A test chess piece with a magnet attached</li>
+						<li>Electromagnet mounted to a 1D gantry</li>
+						<li>A not-to-scale hardboard and cardboard box with 2 open sides to test the electromagnet</li>
+						<li>Basic board control software that used an Arduino to move the electromagnet to pick up a
+							piece, move it, and release it</li>
+						<li>Basic chess logic in software</li>
+					</ul>
+					<p>
+						The human move tracking was still in the concept stage, and we recieved valuable feedback and
+						suggestions to use Hall Effect sensors, RFID tags, cameras, etc.
+						We decided to test the basic functionality of a camera in our next step and use sensors as a
+						backup.
+					</p>
+					<h5>Takeaways</h4>
+						<p>
+							Our biggest takeaways from this sprint were about pivoting our idea, getting parts, and
+							scheduling.
+							We originally wanted to do magic chess, but couldn't figure out a compelling method of input
+							to move pieces that would work beter than simply moving the pieces ourselves.
+							Eventually, we settled on single-player chess so we would have a need to move the pieces in
+							a cool way without touching it. We also learned that scheduling meetings is difficult and we
+							decided to send a reminder
+							text about meetings. For future Sprints, we learned that we should order parts early so we
+							aren't scrambling the night before because our parts arrived late.
+						</p>
+						</p>
+				</section>
+
+				<hr />
+				<section>
+					<h3>Sprint 2</h3>
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<!-- <div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/gantry1.png" alt="1st Iteration Gantry" /></span></div> -->
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/gantry 2.jpg"
+										alt="2nd Iteration Gantry" /></span></div>
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/magnet.jpg"
+										alt="Electromagnet" /></span></div>
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/LED.png"
+										alt="LED lights" /></span></div>
+						</div>
+
+					</div>
+
+					<h4>Sprint Goals</h4>
+					<p>Our second Sprint was structured differently in that it was more of a check-in on progress than a
+						deliverable. Our goals for this check-in were to have a fully functional 2D gantry,
+						wire up LED lights and incorporate drivers for the stepper motors, and have a basic chessboard
+						to go over the gantry. We also wanted to test whether using a camera would work to
+						detect the state of the chessboard. </p>
+					<h5>At the end of our second sprint, we had:</h5>
+					<ul>
+						<li>A lasercut chess board (minus the chess tiles) with LEDs attached</li>
+						<li>A 2D gantry</li>
+						<li>Software that could detect the location of AprilTags through a camera</li>
+					</ul>
+					<p>
+						We had the above working individually, but did not get to a stage where we integrated everything
+						into a single system.
+						The biggest contributer was some miscommunication across subsystems, specifically talking about
+						the dimension of the chessboard so it would have room for captured pieces and
+						incorporate gantry reach. We also pivoted the rods we used for the gantry in this Sprint. Once
+						assembling the 2D gantry, we realized that the tolerances were too loose with
+						the rods we bought for the accuracy we wanted with the gantry movement, so we made the decision
+						to buy and use a more expensive set.
+					</p>
+					<h5>Takeaways</h5>
+					<p>Our biggest takeaway was to spend time talking through details of the whole system to clarify
+						what each subsystem has to do and make sure everyone is on the same page. That way, we
+						can minimize having to redo parts and needing to make up for lost time. For the last Sprint, we
+						needed to recut the chessboard with correct dimensions, test the camera software
+						using real chess pieces and a full sized chessboard, and more deeply integrate everything.
+					</p>
+				</section>
+
+				<hr />
+				<section>
+					<h3>Sprint 3</h3>
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/Sprint 3.gif"
+										alt="Moving Chess Piece" /></span></div>
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/IMG_7913 (1).JPG"
+										alt="Outside view" /></span></div>
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/physical_gantry.jpg"
+										alt="Electrical and Mechanical Hidden Systems" /></span></div>
+						</div>
+
+					</div>
+
+					<h4>Sprint Goals</h4>
+					<p>For our final Sprint, we wanted to get as close to what we wanted to present on Demo Day as we
+						could. This meant integrating
+						all of our subsystem parts into a single chessboard system and working on the software
+						subsystem.
+					</p>
+					<h5>At the end of our third sprint, we had:</h5>
+					<ul>
+						<li>A full sized, polished chessboard</li>
+						<li>2 full sets of chessboard pieces with magnets incorporated</li>
+						<li>A 2nd iteration of pulley and motor mounts</li>
+						<li>All electrical components incorporated</li>
+						<li>Integration of buttons</li>
+						<li>Software that detects the center of each chess tile and can move a chess piece to it</li>
+						<li>A camera mount and camera integration</li>
+						<li>Raspberry Pi controlling the entire system and communicating with Arduino over Serial</li>
+						<li>Hardware controlled by Arduino</li>
+						<li>Chess AI that obeys chess rules and avoides difficult moves (knights and captures)</li>
+						<li>AprilTags attached to all chess pieces</li>
+
+
+
+					</ul>
+					<p>
+						We made a lot of progress between Sprints 2 and 3, but we still felt as if there was a bit of
+						work to do before Demo Day, mainly
+						in solving the problem in the communication between the Raspberry Pi and Arduino and expanding
+						the chess logic to cover a full game.
+					</p>
+					<h5>Takeaways</h5>
+					<p> A big takeaway during this Sprint was pivoting the material we were planning to use for the
+						chessboard. We were originally going to
+						lasercut all of the pieces using 1/8" stock and the large laser cutter at the Weissman Foundry.
+						We pivoted to using 1/4" MDF to have
+						sturdier material for the base and the walls of the chessboard, and decided to ShopBot those
+						pieces. Getting our chessboard assembled
+						ended up being delayed by a couple days due to ShopBot scheduling and cutting issues.
+
+					</p>
+
+					</p>
+					<hr />
+				</section>
+
+				<header class="major">
+					<h2>Check out Grandmaster in Action</h2>
+				</header>
+				<div style="text-align:center">
+					<a href="https://drive.google.com/file/d/116ln5jihdnNPw1qvX96EzpsT7K2F-gmc/view?usp=sharing"
+						class="button primary">See the Video</a>
+				</div>
+				<br>
+				<div class="box alt">
+					<div class="row gtr-50 gtr-uniform">
+						<div class="col-12"><span class="image fit"><img src="images/Instructions-05.png"
+									alt="Instructions" /></span></div>
+					</div>
+
+				</div>
+
+
+
+
+				<div class="row">
+					<div class="col-6 col-12-xsmall">
+						<!--
+										<h4>Unordered</h4>
+										<ul>
+											<li>Dolor pulvinar etiam magna etiam.</li>
+											<li>Sagittis adipiscing lorem eleifend.</li>
+											<li>Felis enim feugiat dolore viverra.</li>
+										</ul>
+
+										<h4>Alternate</h4>
+										<ul class="alt">
+											<li>Dolor pulvinar etiam magna etiam.</li>
+											<li>Sagittis adipiscing lorem eleifend.</li>
+											<li>Felis enim feugiat dolore viverra.</li>
+											<li>Lobortis adipiscing condimentum lorem.</li>
+											<li>Integer eleifend erat sed accumsan.</li>
+										</ul>
+
+									</div>
+									-->
+
+						<!--
+									<div class="col-6 col-12-xsmall">
+
+										<h4>Ordered</h4>
+										<ol>
+											<li>Dolor pulvinar etiam magna etiam.</li>
+											<li>Etiam vel felis at lorem sed viverra.</li>
+											<li>Felis enim feugiat dolore viverra.</li>
+											<li>Dolor pulvinar etiam magna etiam.</li>
+											<li>Etiam vel felis at lorem sed viverra.</li>
+											<li>Felis enim feugiat dolore viverra.</li>
+										</ol>
+
+										-->
+
+						<!--
+										<h4>Icons</h4>
+										<ul class="icons">
+											<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+											<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+											<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
+										</ul>
+										<ul class="icons">
+											<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+											<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="#" class="icon brands alt fa-github"><span class="label">Github</span></a></li>
+											<li><a href="#" class="icon brands alt fa-dribbble"><span class="label">Dribbble</span></a></li>
+											<li><a href="#" class="icon brands alt fa-tumblr"><span class="label">Tumblr</span></a></li>
+										</ul>
+									-->
+					</div>
+				</div>
+
+				<!--
+								<h4>Actions</h4>
+								<ul class="actions">
+									<li><a href="#" class="button primary">Default</a></li>
+									<li><a href="#" class="button">Default</a></li>
+								</ul>
+								<ul class="actions small">
+									<li><a href="#" class="button primary small">Small</a></li>
+									<li><a href="#" class="button small">Small</a></li>
+								</ul>
+								<div class="row">
+									<div class="col-3 col-6-medium col-12-xsmall">
+										<ul class="actions stacked">
+											<li><a href="#" class="button primary">Default</a></li>
+											<li><a href="#" class="button">Default</a></li>
+										</ul>
+									</div>
+									<div class="col-3 col-6-medium col-12-xsmall">
+										<ul class="actions stacked">
+											<li><a href="#" class="button primary small">Small</a></li>
+											<li><a href="#" class="button small">Small</a></li>
+										</ul>
+									</div>
+									<div class="col-3 col-6-medium col-12-xsmall">
+										<ul class="actions stacked">
+											<li><a href="#" class="button primary fit">Default</a></li>
+											<li><a href="#" class="button fit">Default</a></li>
+										</ul>
+									</div>
+									<div class="col-3 col-6-medium col-12-xsmall">
+										<ul class="actions stacked">
+											<li><a href="#" class="button primary small fit">Small</a></li>
+											<li><a href="#" class="button small fit">Small</a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+						-->
+
+				<!-- Table -->
+
+
+
+				<!-- Buttons 
+							<section>
+								<h3>Buttons</h3>
+								<ul class="actions">
+									<li><a href="#" class="button primary">Primary</a></li>
+									<li><a href="#" class="button">Default</a></li>
+								</ul>
+								<ul class="actions">
+									<li><a href="#" class="button primary large">Large</a></li>
+									<li><a href="#" class="button">Default</a></li>
+									<li><a href="#" class="button small">Default</a></li>
+								</ul>
+								<div class="row">
+									<div class="col-6 col-12-xsmall">
+										<ul class="actions fit">
+											<li><a href="#" class="button primary fit">Fit</a></li>
+											<li><a href="#" class="button fit">Fit</a></li>
+										</ul>
+									</div>
+									<div class="col-6 col-12-xsmall">
+										<ul class="actions fit small">
+											<li><a href="#" class="button primary fit small">Fit + Small</a></li>
+											<li><a href="#" class="button fit small">Fit + Small</a></li>
+										</ul>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+									<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+								</ul>
+								<ul class="actions">
+									<li><span class="button primary disabled">Primary</span></li>
+									<li><span class="button disabled">Default</span></li>
+								</ul>
+							</section>
+						-->
+
+				<!-- Image -->
+				<!--
+							<section>
+								<h3>Image</h3>
+								<h4>Fit</h4>
+								<div class="box alt">
+									<div class="row gtr-50 gtr-uniform">
+										<div class="col-12"><span class="image fit"><img src="images/pic07.jpg" alt="" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+										<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+									</div>
+								</div>
+
+								<h4>Left &amp; Right</h4>
+								<p><span class="image left"><img src="images/pic08.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Cras aliquet accumsan curae accumsan arcu amet egestas placerat odio morbi mi adipiscing col morbi felis faucibus in gravida sollicitudin interdum commodo. Ante aliquam vis iaculis accumsan lorem ipsum dolor sit amet nullam. Cras aliquet accumsan curae accumsan arcu amet egestas placerat odio morbi mi adipiscing col morbi felis faucibus in gravida sollicitudin interdum commodo. Ante aliquam vis iaculis accumsan lorem ipsum dolor sit amet nullam.</p>
+								<p><span class="image right"><img src="images/pic08.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Cras aliquet accumsan curae accumsan arcu amet egestas placerat odio morbi mi adipiscing col morbi felis faucibus in gravida sollicitudin interdum commodo. Ante aliquam vis iaculis accumsan lorem ipsum dolor sit amet nullam. Cras aliquet accumsan curae accumsan arcu amet egestas placerat odio morbi mi adipiscing col morbi felis faucibus in gravida sollicitudin interdum commodo. Ante aliquam vis iaculis accumsan lorem ipsum dolor sit amet nullam.</p>
+							</section>
+
+					</div>
+				</div>
+				-->
+
+				<!-- Footer -->
+				<footer id="footer">
+					<!--
+					<ul class="icons">
+						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				-->
+					<ul class="copyright">
+						<li>&copy; 2021 Grandmaster. All rights reserved.</li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+			</div>
+
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

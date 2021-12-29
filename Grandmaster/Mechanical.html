@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Grandmaster - Mechanical</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1 id="logo"><a href="index.html"><img alt="Logo" src="images/crown.png" width="50" height="50"></a></h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="System.html">System Overview</a></li>
+					<li><a href="Electrical.html">Electrical</a></li>
+					<li><a href="Software.html">Software</a></li>
+					<li><a href="Mechanical.html">Mechanical</a></li>
+					<li><a href="Budget.html">Budget</a></li>
+					<li><a href="Process.html">Process</a></li>
+					<!--
+								<li><a href="#" class="button primary">Sign Up</a></li>
+							-->
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<div id="main" class="wrapper style1">
+			<div class="container">
+				<header class="major">
+					<h2>Mechanical Subsystem</h2>
+					<p>The mechanical subsystem is the physical embodyment of Grandmaster. In addition to looking
+						<i>amazing</i>, it's includes the game board and chess pieces themselves, along with the gantry
+						that allows them to move.
+					</p>
+				</header>
+
+				<!-- Content -->
+				<section id="content">
+					<p>There are three primary mechanical subsystems within our project: the gantry system,
+						the physical chess board box (including an elevated camera mount), and the chess pieces.
+					</p>
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/BoardTopView.jpg"
+										alt="Gantry CAD top view" /></span></div>
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/OneAxisTake2.jpg"
+										alt="Close up view of axis with electromagnet" /></span></div>
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/physical_gantry.jpg"
+										alt="Physical photo of gantry" /></span></div>
+						</div>
+					</div>
+					<h4>The Gantry</h4>
+					<p>
+
+						The gantry is the most complex of the mechanical subsystems. It's responsible for moving the
+						electromagnet to anywhere in a 2D plane.
+						For our first sprint, we bought cheaper
+						linear rails and sliders from Amazon. After testing these rails in 2D,
+						we determined that they wouldn't have enough precision for our purpose and had
+						to exchange them for slightly more expensive rails and sliders. Two of our rails are mounted
+						parallel to each other directly to our base, and the third spans the distance between them,
+						mounted to the stationary axes' sliders. We also custom-built mounts for our pulley and motor
+						systems, of which we had two: one that runs parallel to the moving rail (along what we call
+						the x axis) and one that attaches directly to the moving rail at a 90° angle to pull the gantry
+						along what we call the y axis. We also created and 3D printed a mount for the electromagnet that
+						could be easily adjusted for height. The gantry system in CAD is shown in the photos above.
+					</p>
+
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img
+										src="images/WholeBoardTopOff.jpg"
+										alt="CAD Whole chess board without the top" /></span></div>
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/IMG_1844.jpg"
+										alt="Photo of chessboard and camera mount" /></span></div>
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/IMG_1802.jpg"
+										alt="Top view photo of chessboard (no mount)" /></span></div>
+						</div>
+					</div>
+
+
+					<h4>The Physical Chessboard</h4>
+					<p>
+						Our physical chess board box is 26 inches square and four inches tall. Except for the top, it
+						is made of ¼ inch MDF. We encountered issues while trying to obtain stock that was big enough to
+						fit the entire 26 by 26 inch square, and ended up cutting the base in half and putting a
+						half-lap
+						joint in the middle to secure it and reinforce the glue. A picture of the box is shown below.
+						The top of the box, which makes up the actual chess board, is made of three layers: ⅛ inch
+						hardboard, printed poster paper,
+						and 1/16 inch clear acrylic. We spray painted the entire board black except for the poster paper
+						and clear acrylic, and lined
+						the board with LEDs. We have four buttons, two on top of the board and two on one side. The
+						camera
+						is mounted about a foot and a half above the top of the board on a custom mount made of lasercut
+						plywood.
+					</p>
+
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/chess pieces.jpg"
+										alt="All chess pieces" /></span></div>
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img src="images/IMG_1770.jpg"
+										alt="Blue chess pieces" /></span></div>
+							<div class="col-4 col-6-xsmall"><span class="image fit"><img
+										src="images/chess pieces magnet.jpg"
+										alt="Magnet attached to chess piece bottom" /></span></div>
+						</div>
+					</div>
+
+					<h4>Chess Pieces</h4>
+					<p>
+						We also have two full sets of chess pieces, which are 3D printed from PLA. We began with designs
+						from
+						user <a href="https://www.thingiverse.com/thing:470700">BigBadBison's Spiral Chess Set on
+							Thingiverse (licensed under CC BY-NC</a>, then modified them in Meshmixer to achieve the
+						correct
+						scale and add indentations for magnets. We made them 0.9in wide (except for pawns, which are
+						0.75in) so that
+						they will have room to move through our 2in squares and have enough space left over for a knight
+						to move
+						between squares. After printing, we glued the magnets on the bottom, printed out unique
+						Apriltags on cardstock,
+						and glued those to the top of each piece.
+					</p>
+
+
+				</section>
+
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<!--
+					<ul class="icons">
+						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					-->
+			<ul class="copyright">
+				<li>&copy; 2021 Grandmaster. All rights reserved.</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

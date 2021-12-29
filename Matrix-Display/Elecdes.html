@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Electrical Design</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Electrical Design</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="Team BIo.html">Team Bios</a></li>
+											<li><a href="sprints.html">Sprints</a></li>
+											<li><a href="Finale.html">Final Desgin</a></li>
+											<li><a href="Softdes.html">Software Design</a></li>
+											<li><a href="Mechdes.html">Mechanical Design</a></li>
+											<li><a href="Elecdes.html">Electrical Design</a></li>
+											<li><a href="http://matrixdisplaypi.local:8000/">Interactive Website</a></li>
+											<li><a href="Budget.html">Budget</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Electrical Design</h2>
+						</header>
+
+				<!-- One -->
+				<section id="one" class="wrapper style1 special">
+					<div class="inner">
+						<header class="major">
+							<p>Learn more about our electrical design procceses.</p>
+						</header>
+					<!--	<ul class="icons major">
+							<li><span class="icon fa-gem major style1"><span class="label">Lorem</span></span></li>
+							<li><span class="icon fa-heart major style2"><span class="label">Ipsum</span></span></li>
+							<li><span class="icon solid fa-code major style3"><span class="label">Dolor</span></span></li>
+						</ul> -->
+					</div>
+				</section>
+				<div class="row gtr-50 gtr-uniform">
+					<div class="col-12"><span class="image fit"><img src="images/layoutnew.JPG" alt="" /></span></div>
+				<!-- Two -->
+					<section id="two" class="wrapper alt style2">
+						<section class="spotlight">
+							<div class="image"><img src="images/circuit_diagram.png" alt=""  width = "100" height = "500"/></div><div class="content">
+								<h2>Circuit diagram</h2>
+								<p>The electrical system involves one raspberry pi, two arduinos, a CNC shield, a stepper motor, three servos, and a color sensor. The first step is to access our website that is hosted on our raspi. Then you upload any .jpg image, and our server converts that image to black and white and the correct size for our display. The raspi then sends the image information to Arduino 1 which controls the stepper motor to drive the carousel and the server to drop each ball. The other Arduino separately runs the color sensor, the servo to sort the balls and the continuous servo to power the elevator.
+								</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/steppermotor.jpg" alt=""  width = "100" height = "500" /></div><div class="content">
+								<h2>Stepper Motor</h2>
+								<p>We have a stepper motor powering the carousel of tubes in our display. Every time we fill a column of the desired image the stepper motor moves the next tube into place. We chose to power them with a stepper motor so that we could have precise control over the speed and positioning of our entire carousel. The stepper was connected to our Arduino 1 via a CNC Shield that was getting 12 V. </p>
+							</div>
+						</section>
+
+						<section class="spotlight">
+							<div class="image"><img src="images/dropperservo.jpg" alt="" width = "100" height = "500"/></div><div class="content">
+								<h2>Dropping Servo</h2>
+								<p>Our dropping mechanism for the balls into the image is controlled with a servo that can move into a neutral position where it gets loaded with a black and a white ball and then to a dropping position where whichever ball is needed is dropped into a tube. This stepper motor is powered with 5V and is controlled from Arduino 1 via a digital pin.
+									</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/ElevatorServo.jpg" alt=""  width = "100" height = "500" /></div><div class="content">
+								<h2>Elevator Servo</h2>
+								<p>Our elevator is power with a continuous motion servo. This servo is connected to our Arduino 2 and is set to a particular speed at the beginning of that sketch and then left on so that it is continuously rotating the helix structure that pulls balls up to the top of the device. This servo is powered with 5V and connected to a digital pin on our Arduino 2 to receive commands.</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/colorsensor1.jpg" alt="" width = "100" height = "500"/></div><div class="content">
+								<h2>Color Sensor</h2>
+								<p>We have an AdaFruit color sensor at the top of our Ball Matrix Display so that we can resort the balls from an image and have them ready for the next image to be displayed. From the top of our elevator, the balls go into a clear plastic tube that passes right in front of the color sensor. The color sensor reads the RGB values for each ball and calculates a color value. We found that when that color value is above 2500 it is sensing a white ball, and when the value is below it is sensing a black ball. When there is no ball in front of the color sensor the value reads a black ball because the material behind the clear tube is a dark gray. To deal with this bug you can manually full the tube with black balls whenever it is empty. The sensor is set 6 ball widths above the actual dropping mechanism. This means when it is powered up it does not know what the first 5 balls are. To solve this we programed it to assume the first 5 are black, so when powering up this device there need to be at least 5 black balls preloaded into the sensing tube.
+									</p>
+							</div>
+						</section>
+						<section>
+							<div style="text-align:center">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/Vjjq8ztDhes" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/sorterservo.jpg" alt=""  width = "100" height = "500" /></div><div class="content">
+								<h2>Sorting Servo </h2>
+								<p>We use a servo to sort the mixed balls back into the hoppers separated by color. The servo is located under the color sensor and is controlled by our Arduino 2. It is set up to move to a neutral position to load one ball and move that ball to the left or right depending on what color it is. The servo is powered by 5V and controlled by a digital pin to the Arduino 2.
+									</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/ajatator.jpg" alt="" width = "100" height = "500"/></div><div class="content">
+								<h2>Agitators</h2>
+								<p>While testing our device, we noticed that the balls in our hoppers were getting jammed and not feeding into our dropping mechanism. To solve this we added two continuous motion servos, one in each hopper. These servos only need 5V and then they rotate continuously as long as the device is powered.
+									</p>
+							</div>
+						</section>
+					</section>
+						<!--section class="wrapper style5">
+							<div class="inner">
+
+								<h3>Lorem ipsum dolor</h3>
+								<p>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo, tempus sed finibus eget, fringilla quis risus. Maecenas et lorem quis sem varius sagittis et a est. Maecenas iaculis iaculis sem. Donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
+
+								<p>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec dui cursus, posuere dui eget interdum. Fusce lectus magna, sagittis at facilisis vitae, pellentesque at etiam. Quisque posuere leo quis sem commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius.</p>
+
+								<hr />
+
+								<h4>Feugiat aliquam</h4>
+								<p>Nam sapien ante, varius in pulvinar vitae, rhoncus id massa. Donec varius ex in mauris ornare, eget euismod urna egestas. Etiam lacinia tempor ipsum, sodales porttitor justo. Aliquam dolor quam, semper in tortor eu, volutpat efficitur quam. Fusce nec fermentum nisl. Aenean erat diam, tempus aliquet erat.</p>
+
+								<p>Etiam iaculis nulla ipsum, et pharetra libero rhoncus ut. Phasellus rutrum cursus velit, eget condimentum nunc blandit vel. In at pulvinar lectus. Morbi diam ante, vulputate et imperdiet eget, fermentum non dolor. Ut eleifend sagittis tincidunt. Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui, at vestibulum sit amet, auctor bibendum neque.</p>
+
+							</div>
+						</section-->
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<!--ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul-->
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

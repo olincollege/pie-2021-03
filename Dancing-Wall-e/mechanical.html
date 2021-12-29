@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Mechanical</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Dancing Wall-E</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="about.html">About Us</a></li>
+							<li><a href="financials.html">Financials</a></li>
+							<li><a href="system.html">System Diagram</a></li>
+							<li><a href="mechanical.html">Mechanical</a></li>
+							<li><a href="electrical.html">Electrical</a></li>
+							<li><a href="firmware.html">Firmware</a></li>
+							<li><a href="process.html">Process</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+								<h1>Mechanical</h1>
+								<h2>Overview</h2>
+									<div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+										<p style="text-align:center"><img src="images/CAD-full_assembly.jpeg" alt="" height="500" /></p>
+										<p style="text-align:center"><img src="images/wall_e-full.png" alt="" height="400" /></p>
+									</div>
+									<p>Our assembly consists of three different subsystems: the “head”, the “body”, and the “drivetrain”. You will find that a lot of our design was either taken directly from or closely inspired by <a href="https://www.thingiverse.com/thing:3703555">this existing Wall-E replica</a>, like the head assembly and the arms. The main materials used for the final assembly are: PLA, MDF, plywood, aluminum, COTS treads, and various fasteners and adhesives. The main manufacturing methods were 3D printing, laser-cutting and water jetting. Below, you’ll see a more detailed description of each subassembly.</p>
+								<h2>Subassembly 1: Head (Eyes & Neck)</h2>
+									<div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+										<p style="text-align:center"><img src="images/wall_e-eyes.jpeg" alt="" height="250" /></p>
+										<p style="text-align:center"><img src="images/CAD-eyes.jpeg" alt="" height="250" /></p>
+										<p style="text-align:center"><img src="images/CAD-eyes_exploded.jpeg" alt="" height="250" /></p>
+									</div>
+									<p>Most of the head assembly was un-modified from <a href="https://www.thingiverse.com/thing:3703555">the original</a> that we found. This was due to the convenience of the original size. We also didn’t find a need to modify the locations of the servos since they provided the movement we wanted. All of these parts were 3D printed with PLA, and assembled with a press-fit.</p>
+									<div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+										<p style="text-align:center"><img src="images/wall_e-eyes_paperclip.jpeg" alt="" height="250" /></p>
+									</div>
+									<p>The only thing we added in addition to the original design was a metal spacer (see picture) on the paperclips connecting each eye servo to the center shaft. This was due to the fact that each time we tested eye movement, the original paper clips would bend in the middle from movement, which would result in less range. The metal spacer added support to prevent that from happening again.</p>
+									<div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+										<p style="text-align:center"><img src="images/wall_e-neck_servo.jpeg" alt="" height="250" /></p>
+										<p style="text-align:center"><img src="images/CAD-neck.jpeg" alt="" height="250" /></p>
+										<p style="text-align:center"><img src="images/CAD-neck_exploded.jpeg" alt="" height="250" /></p>
+									</div>
+								<h2>Subassembly 2: Body (Arms, Electronics & Box)</h2>
+									<div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+										<p style="text-align:center"><img src="images/wall_e-arms_side.jpeg" alt="" height="250" /></p>
+										<p style="text-align:center"><img src="images/CAD-arm.jpeg" alt="" height="250" /></p>
+										<p style="text-align:center"><img src="images/CAD-arm_exploded.jpeg" alt="" height="250" /></p>
+									</div>
+									<p>Within this subassembly, there are 3 categories of parts: the arms, the body, and the electronics & electronic mounts housed inside the body.</p>
+									<p>For the arms, only one part needed to be modified from the original design, which was the inner part of the arm hinge that connects the arm from the outside of the box to the servo housed inside the box. Since we used the original scale arms but switched to standard-size servos instead of sub-micro size, we needed to scale up the portion of the hinge that attaches to the servo horn by 1.72. In addition, we shortened the height of the hinge piece since the thickness of the walls of our box are thinner than the original design, and we wanted the arms to stay flush with the outside of the body.</p>
+									<div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+										<p style="text-align:center"><img src="images/CAD-arm_hinge_old.jpeg" alt="" height="250" /></p>
+										<p style="text-align:center"><img src="images/CAD-arm_hinge_new.jpeg" alt="" height="250" /></p>
+									</div>
+									<p>After the necessary modifications, all of our arm components were 3D printed using PLA and assembled with press-fit and super glue where needed.</p>
+									<div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+										<p style="text-align:center"><img src="images/wall_e-electronics.jpeg" alt="" height="250" /></p>
+										<p style="text-align:center"><img src="images/CAD-box.jpeg" alt="" height="250" /></p>
+										<p style="text-align:center"><img src="images/CAD-box_exploded.jpeg" alt="" height="250" /></p>
+									</div>
+									<p>The body design comprised of 5 rectangular panels with interlocking notches for stability laser cut out of ⅛” MDF for the sides, bottom, top, and back wall of the box and assembled with wood glue, as well as a door panel laser cut from ¼” plywood and attached via two small metal pins that allow it to rotate open and close. A thicker and sturdier material (plywood) was chosen for the door to ensure the longevity of the hinges.</p>
+									<div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+										<p style="text-align:center"><img src="images/CAD-servo_mount.jpeg" alt="" height="400" /></p>
+									</div>
+									<p>To secure the electronics inside the box, we designed and 3D printed mounts out of PLA with dimensions customized to each electronic. For components with bolt holes, they were secured with bolts and nuts to their mounts, while electronics without bolt holes had mounts that were press-fit. All of the mounts were then secured to the inside of the box using strips of velcro to make them easily removable. </p>
+									<p>The biggest challenge was arranging the electronics within the body so that components that needed to be wired together were placed in appropriate proximity to each other. In addition, electronics that had ports that we needed to connect to for testing purposes needed to be close to the door and facing outward for ease of access. </p>
+								<h2>Subassembly 3: Drivetrain</h2>
+									<div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+										<p style="text-align:center"><img src="images/wall_e-drivetrain_bottom.jpeg" alt="" height="250" /></p>
+										<p style="text-align:center"><img src="images/CAD-drivetrain.jpeg" alt="" height="250" /></p>
+										<p style="text-align:center"><img src="images/CAD-drivetrain_exploded.jpeg" alt="" height="250" /></p>
+									</div>
+									<p>The drivetrain was heavily inspired by <a href="https://www.thingiverse.com/thing:3703555">the original</a>, but almost all of the parts were re-designed to fit <a href="https://www.amazon.com/Robot-Crawler-Tank-Treads-Tracks/dp/B07HBSWR1D/ref=asc_df_B07HBSWR1D/?tag=hyprod-20&linkCode=df0&hvadid=416672155323&hvpos=&hvnetw=g&hvrand=15706359889334108586&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9002080&hvtargid=pla-875525595838&psc=1&tag=&ref=&adgrpid=93457066509&hvpone=&hvptwo=&hvadid=416672155323&hvpos=&hvnetw=g&hvrand=15706359889334108586&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9002080&hvtargid=pla-875525595838">custom treads</a> that we ordered. This assembly consists of: <a href="https://www.pololu.com/product/4745">DC motor</a>, motor bracket, spacers, motor gear, driven gear, sprockets, front wheels, top wheels, a frame and shafts. </p>
+									<p>The treads were easily adjusted to length by pulling out a pin and reconnecting it at another location. The motors were spec-ed to have enough torque for an assembly that weighed 0.75kg, with a factor of safety of 1.5. We also assumed that the max distance the force would act on the assembly is 0.3m, or the edge of the body. Multiplying all of those together gives us a torque requirement of 3.3Nm, or 33kgf-cm, which our current motor is able to max with a max torque of 34kgf-cm.</p>
+									<p>The challenge here was to measure the correct pitch diameter for the “sprockets” that connected to the treads, since the tread we ordered did not come with manual or technical specifications. We decided to use aluminum for our custom sprockets, both for Wall-E aesthetics and robustness. Once the design was finalized, we waterjet the aluminum sprockets, front wheels and motor/driven gears, laser cut the frame and top wheels, and 3D printed the shafts that held everything together.</p>
+								<h2>Aesthetics</h2>
+									<div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+										<p style="text-align:center"><img src="images/raster-front.jpeg" alt="" height="400" /></p>
+									</div>
+									<p>To make our final mechanical assembly look like Wall-E, we redesigned the laser cut files for the box to have rastered designs inspired by Wall-E on the sides, back, top, and door.</p>
+									<div style="display:flex; flex-direction:row; justify-content:center; align-items:center">
+										<p style="text-align:center"><img src="images/Wall_E-sprint3.png" alt="" height="400" /></p>
+										<p style="text-align:center; margin-left:3rem"><img src="images/wall_e-front.jpeg" alt="" height="400" /></p>
+									</div>
+									<p>In addition to rastering, we hand-painted all of the 3D printed and laser cut parts. We ran into issues with the watercolor paint that we initially used flaking off of the PLA parts once it dried, but the problem was solved once we switched to acrylic paint. We also laser cut two clear acrylic discs to act as lenses for Wall-E’s eyes.</p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner" style="padding-left:3rem">
+						<section>
+							<h2>Our Repository</h2>
+							<ul class="icons">
+								<li><a href="https://github.com/jellyyams/pie-wallE" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+						<ul class="copyright">
+							<li>&copy; 2021. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

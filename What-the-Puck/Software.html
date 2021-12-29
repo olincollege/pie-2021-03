@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Software System</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+							<header id="header">
+								<!-- <a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a> -->
+								<ul class="icons">
+									<li><a href="https://github.com/wsh32/airhockey" class="fab fa-github"><span class="label">Github</span></a></li>
+								</ul>
+							</header>
+
+							<!-- Content -->
+
+							<section id="banner">
+								<div class="content">
+									<header>
+										<h1>Software System</h1>
+										<p>Summary</p>
+									</header>
+									<p>Our software system was required to be fast and send the striker to the right spot to accurately play air hockey.</p>
+								</div>
+								<span class="image main">
+									<img src="images/isabel_coding.jpg" alt="" height="50%"/>
+								</span>
+							</section>
+
+								<section>
+
+									<span class="image main"><img src="images/init_s_block_diagram.png" alt="" /></span>
+									<h2>Communication</h2>
+									<p>Our software system utilized ROS to communicate between the camera, laptop, and Arduino. The ROS ecosystem allowed us to have many separate scripts on different pieces of hardware that can communicate with each other. These individual nodes use ROS to publish and subscribe to data. ROS also helped us create visualizations that could be viewed on multiple computers on the same network.</p>
+
+									<hr class="major" />
+									<h3>Camera System</h3>
+									<p>We analyzed images from our camera using the OpenCV library, which allowed us to track where the puck was on the table and also track the edges of the table using fiducial markers.</p>
+									<p>The puck was located using HSV filtering. Originally, we had issues with the puck reflecting lights from the ceiling; at different points in the table, it would appear as a different color, because the lighting was inconsistent. This was fixed by adding a matte blue vinyl layer to the pucks that did not reflect the light. </p>
+									<p>Six fiducial markers were applied to known locations around the table. The apriltag library was used to locate the tags and compute their IDs. A minimum of four markers is necessary to compute the puck location in the table space; a total of six were included because the tags are prone to being incidentally covered by the player or the puck. </p>
+									<p>The puck is originally detected in the coordinate system of the camera (camera space). The fiducials are used to create a <a href="https://en.wikipedia.org/wiki/Homography_(computer_vision)">homograph matrix</a> which allows us to transpose the puck location into the table coordinate system (table space). The homography matrix is computed by OpenCV, which makes the transformation simple.</p>
+									<p> The final transformation becomes </p>
+									<span class="image "><img src="images/HomographyMatrix.png" alt="" width="100%"/></span>
+
+
+									<hr class="major" />
+									<h3>Trajectory Predictions</h3>
+									<p>By keeping track of the puck position over time, we were able to calculate the x and y velocity vectors of the puck and use those to extrapolate where the puck's future position would be. In order to account for bounces off the edges of the table, we assumed that all collisions would be perfectly inelastic (i.e. the puck would bounce at the exact same angle it hit the edge of the table at). As we were only initially working in one axis, we calculated the point in which the puck would cross the line y = 12, since the single axis gantry laid on the table 12 inches away from the x-axis. If this point was off the table (i.e. the puck was aimed toward a wall), we then reflected the point of intersection back onto the table recursively to place the predicted position in the correct location. </p>
+									<p>We implemented our model of table physics by projecting the velocity in a straight line. </p>
+									<span class="image "><img src="images/PhysicsMath.png" alt="" width="90%"/></span>
+
+									<p>To account for the puck bouncing off the walls, we kept the projection in a straight line and instead reflected the puck position across the table walls if it was out of bounds.</p>
+									<p>We also applied low pass filters to the puck's position to reduce the amount of jitter that the predicted position experienced.</p>
+
+									<hr class="major" />
+									<h3>Striker Control</h3>
+									<p>We used the AccelStepper Arduino library to control our stepper motors that moved the striker. We set up our system to be a state machine with three different states: run, stop, and home. Once turned on, we started the game in stop mode. This mode disabled our motors to help with temperature control and waited to receive a position command from ROS. Once an initial position command was received, the state machine entered home mode. This involved enabling the motors and sending the striker to the left until it triggered the break beam sensor. The current location of the striker was set to be 0 and the state machine then entered run mode. Run mode was set up to receive position commands from ROS and send the striker to that location as quickly as possible. If the break in receiving position commands was ever longer than two minutes, the system entered stop mode.</p>
+
+									<hr class="major" />
+									<h3>Future Work</h3>
+									<p>The next step for this project would be to implement control code to move the striker in two axes. This goal was unable to be reached during the timeframe of the project due to mechanical limitations. Two axes of motion would elevate the project as the puck would be able to be hit back to the human player (as opposed to just being blocked), and allows us to add another level of complexity to the project: gameplay. There are game simulations and machine learning algorithms that can be written to design the position commands in such a way that the robot is able to play offensively and score against a human opponent. </p>
+									<p>As we integrated our systems, we discovered issues where the motors skipped steps. When this happened, we needed to rehome the striker more frequently to ensure that its current position was accurate. In a future revision of this project, we would like to track the striker position using the camera and compare it to the position that the striker reported being at. If there was ever a large discrepancy, we could then command the striker to rehome itself and resolve the difference. This would allow the robot to be more autonomous and require less human input. </p>
+
+						</div>
+					</div>
+
+					<!-- Sidebar -->
+						<div id="sidebar">
+							<div class="inner">
+
+								<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Homepage</a></li>
+										<li><a href="SystemOverview.html">System Overview</a></li>
+										<li>
+											<span class="opener">Subsystems</span>
+											<ul>
+												<li><a href="Mechanical.html">Mechanical Overview</a></li>
+												<li><a href="Electrical.html">Electrical Overview</a></li>
+												<li><a href="Software.html">Software Overview</a></li>
+											</ul>
+										</li>
+										<li><a href="OurProcess.html">Our Process</a></li>
+										<li><a href="AboutTheTeam.html">Our Team</a></li>
+										<li><a href="BudgetAndMaterials.html">Budget and Materials</a></li>
+									</ul>
+								</nav>
+
+
+								<!-- Section -->
+								<section>
+									<ul class="contact">
+										<li class="icon solid fa-home">1000 Olin Way<br />
+										Needham, MA 02492</li>
+									</ul>
+								</section>
+
+								<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">What the Puck? 2021. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+							</div>
+						</div>
+
+				</div>
+
+			<!-- Scripts -->
+				<script src="assets/js/jquery.min.js"></script>
+				<script src="assets/js/browser.min.js"></script>
+				<script src="assets/js/breakpoints.min.js"></script>
+				<script src="assets/js/util.js"></script>
+				<script src="assets/js/main.js"></script>
+
+		</body>
+	</html>

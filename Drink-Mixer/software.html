@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Hyperspace by HTML5 UP</title>
+		<title>Software Design</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -16,12 +16,14 @@
 
 		<!-- Header -->
 			<header id="header">
-				<a href="index.html" class="title">Hyperspace</a>
+				<a href="index.html" class="title">PIE Drink Mixer</a>
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="generic.html" class="active">Generic</a></li>
-						<li><a href="elements.html">Elements</a></li>
+						<li><a href="mechanical.html">Mechanical</a></li>
+						<li><a href="electrical.html">Electrical</a></li>
+						<li><a href="firmware.html">Firmware</a></li>
+						<li><a href="software.html">Software</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -32,10 +34,43 @@
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
-							<h1 class="major">A Generic Page</h1>
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<h1 class="major">Software Design</h1>
+							<p>The final code for this project can be found on <a href="https://github.com/VedaantKuchhal/PIE-Project-Drink-Mixer"> <b>this GitHub</b></a>.
+							</p>
+							<p>This section runs in parallel with the <a href="firmware.html">firmware section</a>, and if you haven't checked that out yet, do that first to get some context on the code! 
+							</p>
+							<h2>Iteration 1: Arduino with serial monitor</h2>
+							<p>Initially, to ensure that we had a rough code framework to test our parts on, we coded out an interface using the serial monitor. This code essentially worked as follows - 
+							</p>
+							<ol>
+								<li>The user would enter a message on the serial monitor specifying which drink they want.
+								</li>
+								<li>Depending on the message, the corresponding function would be called.
+								</li>
+								<li>In the function, the appropriate digital signals would be sent for a fixed amount of time to open a valve to pour the drink.
+								</li>
+								<li>After pouring the drink, the user would be sent a message on the serial monitor saying that their drink is poured.
+								</li>
+								<li>The loop would repeat.
+								</li>
+								<br>
+								<p>This is essentially the same framework we carried throughout the project. Initially, we had also planned on including a function to calculate the correct amount of drink to be poured based on flow rate and water pressure, but we discarded that idea since we didn’t have the mechanical infrastructure set up to test it appropriately.
+								</p>
+								<p>Future iterations basically involved modifying steps 1 and 4 into a full-fledged user interface.
+								</p>
+								<h2>Iteration 2: Arduino and Raspberry Pi setup with touchscreen</h2>
+								<p>In this part of the project, while there was a lot of setup, changing laptop settings, and integration, there was no actual coding since we never got to the stage of creating an interface between the touchscreen, Raspberry Pi, and Arduino. Most of the coding in this project happened in the final iteration of our design.
+								</p>
+								<h2>Iteration 3: Teensy User Interface</h2>
+								<p>Using the framework we had created in Iteration 1, we expanded on the touchscreen interface using <a href="https://github.com/Stan-Reifel/TeensyUserInterface/">Stan Reifel's library</a> that we described in firmware. Using this, buttons and panels on the touchscreen could be coded by using objects to specify each component. In this way, an entire screen would be coded out in just one line of code, and each object was linked so that we could cycle between different menus. This library was so incredibly convenient that the part of the project that had previously taken us two and half weeks was solved from scratch in just 5 hours! It speaks for how powerful having the right library can be.
+								</p>
+								<p>We linked each of the menus created using the library to functions to pour each of the drinks - each of these were essentially copied over from Iteration 1 due to the way we had separated out our code. These allowed the Teensy to communicate with the valves appropriately when the necessary button was tapped on in the touchscreen menu. However, one of the features we didn’t find the time to integrate was releasing multiple drinks at the same time to create a true ‘Drink Mixer’. While it was a simple addition of a few lines of code from the software side, we were not able to test the mechanics of pouring multiple drinks in time. In theory, there is nothing stopping the our machine to pour multiple drinks at the same time with the way it’s currently constructed.
+								</p>
+								<p>As an extra treat, we integrated an LED strip into our machine. If you haven’t already noticed from our demonstration video, this simple addition made a significant difference to the aesthetic quality of our machine. The one constraint was that we couldn’t run the LED and the touchscreen interface process simultaneously, so if you notice from our video, our LEDs only change colors/flash when the touchscreen is starting up or frozen on a particular screen.
+								</p>
+								<p>Once again, the code can be found on <a href="https://github.com/VedaantKuchhal/PIE-Project-Drink-Mixer"> <b>this GitHub</b></a>.
+								</p>
+							</ol>
 						</div>
 					</section>
 

@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<!--
+	Template: Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+	Olin College of Engineering, Principles of Integrated Engineering Fall 2021
+	Team: Gati Aher, Mari Kang, Cory Knox, Efe Gulcu, Max Stopyra
+-->
+<html>
+	<head>
+		<title>Mechanical</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Disco Cats</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="mechanical.html">Mechanical</a></li>
+								<li><a href="electrical.html">Electrical</a></li>
+								<li><a href="software.html">Software</a></li>
+								<li><a href="bill_of_materials.html">Bill of Materials</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>Mechanical</h2>
+								<p>Our mechanical team primarily used lasercutting and 3D printing to create the structure that expressed our output.</p>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+
+									<h3 class="major">Project Evolution</h3>
+
+									<div class="box alt">
+										<div class="row gtr-uniform" padding="4em">									
+											<div class="col-4">
+												<span class="image fit">
+													<p><i>Sprint 1: Music Box</i></p>
+													<img src="images/sketches/sprint_1.png">
+												</span>
+											</div>
+
+											<div class="col-4">
+												<span class="image fit">
+													<p><i>Sprint 2: Circular Platform</i></p>
+													<img src="images/sketches/sprint_2.png">
+												</span>
+											</div>
+
+											<div class="col-4">
+												<span class="image fit">
+													<p><i>Sprint 3: Rave King</i></p>
+													<img src="images/sketches/sprint_3.png">
+												</span>
+											</div>
+										</div>
+									</div>
+
+									<h3 class="major">The Stage</h3>
+									<p>
+										<span class="image right">
+											<img src="images/cad_renders/Whole_Thing.JPG">
+										</span>
+										As the primary housing unit for the project, this had to be large enough to hold all of our wiring and electrical components, the motors and stands that support the cats, and the linkages that drive the cat motions. Because of the sheer amount that this stage had to contain, our team designed big. The housing unit stands at 5.5” in height with an 18” diameter. The walls are created from living hinges and the components of the stage are held together with a slot-based design.
+									</p>
+
+									<h3 class="major">The LED Housing</h3>
+									<p>
+										<span class="image right">
+											<img src="images/photo_booth/final_build.jpg">
+										</span>
+										This component of the project brings height and conveys the primary expression of note pitches. It stands at 16.5” tall and holds 64 LEDs in an 8x8 matrix. The material is laser cut acrylic, assembled with a puzzle piece method and spray painted black to minimize the reflection of light in any unwanted directions. The 8 columns of the octagonal LED matrix column line up with the 8 dancing cat figures. Each column and dancing cat pairing correspond to an instrument being played in the song, creating a coherent and visually pleasing effect.
+									</p>
+
+									<h3 class="major">The Cats</h3>
+									<p>Various linkage systems and stepper motor interactions make 3D-printed cats puppets dance. Four unique motions were incorporated into our design: (1) up and down, (2) the infinity loop, (3) dancing pair, and (4) one dancing on its own.</p>
+
+									<h4>Rotating Cat</h4>
+									<p>This is a pretty simple mechanism. We designed a part that fits into the DC motor. A wooden shaft transmits the torque from the DC motor to the cat model, making the cat rotate to the given signal.</p>
+
+									<div class="box alt">
+										<div class="row gtr-uniform" padding="4em">									
+											<div class="col-8">
+												<span class="image fit">
+													<img src="images/cad_renders/Rotating.JPG">
+												</span>
+											</div>
+
+											<div class="col-4">
+												<span class="image fit">
+													<img src="images/photo_booth/rotating.PNG">
+												</span>
+											</div>
+										</div>
+									</div>
+
+									<h4>Circular Cat</h4>
+									<p>Circular cat uses the same method as the rotating cat but adds a bar to the system. Instead of the shaft directly moving the cat, the shaft moves a bar link that connects the shaft and the cat. With this change, the cat's rotation follows a circular path and orbits the shaft axis.</p>
+
+									<div class="box alt">
+										<div class="row gtr-uniform" padding="4em">									
+											<div class="col-8">
+												<span class="image fit">
+													<img src="images/cad_renders/Half_Rotating.JPG">
+												</span>
+											</div>
+
+											<div class="col-4">
+												<span class="image fit">
+													<img src="images/photo_booth/half_rotating.PNG">
+												</span>
+											</div>
+										</div>
+									</div>
+
+									<h4>Dancing Pair Cats</h4>
+									<p>Dancing cats use the same shaft system as the two prior mechanisms, but this time the shaft is connected to a platform with two cat models are placed on top. This way the motion of cats looks as if they are turning around each other / dancing as a pair.</p>
+
+									<div class="box alt">
+										<div class="row gtr-uniform" padding="4em">									
+											<div class="col-8">
+												<span class="image fit">
+													<img src="images/cad_renders/Dancing.JPG">
+												</span>
+											</div>
+
+											<div class="col-4">
+												<span class="image fit">
+													<img src="images/photo_booth/dancing.PNG">
+												</span>
+											</div>
+										</div>
+									</div>
+
+									<h4>Infinity Sign Cat</h4>
+									<p>This design is trickier and more delicate than the previous ones. It uses a four bar linkage and two DC motors to create an infinity sign shaped path for the cat model. The DC motors move their shafts in opposite directions. With enough precision in initial state and speed of motors, a very clear infinity sign shape is created. This design has to be very precise to create a clean path. To understand how the four bar linkage system works, watch this video: <a href="https://www.youtube.com/watch?v=oZdUY9xwrls">The Infinity Sign Drawing Device</a></p>
+
+									<div class="box alt">
+										<div class="row gtr-uniform" padding="4em">									
+											<div class="col-8">
+												<span class="image fit">
+													<img src="images/cad_renders/Infinity.JPG">
+												</span>
+											</div>
+
+											<div class="col-4">
+												<span class="image fit">
+													<img src="images/photo_booth/infinity.PNG">
+												</span>
+											</div>
+										</div>
+									</div>
+
+									<h4>Jumping Cat</h4>
+									<p>A slider crank mechanism moves the cat model on the vertical axis. Its motion is noticeably jerky, as the slider crank mechanism that works on the vertical axis has bear a significant amount of weight which makes it difficult to build with low quality parts. Thus, we have a non perfect slider crank mechanism that accomplishes the job.</p>
+
+									<div class="box alt">
+										<div class="row gtr-uniform" padding="4em">									
+											<div class="col-8">
+												<span class="image fit">
+													<img src="images/cad_renders/Jumping.JPG">
+												</span>
+											</div>
+
+											<div class="col-4">
+												<span class="image fit">
+													<img src="images/photo_booth/jumping_cat.PNG">
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+					</section>
+
+				<!-- Footer -->
+				<section id="footer">
+					<div class="inner">
+						<h2 class="major">About Us</h2>
+						<ul>
+							<li><b>Mechanical:</b> Efe Gulcu & Cory Knox (also PM)</li>
+							<li><b>Electrical:</b> Max Stopyra</li>
+							<li><b>Software:</b> Gati Aher & Mari Kang</li>
+						</ul>
+
+						<div class="box alt">
+							<div class="row gtr-uniform" padding="4em">									
+								<div class="col-4">
+									<span class="image fit">
+										<img src="images/MechECat.png">
+									</span>
+								</div>
+
+								<div class="col-4">
+									<span class="image fit">
+										<img src="images/ECECat.png">
+									</span>
+								</div>
+
+								<div class="col-4">
+									<span class="image fit">
+										<img src="images/softwareCat.png">
+									</span>
+								</div>
+							</div>
+						</div>
+
+						<ul class="contact">
+							<li class="icon solid fa-home">
+								Olin College of Engineering<br/>
+								1000 Olin Way, Needham, MA<br/>
+								<a href="https://olincollege.github.io/pie-2021-03/">Principles of Integrated Engineering, Fall 2021</a>
+							</li>
+							<li class="icon brands fa-github"><a href="https://github.com/GatiAher/disco_cats">disco_cats</a></li>
+							<li class="icon fa-gem"><a href="https://html5up.net/solid-state">Website Powered by HTML5: Solid State</a></li>
+						</ul>
+					</div>
+				</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

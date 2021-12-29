@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Electrical</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="https://cup-noodle-app.herokuapp.com/" class="logo">Make an order now!</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">This is Cup Noodle</a></li>
+							<li><a href="process.html">Our Process</a></li>
+							<li class="active"><a href="systemsoverview.html">Systems Overview</a></li>
+							<li><a href="aboutus.html"> About Us </a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1> Electrical </h1>
+                                    <div class="image main"><img src="images/https://imgpile.com/images/w4dSy8.jpg" alt="" /></div>
+                                </header>
+								
+								<hr/>
+                                <!-- Second feature -->
+								
+								<h3> Wiring Diagram </h3>	
+								<p class='tab'> The full wiring for our system can be viewed below:
+								</p>
+                                <div class="image fit"><img src="images/electrical-circuit-diagram.jpg" alt="" /></div>
+                                
+								<p class='tab'> Starting from the right of the diagram, we used an ESP8266 for our wifi communications. We chose this board for its reliability and widespread documentation. This allowed us to easily connect to the olin devices wifi to retrieve orders. The ESP8266 runs its logic on 3.3v as opposed to an Arduino which operates on 5v. This required a logic level converter to step up and down signals between each board. The logic level converter was simply placed in between the ESP and arduino to convert each signal being sent to the correct voltage. The main processing and controls occurred on an Arduino Mega 2560. This board was chosen because it has many digital pins that allow us to control all of our mechanisms. <br/> </p>
+
+								<p class='tab'> To control our stepper motors we used the A4988 stepper motor drivers. These drivers were chosen to provide more control over our motors as well as separate arduino and motor power. As shown in the diagram, the motor drivers are powered with 5v from the arduino, and motor power is provided from a 24v power supply. The 4 motor wires on the stepper motors are connected directly to the motor controller. To control the motors, each motor controller has 2 pins connected to digital outputs on the arduino. These pins control the stepping and direction of the stepper motors. We originally ran our motor controllers with 12v and had them tuned to a reference voltage that gave our motors 1A. After problems with the gantry, we increased the voltage to 24v and adjusted the reference voltage to 2A. This gave our motors more torque and helped resolve some problems with lack of power. <br/> </p>
+
+
+								<p class='tab'> For our gantry we used bipolar nema 17 2A 59Ncm stepper motors. These motors were chosen due to their small and light form factor relative to their power output. We chose stepper motors to allow for precise control of the gantry system. <br/> </p>
+
+								<p class='tab'> A larger bipolar nema 17 65Ncm 2.1A stepper motor was used to open the kettle valve. We chose this motor because it had higher torque than our other motors, and it could easily integrate with the parts that we had. In the future we would like to replace this motor with a higher torque DC motor. <br/> </p>
+
+								<p class='tab'> An Adafruit Motor Shield V2 was used to control 4 DC motors. This board was chosen because it integrated well with our existing electronics and had a well documented library. This board was connected directly to the Arduino Mega 2560 We powered this board with a separate 12v power supply. The DC motors used were chosen as they were already accessible in the class, and we had experience using them. We used 1:48 reduction ratio 200RPM dual shaft gearbox DC motors. Given more time and budget, we would replace these motors with a higher torque alternative to remedy occasional issues with stalling. <br/> </p>
+
+								<p class='tab'> We had 3 limit switches wired directly to the Arduino. These limit switches were connected to a digital pin and ground. This allowed us to measure when a switch was activated as the connect pin was brought down to ground. These were mounted on the gantry for calibration. <br/> </p>
+
+
+								<hr/>
+
+
+
+
+
+                                <!-- Add a video -->
+								<!-- <div style="justify-content: center">
+									<video width="100%" controls>
+										<source src="videos/sprint1-1.mp4" type="video/mp4" scale="50%">
+									</video>
+								</div> -->
+							
+							</section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p> 1000 Olin Way <br/>
+									Needham, MA 02492</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(781) 292-2300</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">pie@olin.edu</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
